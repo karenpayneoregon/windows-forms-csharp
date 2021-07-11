@@ -1,7 +1,7 @@
 ﻿using System.Data;
 using System.Linq;
 
-namespace GroupbyDataTable
+namespace GroupbyDataTable.Classes
 {
     public class Operations 
     {
