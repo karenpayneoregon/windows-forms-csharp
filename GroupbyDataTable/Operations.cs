@@ -12,7 +12,8 @@ namespace GroupbyDataTable
             table.Columns.Add(new DataColumn("TaxRate", typeof(decimal)));
             table.Columns.Add(new DataColumn("Value", typeof(decimal)));
             table.Columns.Add(new DataColumn("TaxAmount", typeof(decimal)));
-            table.Columns.Add(new DataColumn("FinalValue", typeof(decimal), "Value + TaxAmount"));
+            table.Columns.Add(new DataColumn("FinalValue", typeof(decimal), 
+                "Value + TaxAmount"));
 
             table.Rows.Add(5, 1000, 50);
             table.Rows.Add(5, 2000, 100);
@@ -26,7 +27,6 @@ namespace GroupbyDataTable
             return table;
             
         }
-
 
         public static DataTable GroupData(DataTable dt)
         {
