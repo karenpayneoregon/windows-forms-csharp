@@ -5,6 +5,10 @@ namespace GroupbyDataTable.Classes
 {
     public class Operations 
     {
+        /// <summary>
+        /// Mini data coming from a database, text file etc.
+        /// </summary>
+        /// <returns><see cref="DataTable"/></returns>
         public static DataTable Mocked()
         {
             var table = new DataTable();
@@ -27,12 +31,16 @@ namespace GroupbyDataTable.Classes
             return table;
             
         }
-
+        /// <summary>
+        /// Group by TaxRate column into a new DataTable
+        /// </summary>
+        /// <param name="dt"><see cref="DataTable"/></param>
+        /// <returns><see cref="DataTable"/> with the same structure as <see cref="Mocked"/></returns>
         public static DataTable GroupData(DataTable dt)
         {
 
             return dt.AsEnumerable()
-                .GroupBy(row => DataRowExtensions.Field<decimal>(row, "TaxRate"))
+                .GroupBy(row => row.Field<decimal>("TaxRate"))
                 .Select(grouped =>
                 {
                     var row = dt.NewRow();
@@ -43,7 +51,9 @@ namespace GroupbyDataTable.Classes
                     row["FinalValue"] = grouped.Sum(dRow => dRow.Field<decimal>("FinalValue"));
 
                     return row;
-                }).CopyToDataTable();
+                    
+                })
+                .CopyToDataTable();
         }
     }
 }
