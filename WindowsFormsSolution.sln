@@ -16,6 +16,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GroupbyDataTable", "Groupby
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PassingDataBetweenForms", "PassingDataBetweenForms\PassingDataBetweenForms.csproj", "{966FA546-F8FE-4954-B4DE-BABE5FEFF591}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".NET Classic", ".NET Classic", "{07EEA43B-E7E7-45AC-B312-B41BB1F8922A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".NET Core", ".NET Core", "{A033CF08-D34E-4F7D-8523-4E31BDEB614E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,6 +45,12 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B09FA7C0-E3C2-4DDD-A7CC-8D7046A1041A} = {07EEA43B-E7E7-45AC-B312-B41BB1F8922A}
+		{0D890FAB-46E6-44F7-953D-2F1EE71240EA} = {A033CF08-D34E-4F7D-8523-4E31BDEB614E}
+		{E3E62E1B-9238-4D5C-B6DB-F65A801F6634} = {07EEA43B-E7E7-45AC-B312-B41BB1F8922A}
+		{966FA546-F8FE-4954-B4DE-BABE5FEFF591} = {07EEA43B-E7E7-45AC-B312-B41BB1F8922A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {58AC3B13-B420-4F3C-8723-CE1E6C224D46}
