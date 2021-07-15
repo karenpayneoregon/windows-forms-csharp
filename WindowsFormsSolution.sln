@@ -24,13 +24,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Visual Basic", "Visual Basi
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "WinFormLibrary", "WinFormLibrary\WinFormLibrary.vbproj", "{AE5F0C94-5D5F-4E96-B5B2-BA98D33BEFD7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeLibrary", "TimeLibrary\TimeLibrary.csproj", "{2437DDCE-75F0-410C-AD4F-A228CCD05B72}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TimeLibrary", "TimeLibrary\TimeLibrary.csproj", "{2437DDCE-75F0-410C-AD4F-A228CCD05B72}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Class projects", "Class projects", "{9761F0CA-5FE0-490A-825A-E5B148555DE4}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Console projects", "Console projects", "{DE16B1C7-FA6D-417E-B3A3-C9B8AC284A41}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeLibraryConsoleApp", "TimeLibraryConsoleApp\TimeLibraryConsoleApp.csproj", "{D9F08F9E-AA25-4937-8717-819CB98063E8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TimeLibraryConsoleApp", "TimeLibraryConsoleApp\TimeLibraryConsoleApp.csproj", "{D9F08F9E-AA25-4937-8717-819CB98063E8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataGridViewCellFormatting1", "DataGridViewCellFormatting1\DataGridViewCellFormatting1.csproj", "{E1DDF130-640F-424E-AB13-010F255F8361}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -66,6 +68,10 @@ Global
 		{D9F08F9E-AA25-4937-8717-819CB98063E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D9F08F9E-AA25-4937-8717-819CB98063E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D9F08F9E-AA25-4937-8717-819CB98063E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E1DDF130-640F-424E-AB13-010F255F8361}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E1DDF130-640F-424E-AB13-010F255F8361}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E1DDF130-640F-424E-AB13-010F255F8361}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E1DDF130-640F-424E-AB13-010F255F8361}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -81,6 +87,7 @@ Global
 		{9761F0CA-5FE0-490A-825A-E5B148555DE4} = {A033CF08-D34E-4F7D-8523-4E31BDEB614E}
 		{DE16B1C7-FA6D-417E-B3A3-C9B8AC284A41} = {A033CF08-D34E-4F7D-8523-4E31BDEB614E}
 		{D9F08F9E-AA25-4937-8717-819CB98063E8} = {DE16B1C7-FA6D-417E-B3A3-C9B8AC284A41}
+		{E1DDF130-640F-424E-AB13-010F255F8361} = {07EEA43B-E7E7-45AC-B312-B41BB1F8922A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {58AC3B13-B420-4F3C-8723-CE1E6C224D46}
