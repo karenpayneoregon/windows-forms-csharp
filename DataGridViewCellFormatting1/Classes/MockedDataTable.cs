@@ -16,10 +16,10 @@ namespace DataGridViewCellFormatting1.Classes
                 AutoIncrementSeed = 1
             });
             
-            dt.Columns.Add(new DataColumn() { ColumnName = "Amount", DataType = typeof(int) });
+            dt.Columns.Add(new DataColumn() { ColumnName = "Amount", DataType = typeof(int)});
 
             dt.Rows.Add(null, 200);
-            dt.Rows.Add(null, 1000);
+            dt.Rows.Add(null, null);
             dt.Rows.Add(null, -3200);
             dt.Rows.Add(null, -300);
             dt.Rows.Add(null, 500);
