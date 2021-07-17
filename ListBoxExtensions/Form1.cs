@@ -1,20 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using ListBoxExtensions.Classes;
-using static ListBoxExtensions.Classes.Dialogs;
+using MediaFileDemo.Classes;
+using static MediaFileDemo.Classes.Dialogs;
 
-namespace ListBoxExtensions
+namespace MediaFileDemo
 {
     public partial class Form1 : Form
     {
-        private BindingSource _bindingSource = new BindingSource();
+        private readonly BindingSource _bindingSource = new BindingSource();
         public Form1()
         {
             InitializeComponent();

@@ -34,7 +34,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TimeLibraryConsoleApp", "Ti
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataGridViewCellFormatting1", "DataGridViewCellFormatting1\DataGridViewCellFormatting1.csproj", "{E1DDF130-640F-424E-AB13-010F255F8361}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ListBoxExtensions", "ListBoxExtensions\ListBoxExtensions.csproj", "{0091F982-4312-419C-B093-2988772BBEA7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MediaFileDemo", "ListBoxExtensions\MediaFileDemo.csproj", "{0091F982-4312-419C-B093-2988772BBEA7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

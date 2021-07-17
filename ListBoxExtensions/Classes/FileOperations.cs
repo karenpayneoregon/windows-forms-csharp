@@ -1,4 +1,4 @@
-﻿namespace ListBoxExtensions.Classes
+﻿namespace MediaFileDemo.Classes
 {
     public class FileOperations
     {
@@ -10,6 +10,6 @@
         /// For a real app we save to <see cref="MediaFileName"/> but this helps
         /// to ensure code is working correctly
         /// </summary>
-        public static string SaveFileName => "Mediasongs.txt";
+        public static string SaveFileName => "MediasongsTest.txt";
     }
 }

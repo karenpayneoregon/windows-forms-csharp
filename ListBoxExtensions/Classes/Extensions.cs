@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Windows.Forms;
 
-namespace ListBoxExtensions.Classes
+namespace MediaFileDemo.Classes
 {
     public static class Extensions
     {

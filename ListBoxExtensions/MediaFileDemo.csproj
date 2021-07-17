@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{0091F982-4312-419C-B093-2988772BBEA7}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>ListBoxExtensions</RootNamespace>
-    <AssemblyName>ListBoxExtensions</AssemblyName>
+    <RootNamespace>MediaFileDemo</RootNamespace>
+    <AssemblyName>MediaFileDemo</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -69,6 +69,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

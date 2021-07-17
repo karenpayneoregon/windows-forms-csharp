@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.IO;
 
-namespace ListBoxExtensions.Classes
+namespace MediaFileDemo.Classes
 {
     public class MediaItem
     {

@@ -1,5 +1,5 @@
 ﻿
-namespace ListBoxExtensions
+namespace MediaFileDemo
 {
     partial class Form1
     {
