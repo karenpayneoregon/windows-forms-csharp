@@ -7,7 +7,7 @@ namespace TimeLibraryConsoleApp
     {
         static void Main(string[] args)
         {
-            var fromDateTime = new DateTime(1956, 9, 24);
+            var fromDateTime = new DateTime(2008, 9, 24);
             var toDateTime = DateTime.Now;
 
             fromDateTime.GetElapsedTime(toDateTime, 

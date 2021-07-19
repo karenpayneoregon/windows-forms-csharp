@@ -36,6 +36,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataGridViewCellFormatting1
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MediaFileDemo", "ListBoxExtensions\MediaFileDemo.csproj", "{0091F982-4312-419C-B093-2988772BBEA7}"
 EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ChangeButtonColorsFromDate", "ChangeButtonColorsFromDate\ChangeButtonColorsFromDate.vbproj", "{9E983448-DF87-40C4-9018-EFA1F6C204F1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -78,6 +80,10 @@ Global
 		{0091F982-4312-419C-B093-2988772BBEA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0091F982-4312-419C-B093-2988772BBEA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0091F982-4312-419C-B093-2988772BBEA7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E983448-DF87-40C4-9018-EFA1F6C204F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E983448-DF87-40C4-9018-EFA1F6C204F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E983448-DF87-40C4-9018-EFA1F6C204F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E983448-DF87-40C4-9018-EFA1F6C204F1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -95,6 +101,7 @@ Global
 		{D9F08F9E-AA25-4937-8717-819CB98063E8} = {DE16B1C7-FA6D-417E-B3A3-C9B8AC284A41}
 		{E1DDF130-640F-424E-AB13-010F255F8361} = {07EEA43B-E7E7-45AC-B312-B41BB1F8922A}
 		{0091F982-4312-419C-B093-2988772BBEA7} = {07EEA43B-E7E7-45AC-B312-B41BB1F8922A}
+		{9E983448-DF87-40C4-9018-EFA1F6C204F1} = {5D21CFBF-44AA-4562-B731-2D1369E8F39B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {58AC3B13-B420-4F3C-8723-CE1E6C224D46}
