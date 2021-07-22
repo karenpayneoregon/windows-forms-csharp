@@ -15,7 +15,6 @@ namespace PassingDataBetweenForms
 
         }
 
-
         private void OnShown(object sender, EventArgs e)
         {
             Operations.AddNote += OperationsOnAddNote;

@@ -9,9 +9,6 @@ namespace PassingDataBetweenForms.Classes
         private string _content;
         private int _id;
 
-        /// <summary>
-        /// Primary key, not used in this code sample but would be in a real application
-        /// </summary>
         public int Id
         {
             get => _id;
