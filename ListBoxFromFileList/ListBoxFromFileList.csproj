@@ -52,6 +52,7 @@
     <Compile Include="Classes\FileItem.cs" />
     <Compile Include="Classes\JsonHelpers.cs" />
     <Compile Include="Classes\MockOperations.cs" />
+    <Compile Include="Classes\Dialogs.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

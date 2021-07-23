@@ -33,6 +33,8 @@ namespace ListBoxFromFileList
             this.AddNewButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.RemoveButton = new System.Windows.Forms.Button();
+            this.SHowButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -67,6 +69,8 @@ namespace ListBoxFromFileList
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.SHowButton);
+            this.panel1.Controls.Add(this.RemoveButton);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.AddNewButton);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -74,6 +78,26 @@ namespace ListBoxFromFileList
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(338, 57);
             this.panel1.TabIndex = 3;
+            // 
+            // RemoveButton
+            // 
+            this.RemoveButton.Location = new System.Drawing.Point(251, 3);
+            this.RemoveButton.Name = "RemoveButton";
+            this.RemoveButton.Size = new System.Drawing.Size(75, 23);
+            this.RemoveButton.TabIndex = 3;
+            this.RemoveButton.Text = "Remove";
+            this.RemoveButton.UseVisualStyleBackColor = true;
+            this.RemoveButton.Click += new System.EventHandler(this.RemoveButton_Click);
+            // 
+            // SHowButton
+            // 
+            this.SHowButton.Location = new System.Drawing.Point(119, 3);
+            this.SHowButton.Name = "SHowButton";
+            this.SHowButton.Size = new System.Drawing.Size(75, 23);
+            this.SHowButton.TabIndex = 4;
+            this.SHowButton.Text = "Show";
+            this.SHowButton.UseVisualStyleBackColor = true;
+            this.SHowButton.Click += new System.EventHandler(this.ShowButton_Click);
             // 
             // Form1
             // 
@@ -97,6 +121,8 @@ namespace ListBoxFromFileList
         private System.Windows.Forms.Button AddNewButton;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button RemoveButton;
+        private System.Windows.Forms.Button SHowButton;
     }
 }
 

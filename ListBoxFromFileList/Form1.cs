@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ListBoxFromFileList.Classes;
 using Newtonsoft.Json;
+using static ListBoxFromFileList.Dialogs;
 
 namespace ListBoxFromFileList
 {
@@ -27,8 +28,25 @@ namespace ListBoxFromFileList
             listBox1.DataSource = _BindingSource;
             
             listBox1.MouseDoubleClick += ListBox1OnMouseDoubleClick;
+            _BindingSource.PositionChanged += BindingSourceOnPositionChanged;
             
             Closing += OnClosing;
+
+            PositionChanged();
+        }
+        
+
+        private void BindingSourceOnPositionChanged(object sender, EventArgs e)
+        {
+            PositionChanged();
+        }
+
+        private void PositionChanged()
+        {
+            if (_BindingSource.Current == null) return;
+
+            var current = ((FileItem) _BindingSource.Current);
+            Console.WriteLine(current.FileName);
         }
 
         private void OnClosing(object sender, CancelEventArgs e)
@@ -52,6 +70,40 @@ namespace ListBoxFromFileList
         private void AddNewButton_Click(object sender, EventArgs e)
         {
             _BindingSource.Add(new FileItem() {FullName = "D:\\Docs\\readme.md"});
+        }
+
+        private void RemoveButton_Click(object sender, EventArgs e)
+        {
+            if (_BindingSource.Current != null)
+            {
+                if (Question("Remove current item?"))
+                {
+                    _BindingSource.RemoveCurrent();
+                }
+            }
+        }
+
+        /// <summary>
+        /// Quickie example to show files for selected item in list box
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ShowButton_Click(object sender, EventArgs e)
+        {
+            if (_BindingSource.Current == null) return;
+            
+            var current = ((FileItem)_BindingSource.Current);
+
+
+            if (!Directory.Exists(current.FolderName)) return;
+            
+            var files = Directory.GetFiles(current.FolderName);
+            Console.WriteLine($"Files for {current.FolderName}");
+            foreach (var file in files)
+            {
+                Console.WriteLine($"\t{file}");
+            }
+
         }
     }
 }

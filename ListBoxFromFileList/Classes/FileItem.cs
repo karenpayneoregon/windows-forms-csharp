@@ -26,6 +26,8 @@ namespace ListBoxFromFileList.Classes
 
         [JsonIgnore]
         public string FileName => Path.GetFileName(FullName);
+        [JsonIgnore]
+        public string FolderName => Path.GetDirectoryName(FullName);
         public override string ToString() => FileName;
         public event PropertyChangedEventHandler PropertyChanged;
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
