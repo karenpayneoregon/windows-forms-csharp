@@ -2,6 +2,16 @@
 
 Basic code sample to import a DataTable in a DataGridView to Excel using [SpreadsheetLight](https://www.nuget.org/packages/SpreadsheetLight/) free library via a NuGet package.
 
+
+### To run the project
+
+- Run the script under Script folder
+- Perform a NuGet restore packages
+
+### Requires
+
+SQL-Server 2012 or higher
+
 ### See also
 
 [Common operations](https://github.com/karenpayneoregon/ExcelUnleashed/blob/master/SpreadSheetLightLibrary/Examples.cs)
