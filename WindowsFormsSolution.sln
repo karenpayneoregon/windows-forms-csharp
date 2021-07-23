@@ -42,6 +42,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ListBoxFromFileList", "List
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpreadsheetLightDataGridViewExport", "SpreadsheetLightDataGridViewExport\SpreadsheetLightDataGridViewExport.csproj", "{DEE7E207-F1EB-4691-83E3-7F9E272B2656}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CheckListBoxProducts", "CheckListBoxProducts\CheckListBoxProducts.csproj", "{38558207-41A2-43D6-A508-939153D6C9F6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -122,6 +124,14 @@ Global
 		{DEE7E207-F1EB-4691-83E3-7F9E272B2656}.Release|Any CPU.Build.0 = Release|Any CPU
 		{DEE7E207-F1EB-4691-83E3-7F9E272B2656}.Release|x86.ActiveCfg = Release|Any CPU
 		{DEE7E207-F1EB-4691-83E3-7F9E272B2656}.Release|x86.Build.0 = Release|Any CPU
+		{38558207-41A2-43D6-A508-939153D6C9F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38558207-41A2-43D6-A508-939153D6C9F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38558207-41A2-43D6-A508-939153D6C9F6}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{38558207-41A2-43D6-A508-939153D6C9F6}.Debug|x86.Build.0 = Debug|Any CPU
+		{38558207-41A2-43D6-A508-939153D6C9F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38558207-41A2-43D6-A508-939153D6C9F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{38558207-41A2-43D6-A508-939153D6C9F6}.Release|x86.ActiveCfg = Release|Any CPU
+		{38558207-41A2-43D6-A508-939153D6C9F6}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -142,6 +152,7 @@ Global
 		{26D85BB1-D738-4E71-B11F-08FFB2BEC862} = {A033CF08-D34E-4F7D-8523-4E31BDEB614E}
 		{8ACBC19D-CDF0-4779-A921-E8628B8F9539} = {07EEA43B-E7E7-45AC-B312-B41BB1F8922A}
 		{DEE7E207-F1EB-4691-83E3-7F9E272B2656} = {07EEA43B-E7E7-45AC-B312-B41BB1F8922A}
+		{38558207-41A2-43D6-A508-939153D6C9F6} = {07EEA43B-E7E7-45AC-B312-B41BB1F8922A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {58AC3B13-B420-4F3C-8723-CE1E6C224D46}
