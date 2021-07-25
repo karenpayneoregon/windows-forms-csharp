@@ -4,7 +4,7 @@ Select a random file from a list of files from a specific folder.
 
 ![img](../assets/random.png)
 
-Containter class
+Container class
 
 ```csharp
 public class FileItem
