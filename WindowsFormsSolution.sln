@@ -52,9 +52,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Forms", "Forms", "{2E5D5985
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DateTimePickerBlank", "DateTimePickerBlank\DateTimePickerBlank.csproj", "{D3AB5EEF-055D-4412-8105-667851081A7C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExceptionsLibrary", "ExceptionsLibrary\ExceptionsLibrary.csproj", "{64835798-0F56-42FD-8D07-A7235C993606}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExceptionsLibrary", "ExceptionsLibrary\ExceptionsLibrary.csproj", "{64835798-0F56-42FD-8D07-A7235C993606}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExceptionConsoleApp", "ExceptionConsoleApp\ExceptionConsoleApp.csproj", "{ADB06860-D7AF-46CE-9DE1-AF56BCBC1821}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExceptionConsoleApp", "ExceptionConsoleApp\ExceptionConsoleApp.csproj", "{ADB06860-D7AF-46CE-9DE1-AF56BCBC1821}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SelectRandomFile", "SelectRandomFile\SelectRandomFile.csproj", "{A7CF3565-DD78-4D1C-BE29-C8D2D22EC0E4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -168,6 +170,14 @@ Global
 		{ADB06860-D7AF-46CE-9DE1-AF56BCBC1821}.Release|Any CPU.Build.0 = Release|Any CPU
 		{ADB06860-D7AF-46CE-9DE1-AF56BCBC1821}.Release|x86.ActiveCfg = Release|Any CPU
 		{ADB06860-D7AF-46CE-9DE1-AF56BCBC1821}.Release|x86.Build.0 = Release|Any CPU
+		{A7CF3565-DD78-4D1C-BE29-C8D2D22EC0E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7CF3565-DD78-4D1C-BE29-C8D2D22EC0E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7CF3565-DD78-4D1C-BE29-C8D2D22EC0E4}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{A7CF3565-DD78-4D1C-BE29-C8D2D22EC0E4}.Debug|x86.Build.0 = Debug|Any CPU
+		{A7CF3565-DD78-4D1C-BE29-C8D2D22EC0E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7CF3565-DD78-4D1C-BE29-C8D2D22EC0E4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A7CF3565-DD78-4D1C-BE29-C8D2D22EC0E4}.Release|x86.ActiveCfg = Release|Any CPU
+		{A7CF3565-DD78-4D1C-BE29-C8D2D22EC0E4}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -195,6 +205,7 @@ Global
 		{D3AB5EEF-055D-4412-8105-667851081A7C} = {20A306CF-BC01-44E0-836A-1049B29A6890}
 		{64835798-0F56-42FD-8D07-A7235C993606} = {9761F0CA-5FE0-490A-825A-E5B148555DE4}
 		{ADB06860-D7AF-46CE-9DE1-AF56BCBC1821} = {DE16B1C7-FA6D-417E-B3A3-C9B8AC284A41}
+		{A7CF3565-DD78-4D1C-BE29-C8D2D22EC0E4} = {07EEA43B-E7E7-45AC-B312-B41BB1F8922A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {58AC3B13-B420-4F3C-8723-CE1E6C224D46}
