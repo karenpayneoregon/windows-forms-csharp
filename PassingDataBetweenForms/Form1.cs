@@ -35,6 +35,7 @@ namespace PassingDataBetweenForms
         private void AddButton_Click(object sender, EventArgs e)
         {
             var addForm = new AddNoteForm();
+ 
             try
             {
                 addForm.ShowDialog();

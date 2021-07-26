@@ -4,4 +4,6 @@ Simple code sample for sharing data between two forms. In this case clicking the
 
 Alternate is to have a property in the child form that if DialogResult is Ok access the property before disposing the child form.
 
+**7/26/2021** Added default values for adding a new note.
+
 ![image](../assets/noteTaker.png)

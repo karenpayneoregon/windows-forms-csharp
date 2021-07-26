@@ -9,6 +9,8 @@ namespace PassingDataBetweenForms.Classes
         public static event OnAddNote AddNote;
 
         public static List<Note> NotesList = new List<Note>();
+
+        public static Note DefaultNote => new Note() { Title = "Default title", Content = "Content"};
         
         /// <summary>
         /// Pass new Note to listeners
@@ -38,6 +40,11 @@ namespace PassingDataBetweenForms.Classes
             {
                 Title = "First", 
                 Content = "My note"
+            });
+            NotesList.Add(new Note()
+            {
+                Title = "Second",
+                Content = "Some content"
             });
         }
 

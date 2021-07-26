@@ -9,7 +9,10 @@ namespace PassingDataBetweenForms
         public AddNoteForm()
         {
             InitializeComponent();
+            TitleTextBox.Text = Operations.DefaultNote.Title;
+            NoteTextBox.Text = Operations.DefaultNote.Content;
         }
+
 
         private void AddButton_Click(object sender, EventArgs e)
         {
