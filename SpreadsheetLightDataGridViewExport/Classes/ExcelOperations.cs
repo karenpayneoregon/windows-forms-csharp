@@ -36,36 +36,36 @@ namespace SpreadsheetLightDataGridViewExport.Classes
                         File.Delete(FileName);
                     }
 
-                    using (var doc = new SLDocument())
+                    using (var document = new SLDocument())
                     {
                         // style for date columns
-                        SLStyle dateStyle = doc.CreateStyle();
+                        SLStyle dateStyle = document.CreateStyle();
                         dateStyle.FormatCode = "mm-dd-yyyy";
 
                         /*
                          * import DataTable without column names,
                          * change last param to true for column names
                          */
-                        doc.ImportDataTable(1,
+                        document.ImportDataTable(1,
                             SLConvert.ToColumnIndex("A"), table, true);
 
                         // apply date style to DateTime columns
-                        doc.SetColumnStyle(4, dateStyle);
-                        doc.SetColumnStyle(5, dateStyle);
-                        doc.SetColumnStyle(6, dateStyle);
+                        document.SetColumnStyle(4, dateStyle);
+                        document.SetColumnStyle(5, dateStyle);
+                        document.SetColumnStyle(6, dateStyle);
 
                         // Auto format date columns
-                        doc.AutoFitColumn(4);
-                        doc.AutoFitColumn(5);
-                        doc.AutoFitColumn(6);
+                        document.AutoFitColumn(4);
+                        document.AutoFitColumn(5);
+                        document.AutoFitColumn(6);
 
                         // rename default sheet, sheet1
-                        doc.RenameWorksheet(
+                        document.RenameWorksheet(
                             SLDocument.DefaultFirstSheetName,
                             SheetName);
 
                         // save to file
-                        doc.SaveAs(FileName);
+                        document.SaveAs(FileName);
 
                         return (true, null);
                     }
