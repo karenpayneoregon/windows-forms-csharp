@@ -65,7 +65,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\DataOperations.cs" />
+    <Compile Include="Classes\ExcelHelpers.cs" />
     <Compile Include="Classes\ExcelOperations.cs" />
+    <Compile Include="CreateFileWithSheets.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateFileWithSheets.Designer.cs">
+      <DependentUpon>CreateFileWithSheets.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -74,6 +81,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CreateFileWithSheets.resx">
+      <DependentUpon>CreateFileWithSheets.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
