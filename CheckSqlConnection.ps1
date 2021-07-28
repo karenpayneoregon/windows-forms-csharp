@@ -10,3 +10,5 @@ while($rdr.Read())
   $rdr["ServerName"].ToString()
 }
 $SqlConnection.Close()
+Write-Host "Done"
+
