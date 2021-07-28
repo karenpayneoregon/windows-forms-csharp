@@ -32,7 +32,8 @@ namespace ExcelInteropApp.Classes
                 Excel.Workbook xlWorkBook;
                 Excel.Worksheet xlWorkSheet;
                 Excel.Sheets xlWorkSheets;
-
+                
+                
                 xlApp = new Excel.Application { DisplayAlerts = false };
 
                 xlWorkBooks = xlApp.Workbooks;
@@ -55,6 +56,12 @@ namespace ExcelInteropApp.Classes
                 xlNewSheet.Move(System.Reflection.Missing.Value, xlWorkSheets[xlWorkSheets.Count]);
 
                 xlNewSheet.Name = secondWorkSheetName;
+
+                Excel.Range xlRange1 = null;
+                xlRange1 = xlWorkSheet.Range["A1"];
+                xlRange1.Value = "Hello Excel";
+                Marshal.FinalReleaseComObject(xlRange1);
+                xlRange1 = null;
 
                 ActionHandler?.Invoke("Done with add sheet");
 
