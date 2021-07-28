@@ -7,6 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreateDynamicControls", "Cr
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{ADAFC974-47BC-402C-ADCF-CBE2E275FEF8}"
 	ProjectSection(SolutionItems) = preProject
+		CheckSqlConnection.ps1 = CheckSqlConnection.ps1
 		readme.md = readme.md
 	EndProjectSection
 EndProject
@@ -61,6 +62,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SqlServerUtilityLibraryApp", "SqlServerUtilityLibraryApp\SqlServerUtilityLibraryApp.csproj", "{6F86E7C3-3F4C-4D86-901C-EB7DC95E3EF7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExcelInteropApp", "ExcelInteropApp\ExcelInteropApp.csproj", "{B3CBD82F-2C0A-4345-889D-2BCBDF749DBA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SplitButtonDemo", "SplitButtonDemo\SplitButtonDemo.csproj", "{091A2033-82BE-450E-9C19-EEB611C222C2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -206,6 +209,14 @@ Global
 		{B3CBD82F-2C0A-4345-889D-2BCBDF749DBA}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B3CBD82F-2C0A-4345-889D-2BCBDF749DBA}.Release|x86.ActiveCfg = Release|Any CPU
 		{B3CBD82F-2C0A-4345-889D-2BCBDF749DBA}.Release|x86.Build.0 = Release|Any CPU
+		{091A2033-82BE-450E-9C19-EEB611C222C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{091A2033-82BE-450E-9C19-EEB611C222C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{091A2033-82BE-450E-9C19-EEB611C222C2}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{091A2033-82BE-450E-9C19-EEB611C222C2}.Debug|x86.Build.0 = Debug|Any CPU
+		{091A2033-82BE-450E-9C19-EEB611C222C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{091A2033-82BE-450E-9C19-EEB611C222C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{091A2033-82BE-450E-9C19-EEB611C222C2}.Release|x86.ActiveCfg = Release|Any CPU
+		{091A2033-82BE-450E-9C19-EEB611C222C2}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -236,6 +247,7 @@ Global
 		{DB0A2E8A-FA39-4DF8-8643-568A1CC8717B} = {9761F0CA-5FE0-490A-825A-E5B148555DE4}
 		{6F86E7C3-3F4C-4D86-901C-EB7DC95E3EF7} = {DE16B1C7-FA6D-417E-B3A3-C9B8AC284A41}
 		{B3CBD82F-2C0A-4345-889D-2BCBDF749DBA} = {D8C42D3D-B70F-46E0-B197-0C0C1FD84A07}
+		{091A2033-82BE-450E-9C19-EEB611C222C2} = {07EEA43B-E7E7-45AC-B312-B41BB1F8922A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {58AC3B13-B420-4F3C-8723-CE1E6C224D46}
