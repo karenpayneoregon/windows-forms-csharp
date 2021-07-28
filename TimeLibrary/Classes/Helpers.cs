@@ -3,9 +3,60 @@ using System;
 
 namespace TimeLibrary.Classes
 {
+    public class Age
+    {
+        public int Years { get; set; }
+        public int Months { get; set; }
+        public int Days { get; set; }
+        public int Hours { get; set; }
+        public int Minutes { get; set; }
+        public int Seconds { get; set; }
+        public int Milliseconds { get; set; }
+        /// <summary>
+        /// Date to calculate off of a later date
+        /// </summary>
+        public DateTime From { get; set; }
+        /// <summary>
+        /// Date to calculate off a earlier date
+        /// </summary>
+        public DateTime To { get; set; }
+
+        public string YearsMonthsDays => $"{Years} years {Months} months {Days} days";
+
+    }
     public static class Helpers
     {
 
+        public static Age Age(this DateTime fromDateTime, DateTime toDate)
+        {
+            if (toDate.IsBefore(fromDateTime))
+            {
+                throw new ArgumentOutOfRangeException(@"to date must be after from date");
+            }
+
+            if (fromDateTime.IsAfter(toDate))
+            {
+                throw new ArgumentOutOfRangeException(@"from date must be after to date");
+            }
+            
+            fromDateTime.GetElapsedTime(toDate, 
+                out var years, out var months, out var days, 
+                out var hours, out var minutes, out var seconds, 
+                out _);
+
+            return new Age()
+            {
+                Years = years, 
+                Months = months, 
+                Days = days, 
+                Hours = hours, 
+                Minutes = minutes, 
+                Seconds = seconds, 
+                From = fromDateTime, 
+                To = toDate
+            };
+            
+        }
         /// <summary>
         /// Get elapsed time in years, months, days, hours, seconds
         /// </summary>
