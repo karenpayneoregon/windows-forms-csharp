@@ -32,13 +32,18 @@ Public Class Form1
 
         Dim parts = ItemTextBox.Text.Split(" "c)
 
-        If LabelList.Any(Function(currentLabel) currentLabel.Text.ContainsAll(parts)) Then
+        '
+        ' Use either ContainsAny or ContainsAll
+        '
+        If LabelList.Any(Function(currentLabel) currentLabel.Text.ContainsAny(parts)) Then
+
             LabelList.ForEach(
                 Sub(label)
-                    If label.Text.ContainsAll(parts) Then
+                    If label.Text.ContainsAny(parts) Then
                         label.ForeColor = Color.Red
                     End If
                 End Sub)
+
         End If
 
     End Sub

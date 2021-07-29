@@ -7,5 +7,9 @@
     Public Function ContainsAll(source As String, ParamArray values() As String) As Boolean
         Return values.All(Function(x) source.ContainsInsensitive(x))
     End Function
+    <Runtime.CompilerServices.Extension>
+    Public Function ContainsAny(sender As String, ParamArray items() As String) As Boolean
+        Return items.Any(Function(value) sender.ContainsInsensitive(value))
+    End Function
 
 End Module
