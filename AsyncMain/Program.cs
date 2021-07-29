@@ -5,7 +5,7 @@ namespace AsyncMain
 {
     class Program
     {
-        public static async Task<int> Main(string[] args)
+        public static async Task Main(string[] args)
         {
             static Task<string> Simple() => Task.Run(async () =>
                 {
@@ -17,9 +17,6 @@ namespace AsyncMain
             Console.WriteLine(await Simple());
 
             Console.ReadKey();
-            return 0;
         }
-
-
     }
 }
