@@ -30,8 +30,8 @@ namespace AsyncMain
 
         static async Task DemoAsync()
         {
-            CancellationTokenSource _cancellationSource = new();
-            await foreach (var item in 10.RangeAsync(11,20, cancellationToken: _cancellationSource.Token).WithCancellation(_cancellationSource.Token))
+            CancellationTokenSource cancellationSource = new();
+            await foreach (var item in 10.RangeAsync(11,20, cancellationToken: cancellationSource.Token).WithCancellation(cancellationSource.Token))
             {
                 Console.WriteLine(item);
             };
