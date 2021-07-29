@@ -2,6 +2,9 @@
 
 namespace TimeLibrary.Classes
 {
+    /// <summary>
+    /// Provides a container for results from <see cref="Helpers.Age"/>
+    /// </summary>
     public class Age
     {
         public int Years { get; set; }
@@ -20,7 +23,13 @@ namespace TimeLibrary.Classes
         /// </summary>
         public DateTime To { get; set; }
 
+        #region Idea for wrapping results
+
         public string YearsMonthsDays => $"{Years} years {Months} months {Days} days";
+        public string YearsMonths => $"{Years} years {Months} months";
+
+        #endregion
+
 
     }
 }

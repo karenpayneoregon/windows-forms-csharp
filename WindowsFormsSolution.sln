@@ -67,6 +67,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SplitButtonDemo", "SplitBut
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ConfigurationLibraryVisualBasic", "ConfigurationLibraryVisualBasic\ConfigurationLibraryVisualBasic.vbproj", "{04F4E176-1D54-45F4-BC09-0617AE6465C6}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Entity Framework", "Entity Framework", "{BD65B6CC-7E56-4925-8812-7C28E0BD718C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsyncMain", "AsyncMain\AsyncMain.csproj", "{CFA549B7-31AA-4A1B-B67B-D64CFFEC9463}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -227,6 +231,14 @@ Global
 		{04F4E176-1D54-45F4-BC09-0617AE6465C6}.Release|Any CPU.Build.0 = Release|Any CPU
 		{04F4E176-1D54-45F4-BC09-0617AE6465C6}.Release|x86.ActiveCfg = Release|Any CPU
 		{04F4E176-1D54-45F4-BC09-0617AE6465C6}.Release|x86.Build.0 = Release|Any CPU
+		{CFA549B7-31AA-4A1B-B67B-D64CFFEC9463}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFA549B7-31AA-4A1B-B67B-D64CFFEC9463}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFA549B7-31AA-4A1B-B67B-D64CFFEC9463}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{CFA549B7-31AA-4A1B-B67B-D64CFFEC9463}.Debug|x86.Build.0 = Debug|Any CPU
+		{CFA549B7-31AA-4A1B-B67B-D64CFFEC9463}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFA549B7-31AA-4A1B-B67B-D64CFFEC9463}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CFA549B7-31AA-4A1B-B67B-D64CFFEC9463}.Release|x86.ActiveCfg = Release|Any CPU
+		{CFA549B7-31AA-4A1B-B67B-D64CFFEC9463}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -259,6 +271,8 @@ Global
 		{B3CBD82F-2C0A-4345-889D-2BCBDF749DBA} = {D8C42D3D-B70F-46E0-B197-0C0C1FD84A07}
 		{091A2033-82BE-450E-9C19-EEB611C222C2} = {07EEA43B-E7E7-45AC-B312-B41BB1F8922A}
 		{04F4E176-1D54-45F4-BC09-0617AE6465C6} = {5D21CFBF-44AA-4562-B731-2D1369E8F39B}
+		{BD65B6CC-7E56-4925-8812-7C28E0BD718C} = {07EEA43B-E7E7-45AC-B312-B41BB1F8922A}
+		{CFA549B7-31AA-4A1B-B67B-D64CFFEC9463} = {DE16B1C7-FA6D-417E-B3A3-C9B8AC284A41}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {58AC3B13-B420-4F3C-8723-CE1E6C224D46}

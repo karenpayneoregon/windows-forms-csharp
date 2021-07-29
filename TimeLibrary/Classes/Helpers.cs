@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 
 namespace TimeLibrary.Classes
 {
@@ -7,26 +6,17 @@ namespace TimeLibrary.Classes
     {
 
         /// <summary>
+        /// Provides a wrapper for <see cref="GetElapsedTime"/> to keep client code clean
         /// </summary>
         /// <param name="fromDateTime"></param>
         /// <param name="toDate"></param>
         /// <returns><see cref="Age"/> instance</returns>
         /// <remarks>
-        /// The first two assertions are actually not needed as there is a check in <see cref="GetElapsedTime"/> and
-        /// can be removed or refactor the base code.
+        /// * Minimal assertion is done
+        /// * milliseconds are provides but not much use
         /// </remarks>
         public static Age Age(this DateTime fromDateTime, DateTime toDate)
         {
-
-            if (toDate.IsBefore(fromDateTime))
-            {
-                throw new ArgumentOutOfRangeException(@"to date must be after from date");
-            }
-
-            if (fromDateTime.IsAfter(toDate))
-            {
-                throw new ArgumentOutOfRangeException(@"from date must be after to date");
-            }
             
             fromDateTime.GetElapsedTime(toDate, 
                 out var years, out var months, out var days, 
