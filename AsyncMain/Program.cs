@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace AsyncMain
@@ -7,6 +8,8 @@ namespace AsyncMain
     {
         public static async Task Main(string[] args)
         {
+            Console.Title = "Demos";
+            
             static Task<string> Simple() => Task.Run(async () =>
                 {
                     await Task.Delay(2000);
@@ -14,9 +17,24 @@ namespace AsyncMain
                 });
 
 
+            Console.WriteLine("String example");
             Console.WriteLine(await Simple());
 
+            Console.WriteLine();
+            Console.WriteLine("Iterator example");
+            
+            await DemoAsync();
+
             Console.ReadKey();
+        }
+
+        static async Task DemoAsync()
+        {
+            CancellationTokenSource _cancellationSource = new();
+            await foreach (var item in 10.RangeAsync(11,20, cancellationToken: _cancellationSource.Token).WithCancellation(_cancellationSource.Token))
+            {
+                Console.WriteLine(item);
+            };
         }
     }
 }
