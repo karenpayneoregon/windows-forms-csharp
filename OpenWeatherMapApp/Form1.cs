@@ -1,13 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Drawing;
-using System.IO;
-using System.Linq;
 using System.Net.Http;
-using System.Runtime.Serialization.Json;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Newtonsoft.Json;
 using OpenWeatherMapApp.Classes;
@@ -33,7 +25,8 @@ namespace OpenWeatherMapApp
             
             http.DefaultRequestHeaders.Add(
                 "User-Agent", 
-                "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.84 Safari/537.36");
+                "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 " + 
+                     "(KHTML, like Gecko) Chrome/51.0.2704.84 Safari/537.36");
             
             var response = await http.GetAsync(url);
             
