@@ -1,0 +1,66 @@
+﻿Translated from current csharp code.
+==============================================================================
+
+Public Class DataResults
+	Public Property DataTable() As DataTable
+	Public Property Success() As Boolean
+	Public Property Exception() As Exception
+End Class
+
+
+------------------------------------------------------------------------------
+
+Option Infer On
+
+Imports System
+Imports System.Collections.Generic
+Imports System.Data
+Imports System.Linq
+Imports System.Text
+Imports System.Threading.Tasks
+Imports Oracle.ManagedDataAccess.Client
+
+Namespace DataGridViewDataTableOracle.Classes
+
+	''' <summary>
+	''' VB.NET Code in -> OracleOperationsVisualBase.txt
+	''' </summary>
+	Public Class OracleOperations
+		Public Shared ConnectionString As String = "TODO;"
+
+		''' <summary>
+		''' Read a table
+		''' </summary>
+		''' <returns>
+		''' <see cref="DataResults"/>
+		''' Which could be replaced with a named value tuple
+		''' </returns>
+		Public Shared Async Function ReadAllAsync() As Task(Of DataResults)
+			Dim dt = New DataTable()
+
+			Dim results = New DataResults() With {.Success = True}
+
+			Return Await Task.Run(Async Function()
+				Try
+					Using cn = New OracleConnection(ConnectionString)
+						Using cmd = cn.CreateCommand()
+							cmd.CommandText = "TODO"
+							cmd.CommandType = CommandType.Text
+							Await cn.OpenAsync()
+							dt.Load(Await cmd.ExecuteReaderAsync())
+						End Using
+					End Using
+
+					results.DataTable = dt
+					Return results
+
+				Catch ex As Exception
+					results.Exception = ex
+					results.Success = False
+					Return results
+				End Try
+
+			End Function)
+		End Function
+	End Class
+End Namespace
