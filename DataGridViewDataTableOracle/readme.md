@@ -13,6 +13,7 @@ Shows reading a table from an Oracle database table
 - Needs connection string
 - SQL SELECT statement
 
+
 ### Notes
 
 - Code has been tested with a real connection and SELECT statement.
