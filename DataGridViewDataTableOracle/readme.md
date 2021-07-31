@@ -2,7 +2,7 @@
 
 Shows reading a table from an Oracle database table
 
-![img](assets/Figure1.png)
+![img](assets/FIGURE1.png)
 
 **NuGet package**
 
