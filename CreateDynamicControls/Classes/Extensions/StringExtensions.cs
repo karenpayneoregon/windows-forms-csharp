@@ -16,6 +16,10 @@ namespace CreateDynamicControls.Classes.Extensions
         {
             var parts = sender.SplitCamelCase().Split(' ');
             return parts.Length > -1 ? parts[0] : sender;
+
         }
+        public static string Numbers(this string sender) =>
+            Regex.Replace(sender, "[^0-9 _]", "");
+
     }
 }
