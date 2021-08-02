@@ -11,6 +11,8 @@ namespace ConvertingUnitTest
 {
     public partial class MainTest
     {
+
+        public string MockedBasePrice = "USD1000";
         /// <summary>
         /// Perform initialization before test runs using assertion on current test name.
         /// </summary>

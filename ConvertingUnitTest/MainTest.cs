@@ -11,8 +11,7 @@ namespace ConvertingUnitTest
         [TestTraits(Trait.SingleConvert)]
         public void TestToDecimal()
         {
-            string mockedBasePrice = "USD1000";
-            decimal basePrice = mockedBasePrice.ToDecimal();
+            decimal basePrice = MockedBasePrice.ToDecimal();
             decimal expected = 1000;
             
             Assert.AreEqual(basePrice, expected);
@@ -23,8 +22,7 @@ namespace ConvertingUnitTest
         [TestTraits(Trait.SingleConvert)]
         public void TestStringValueIsNotGreaterThan()
         {
-            string mockedBasePrice = "USD1000";
-            decimal basePrice = mockedBasePrice.ToDecimal();
+            decimal basePrice = MockedBasePrice.ToDecimal();
 
             string value = "USD999";
             
@@ -35,8 +33,7 @@ namespace ConvertingUnitTest
         [TestTraits(Trait.SingleConvert)]
         public void TestStringValueIsGreaterThan()
         {
-            string mockedBasePrice = "USD1000";
-            decimal basePrice = mockedBasePrice.ToDecimal();
+            decimal basePrice = MockedBasePrice.ToDecimal();
 
             string value = "USD1001";
 
@@ -47,8 +44,7 @@ namespace ConvertingUnitTest
         [TestTraits(Trait.SingleConvert)]
         public void TestStringWithWhiteSpace()
         {
-            string mockedBasePrice = "USD1000";
-            decimal basePrice = mockedBasePrice.ToDecimal();
+            decimal basePrice = MockedBasePrice.ToDecimal();
 
             string value = "USD10 01";
 
@@ -59,9 +55,8 @@ namespace ConvertingUnitTest
         [TestTraits(Trait.ArrayConvert)]
         public void TestStringArrayNotGreaterThan()
         {
-            string mockedBasePrice = "USD1000";
-            decimal basePrice = mockedBasePrice.ToDecimal();
-            
+            decimal basePrice = MockedBasePrice.ToDecimal();
+
             string[] values = { "USD999", "", "USD20" };
 
             var onlyDecimalArray = values.ToDecimalArray();
@@ -72,9 +67,7 @@ namespace ConvertingUnitTest
         [TestTraits(Trait.ArrayConvert)]
         public void TestStringArrayIsGreaterThan()
         {
-            string mockedBasePrice = "USD1000";
-            decimal basePrice = mockedBasePrice.ToDecimal();
-
+            decimal basePrice = MockedBasePrice.ToDecimal();
             string[] values = { "USD999", "USD2020", "USD20" };
 
             var onlyDecimalArray = values.ToDecimalArray();
