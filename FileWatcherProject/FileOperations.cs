@@ -51,6 +51,8 @@ namespace FileWatcherExample
             
             EnableRaisingEvents = true;
 
+            IncludeSubdirectories = true;
+
             NotifyFilter = NotifyFilters.Attributes
                            | NotifyFilters.CreationTime
                            | NotifyFilters.DirectoryName

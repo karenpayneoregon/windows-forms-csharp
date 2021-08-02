@@ -14,6 +14,7 @@ private readonly FileOperations _fileOperations =
 </br>
 
 - On form closing the watcher is stopped
+- [IncludeSubdirectories](https://docs.microsoft.com/en-us/dotnet/api/system.io.filesystemwatcher.includesubdirectories?view=net-5.0) is set to true
 
 </br>
 

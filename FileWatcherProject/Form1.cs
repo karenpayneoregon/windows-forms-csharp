@@ -7,7 +7,7 @@ namespace FileWatcherExample
     public partial class Form1 : Form
     {
         private readonly FileOperations _fileOperations = 
-            new FileOperations("C:\\OED","C:\\OED\\Target", "*.txt");
+            new FileOperations("C:\\OED", "C:\\uisides", "*.txt");
         
         public Form1()
         {
