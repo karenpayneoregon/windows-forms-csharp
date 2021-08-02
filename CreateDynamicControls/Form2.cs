@@ -47,7 +47,8 @@ namespace CreateDynamicControls
             
             if (_checkedRadioButtons.Count > 0)
             {
-                label1.Text = string.Join(" ", _checkedRadioButtons.Select(rb => rb.Text));
+                label1.Text = string.Join(" ", 
+                    _checkedRadioButtons.Select(rb => rb.Text));
             }
         }
 

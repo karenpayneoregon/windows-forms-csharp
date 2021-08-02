@@ -31,7 +31,6 @@ namespace CreateDynamicControls.Classes.Extensions
         
         public static List<RadioButton> RadioButtonListChecked(this Control control) => 
             control.RadioButtonList().Where(rb => rb.Checked).ToList();
-        
 
     }
 }
