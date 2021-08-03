@@ -1,0 +1,133 @@
+﻿
+
+
+One idea is to use a singleton for storing your single instance of UserInfo or even better, if there are only two forms (as mentioned already in comments) pass  your single instance of UserInfo to a property in another form or an overload of child form constructors, pass the instance of UserInfo to the form and assign to a private field or property.
+
+A sample singleton
+
+    public sealed class ApplicationSettings
+    {
+        private static readonly Lazy<ApplicationSettings> Lazy = new(() => 
+            new ApplicationSettings());
+        
+        public static ApplicationSettings Instance => Lazy.Value;
+        
+        public UserInfo Info;
+        
+        /// <summary>
+        /// See if <see cref="Info"/> is set
+        /// </summary>
+        public bool HasInfo => Info != null;
+    }
+
+Mockup for reading data and setting properties for UserInfo property in ApplicationSettings. You may want to change from returning a tuple as you see fit.
+
+    public class SqlOperations
+    {
+        public static (bool success, Exception exception) GetUserInformation(string userName, string userPassword)
+        {
+    
+            var info = new UserInfo();
+    
+            try
+            {
+                var connectionString = ConfigurationManager.ConnectionStrings["MYCUSTOMAPPDatabaseString"].ConnectionString;
+                
+                using (var cn = new SqlConnection { ConnectionString = connectionString })
+                {
+                    using (var cmd = new SqlCommand("dbo.LoginUser", cn))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.Add("@UserName", SqlDbType.NVarChar).Value = userName;
+                        cmd.Parameters.Add("@UserPassword", SqlDbType.NVarChar).Value = userName;
+    
+                        cn.Open();
+    
+                        var reader = cmd.ExecuteReader();
+                        
+                        if (reader.HasRows)
+                        {
+                            reader.Read();
+    
+                            // adjust according to column order in select statement in the stored procedure
+                            info.userType = reader.GetString(0);
+                            info.userName = reader.GetString(1);
+                            info.userUserName = reader.GetString(2);
+                            info.userType = reader.GetString(3);
+                            info.userPhone = reader.GetString(4);
+                            info.userIdCard = reader.GetString(5);
+                            
+                            ApplicationSettings.Instance.Info = info;
+    
+                            return (true, null);
+                            
+                        }
+                        else
+                        {
+                            return (false, null);
+                        }
+                    }
+    
+                }
+            }
+            catch (Exception exception)
+            {
+                return (false, exception);
+            }
+        }
+    }
+
+Sample to call above code, open another form and access ApplicationSettings property for UserInfo
+
+    private void ReadButton_Click(object sender, System.EventArgs e)
+    {
+        var (success, exception) = SqlOperations.GetUserInformation(usernameBox.Text, passwordBox.Text);
+        
+        if (success && exception == null)
+        {
+            var form = new Form2();
+    
+            try
+            {
+                form.ShowDialog();
+                MessageBox.Show(ApplicationSettings.Instance.Info.userName);
+            }
+            finally
+            {
+                form.Dispose();
+            }
+            
+        }
+        else
+        {
+            MessageBox.Show(exception.Message);
+        }
+    
+    
+    }
+
+In a child form
+
+    public partial class Form2 : Form
+    {
+        public Form2()
+        {
+            InitializeComponent();
+            
+            Closing += OnClosing;
+        }
+    
+        private void OnClosing(object sender, CancelEventArgs e)
+        {
+            ApplicationSettings.Instance.Info.userName = "Anne";
+        }
+    
+        
+        private void GetUserInfoButton_Click(object sender, EventArgs e)
+        {
+            var userName = ApplicationSettings.Instance.Info.userName;
+            MessageBox.Show(userName);
+        }
+    }
+
+ 
