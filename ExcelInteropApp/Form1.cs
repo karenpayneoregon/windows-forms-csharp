@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.IO;
 using System.Windows.Forms;
 using ExcelInteropApp.Classes;
@@ -35,5 +36,10 @@ namespace ExcelInteropApp
             listBox1.Items.Add(sender);
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Version version = new Version(ExcelOperations.ExcelVersion());
+            Debug.WriteLine($"{version.Major}, {version.Minor}");
+        }
     }
 }

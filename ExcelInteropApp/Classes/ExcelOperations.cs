@@ -11,6 +11,12 @@ namespace ExcelInteropApp.Classes
     {
         public delegate void OnAction(string sender);
         public static event OnAction ActionHandler;
+
+        public static string ExcelVersion()
+        {
+            Excel.Application application = new Excel.Application();
+            return application.Version;
+        }
         /// <summary>
         /// create an excel file, rename sheet1 (default sheet),
         /// create another worksheet, rename it and re-order to end.

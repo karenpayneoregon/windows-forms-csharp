@@ -31,5 +31,18 @@ namespace SpreadsheetLightDataGridViewExport
                 MessageBox.Show($"Failed\n{exception.Message}");
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var results = ExcelOperations.Find("Demo1.xlsx","Sheet1", SearchTextBox.Text);
+            if (!string.IsNullOrWhiteSpace(results))
+            {
+                Console.WriteLine(results);
+            }
+            else
+            {
+                Console.WriteLine("Not found");
+            }
+        }
     }
 }

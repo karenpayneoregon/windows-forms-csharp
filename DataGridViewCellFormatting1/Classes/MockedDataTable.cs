@@ -13,7 +13,8 @@ namespace DataGridViewCellFormatting1.Classes
                 ColumnName = "id", 
                 DataType = typeof(int), 
                 AutoIncrement = true, 
-                AutoIncrementSeed = 1
+                AutoIncrementSeed = 1, 
+                ReadOnly = true
             });
             
             dt.Columns.Add(new DataColumn() { ColumnName = "Amount", DataType = typeof(int)});

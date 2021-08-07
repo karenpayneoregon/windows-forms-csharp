@@ -67,6 +67,7 @@
     <Compile Include="Classes\DataOperations.cs" />
     <Compile Include="Classes\ExcelHelpers.cs" />
     <Compile Include="Classes\ExcelOperations.cs" />
+    <Compile Include="Classes\StringExtensions.cs" />
     <Compile Include="CreateFileWithSheets.cs">
       <SubType>Form</SubType>
     </Compile>
