@@ -4,6 +4,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using AsyncSimple.Classes;
 using static AsyncSimple.Classes.GlobalStuff;
+using TimeSpan = System.TimeSpan;
 
 namespace AsyncSimple
 {
@@ -30,6 +31,20 @@ namespace AsyncSimple
             Console.WriteLine("Iterator");
             await Example3();
 
+
+            var startTimeSpan = TimeSpan.Zero;
+            var periodTimeSpan = TimeSpan.FromSeconds(20);
+
+            Console.WriteLine();
+            Console.WriteLine("Last example");
+            var timer = new Timer(async (e) =>
+            {
+                var x = await Example1();
+
+                Console.WriteLine(x.ToYesNo());
+                
+            }, null, startTimeSpan, periodTimeSpan);
+
             Console.ReadLine();
         }
 
@@ -37,7 +52,7 @@ namespace AsyncSimple
         {
             return await Task.Run(async () =>
             {
-                await Task.Delay(1);
+                await Task.Delay(5000);
                 return true;
             });
 
