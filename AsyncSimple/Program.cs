@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using AsyncSimple.Classes;
@@ -47,6 +48,11 @@ namespace AsyncSimple
 
             
             Console.WriteLine("Done"); // shown prior to timer completion
+
+            await Example4();
+
+
+            
             Console.ReadLine();
         }
 
@@ -85,6 +91,45 @@ namespace AsyncSimple
             {
                 Console.WriteLine(ex.Message);
             }
+        }
+
+        public static async Task Example4()
+        {
+            // this task will take about 2.5s to complete
+            var sumTask = SlowAndComplexSumAsync();
+
+            // this task will take about 4s to complete
+            var wordTask = SlowAndComplexWordAsync();
+
+            // running them in parallel should take about 4s to complete
+            await Task.WhenAll(sumTask, wordTask);
+            
+            Console.WriteLine("Result of complex sum = " + sumTask.Result);
+            Console.WriteLine("Result of complex letter processing " + wordTask.Result);
+        }
+        
+
+        private static async Task<int> SlowAndComplexSumAsync()
+        {
+            int sum = 0;
+            foreach (var counter in Enumerable.Range(0, 25))
+            {
+                sum += counter;
+                await Task.Delay(100);
+            }
+
+            return sum;
+        }
+        private static async Task<string> SlowAndComplexWordAsync()
+        {
+            var word = string.Empty;
+            foreach (var counter in Enumerable.Range(65, 26))
+            {
+                word = string.Concat(word, (char)counter);
+                await Task.Delay(150);
+            }
+
+            return word;
         }
     }
 }
