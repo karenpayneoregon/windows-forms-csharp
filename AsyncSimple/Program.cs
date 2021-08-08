@@ -45,6 +45,8 @@ namespace AsyncSimple
                 
             }, null, startTimeSpan, periodTimeSpan);
 
+            
+            Console.WriteLine("Done"); // shown prior to timer completion
             Console.ReadLine();
         }
 
@@ -52,7 +54,7 @@ namespace AsyncSimple
         {
             return await Task.Run(async () =>
             {
-                await Task.Delay(5000);
+                await Task.Delay(1000);
                 return true;
             });
 
