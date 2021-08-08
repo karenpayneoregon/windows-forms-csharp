@@ -14,6 +14,9 @@ namespace AsyncSimple
         private static readonly CancellationTokenSource _cancellationSource = new();
         static async Task Main(string[] args)
         {
+
+            Console.Title = "Async simple/basics";
+            
             Console.WriteLine("Return bool");
             var example1Result = await Example1();
             Console.WriteLine($"\t{example1Result.ToYesNo()}");
@@ -34,10 +37,10 @@ namespace AsyncSimple
 
 
             var startTimeSpan = TimeSpan.Zero;
-            var periodTimeSpan = TimeSpan.FromSeconds(20);
+            var periodTimeSpan = TimeSpan.FromSeconds(2);
 
             Console.WriteLine();
-            Console.WriteLine("Last example");
+            Console.WriteLine("Timer");
             var timer = new Timer(async (e) =>
             {
                 var x = await Example1();
@@ -46,13 +49,15 @@ namespace AsyncSimple
                 
             }, null, startTimeSpan, periodTimeSpan);
 
-            
-            Console.WriteLine("Done"); // shown prior to timer completion
+            await Task.Delay(3000);
 
+
+            Console.WriteLine();
+            Console.WriteLine("WhenAll");
             await Example4();
 
+            Console.WriteLine();
 
-            
             Console.ReadLine();
         }
 
@@ -104,8 +109,8 @@ namespace AsyncSimple
             // running them in parallel should take about 4s to complete
             await Task.WhenAll(sumTask, wordTask);
             
-            Console.WriteLine("Result of complex sum = " + sumTask.Result);
-            Console.WriteLine("Result of complex letter processing " + wordTask.Result);
+            Console.WriteLine($"Result of complex sum = {sumTask.Result}");
+            Console.WriteLine("Result of complex letter processing {wordTask.Result");
         }
         
 
