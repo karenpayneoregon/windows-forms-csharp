@@ -16,6 +16,7 @@ namespace ConnectorLibrary
 
         public static SqlServerConnections Instance => Lazy.Value;
         private readonly Hashtable _connections = new Hashtable();
+        public string ConnectionString { get; set; }
 
         /// <summary>
         /// Reset an existing connection string
@@ -57,6 +58,16 @@ namespace ConnectorLibrary
                     // ignored
                 }
             }
+        }
+
+        public SqlConnection Connection()
+        {
+            if (string.IsNullOrWhiteSpace(ConnectionString))
+            {
+                throw new NullReferenceException("Connection string can not be empty");
+            }
+            
+            return Connection(ConnectionString);
         }
         /// <summary>
         /// Returns an open connection for connection string
