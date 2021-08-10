@@ -12,3 +12,5 @@ while($rdr.Read())
 $SqlConnection.Close()
 Write-Host "Done"
 
+
+
