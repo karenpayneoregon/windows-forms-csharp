@@ -28,7 +28,7 @@ namespace PictureBoxSqlServer_efcore
         
         private async void OnShown(object? sender, EventArgs e)
         {
-            await Task.Delay(100);
+            await Task.Delay(100); // let controls paint
             
             await using var context = new NorthWindContext();
             
