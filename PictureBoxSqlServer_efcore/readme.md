@@ -34,3 +34,5 @@ Connection string is read from appsettings.json using `Microsoft.Extensions.Conf
   <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
 </ItemGroup>
 ```
+
+ ¯\\_(ツ)_/¯
