@@ -14,15 +14,19 @@ namespace TestSingletonConnection
 {
     public partial class Form1 : Form
     {
+        private SqlDataAdapter _sqlDataAdapter;
         public Form1()
         {
             InitializeComponent();
-            
+
             /*
              * Let's say in a real app the connection string comes from an encrypted app.config or appsettings.json
              */
-            SqlServerConnections.Instance.ConnectionString = 
-                "Data Source=.\\SQLEXPRESS;Initial Catalog=NorthWind2020;Integrated Security=True";
+            SqlServerConnections.Instance.ConnectionString = "Data Source=.\\SQLEXPRESS;Initial Catalog=NorthWind2020;Integrated Security=True";
+            _sqlDataAdapter = new SqlDataAdapter("TODO", SqlServerConnections.Instance.Connection());
+            
+            
+
             
             Shown += OnShown;
         }

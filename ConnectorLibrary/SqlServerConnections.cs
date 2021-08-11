@@ -1,34 +1,25 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ConnectorLibrary
 {
     public sealed class SqlServerConnections
     {
-        private static readonly Lazy<SqlServerConnections>
-            Lazy = new Lazy<SqlServerConnections>(() => new SqlServerConnections());
+        private static readonly Lazy<SqlServerConnections> Lazy = new Lazy<SqlServerConnections>(() => new SqlServerConnections());
 
         public static SqlServerConnections Instance => Lazy.Value;
         private readonly Hashtable _connections = new Hashtable();
         public string ConnectionString { get; set; }
 
-        /// <summary>
-        /// Reset an existing connection string
-        /// </summary>
-        /// <param name="connectionString">An existing connection string</param>
         public void Reset(string connectionString)
         {
             SqlConnection connection = null;
 
             try
             {
-                connection = (SqlConnection)_connections[connectionString];
+                connection = (SqlConnection) _connections[connectionString];
                 connection.Dispose();
                 connection = null;
             }
@@ -38,9 +29,6 @@ namespace ConnectorLibrary
             }
         }
 
-        /// <summary>
-        /// Used to reset all known connections to null
-        /// </summary>
         public void ResetAll()
         {
             foreach (var cn in _connections)
@@ -49,7 +37,7 @@ namespace ConnectorLibrary
 
                 try
                 {
-                    connection = (SqlConnection)cn;
+                    connection = (SqlConnection) cn;
                     connection.Dispose();
                     connection = null;
                 }
@@ -66,9 +54,10 @@ namespace ConnectorLibrary
             {
                 throw new NullReferenceException("Connection string can not be empty");
             }
-            
+
             return Connection(ConnectionString);
         }
+
         /// <summary>
         /// Returns an open connection for connection string
         /// </summary>
@@ -81,7 +70,7 @@ namespace ConnectorLibrary
 
             try
             {
-                connection = (SqlConnection)_connections[connectionString];
+                connection = (SqlConnection) _connections[connectionString];
             }
             catch (Exception)
             {
@@ -106,6 +95,8 @@ namespace ConnectorLibrary
                 }
 
                 connection = new SqlConnection();
+
+                connection.StateChange += ConnectionOnStateChange;
             }
 
             if (connection.State == ConnectionState.Closed)
@@ -122,5 +113,20 @@ namespace ConnectorLibrary
             return connection;
         }
 
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ConnectionOnStateChange(object sender, StateChangeEventArgs e)
+        {
+            if (e.CurrentState == ConnectionState.Broken || e.CurrentState == ConnectionState.Closed)
+            {
+
+            }
+
+        }
     }
 }
+
