@@ -95,6 +95,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestSingletonConnection", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PictureBoxSqlServer", "PictureBoxSqlServer\PictureBoxSqlServer.csproj", "{C7E73BDF-3151-4D48-BBB3-47502B2C0F52}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Enity Framework core", "Enity Framework core", "{746A92C3-5E0B-4536-A18F-D0542BFF7C60}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PictureBoxSqlServer_efcore", "PictureBoxSqlServer_efcore\PictureBoxSqlServer_efcore.csproj", "{5B82E7F4-B8FF-4299-8F6D-16ADAB2BDC14}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -339,6 +343,14 @@ Global
 		{C7E73BDF-3151-4D48-BBB3-47502B2C0F52}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C7E73BDF-3151-4D48-BBB3-47502B2C0F52}.Release|x86.ActiveCfg = Release|Any CPU
 		{C7E73BDF-3151-4D48-BBB3-47502B2C0F52}.Release|x86.Build.0 = Release|Any CPU
+		{5B82E7F4-B8FF-4299-8F6D-16ADAB2BDC14}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B82E7F4-B8FF-4299-8F6D-16ADAB2BDC14}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B82E7F4-B8FF-4299-8F6D-16ADAB2BDC14}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{5B82E7F4-B8FF-4299-8F6D-16ADAB2BDC14}.Debug|x86.Build.0 = Debug|Any CPU
+		{5B82E7F4-B8FF-4299-8F6D-16ADAB2BDC14}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B82E7F4-B8FF-4299-8F6D-16ADAB2BDC14}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B82E7F4-B8FF-4299-8F6D-16ADAB2BDC14}.Release|x86.ActiveCfg = Release|Any CPU
+		{5B82E7F4-B8FF-4299-8F6D-16ADAB2BDC14}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -385,6 +397,8 @@ Global
 		{6BFCAE18-B5E1-4868-AFC0-184839D307D9} = {07EEA43B-E7E7-45AC-B312-B41BB1F8922A}
 		{D4E0B3CC-6405-4508-B5D7-319CF6C3DD6C} = {2E5D5985-8504-422C-A302-6A46890F4ACB}
 		{C7E73BDF-3151-4D48-BBB3-47502B2C0F52} = {2E5D5985-8504-422C-A302-6A46890F4ACB}
+		{746A92C3-5E0B-4536-A18F-D0542BFF7C60} = {A033CF08-D34E-4F7D-8523-4E31BDEB614E}
+		{5B82E7F4-B8FF-4299-8F6D-16ADAB2BDC14} = {746A92C3-5E0B-4536-A18F-D0542BFF7C60}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {58AC3B13-B420-4F3C-8723-CE1E6C224D46}
