@@ -25,10 +25,11 @@ namespace GroupByWithCountMocked.Classes
         public override string ToString() => ConnectionName;
 
     }
-    ```
 
 }
 ```
 </br>
+
+In this case the property to group by is an emum but with minor tweaks will work with string, numerics, dates and whatever you can think up.
 
 ![img](assets/groupby_1.png)
