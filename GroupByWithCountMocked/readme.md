@@ -2,6 +2,9 @@
 
 Shows how to perform a GroupBy with count
 
+- Create in .NET Core 5, C#9 so if using .NET Framework say 4.8 or lower this will not compile but look at the code will make sense.
+- Uses mocked data.
+
 ![img](assets/groupedData.png)
 
 Using `ConnectionData`, group by `ConnectionType` property.
