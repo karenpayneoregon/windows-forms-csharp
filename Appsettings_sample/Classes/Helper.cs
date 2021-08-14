@@ -12,7 +12,10 @@ namespace Appsettings_sample.Classes
         }
         private static IConfigurationRoot InitConfiguration()
         {
-            var builder = new ConfigurationBuilder().SetBasePath(Directory.GetCurrentDirectory()).AddJsonFile("appsettings.json");
+            var builder = new ConfigurationBuilder()
+                .SetBasePath(Directory.GetCurrentDirectory())
+                .AddJsonFile("appsettings.json");
+            
             return builder.Build();
         }
         public static T InitOptions<T>(string section) where T : new()
