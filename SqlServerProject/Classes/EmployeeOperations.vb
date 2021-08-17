@@ -3,15 +3,17 @@ Imports SqlServerProject.Classes
 
 Public Class EmployeeOperations
 
-    Private Shared _connectionString As String = "Data Source=.\sqlexpress;Initial Catalog=NorthWind2020;Integrated Security=True"
+    Private Shared _connectionString As String =
+                       "Data Source=.\sqlexpress;Initial Catalog=NorthWind2020;Integrated Security=True"
 
     Public Shared Function Insert(employee As Employee) As (success As Boolean, exception As Exception)
 
         Using cn = New SqlConnection With {.ConnectionString = _connectionString}
             Using cmd = New SqlCommand With {.Connection = cn}
 
-                cmd.CommandText = "INSERT INTO dbo.Employees (LastName,FirstName,HireDate)  VALUES (@LastName,@FirstName,@HireDate);" &
-                                  "SELECT CAST(scope_identity() AS int);"
+                cmd.CommandText =
+                    "INSERT INTO dbo.Employees (LastName,FirstName,HireDate)  VALUES (@LastName,@FirstName,@HireDate);" &
+                    "SELECT CAST(scope_identity() AS int);"
 
                 cmd.Parameters.Add("@FirstName", SqlDbType.NVarChar).Value = employee.FirstName
                 cmd.Parameters.Add("@LastName", SqlDbType.NVarChar).Value = employee.LastName
@@ -67,4 +69,8 @@ Public Class EmployeeOperations
     Public Function Remove(identifier As Integer) As (success As Boolean, exception As Exception)
         Throw New NotImplementedException
     End Function
+    Public Function Update(employee As Employee) As (success As Boolean, exception As Exception)
+        Throw New NotImplementedException
+    End Function
+
 End Class
