@@ -33,11 +33,13 @@ Partial Class Form1
         Me.LastNameTextBox = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
+        Me.RemoveCurrentButton = New System.Windows.Forms.Button()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'DataGridView1
         '
+        Me.DataGridView1.AllowUserToAddRows = False
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.FirstNameColumn, Me.LastColumn, Me.HireDateColumn})
         Me.DataGridView1.Location = New System.Drawing.Point(8, 1)
@@ -123,11 +125,21 @@ Partial Class Form1
         Me.DateTimePicker1.Size = New System.Drawing.Size(148, 23)
         Me.DateTimePicker1.TabIndex = 7
         '
+        'RemoveCurrentButton
+        '
+        Me.RemoveCurrentButton.Location = New System.Drawing.Point(319, 458)
+        Me.RemoveCurrentButton.Name = "RemoveCurrentButton"
+        Me.RemoveCurrentButton.Size = New System.Drawing.Size(117, 23)
+        Me.RemoveCurrentButton.TabIndex = 8
+        Me.RemoveCurrentButton.Text = "Remove current"
+        Me.RemoveCurrentButton.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(448, 505)
+        Me.Controls.Add(Me.RemoveCurrentButton)
         Me.Controls.Add(Me.DateTimePicker1)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.LastNameTextBox)
@@ -157,4 +169,5 @@ Partial Class Form1
     Friend WithEvents LastNameTextBox As TextBox
     Friend WithEvents Label3 As Label
     Friend WithEvents DateTimePicker1 As DateTimePicker
+    Friend WithEvents RemoveCurrentButton As Button
 End Class

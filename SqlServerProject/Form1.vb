@@ -32,4 +32,20 @@ Public Class Form1
         End If
 
     End Sub
+
+    Private Sub RemoveCurrentButton_Click(sender As Object, e As EventArgs) Handles RemoveCurrentButton.Click
+        If bindingSource.Current IsNot Nothing Then
+            If Question("Remove current") Then
+                Dim id = CType(bindingSource.Current, DataRowView).Row.Field(Of Integer)("EmployeeID")
+
+                Dim results = EmployeeOperations.Remove(id)
+                If results.success Then
+                    bindingSource.RemoveCurrent()
+                Else
+                    MessageBox.Show(results.exception.Message)
+                End If
+            End If
+        End If
+
+    End Sub
 End Class

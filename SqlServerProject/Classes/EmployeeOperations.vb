@@ -51,7 +51,7 @@ Public Class EmployeeOperations
             Using cn = New SqlConnection With {.ConnectionString = _connectionString}
                 Using cmd = New SqlCommand With {.Connection = cn}
 
-                    cmd.CommandText = "SELECT EmployeeID, LastName, FirstName, HireDate FROM dbo.Employees;"
+                    cmd.CommandText = "SELECT EmployeeID, LastName, FirstName, HireDate FROM dbo.Employees WHERE ACTIVE = 1;"
                     cn.Open()
                     Table.Load(cmd.ExecuteReader())
 
@@ -67,10 +67,33 @@ Public Class EmployeeOperations
 
         End Try
     End Function
-    Public Function Remove(identifier As Integer) As (success As Boolean, exception As Exception)
-        Throw New NotImplementedException
+    ''' <summary>
+    ''' Soft delete rather than a hard delete, see <see cref="Read"/> SELECT for Active column condition
+    ''' </summary>
+    ''' <param name="identifier"></param>
+    ''' <returns></returns>
+    Public Shared Function Remove(identifier As Integer) As (success As Boolean, exception As Exception)
+
+        Try
+            Using cn = New SqlConnection With {.ConnectionString = _connectionString}
+
+                Using cmd = New SqlCommand With {.Connection = cn}
+
+                    cmd.CommandText = $"UPDATE dbo.Employees SET [Active] = 0 WHERE EmployeeID = @identifier;"
+                    cmd.Parameters.AddWithValue("@identifier", identifier)
+
+                    cn.Open()
+                    Dim affected = cmd.ExecuteNonQuery()
+                    Return (affected = 1, Nothing)
+                End Using
+
+            End Using
+        Catch exception As Exception
+            Return (False, exception)
+        End Try
+
     End Function
-    Public Function Update(employee As Employee) As (success As Boolean, exception As Exception)
+    Public Shared Function Update(employee As Employee) As (success As Boolean, exception As Exception)
         Throw New NotImplementedException
     End Function
 
