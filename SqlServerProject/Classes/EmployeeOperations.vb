@@ -1,6 +1,7 @@
 ﻿Imports System.Data.SqlClient
 Imports SqlServerProject.Classes
 
+' ReSharper disable once CheckNamespace
 Public Class EmployeeOperations
 
     Private Shared _connectionString As String =
