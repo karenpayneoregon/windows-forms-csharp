@@ -113,6 +113,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsApp2", "Windows
 EndProject
 Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "WinFormsUnitsDemo", "UnitsDemo\WinFormsUnitsDemo.vbproj", "{9DE32364-F489-4DF9-B893-35FDCA3E6B21}"
 EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "SqlServerProject", "SqlServerProject\SqlServerProject.vbproj", "{B2BF7B22-BB42-4A36-A760-9B5358378045}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -421,6 +423,14 @@ Global
 		{9DE32364-F489-4DF9-B893-35FDCA3E6B21}.Release|Any CPU.Build.0 = Release|Any CPU
 		{9DE32364-F489-4DF9-B893-35FDCA3E6B21}.Release|x86.ActiveCfg = Release|Any CPU
 		{9DE32364-F489-4DF9-B893-35FDCA3E6B21}.Release|x86.Build.0 = Release|Any CPU
+		{B2BF7B22-BB42-4A36-A760-9B5358378045}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2BF7B22-BB42-4A36-A760-9B5358378045}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2BF7B22-BB42-4A36-A760-9B5358378045}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{B2BF7B22-BB42-4A36-A760-9B5358378045}.Debug|x86.Build.0 = Debug|Any CPU
+		{B2BF7B22-BB42-4A36-A760-9B5358378045}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2BF7B22-BB42-4A36-A760-9B5358378045}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2BF7B22-BB42-4A36-A760-9B5358378045}.Release|x86.ActiveCfg = Release|Any CPU
+		{B2BF7B22-BB42-4A36-A760-9B5358378045}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -476,6 +486,7 @@ Global
 		{F00DEEA6-D4CF-4163-8CC5-E7D24FF6F9F0} = {2E5D5985-8504-422C-A302-6A46890F4ACB}
 		{503624A1-7510-4877-9E89-A0BFBDAE4775} = {2E5D5985-8504-422C-A302-6A46890F4ACB}
 		{9DE32364-F489-4DF9-B893-35FDCA3E6B21} = {5D21CFBF-44AA-4562-B731-2D1369E8F39B}
+		{B2BF7B22-BB42-4A36-A760-9B5358378045} = {5D21CFBF-44AA-4562-B731-2D1369E8F39B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {58AC3B13-B420-4F3C-8723-CE1E6C224D46}
