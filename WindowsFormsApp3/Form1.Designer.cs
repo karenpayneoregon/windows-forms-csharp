@@ -45,7 +45,7 @@ namespace WindowsFormsApp3
             // ShowCalendarButton
             // 
             this.ShowCalendarButton.Image = global::WindowsFormsApp3.Properties.Resources.Calendar_16x;
-            this.ShowCalendarButton.Location = new System.Drawing.Point(170, 43);
+            this.ShowCalendarButton.Location = new System.Drawing.Point(164, 43);
             this.ShowCalendarButton.Name = "ShowCalendarButton";
             this.ShowCalendarButton.Size = new System.Drawing.Size(27, 23);
             this.ShowCalendarButton.TabIndex = 1;
