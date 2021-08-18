@@ -53,5 +53,10 @@ namespace WindowsFormsApp3
         {
             DateTimeValueTextBox.Text = $"{sender.ToString("MM-dd-yyyy")}";
         }
+
+        private void dateTimePicker1_KeyDown(object sender, KeyEventArgs e)
+        {
+            e.Handled = true;
+        }
     }
 }
