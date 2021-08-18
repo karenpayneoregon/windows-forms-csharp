@@ -109,5 +109,10 @@
   <ItemGroup>
     <None Include="assets\Calendar_16x.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="readme.html">
+      <DependentUpon>readme.md</DependentUpon>
+    </Content>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
