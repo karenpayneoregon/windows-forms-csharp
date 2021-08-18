@@ -115,6 +115,8 @@ Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "WinFormsUnitsDemo", "UnitsD
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "SqlServerProject", "SqlServerProject\SqlServerProject.vbproj", "{B2BF7B22-BB42-4A36-A760-9B5358378045}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsApp3", "WindowsFormsApp3\WindowsFormsApp3.csproj", "{EE8F0237-D7F9-428B-9B22-1C131591B8BD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -431,6 +433,14 @@ Global
 		{B2BF7B22-BB42-4A36-A760-9B5358378045}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B2BF7B22-BB42-4A36-A760-9B5358378045}.Release|x86.ActiveCfg = Release|Any CPU
 		{B2BF7B22-BB42-4A36-A760-9B5358378045}.Release|x86.Build.0 = Release|Any CPU
+		{EE8F0237-D7F9-428B-9B22-1C131591B8BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE8F0237-D7F9-428B-9B22-1C131591B8BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE8F0237-D7F9-428B-9B22-1C131591B8BD}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{EE8F0237-D7F9-428B-9B22-1C131591B8BD}.Debug|x86.Build.0 = Debug|Any CPU
+		{EE8F0237-D7F9-428B-9B22-1C131591B8BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE8F0237-D7F9-428B-9B22-1C131591B8BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE8F0237-D7F9-428B-9B22-1C131591B8BD}.Release|x86.ActiveCfg = Release|Any CPU
+		{EE8F0237-D7F9-428B-9B22-1C131591B8BD}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -487,6 +497,7 @@ Global
 		{503624A1-7510-4877-9E89-A0BFBDAE4775} = {2E5D5985-8504-422C-A302-6A46890F4ACB}
 		{9DE32364-F489-4DF9-B893-35FDCA3E6B21} = {5D21CFBF-44AA-4562-B731-2D1369E8F39B}
 		{B2BF7B22-BB42-4A36-A760-9B5358378045} = {5D21CFBF-44AA-4562-B731-2D1369E8F39B}
+		{EE8F0237-D7F9-428B-9B22-1C131591B8BD} = {2E5D5985-8504-422C-A302-6A46890F4ACB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {58AC3B13-B420-4F3C-8723-CE1E6C224D46}

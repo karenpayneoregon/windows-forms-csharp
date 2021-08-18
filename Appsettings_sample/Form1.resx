@@ -60,19 +60,19 @@
   <assembly alias="System.Drawing.Common" name="System.Drawing.Common, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51" />
   <data name="GetConnectionStringButton.Image" type="System.Drawing.Bitmap, System.Drawing.Common" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABnSURBVDhPvc8xDoAgDIVhztYjy8HUpeszDDUVKm0lcfiD
-        VPgSCoClzGGm+4OZkckEiCiUC9St4tjPR20WAuSgRvTMBeRCD8g+BMz6B1h6Qjsoqwb0vynQX+6REOD1
-        CmQagK+Zw3goF3o3Dk7WgzDPAAAAAElFTkSuQmCC
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wgAADsIBFShKgAAAAGdJREFUOE+9zzEOgCAMhWHO1iPLwdSl6zMMNRUqbSVx+INU+BIKgKXMYab7g5mR
+        yQSIKJQL1K3i2M9HbRYC5KBG9MwF5EIPyD4EzPoHWHpCOyirBvS/KdBf7pEQ4PUKZBqAr5nDeCgXejcO
+        TtaDMM8AAAAASUVORK5CYII=
 </value>
   </data>
   <data name="TestConnectionButton.Image" type="System.Drawing.Bitmap, System.Drawing.Common" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAC7SURBVDhPY/j//z8Yg8C3b98kgbgOiI8B8Ssg/gvFIDZI
-        DCQnCVIL1wdjACWc33/++mn25Xf/I3a++K+74sl/2UWPwBjEBomB5EBqQGqxGXA/dPvz/26bnv1fcPnN
-        //OP3/+///IDGIPYIDGQHEgNSC02A/5LL3z0f+nVN/8/vP+IFYPkQGpAanEaAMKmq5/8T9n74n/Z4Vdg
-        DGKDxGDyBA0ghEcNGNYGgJMyNg3IGF9SpiwzkZed/zMAAI2U+SOewEgmAAAAAElFTkSuQmCC
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wgAADsIBFShKgAAAALtJREFUOE9j+P//PxiDwLdv3ySBuA6IjwHxKyD+C8UgNkgMJCcJUgvXB2MAJZzf
+        f/76afbld/8jdr74r7viyX/ZRY/AGMQGiYHkQGpAarEZcD90+/P/bpue/V9w+c3/84/f/7//8gMYg9gg
+        MZAcSA1ILTYD/ksvfPR/6dU3/z+8/4gVg+RAakBqcRoAwqarn/xP2fvif9nhV2AMYoPEYPIEDSCERw0Y
+        1gaAkzI2DcgYX1KmLDORl53/MwAAjZT5I57ASCYAAAAASUVORK5CYII=
 </value>
   </data>
 </root>
