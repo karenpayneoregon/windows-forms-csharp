@@ -27,7 +27,7 @@ namespace SqlServerAsyncReadCore
         {
             try
             {
-                var table = await DataOperations.ReadProductsTask(_cancellationTokenSource.Token);
+                DataTable table = await DataOperations.ReadProductsTask(_cancellationTokenSource.Token);
 
                 ProductCheckedListBox.DataSource = table;
                 ProductCheckedListBox.DisplayMember = "ProductName";
