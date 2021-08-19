@@ -15,7 +15,7 @@ Working with [CheckedListBox](https://docs.microsoft.com/en-us/dotnet/api/system
 
 # Extension methods
 
-
+First uses [CheckedData](https://github.com/karenpayneoregon/windows-forms-csharp/blob/Version1/SqlServerAsyncReadCore/Classes/CheckedData.cs), second uses [ProductItem](https://github.com/karenpayneoregon/windows-forms-csharp/blob/Version1/SqlServerAsyncReadCore/Classes/ProductItem.cs) containers.
 
 ```csharp
 public static partial class CheckedListBoxExtensions
@@ -71,5 +71,7 @@ public static partial class CheckedListBoxExtensions
     }
 }
 ```
+
+
 
 ![img](assets/screens.png)
