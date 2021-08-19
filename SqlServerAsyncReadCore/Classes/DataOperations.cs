@@ -42,18 +42,28 @@ namespace SqlServerAsyncReadCore.Classes
             });
 
         }
+
+
+
+
+        #region So there is no guessing when working with data in the form
         /// <summary>
         /// Product table primary key <see cref="ReadProductsTask"/>
         /// </summary>
         public static readonly string PrimaryKey = "ProductID";
-        
+        /// <summary>
+        /// What to display in CheckedListBox
+        /// </summary>
+        public static readonly string DisplayColumn = "ProductName";
+        #endregion
+
         /// <summary>
         /// Responsible for reading products in 
         /// </summary>
         /// <returns></returns>
         private static string SelectStatement()
         {
-            return $"SELECT P.{PrimaryKey}, P.ProductName, P.SupplierID, S.CompanyName, P.CategoryID, " +
+            return $"SELECT P.{PrimaryKey}, P.{DisplayColumn}, P.SupplierID, S.CompanyName, P.CategoryID, " +
                    "C.CategoryName, P.QuantityPerUnit, P.UnitPrice, P.UnitsInStock, P.UnitsOnOrder, " +
                    "P.ReorderLevel, P.Discontinued, P.DiscontinuedDate " +
                    "FROM  Products AS P INNER JOIN Categories AS C ON P.CategoryID = C.CategoryID " +
