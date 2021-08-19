@@ -19,15 +19,15 @@ public static partial class CheckedListBoxExtensions
         (
             from item in sender.Items.Cast<DataRowView>()
                 .Select(
-                    (data, index) =>
+                    (dataRowView, index) =>
                         new CheckedData
                         {
-                            Row = data.Row,
+                            Row = dataRowView.Row,
                             Index = index,
-                            Identifier = data.Row.Field<int>(primaryKeyName)
+                            Identifier = dataRowView.Row.Field<int>(primaryKeyName)
                         }
                 )
-                .Where((x) => sender.GetItemChecked(x.Index))
+                .Where((checkedData) => sender.GetItemChecked(checkedData.Index))
             select item
         ).ToList();
     }
@@ -43,16 +43,16 @@ public static partial class CheckedListBoxExtensions
         (
             from item in sender.Items.Cast<DataRowView>()
                 .Select(
-                    (data, index) =>
+                    (dataRowView, index) =>
                         new ProductItem
                         {
                             Index = index,
-                            Identifier = data.Row.Field<int>(primaryKeyName),
-                            ProductName = data.Row.Field<string>("ProductName")
+                            Identifier = dataRowView.Row.Field<int>(primaryKeyName),
+                            ProductName = dataRowView.Row.Field<string>("ProductName")
 
                         }
                 )
-                .Where((x) => sender.GetItemChecked(x.Index))
+                .Where((productItem) => sender.GetItemChecked(productItem.Index))
             select item
         ).ToList();
     }
