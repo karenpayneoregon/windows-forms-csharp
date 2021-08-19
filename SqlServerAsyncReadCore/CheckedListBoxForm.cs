@@ -18,10 +18,10 @@ namespace SqlServerAsyncReadCore
         public CheckedListBoxForm()
         {
             InitializeComponent();
-            
+
             Shown += OnShown;
         }
-        private readonly CancellationTokenSource _cancellationTokenSource = new ();
+        private readonly CancellationTokenSource _cancellationTokenSource = new();
 
         private async void OnShown(object? sender, EventArgs e)
         {
@@ -30,7 +30,7 @@ namespace SqlServerAsyncReadCore
                 DataTable table = await DataOperations.ReadProductsTask(_cancellationTokenSource.Token);
 
                 ProductCheckedListBox.DataSource = table;
-                ProductCheckedListBox.DisplayMember = "ProductName";
+                ProductCheckedListBox.DisplayMember = DataOperations.DisplayColumn;
                 GetCheckedButton.Enabled = table.Rows.Count > 0;
                 GetCheckedProductsButton.Enabled = GetCheckedButton.Enabled;
             }
@@ -45,8 +45,8 @@ namespace SqlServerAsyncReadCore
             List<CheckedListBoxExtensions.CheckedData> results = ProductCheckedListBox.IndexList(DataOperations.PrimaryKey);
 
             if (!results.Any()) return;
-            StringBuilder builder = new ();
-            
+            StringBuilder builder = new();
+
             foreach (var data in results)
             {
                 builder.AppendLine($"{data.Index},{data.Identifier}, [{string.Join(",", data.Row.ItemArray)}]");
@@ -55,21 +55,22 @@ namespace SqlServerAsyncReadCore
             textBox1.Text = builder.ToString();
 
         }
-        
+
         private void GetCheckedProductsButton_Click(object sender, EventArgs e)
         {
-            List<CheckedListBoxExtensions.ProductItem> results = ProductCheckedListBox.ProductSelectedList(DataOperations.PrimaryKey);
-            
+            List<CheckedListBoxExtensions.ProductItem> results =
+                ProductCheckedListBox.ProductSelectedList(DataOperations.PrimaryKey);
+
             if (!results.Any()) return;
             StringBuilder builder = new();
-            
+
             foreach (var item in results)
             {
                 builder.AppendLine($"{item.Identifier}, {item.ProductName}");
             }
 
             textBox1.Text = builder.ToString();
-            
+
         }
     }
 }

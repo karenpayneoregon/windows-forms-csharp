@@ -8,8 +8,6 @@
             public string ProductName { get; set; }
             public int Index { get; set; }
             public override string ToString() => ProductName;
-
-
         }
     }
 }
