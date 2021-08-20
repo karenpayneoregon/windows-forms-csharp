@@ -74,6 +74,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\FirstName.vb" />
+    <Compile Include="Classes\GenericName.vb" />
     <Compile Include="Form1.vb">
       <SubType>Form</SubType>
     </Compile>
