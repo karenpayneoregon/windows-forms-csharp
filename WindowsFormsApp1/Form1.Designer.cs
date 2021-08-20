@@ -32,6 +32,7 @@ namespace WindowsFormsApp1
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.SetIdButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // comboBox1
@@ -62,11 +63,22 @@ namespace WindowsFormsApp1
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // SetIdButton
+            // 
+            this.SetIdButton.Location = new System.Drawing.Point(27, 181);
+            this.SetIdButton.Name = "SetIdButton";
+            this.SetIdButton.Size = new System.Drawing.Size(75, 23);
+            this.SetIdButton.TabIndex = 3;
+            this.SetIdButton.Text = "button2";
+            this.SetIdButton.UseVisualStyleBackColor = true;
+            this.SetIdButton.Click += new System.EventHandler(this.SetIdButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(316, 400);
+            this.Controls.Add(this.SetIdButton);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.comboBox1);
@@ -84,6 +96,7 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button SetIdButton;
     }
 }
 

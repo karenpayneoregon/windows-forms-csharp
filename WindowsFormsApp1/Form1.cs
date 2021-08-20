@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Globalization;
 using System.Linq;
@@ -62,5 +63,56 @@ namespace WindowsFormsApp1
             var regionName = RegionInfo.CurrentRegion.ThreeLetterWindowsRegionName;
             Console.WriteLine($"{countryName}, {regionName}");
         }
+
+        private void SetIdButton_Click(object sender, EventArgs e)
+        {
+            var dataTable = MockedDataTable();
+            var items = ReplacementData;
+
+            for (int index = 0; index < dataTable.Rows.Count; index++)
+            {
+                dataTable.Rows[index].SetField("ID",
+                    items.FirstOrDefault(replacement => 
+                        replacement.Value == dataTable.Rows[index].Field<string>("Value")).Index);
+            }
+
+            foreach (DataRow row in dataTable.Rows)
+            {
+                Console.WriteLine($"{string.Join(",", row.ItemArray)}");
+            }
+        }
+
+        private static Replacement[] ReplacementData 
+            => "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+            .ToCharArray().Select((value, index) => new Replacement
+            {
+                Value = value.ToString(), 
+                Index = index + 1
+            })
+            .ToArray();
+        
+        private static DataTable MockedDataTable()
+        {
+            DataTable dataTable = new DataTable();
+
+            dataTable.Columns.Add("Value", typeof(string));
+            dataTable.Columns.Add("ID", typeof(int));
+
+            dataTable.Rows.Add("A");
+            dataTable.Rows.Add("A");
+            dataTable.Rows.Add("A");
+            dataTable.Rows.Add("B");
+            dataTable.Rows.Add("B");
+            dataTable.Rows.Add("C");
+            dataTable.Rows.Add("D");
+            
+            return dataTable;
+        }
+    }
+
+    public class Replacement
+    {
+        public string Value { get; set; }
+        public int Index { get; set; }
     }
 }
