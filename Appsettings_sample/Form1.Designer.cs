@@ -33,6 +33,7 @@ namespace Appsettings_sample
             this.GetConnectionStringButton = new System.Windows.Forms.Button();
             this.TestConnectionButton = new System.Windows.Forms.Button();
             this.BuildDateButton = new System.Windows.Forms.Button();
+            this.WhenAllButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // GetConnectionStringButton
@@ -69,11 +70,22 @@ namespace Appsettings_sample
             this.BuildDateButton.UseVisualStyleBackColor = true;
             this.BuildDateButton.Click += new System.EventHandler(this.BuildDateButton_Click);
             // 
+            // WhenAllButton
+            // 
+            this.WhenAllButton.Location = new System.Drawing.Point(9, 123);
+            this.WhenAllButton.Name = "WhenAllButton";
+            this.WhenAllButton.Size = new System.Drawing.Size(75, 23);
+            this.WhenAllButton.TabIndex = 3;
+            this.WhenAllButton.Text = "button1";
+            this.WhenAllButton.UseVisualStyleBackColor = true;
+            this.WhenAllButton.Click += new System.EventHandler(this.WhenAllButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(228, 127);
+            this.ClientSize = new System.Drawing.Size(228, 162);
+            this.Controls.Add(this.WhenAllButton);
             this.Controls.Add(this.BuildDateButton);
             this.Controls.Add(this.TestConnectionButton);
             this.Controls.Add(this.GetConnectionStringButton);
@@ -90,6 +102,7 @@ namespace Appsettings_sample
         private System.Windows.Forms.Button GetConnectionStringButton;
         private System.Windows.Forms.Button TestConnectionButton;
         private System.Windows.Forms.Button BuildDateButton;
+        private System.Windows.Forms.Button WhenAllButton;
     }
 }
 

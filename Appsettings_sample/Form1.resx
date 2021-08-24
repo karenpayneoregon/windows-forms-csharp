@@ -61,7 +61,7 @@
   <data name="GetConnectionStringButton.Image" type="System.Drawing.Bitmap, System.Drawing.Common" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wQAADsEBuJFr7QAAAGdJREFUOE+9zzEOgCAMhWHO1iPLwdSl6zMMNRUqbSVx+INU+BIKgKXMYab7g5mR
+        vwAADr8BOAVTJAAAAGdJREFUOE+9zzEOgCAMhWHO1iPLwdSl6zMMNRUqbSVx+INU+BIKgKXMYab7g5mR
         yQSIKJQL1K3i2M9HbRYC5KBG9MwF5EIPyD4EzPoHWHpCOyirBvS/KdBf7pEQ4PUKZBqAr5nDeCgXejcO
         TtaDMM8AAAAASUVORK5CYII=
 </value>
@@ -69,7 +69,7 @@
   <data name="TestConnectionButton.Image" type="System.Drawing.Bitmap, System.Drawing.Common" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wQAADsEBuJFr7QAAALtJREFUOE9j+P//PxiDwLdv3ySBuA6IjwHxKyD+C8UgNkgMJCcJUgvXB2MAJZzf
+        vwAADr8BOAVTJAAAALtJREFUOE9j+P//PxiDwLdv3ySBuA6IjwHxKyD+C8UgNkgMJCcJUgvXB2MAJZzf
         f/76afbld/8jdr74r7viyX/ZRY/AGMQGiYHkQGpAarEZcD90+/P/bpue/V9w+c3/84/f/7//8gMYg9gg
         MZAcSA1ILTYD/ksvfPR/6dU3/z+8/4gVg+RAakBqcRoAwqarn/xP2fvif9nhV2AMYoPEYPIEDSCERw0Y
         1gaAkzI2DcgYX1KmLDORl53/MwAAjZT5I57ASCYAAAAASUVORK5CYII=
