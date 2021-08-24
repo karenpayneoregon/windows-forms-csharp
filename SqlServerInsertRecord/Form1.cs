@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -28,6 +29,11 @@ namespace SqlServerInsertRecord
              */
             var (success, exception) = Operations.Insert(employee);
             label1.Text = success ? $"New id: {employee.Id}" : "Failed";
+        }
+
+        private void comboBox1_TextChanged(object sender, EventArgs e)
+        {
+            Debug.WriteLine(comboBox1.Text);
         }
     }
 }

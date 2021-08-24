@@ -32,6 +32,7 @@ namespace Appsettings_sample
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.GetConnectionStringButton = new System.Windows.Forms.Button();
             this.TestConnectionButton = new System.Windows.Forms.Button();
+            this.BuildDateButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // GetConnectionStringButton
@@ -58,11 +59,22 @@ namespace Appsettings_sample
             this.TestConnectionButton.UseVisualStyleBackColor = true;
             this.TestConnectionButton.Click += new System.EventHandler(this.TestConnectionButton_Click);
             // 
+            // BuildDateButton
+            // 
+            this.BuildDateButton.Location = new System.Drawing.Point(6, 74);
+            this.BuildDateButton.Name = "BuildDateButton";
+            this.BuildDateButton.Size = new System.Drawing.Size(210, 23);
+            this.BuildDateButton.TabIndex = 2;
+            this.BuildDateButton.Text = "Build date";
+            this.BuildDateButton.UseVisualStyleBackColor = true;
+            this.BuildDateButton.Click += new System.EventHandler(this.BuildDateButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(228, 82);
+            this.ClientSize = new System.Drawing.Size(228, 127);
+            this.Controls.Add(this.BuildDateButton);
             this.Controls.Add(this.TestConnectionButton);
             this.Controls.Add(this.GetConnectionStringButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
@@ -77,6 +89,7 @@ namespace Appsettings_sample
 
         private System.Windows.Forms.Button GetConnectionStringButton;
         private System.Windows.Forms.Button TestConnectionButton;
+        private System.Windows.Forms.Button BuildDateButton;
     }
 }
 

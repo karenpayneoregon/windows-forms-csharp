@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -37,6 +38,17 @@ namespace Appsettings_sample
         {
             var (success, exception) = SqlOperations.TestConnection();
             MessageBox.Show(success ? @"Open connection successful" : $"Failed to open connection\n{exception.Message}");
+        }
+
+        private void BuildDateButton_Click(object sender, EventArgs e)
+        {
+            DateTime buildDate = GetBuildDate(Assembly.GetExecutingAssembly());
+
+        }
+        private static DateTime GetBuildDate(Assembly assembly)
+        {
+            var attribute = assembly.GetCustomAttribute<BuildDateAttribute>();
+            return attribute?.DateTime ?? default(DateTime);
         }
     }
 }
