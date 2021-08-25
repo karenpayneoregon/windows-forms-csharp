@@ -33,6 +33,7 @@ namespace LoadDataGridViewProgressBar
                 {
                     _customersBindingSource.DataSource = dataTable;
                     customerDataGridView.DataSource = _customersBindingSource;
+                    customerDataGridView.ExpandColumns(true);
                 }
                 else
                 {
