@@ -1,4 +1,5 @@
 ﻿Imports System.Globalization
+Imports System.Reflection
 
 Public Class Form1
     Private Sub RemoveCheckedButton_Click(sender As Object, e As EventArgs) Handles RemoveCheckedButton.Click
@@ -22,8 +23,12 @@ Public Class Form1
 
     End Sub
 
+
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+        BackColor = My.Application.BackColor
+
+        Text = BackColor.ToString()
         MonthCheckedListBox.Items.AddRange(
             Enumerable.Range(1, 12).
                     Select(Function(index)
@@ -43,3 +48,6 @@ Public Class Form1
 
     End Sub
 End Class
+
+
+

@@ -117,4 +117,29 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAQAQAAMQOAADEDgAAAAAAAAAA
+        AABIjwj/SI8I/0iPCP9Ijwj/SI8I/0iPCP9Ijwj/SI8I/0iPCP9Ijwj/SI8I/0iPCP9Ijwj/SI8I/0iP
+        CP9Ijwj/SI8I/0iPCP9Ijwj/SI8I/0iPCP9Ijwj/SI8I/0iPCP9Ijwj/SI8I/0iPCP9Ijwj/SI8I/0iP
+        CP9Ijwj/SI8I/0iPCP9Ijwj/SI8I/0iPCP9Ijwj/SI8I/0iPCP9Ijwj/SI8I/0iPCP9Ijwj/SI8I/0iP
+        CP9Ijwj/SI8I/0iPCP9Ijwj/SI8I/0iPCP9Ijwj/SI8I/0iPCP9Ijwj/SI8I/0iPCP9Ijwj/SI8I/0iP
+        CP9Ijwj/SI8I/0iPCP9Ijwj/SI8I/0iPCP9Ijwj/SI8I/////////////////2ZmZv//////////////
+        //9Ijwj/SI8I/0iPCP9Ijwj/SI8I/0iPCP9Ijwj/SI8I/0iPCP///////////+vr6//s7Oz/7+/v//7+
+        /v//////SI8I/0iPCP9Ijwj/SI8I/0iPCP9Ijwj/SI8I/0iPCP9Ijwj//////9DQ0P/e3t7//Pz8//r6
+        +v9fX1///////0iPCP9Ijwj/SI8I/0iPCP9Ijwj/SI8I/0iPCP9Ijwj/SI8I///////W1tb/3t7e//z8
+        /P/9/f3/dnZ2//////9Ijwj/SI8I/0iPCP9Ijwj/SI8I/0iPCP9Ijwj/SI8I/0iPCP//////xMTE/zIy
+        Mv8FBQX/MzMz/62trf//////SI8I/0iPCP9Ijwj/SI8I/0iPCP9Ijwj/SI8I/0iPCP9Ijwj/////////
+        //8jIyP/CAgI/w8PD//u7u7//////0iPCP9Ijwj/SI8I/0iPCP9Ijwj/SI8I/0iPCP9Ijwj/SI8I////
+        /////////v7+/52dnf/7+/v///////////9Ijwj/SI8I/0iPCP9Ijwj/SI8I/0iPCP9Ijwj/SI8I/0iP
+        CP9Ijwj/SI8I/0iPCP9Ijwj/SI8I/0iPCP9Ijwj/SI8I/0iPCP9Ijwj/SI8I/0iPCP9Ijwj/SI8I/0iP
+        CP9Ijwj/SI8I/0iPCP9Ijwj/SI8I/0iPCP9Ijwj/SI8I/0iPCP9Ijwj/SI8I/0iPCP9Ijwj/SI8I/0iP
+        CP9Ijwj/SI8I/0iPCP9Ijwj/SI8I/0iPCP9Ijwj/SI8I/0iPCP9Ijwj/SI8I/0iPCP9Ijwj/SI8I/0iP
+        CP9Ijwj/SI8I/0iPCP9Ijwj/SI8I/0iPCP9Ijwj/SI8I/0iPCP9Ijwj/SI8I/0iPCP9Ijwj/SI8I/0iP
+        CP9Ijwj/SI8I/0iPCP9Ijwj/SI8I/0iPCP9Ijwj/SI8I/0iPCP9Ijwj/SI8I/0iPCP9Ijwj/SI8I/0iP
+        CP9Ijwj/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAA==
+</value>
+  </data>
 </root>
