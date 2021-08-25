@@ -125,6 +125,8 @@ Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "CheckedListBox1", "CheckedL
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomersDemo", "CustomersDemo\CustomersDemo.csproj", "{754A557A-BA7A-4DA0-B4E5-250678E0D5D0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoadDataGridViewProgressBar", "LoadDataGridViewProgressBar\LoadDataGridViewProgressBar.csproj", "{6DFB95BE-3F03-4B47-A0BA-3C25D0DAE2F3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -481,6 +483,14 @@ Global
 		{754A557A-BA7A-4DA0-B4E5-250678E0D5D0}.Release|Any CPU.Build.0 = Release|Any CPU
 		{754A557A-BA7A-4DA0-B4E5-250678E0D5D0}.Release|x86.ActiveCfg = Release|Any CPU
 		{754A557A-BA7A-4DA0-B4E5-250678E0D5D0}.Release|x86.Build.0 = Release|Any CPU
+		{6DFB95BE-3F03-4B47-A0BA-3C25D0DAE2F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6DFB95BE-3F03-4B47-A0BA-3C25D0DAE2F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6DFB95BE-3F03-4B47-A0BA-3C25D0DAE2F3}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{6DFB95BE-3F03-4B47-A0BA-3C25D0DAE2F3}.Debug|x86.Build.0 = Debug|Any CPU
+		{6DFB95BE-3F03-4B47-A0BA-3C25D0DAE2F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6DFB95BE-3F03-4B47-A0BA-3C25D0DAE2F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6DFB95BE-3F03-4B47-A0BA-3C25D0DAE2F3}.Release|x86.ActiveCfg = Release|Any CPU
+		{6DFB95BE-3F03-4B47-A0BA-3C25D0DAE2F3}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -542,6 +552,7 @@ Global
 		{7931B9AE-FD84-42FF-8BBA-3BAE0B75DE96} = {2E5D5985-8504-422C-A302-6A46890F4ACB}
 		{C487EBF9-0FDF-4E41-AE63-863225603338} = {5D21CFBF-44AA-4562-B731-2D1369E8F39B}
 		{754A557A-BA7A-4DA0-B4E5-250678E0D5D0} = {EB8074FC-097A-4DAD-B824-1C7AC3B3A52D}
+		{6DFB95BE-3F03-4B47-A0BA-3C25D0DAE2F3} = {2E5D5985-8504-422C-A302-6A46890F4ACB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {58AC3B13-B420-4F3C-8723-CE1E6C224D46}
