@@ -40,7 +40,7 @@ namespace Appsettings_sample
             // 
             this.GetConnectionStringButton.Image = ((System.Drawing.Image)(resources.GetObject("GetConnectionStringButton.Image")));
             this.GetConnectionStringButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.GetConnectionStringButton.Location = new System.Drawing.Point(6, 13);
+            this.GetConnectionStringButton.Location = new System.Drawing.Point(6, 89);
             this.GetConnectionStringButton.Name = "GetConnectionStringButton";
             this.GetConnectionStringButton.Size = new System.Drawing.Size(210, 23);
             this.GetConnectionStringButton.TabIndex = 0;
@@ -52,7 +52,7 @@ namespace Appsettings_sample
             // 
             this.TestConnectionButton.Image = ((System.Drawing.Image)(resources.GetObject("TestConnectionButton.Image")));
             this.TestConnectionButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.TestConnectionButton.Location = new System.Drawing.Point(6, 45);
+            this.TestConnectionButton.Location = new System.Drawing.Point(12, 160);
             this.TestConnectionButton.Name = "TestConnectionButton";
             this.TestConnectionButton.Size = new System.Drawing.Size(210, 23);
             this.TestConnectionButton.TabIndex = 1;
@@ -62,7 +62,7 @@ namespace Appsettings_sample
             // 
             // BuildDateButton
             // 
-            this.BuildDateButton.Location = new System.Drawing.Point(6, 74);
+            this.BuildDateButton.Location = new System.Drawing.Point(12, 189);
             this.BuildDateButton.Name = "BuildDateButton";
             this.BuildDateButton.Size = new System.Drawing.Size(210, 23);
             this.BuildDateButton.TabIndex = 2;
@@ -72,7 +72,7 @@ namespace Appsettings_sample
             // 
             // WhenAllButton
             // 
-            this.WhenAllButton.Location = new System.Drawing.Point(9, 123);
+            this.WhenAllButton.Location = new System.Drawing.Point(12, 218);
             this.WhenAllButton.Name = "WhenAllButton";
             this.WhenAllButton.Size = new System.Drawing.Size(75, 23);
             this.WhenAllButton.TabIndex = 3;
@@ -84,7 +84,7 @@ namespace Appsettings_sample
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(228, 162);
+            this.ClientSize = new System.Drawing.Size(579, 278);
             this.Controls.Add(this.WhenAllButton);
             this.Controls.Add(this.BuildDateButton);
             this.Controls.Add(this.TestConnectionButton);

@@ -10,7 +10,7 @@ Public Class FileOperations
     ''' Report progress passing file name
     ''' </summary>
     ''' <param name="fileName">Current file processed</param>
-    Public Delegate Sub ProcessDelegate(ByVal fileName As String)
+    Public Delegate Sub ProcessDelegate(fileName As String)
     ''' <summary>
     ''' Report progress passing current file name
     ''' </summary>

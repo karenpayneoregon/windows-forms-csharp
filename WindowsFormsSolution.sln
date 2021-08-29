@@ -129,7 +129,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoadDataGridViewProgressBar
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InterpolationConsoleApp", "InterpolationConsoleApp\InterpolationConsoleApp.csproj", "{F181921B-2266-42D4-B0A2-B02340740B7F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccountsToDictionaryEfCore", "AccountsToDictionaryEfCore\AccountsToDictionaryEfCore.csproj", "{A48C9688-CA94-451B-97E1-836171BF4F17}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AccountsToDictionaryEfCore", "AccountsToDictionaryEfCore\AccountsToDictionaryEfCore.csproj", "{A48C9688-CA94-451B-97E1-836171BF4F17}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinControlsLibrary", "WinControlsLibrary\WinControlsLibrary.csproj", "{1E4843A2-DA1E-496F-9EAF-4E06C3C0FE98}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -511,6 +513,14 @@ Global
 		{A48C9688-CA94-451B-97E1-836171BF4F17}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A48C9688-CA94-451B-97E1-836171BF4F17}.Release|x86.ActiveCfg = Release|Any CPU
 		{A48C9688-CA94-451B-97E1-836171BF4F17}.Release|x86.Build.0 = Release|Any CPU
+		{1E4843A2-DA1E-496F-9EAF-4E06C3C0FE98}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E4843A2-DA1E-496F-9EAF-4E06C3C0FE98}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E4843A2-DA1E-496F-9EAF-4E06C3C0FE98}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{1E4843A2-DA1E-496F-9EAF-4E06C3C0FE98}.Debug|x86.Build.0 = Debug|Any CPU
+		{1E4843A2-DA1E-496F-9EAF-4E06C3C0FE98}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E4843A2-DA1E-496F-9EAF-4E06C3C0FE98}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E4843A2-DA1E-496F-9EAF-4E06C3C0FE98}.Release|x86.ActiveCfg = Release|Any CPU
+		{1E4843A2-DA1E-496F-9EAF-4E06C3C0FE98}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -575,6 +585,7 @@ Global
 		{6DFB95BE-3F03-4B47-A0BA-3C25D0DAE2F3} = {2E5D5985-8504-422C-A302-6A46890F4ACB}
 		{F181921B-2266-42D4-B0A2-B02340740B7F} = {DE16B1C7-FA6D-417E-B3A3-C9B8AC284A41}
 		{A48C9688-CA94-451B-97E1-836171BF4F17} = {DE16B1C7-FA6D-417E-B3A3-C9B8AC284A41}
+		{1E4843A2-DA1E-496F-9EAF-4E06C3C0FE98} = {2E5D5985-8504-422C-A302-6A46890F4ACB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {58AC3B13-B420-4F3C-8723-CE1E6C224D46}

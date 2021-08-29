@@ -72,5 +72,18 @@ namespace SqlServerAsyncReadCore
             textBox1.Text = builder.ToString();
 
         }
+
+
+        private async void button1_Click(object sender, EventArgs e)
+        {
+            var (exception, success, list) = await SqlOperations.ReadPlaceholderTask(_cancellationTokenSource.Token);
+            if (success)
+            {
+                foreach (var name in list)
+                {
+                    Debug.WriteLine(name);
+                }
+            }
+        }
     }
 }

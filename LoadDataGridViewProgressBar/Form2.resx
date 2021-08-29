@@ -117,17 +117,45 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="MoveFirstItem_Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\assets\MoveFirstItem.Image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="toolStripButton1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAKNJREFUOE9jGHygcNbz/1AmeSB35rP/Cd33yDckY8rT//P2//6f0HWHPEMSep78
+        n73v1//OrX//u5VeJt2QyK5H/6ds+/W/ZOnf/wnT//63yT1LmiGBzQ//t659D9ZsXPLlv3T0tf/GkcuI
+        N8Sj6v7/krnv4JoVXXpIc4F96d3/gS3PyNMMAhZ5d/7bFFwhTzMIGGbdJl8zCOik3SBf81AEDAwAoH5f
+        oAc0QjgAAAAASUVORK5CYII=
+</value>
   </data>
-  <data name="MoveLastItem_Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\assets\MoveLastItem.Image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <metadata name="CustomersBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>18, 17</value>
+  </metadata>
+  <metadata name="CustomersBindingNavigator.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>206, 17</value>
+  </metadata>
+  <data name="EditButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        xAAADsQBlSsOGwAAAKtJREFUOE/tjjEKwkAQReMpbC0tvEcayQ0ClhZeYm/hESwtvICQA3iCVFMIgjb2
+        8X0Z2QiJjr0PHhn+5g9T/ESyElvssMGZvwRIVuEdVzjFLTb++oVclpVnWtI954/ksr79WZe0/tcI/cKL
+        nMnS0wGGymIsf+NfzgTLE7y4tafBski2wCsu8Yw1Bssi2Qb3PmuJLgmWRbIdHvGAN9QVwbJIdkItWePc
+        0yBF8QBPWcDQ9uarwgAAAABJRU5ErkJggg==
+</value>
   </data>
-  <data name="MoveNextItem_Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\assets\MoveNextItem.Image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="PreviousButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        xAAADsQBlSsOGwAAAG9JREFUOE+tk9EJwCAMRB2lo3SEjuAq2TV7xB5NCWJCjfbBiRzcwx+LiGwlhvjU
+        W0gsIK535EviC2xctQkZBYkx6AXJMTDBwhg8AuJDx+n89IKXBUkvAEnJKAAJiS8AJrm0cYkFYPYv4NiJ
+        W85HSgOZgxe8lrAe4wAAAABJRU5ErkJggg==
+</value>
   </data>
-  <data name="MovePreviousItem_Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\assets\MovePreviousItem.Image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="NextButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        xAAADsQBlSsOGwAAAHJJREFUOE9j+P//P0UYQhACjU8coCxMQNAAkObGJ/+BOAEqggqIdEECTkOIMgAE
+        cBlCtAEggM0QkgwAAXRDwAZABMjBCuS64D2YBgH6hQE2zSBAlAG4NIMAQQManwTg1AwCRBggAMT48wIl
+        GKsg8fg/AwCC6RkhHvjZLQAAAABJRU5ErkJggg==
+</value>
   </data>
 </root>

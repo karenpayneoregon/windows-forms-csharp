@@ -19,7 +19,11 @@ namespace AccountsToDictionaryEfCore
         {
             using var context = new Context();
 
-            Dictionary<string, string> results = context.Account.OrderBy(account => account.AccountName).ToDictionary(_ => _.AccountName, _ => _.Location);
+            Dictionary<string, string> results = context
+                .Account
+                .OrderBy(account => account.AccountName)
+                .ToDictionary(_ => _.AccountName, _ => _.Location);
+            
 
             foreach (var result in results)
             {

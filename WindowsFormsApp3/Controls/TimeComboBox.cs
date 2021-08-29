@@ -42,8 +42,8 @@ namespace WindowsFormsApp3.Controls
         /// <returns>Index of item or -1 if not found</returns>
         public int SetCurrentItem(TimeSpan pTime)
         {
-            var dateTimeime = DateTime.Today.Add(pTime);
-            var displayTime = dateTimeime.ToString("hh:mm tt");
+            var dateTime = DateTime.Today.Add(pTime);
+            var displayTime = dateTime.ToString("hh:mm tt");
             var index = FindString(displayTime);
             SelectedIndex = index;
 

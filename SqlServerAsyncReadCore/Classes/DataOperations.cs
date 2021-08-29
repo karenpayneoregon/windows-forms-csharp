@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Diagnostics;
@@ -41,6 +42,43 @@ namespace SqlServerAsyncReadCore.Classes
 
             });
 
+        }
+
+        public static async Task<(Exception, bool success, List<object>)> ReadPlaceholderTask(CancellationToken ct)
+        {
+            (Exception, bool, List<object>) result = (null, true, new List<object>());
+            var selectStatement = "";
+            
+            return await Task.Run(async () =>
+            {
+
+                await using var cn = new SqlConnection(_connectionString);
+                await using var cmd = new SqlCommand { Connection = cn, CommandText = selectStatement };
+                
+                try
+                {
+                    await cn.OpenAsync(ct);
+                    var reader = await cmd.ExecuteReaderAsync(ct);
+
+                    if (reader.HasRows)
+                    {
+                        
+                    }
+                    
+                }
+                catch (TaskCanceledException tce)
+                {
+                    result = (tce, false, null);
+
+                }
+                catch (Exception exception)
+                {
+                    result = (exception, false, null);
+                }
+
+                return result;
+                
+            }, ct);
         }
 
 
