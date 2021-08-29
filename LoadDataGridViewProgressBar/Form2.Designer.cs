@@ -35,10 +35,10 @@ namespace LoadDataGridViewProgressBar
             this.customerDataGridView = new System.Windows.Forms.DataGridView();
             this.CustomersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.CustomersBindingNavigator = new WinControlsLibrary.DataGridToolStrip();
+            this.EditButton = new System.Windows.Forms.ToolStripButton();
             this.PreviousButton = new System.Windows.Forms.ToolStripButton();
             this.NextButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.EditButton = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.customerDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CustomersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CustomersBindingNavigator)).BeginInit();
@@ -55,9 +55,9 @@ namespace LoadDataGridViewProgressBar
             // 
             this.customerDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.customerDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.customerDataGridView.Location = new System.Drawing.Point(0, 0);
+            this.customerDataGridView.Location = new System.Drawing.Point(0, 25);
             this.customerDataGridView.Name = "customerDataGridView";
-            this.customerDataGridView.Size = new System.Drawing.Size(800, 437);
+            this.customerDataGridView.Size = new System.Drawing.Size(610, 412);
             this.customerDataGridView.TabIndex = 3;
             // 
             // CustomersBindingNavigator
@@ -82,9 +82,15 @@ namespace LoadDataGridViewProgressBar
             this.CustomersBindingNavigator.PositionItem = null;
             this.CustomersBindingNavigator.PreviousButton = this.PreviousButton;
             this.CustomersBindingNavigator.Separator = this.toolStripSeparator1;
-            this.CustomersBindingNavigator.Size = new System.Drawing.Size(800, 25);
+            this.CustomersBindingNavigator.Size = new System.Drawing.Size(610, 25);
             this.CustomersBindingNavigator.TabIndex = 4;
             this.CustomersBindingNavigator.Text = "dataGridToolStrip1";
+            // 
+            // EditButton
+            // 
+            this.EditButton.Image = ((System.Drawing.Image)(resources.GetObject("EditButton.Image")));
+            this.EditButton.Name = "EditButton";
+            this.EditButton.Size = new System.Drawing.Size(23, 22);
             // 
             // PreviousButton
             // 
@@ -104,19 +110,13 @@ namespace LoadDataGridViewProgressBar
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
-            // EditButton
-            // 
-            this.EditButton.Image = ((System.Drawing.Image)(resources.GetObject("EditButton.Image")));
-            this.EditButton.Name = "EditButton";
-            this.EditButton.Size = new System.Drawing.Size(23, 22);
-            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 437);
-            this.Controls.Add(this.CustomersBindingNavigator);
+            this.ClientSize = new System.Drawing.Size(610, 437);
             this.Controls.Add(this.customerDataGridView);
+            this.Controls.Add(this.CustomersBindingNavigator);
             this.Name = "Form2";
             this.Text = "Custom BindingNavigator";
             ((System.ComponentModel.ISupportInitialize)(this.customerDataGridView)).EndInit();

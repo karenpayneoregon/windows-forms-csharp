@@ -35,7 +35,7 @@ namespace LoadDataGridViewProgressBar
 
             customerDataGridView.ExpandColumns(true);
 
-            //NextButton.Click += (sender, args) => CustomersBindingSource.MoveNext();
+            NextButton.Click += (sender, args) => CustomersBindingSource.MoveNext();
 
             PreviousButton.Click += (sender, args)
                 => CustomersBindingSource.MovePrevious();

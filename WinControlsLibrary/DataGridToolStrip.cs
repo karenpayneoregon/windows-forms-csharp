@@ -27,10 +27,6 @@ namespace WinControlsLibrary
 
             Items.AddRange(new ToolStripItem[] {PreviousButton, NextButton, Separator, EditButton });
             
-
-
         }
-
-
     }
 }
