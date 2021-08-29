@@ -78,6 +78,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="customerBindingNavigator.md" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -93,22 +94,13 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="assets\MoveFirstItem.Image.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="assets\MoveLastItem.Image.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="assets\MoveNextItem.Image.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="assets\MovePreviousItem.Image.png" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\WinControlsLibrary\WinControlsLibrary.csproj">
       <Project>{1e4843a2-da1e-496f-9eaf-4e06c3c0fe98}</Project>
       <Name>WinControlsLibrary</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="assets\CustomBindingNavigator.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
