@@ -31,6 +31,7 @@ namespace PassingDataBetweenForms
         {
             this.NotesListBox = new System.Windows.Forms.ListBox();
             this.ContentsTextBox = new System.Windows.Forms.TextBox();
+            this.EditButton = new System.Windows.Forms.Button();
             this.AddButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -50,6 +51,18 @@ namespace PassingDataBetweenForms
             this.ContentsTextBox.Size = new System.Drawing.Size(622, 159);
             this.ContentsTextBox.TabIndex = 1;
             // 
+            // EditButton
+            // 
+            this.EditButton.Image = global::PassingDataBetweenForms.Properties.Resources.Edit_blue;
+            this.EditButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.EditButton.Location = new System.Drawing.Point(154, 330);
+            this.EditButton.Name = "EditButton";
+            this.EditButton.Size = new System.Drawing.Size(128, 23);
+            this.EditButton.TabIndex = 3;
+            this.EditButton.Text = "Edit";
+            this.EditButton.UseVisualStyleBackColor = true;
+            this.EditButton.Click += new System.EventHandler(this.EditButton_Click);
+            // 
             // AddButton
             // 
             this.AddButton.Image = global::PassingDataBetweenForms.Properties.Resources.Add_8x_16x;
@@ -67,6 +80,7 @@ namespace PassingDataBetweenForms
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(646, 373);
+            this.Controls.Add(this.EditButton);
             this.Controls.Add(this.AddButton);
             this.Controls.Add(this.ContentsTextBox);
             this.Controls.Add(this.NotesListBox);
@@ -84,6 +98,7 @@ namespace PassingDataBetweenForms
         private System.Windows.Forms.ListBox NotesListBox;
         private System.Windows.Forms.TextBox ContentsTextBox;
         private System.Windows.Forms.Button AddButton;
+        private System.Windows.Forms.Button EditButton;
     }
 }
 

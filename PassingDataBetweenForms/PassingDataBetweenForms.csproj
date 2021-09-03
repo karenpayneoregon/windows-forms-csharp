@@ -53,6 +53,12 @@
       <DependentUpon>AddNoteForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Classes\Operations.cs" />
+    <Compile Include="EditNoteForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditNoteForm.Designer.cs">
+      <DependentUpon>EditNoteForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -64,6 +70,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AddNoteForm.resx">
       <DependentUpon>AddNoteForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditNoteForm.resx">
+      <DependentUpon>EditNoteForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -100,6 +109,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Add_8x_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Edit_blue.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

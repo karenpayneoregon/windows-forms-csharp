@@ -8,6 +8,10 @@ namespace PassingDataBetweenForms.Classes
         public delegate void OnAddNote(Note note);
         public static event OnAddNote AddNote;
 
+        public delegate void OnSaveNote(Note note);
+        public static event OnSaveNote SaveNote;
+
+        
         public static List<Note> NotesList = new List<Note>();
 
         public static Note DefaultNote => new Note() { Title = "Default title", Content = "Content"};
@@ -26,9 +30,9 @@ namespace PassingDataBetweenForms.Classes
         /// </summary>
         /// <param name="note"></param>
         /// <returns></returns>
-        public static Note EditNote(Note note)
+        public static void EditNote(Note note)
         {
-            throw new NotImplementedException();
+            SaveNote?.Invoke(note);
         }
 
         /// <summary>
@@ -45,6 +49,11 @@ namespace PassingDataBetweenForms.Classes
             {
                 Title = "Second",
                 Content = "Some content"
+            });
+            NotesList.Add(new Note()
+            {
+                Title = "Get groceries",
+                Content = "Need coffee and milk\r\nAnd cookies"
             });
         }
 

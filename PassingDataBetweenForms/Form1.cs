@@ -18,12 +18,20 @@ namespace PassingDataBetweenForms
         private void OnShown(object sender, EventArgs e)
         {
             Operations.AddNote += OperationsOnAddNote;
+            Operations.SaveNote += OperationsOnSaveNote;
             
             Operations.Mocked();
             
             _bindingSource.DataSource = Operations.NotesList;
             NotesListBox.DataSource = _bindingSource;
             ContentsTextBox.DataBindings.Add("Text", _bindingSource, "Content");
+        }
+
+        private void OperationsOnSaveNote(Note note)
+        {
+            var current = (Note) _bindingSource.Current;
+            current.Title = note.Title;
+            current.Content = note.Content;
         }
 
         private void OperationsOnAddNote(Note note)
@@ -45,6 +53,12 @@ namespace PassingDataBetweenForms
                 addForm.Dispose();
             }
 
+        }
+
+        private void EditButton_Click(object sender, EventArgs e)
+        {
+            var editForm = new EditNoteForm((Note) _bindingSource.Current);
+            editForm.ShowDialog();
         }
     }
 }
