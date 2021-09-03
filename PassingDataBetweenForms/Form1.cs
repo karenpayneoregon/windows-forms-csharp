@@ -58,7 +58,15 @@ namespace PassingDataBetweenForms
         private void EditButton_Click(object sender, EventArgs e)
         {
             var editForm = new EditNoteForm((Note) _bindingSource.Current);
-            editForm.ShowDialog();
+            try
+            {
+                editForm.ShowDialog();
+            }
+            finally
+            {
+                editForm.Dispose();
+            }
+            
         }
     }
 }
