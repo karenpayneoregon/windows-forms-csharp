@@ -44,4 +44,8 @@ Public Class Form1
         ExcelOperations2.SimpleWrite("SimpleWriteExample.xlsx", "Karen", "Payne", "Wrote this")
         MessageBox.Show("Done")
     End Sub
+
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        ExcelOperations2.Numbers()
+    End Sub
 End Class

@@ -15,8 +15,7 @@ namespace SqlServerAsyncReadCore.Classes
         {
             (Exception, bool, List<string> namesList) result = (null, true, new List<string>());
 
-            var selectStatement = 
-                "SELECT CategoryName FROM dbo.Categories WHERE dbo.Categories.CategoryID IN (1,3);";
+            var selectStatement = "SELECT CategoryName FROM dbo.Categories WHERE dbo.Categories.CategoryID IN (1,3);";
 
             return await Task.Run(async () =>
             {

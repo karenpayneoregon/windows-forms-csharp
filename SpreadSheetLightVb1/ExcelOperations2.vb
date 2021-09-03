@@ -1,4 +1,5 @@
 ﻿Imports System.IO
+Imports DocumentFormat.OpenXml.Spreadsheet
 Imports SpreadsheetLight
 
 ''' <summary>
@@ -13,6 +14,82 @@ Imports SpreadsheetLight
 ''' https://spreadsheetlight.com/
 ''' </remarks>
 Public Class ExcelOperations2
+
+    Public Shared Sub DataGridViewExport(dataTable As DataTable)
+
+        Dim sl As New SLDocument()
+
+
+        For index As Integer = 0 To dataTable.Columns.Count - 1
+            sl.SetCellValue(1, index + 1, dataTable.Columns(index).ColumnName)
+        Next
+
+
+        For index As Integer = 0 To dataTable.Rows.Count - 1
+            sl.SetCellValue(index + 2, 1, dataTable.Rows(index)(0).ToString())
+            sl.SetCellValue(index + 2, 2, dataTable.Rows(index)(1).ToString())
+        Next
+
+        Dim style As SLStyle = sl.CreateStyle()
+        style.Font.Bold = True
+        sl.SetRowStyle(1, 1, style)
+
+        sl.AutoFitColumn(1, 2)
+
+        style = sl.CreateStyle()
+        style.SetHorizontalAlignment(HorizontalAlignmentValues.Right)
+        sl.SetColumnStyle(1, style)
+
+        sl.RenameWorksheet(SLDocument.DefaultFirstSheetName, "Whatever you want")
+
+        sl.SaveAs("ExportedFormatted.xlsx")
+
+    End Sub
+    Public Shared Sub Numbers()
+        Dim sl As New SLDocument()
+
+
+        '123456789.12345
+        Dim a1Value = "00001"
+        sl.SetCellValue("A1", a1Value)
+        sl.SetCellValue(2, 1, -123456789.12345)
+        sl.SetCellValue(3, 1, New DateTime(2123, 4, 15))
+        sl.SetCellValue(4, 1, 12.3456)
+        sl.SetCellValue(5, 1, 12.3456)
+        sl.SetCellValue("A6", 123456789.12345)
+
+        Dim style As SLStyle = sl.CreateStyle()
+        'style.FormatCode = "#,##0.000"
+        'sl.SetCellStyle("A1", style)
+        style.SetHorizontalAlignment(HorizontalAlignmentValues.Right)
+        sl.SetCellStyle("A1", style)
+
+        style = sl.CreateStyle()
+        style.FormatCode = "$#,##0.00_);[Red]($#,##0.00)"
+        sl.SetCellStyle(2, 1, style)
+
+        style = sl.CreateStyle()
+        style.FormatCode = "d mmm yyyy"
+        sl.SetCellStyle(3, 1, style)
+
+        ' we can just reassign like this because the only property
+        ' we just used was the FormatCode property
+
+        style.FormatCode = "0.00%"
+        sl.SetCellStyle("A4", style)
+
+        ' this means "number with fractional part (2 digit denominator)"
+        style.FormatCode = "# ??/??"
+        sl.SetCellStyle(5, 1, style)
+
+        style.FormatCode = "0.000E+00"
+        sl.SetCellStyle(6, 1, style)
+
+        sl.AutoFitColumn(1, 10)
+
+        sl.SaveAs("NumberFormat.xlsx")
+        Console.WriteLine("End of program")
+    End Sub
     ''' <summary>
     ''' Writes three values to the default worksheet
     ''' </summary>

@@ -135,6 +135,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinControlsLibrary", "WinCo
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "SpreadSheetLightVb1", "SpreadSheetLightVb1\SpreadSheetLightVb1.vbproj", "{25D5096D-410D-4000-9BFF-978A93584CC5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataTableFilterExample", "DataTableFilterExample\DataTableFilterExample.csproj", "{8B2DD08A-DDEE-4422-B641-4831763304FD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -531,6 +533,14 @@ Global
 		{25D5096D-410D-4000-9BFF-978A93584CC5}.Release|Any CPU.Build.0 = Release|Any CPU
 		{25D5096D-410D-4000-9BFF-978A93584CC5}.Release|x86.ActiveCfg = Release|Any CPU
 		{25D5096D-410D-4000-9BFF-978A93584CC5}.Release|x86.Build.0 = Release|Any CPU
+		{8B2DD08A-DDEE-4422-B641-4831763304FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B2DD08A-DDEE-4422-B641-4831763304FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B2DD08A-DDEE-4422-B641-4831763304FD}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{8B2DD08A-DDEE-4422-B641-4831763304FD}.Debug|x86.Build.0 = Debug|Any CPU
+		{8B2DD08A-DDEE-4422-B641-4831763304FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B2DD08A-DDEE-4422-B641-4831763304FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8B2DD08A-DDEE-4422-B641-4831763304FD}.Release|x86.ActiveCfg = Release|Any CPU
+		{8B2DD08A-DDEE-4422-B641-4831763304FD}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -597,6 +607,7 @@ Global
 		{A48C9688-CA94-451B-97E1-836171BF4F17} = {DE16B1C7-FA6D-417E-B3A3-C9B8AC284A41}
 		{1E4843A2-DA1E-496F-9EAF-4E06C3C0FE98} = {2E5D5985-8504-422C-A302-6A46890F4ACB}
 		{25D5096D-410D-4000-9BFF-978A93584CC5} = {5D21CFBF-44AA-4562-B731-2D1369E8F39B}
+		{8B2DD08A-DDEE-4422-B641-4831763304FD} = {07EEA43B-E7E7-45AC-B312-B41BB1F8922A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {58AC3B13-B420-4F3C-8723-CE1E6C224D46}
