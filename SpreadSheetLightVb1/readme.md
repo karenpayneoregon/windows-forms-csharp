@@ -155,4 +155,16 @@ Public Shared Function CreateAndPopulate() As Boolean
 End Function
 ```
 
+# Export DataGridView with formatting
+
+In [GridToDataTableForm](https://github.com/karenpayneoregon/windows-forms-csharp/blob/Version1/SpreadSheetLightVb1/GridToDataTableForm.vb) 
+
+A DataGridView is populated without a Data Source, a [language extension](https://github.com/karenpayneoregon/windows-forms-csharp/blob/Version1/SpreadSheetLightVb1/DataGridViewExtensionMethods.vb#L17) creates a DataTable for all data in the DataGridView which when pressing a button exports data to Excel with formatting.
+
+As this is a basic example there is room for improvement even though it works.
+
+
+
+![img](assets/S2.png)
+
 

@@ -17,32 +17,32 @@ Public Class ExcelOperations2
 
     Public Shared Sub DataGridViewExport(dataTable As DataTable)
 
-        Dim sl As New SLDocument()
+        Dim document As New SLDocument()
 
 
         For index As Integer = 0 To dataTable.Columns.Count - 1
-            sl.SetCellValue(1, index + 1, dataTable.Columns(index).ColumnName)
+            document.SetCellValue(1, index + 1, dataTable.Columns(index).ColumnName)
         Next
 
 
         For index As Integer = 0 To dataTable.Rows.Count - 1
-            sl.SetCellValue(index + 2, 1, dataTable.Rows(index)(0).ToString())
-            sl.SetCellValue(index + 2, 2, dataTable.Rows(index)(1).ToString())
+            document.SetCellValue(index + 2, 1, dataTable.Rows(index)(0).ToString())
+            document.SetCellValue(index + 2, 2, dataTable.Rows(index)(1).ToString())
         Next
 
-        Dim style As SLStyle = sl.CreateStyle()
+        Dim style As SLStyle = document.CreateStyle()
         style.Font.Bold = True
-        sl.SetRowStyle(1, 1, style)
+        document.SetRowStyle(1, 1, style)
 
-        sl.AutoFitColumn(1, 2)
+        document.AutoFitColumn(1, 2)
 
-        style = sl.CreateStyle()
+        style = document.CreateStyle()
         style.SetHorizontalAlignment(HorizontalAlignmentValues.Right)
-        sl.SetColumnStyle(1, style)
+        document.SetColumnStyle(1, style)
 
-        sl.RenameWorksheet(SLDocument.DefaultFirstSheetName, "Whatever you want")
+        document.RenameWorksheet(SLDocument.DefaultFirstSheetName, "Whatever you want")
 
-        sl.SaveAs("ExportedFormatted.xlsx")
+        document.SaveAs("ExportedFormatted.xlsx")
 
     End Sub
     Public Shared Sub Numbers()
