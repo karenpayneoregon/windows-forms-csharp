@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using SpreadsheetLightDataGridViewExport.Classes;
 
@@ -37,7 +31,9 @@ namespace SpreadsheetLightDataGridViewExport
             /*
              * pass in file name, text to find and the column index, in this case A column
              */
-            var (items, exception) = SpreadSheetLightOperations.FindDuplicates(fileName, sheetName, policy, 1);
+            var (items, exception) = SpreadSheetLightOperations
+                .FindDuplicates(fileName, sheetName, policy, 1);
+            
             if (exception != null)
             {
                 MessageBox.Show($"Error\n{exception.Message}");
