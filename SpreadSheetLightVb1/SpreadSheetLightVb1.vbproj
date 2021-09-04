@@ -79,11 +79,13 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataGridViewExtensionMethods.vb" />
-    <Compile Include="DataOperationsSqlServer.vb" />
-    <Compile Include="ExcelOperations.vb" />
-    <Compile Include="ExcelOperations1.vb" />
-    <Compile Include="ExcelOperations2.vb" />
+    <Compile Include="Classes\DataGridViewExtensionMethods.vb" />
+    <Compile Include="Classes\DataOperationsSqlServer.vb" />
+    <Compile Include="Classes\Extensions.vb" />
+    <Compile Include="ExcelClasses\ExcelOperations.vb" />
+    <Compile Include="ExcelClasses\ExcelOperations1.vb" />
+    <Compile Include="ExcelClasses\ExcelOperations2.vb" />
+    <Compile Include="ExcelClasses\ExcelOperations3.vb" />
     <Compile Include="Form1.Designer.vb">
       <DependentUpon>Form1.vb</DependentUpon>
     </Compile>
@@ -94,6 +96,12 @@
       <DependentUpon>GridToDataTableForm.vb</DependentUpon>
     </Compile>
     <Compile Include="GridToDataTableForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LimitedForm.Designer.vb">
+      <DependentUpon>LimitedForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="LimitedForm.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -122,6 +130,9 @@
     <EmbeddedResource Include="GridToDataTableForm.resx">
       <DependentUpon>GridToDataTableForm.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="LimitedForm.resx">
+      <DependentUpon>LimitedForm.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
@@ -131,6 +142,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="bin\Debug\ExcelFiles\DemoExport.xlsx" />
+    <None Include="Customers.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="DemoExport.xlsx" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
@@ -144,6 +158,8 @@
     <None Include="App.config" />
     <None Include="packages.config" />
     <None Include="readme.md" />
+    <Content Include="assets\CountrySheet.png" />
+    <Content Include="readme1.md" />
     <None Include="SimpleWriteExample.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
