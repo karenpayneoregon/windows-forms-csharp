@@ -102,6 +102,7 @@ namespace Appsettings_sample
 
         private async void WhenAllButton_Click(object sender, EventArgs e)
         {
+            
             Task<List<string>> monthNames = SecondTask();
             Task<bool> nameChange = FirstTask();
             Task<List<PersonItem>> groupedTask = ThirdTask();
@@ -113,6 +114,26 @@ namespace Appsettings_sample
             
             groupedTask.Result.ForEach(x => Debug.WriteLine(x));
           
+        }
+
+        private void RunSomeTaskButton_Click(object sender, EventArgs e)
+        {
+            List<Func<Task>> list = new List<Func<Task>>
+            {
+                ExampleTask.FirstAsync,
+                ExampleTask.SecondAsync,
+                ExampleTask.ThirdAsync
+            };
+
+            Task taskingAsync = TaskHelpers.ForEachAsync(list);
+
+            taskingAsync.ContinueWith(task => 
+                Debug.WriteLine(task.Exception.ToString()), 
+                TaskContinuationOptions.OnlyOnFaulted);
+            
+            taskingAsync.ContinueWith(task => 
+                Debug.WriteLine("Done!"), 
+                TaskContinuationOptions.OnlyOnRanToCompletion);
         }
     }
 

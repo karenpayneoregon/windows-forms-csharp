@@ -67,6 +67,7 @@
     <Compile Include="Classes\DataOperations.cs" />
     <Compile Include="Classes\ExcelHelpers.cs" />
     <Compile Include="Classes\ExcelOperations.cs" />
+    <Compile Include="Classes\SpreadSheetLightOperations.cs" />
     <Compile Include="Classes\StringExtensions.cs" />
     <Compile Include="CreateFileWithSheets.cs">
       <SubType>Form</SubType>
@@ -80,6 +81,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="PoliciesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PoliciesForm.Designer.cs">
+      <DependentUpon>PoliciesForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="CreateFileWithSheets.resx">
@@ -87,6 +94,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PoliciesForm.resx">
+      <DependentUpon>PoliciesForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -97,6 +107,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="FindDups.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -108,6 +121,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <None Include="readme.md" />
+    <Content Include="readme1.md" />
     <None Include="ReadRangeDemo.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

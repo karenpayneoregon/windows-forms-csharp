@@ -27,13 +27,34 @@ namespace SpreadsheetLightDataGridViewExport.Classes
                 {
                     if (document.GetCellValueAsString(index, 1).EqualsIgnoreCase(search))
                     {
-                        return document.GetCellValueAsString(index, 2);
+                        var result = document.GetCellValueAsString(index, 2);
+                        return result;
                     }
                 }
             }
 
             return null;
             
+        }
+        public static List<int> FindDuplicates(string fileName, string sheetName, string search)
+        {
+            List<int> indicesList = new List<int>();
+            
+            using (var document = new SLDocument(fileName, sheetName))
+            {
+                var stats = document.GetWorksheetStatistics();
+                var test = stats.EndRowIndex;
+                for (int index = 1; index < stats.EndRowIndex + 1; index++)
+                {
+                    if (document.GetCellValueAsString(index, 1).EqualsIgnoreCase(search))
+                    {
+                        indicesList.Add(index);
+
+                    }
+                }
+            }
+
+            return indicesList;
         }
 
         /// <summary>
