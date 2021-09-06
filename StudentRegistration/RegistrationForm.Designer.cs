@@ -40,6 +40,7 @@ namespace StudentRegistration
             this.label4 = new System.Windows.Forms.Label();
             this.ContactNumberTextBox = new System.Windows.Forms.TextBox();
             this.RegisterButton = new System.Windows.Forms.Button();
+            this.AppointmentDetailLabel = new StudentRegistration.Controls.LinkLabelSpecial();
             this.SuspendLayout();
             // 
             // label1
@@ -145,11 +146,23 @@ namespace StudentRegistration
             this.RegisterButton.UseVisualStyleBackColor = true;
             this.RegisterButton.Click += new System.EventHandler(this.RegisterButton_Click);
             // 
+            // AppointmentDetailLabel
+            // 
+            this.AppointmentDetailLabel.AutoSize = true;
+            this.AppointmentDetailLabel.Id = 0;
+            this.AppointmentDetailLabel.Location = new System.Drawing.Point(44, 5);
+            this.AppointmentDetailLabel.Name = "AppointmentDetailLabel";
+            this.AppointmentDetailLabel.Size = new System.Drawing.Size(34, 13);
+            this.AppointmentDetailLabel.TabIndex = 11;
+            this.AppointmentDetailLabel.TabStop = true;
+            this.AppointmentDetailLabel.Text = "Show";
+            // 
             // RegistrationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(216, 349);
+            this.Controls.Add(this.AppointmentDetailLabel);
             this.Controls.Add(this.RegisterButton);
             this.Controls.Add(this.ContactNumberTextBox);
             this.Controls.Add(this.label4);
@@ -183,6 +196,7 @@ namespace StudentRegistration
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox ContactNumberTextBox;
         private System.Windows.Forms.Button RegisterButton;
+        private Controls.LinkLabelSpecial AppointmentDetailLabel;
     }
 }
 

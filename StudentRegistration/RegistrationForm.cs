@@ -15,6 +15,21 @@ namespace StudentRegistration
         public RegistrationForm()
         {
             InitializeComponent();
+            AppointmentDetailLabel.Id = 12;
+            AppointmentDetailLabel.LinkClicked += ShowAppointmentDetailLabelOnLinkClicked;
+        }
+
+        private void ShowAppointmentDetailLabelOnLinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            if (AppointmentDetailLabel.Id.HasValue)
+            {
+                // use AppointmentDetailLabel.Id.Value
+            }
+            else
+            {
+                // Id not set
+            }
+            
         }
 
         private void RegisterButton_Click(object sender, EventArgs e)

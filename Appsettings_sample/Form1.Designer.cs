@@ -35,6 +35,7 @@ namespace Appsettings_sample
             this.BuildDateButton = new System.Windows.Forms.Button();
             this.WhenAllButton = new System.Windows.Forms.Button();
             this.RunSomeTaskButton = new System.Windows.Forms.Button();
+            this.ReadFileButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // GetConnectionStringButton
@@ -91,11 +92,22 @@ namespace Appsettings_sample
             this.RunSomeTaskButton.UseVisualStyleBackColor = true;
             this.RunSomeTaskButton.Click += new System.EventHandler(this.RunSomeTaskButton_Click);
             // 
+            // ReadFileButton
+            // 
+            this.ReadFileButton.Location = new System.Drawing.Point(338, 209);
+            this.ReadFileButton.Name = "ReadFileButton";
+            this.ReadFileButton.Size = new System.Drawing.Size(75, 23);
+            this.ReadFileButton.TabIndex = 5;
+            this.ReadFileButton.Text = "button1";
+            this.ReadFileButton.UseVisualStyleBackColor = true;
+            this.ReadFileButton.Click += new System.EventHandler(this.ReadFileButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(579, 278);
+            this.Controls.Add(this.ReadFileButton);
             this.Controls.Add(this.RunSomeTaskButton);
             this.Controls.Add(this.WhenAllButton);
             this.Controls.Add(this.BuildDateButton);
@@ -116,6 +128,7 @@ namespace Appsettings_sample
         private System.Windows.Forms.Button BuildDateButton;
         private System.Windows.Forms.Button WhenAllButton;
         private System.Windows.Forms.Button RunSomeTaskButton;
+        private System.Windows.Forms.Button ReadFileButton;
     }
 }
 

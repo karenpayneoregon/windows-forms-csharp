@@ -5,6 +5,7 @@ using System.Data;
 using System.Diagnostics;
 using System.Drawing;
 using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text;
@@ -134,6 +135,30 @@ namespace Appsettings_sample
             taskingAsync.ContinueWith(task => 
                 Debug.WriteLine("Done!"), 
                 TaskContinuationOptions.OnlyOnRanToCompletion);
+        }
+
+        private void ReadFileButton_Click(object sender, EventArgs e)
+        {
+            //List<string> contents = File.ReadAllLines(Path.Combine(
+            //    AppDomain.CurrentDomain.BaseDirectory, "WordList.txt")).ToList();
+            
+            //contents.Add("Karen");
+            //contents.ForEach(x => Debug.WriteLine(x));
+
+            var someData = Enumerable.Range(1, 12)
+                .Select((index) => DateTimeFormatInfo.CurrentInfo.GetMonthName(index)).ToList();
+            
+            someData.Add("May");
+            someData.Add("November");
+
+            List<string> noDuplicates = new HashSet<string>(someData).ToList();
+
+            foreach (var item in noDuplicates)
+            {
+                Debug.WriteLine(item);
+            }
+
+
         }
     }
 
