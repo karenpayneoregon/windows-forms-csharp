@@ -4,11 +4,11 @@ using PassingDataBetweenForms.Classes;
 
 namespace PassingDataBetweenForms
 {
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
         private readonly BindingSource _bindingSource = new BindingSource();
         
-        public Form1()
+        public MainForm()
         {
             InitializeComponent();
             Shown += OnShown;
