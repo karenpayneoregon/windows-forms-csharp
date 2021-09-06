@@ -2,7 +2,7 @@
 using System.IO;
 using System.Text.Json;
 
-namespace CustomersDemo
+namespace CustomersDemo.Classes
 {
     public static class SystemJson
     {

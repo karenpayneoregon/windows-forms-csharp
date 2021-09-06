@@ -29,6 +29,7 @@ namespace CustomersDemo
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ListBoxSaveForm));
             this.label1 = new System.Windows.Forms.Label();
             this.FirstNameTextBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -52,9 +53,9 @@ namespace CustomersDemo
             // 
             this.FirstNameTextBox.Location = new System.Drawing.Point(21, 31);
             this.FirstNameTextBox.Name = "FirstNameTextBox";
+            this.FirstNameTextBox.PlaceholderText = "enter first name";
             this.FirstNameTextBox.Size = new System.Drawing.Size(153, 23);
             this.FirstNameTextBox.TabIndex = 1;
-            this.FirstNameTextBox.Text = "Karen";
             // 
             // label2
             // 
@@ -69,9 +70,9 @@ namespace CustomersDemo
             // 
             this.LastNameTextBox.Location = new System.Drawing.Point(21, 84);
             this.LastNameTextBox.Name = "LastNameTextBox";
+            this.LastNameTextBox.PlaceholderText = "enter last name";
             this.LastNameTextBox.Size = new System.Drawing.Size(153, 23);
             this.LastNameTextBox.TabIndex = 3;
-            this.LastNameTextBox.Text = "Payne";
             // 
             // CustomersListBox
             // 
@@ -84,6 +85,8 @@ namespace CustomersDemo
             // 
             // AddButton
             // 
+            this.AddButton.Image = ((System.Drawing.Image)(resources.GetObject("AddButton.Image")));
+            this.AddButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.AddButton.Location = new System.Drawing.Point(16, 144);
             this.AddButton.Name = "AddButton";
             this.AddButton.Size = new System.Drawing.Size(75, 23);
@@ -94,6 +97,8 @@ namespace CustomersDemo
             // 
             // EditCurrentButton
             // 
+            this.EditCurrentButton.Image = ((System.Drawing.Image)(resources.GetObject("EditCurrentButton.Image")));
+            this.EditCurrentButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.EditCurrentButton.Location = new System.Drawing.Point(104, 144);
             this.EditCurrentButton.Name = "EditCurrentButton";
             this.EditCurrentButton.Size = new System.Drawing.Size(75, 23);
@@ -104,6 +109,8 @@ namespace CustomersDemo
             // 
             // JsonSaveButton
             // 
+            this.JsonSaveButton.Image = ((System.Drawing.Image)(resources.GetObject("JsonSaveButton.Image")));
+            this.JsonSaveButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.JsonSaveButton.Location = new System.Drawing.Point(417, 144);
             this.JsonSaveButton.Name = "JsonSaveButton";
             this.JsonSaveButton.Size = new System.Drawing.Size(75, 23);
@@ -116,7 +123,7 @@ namespace CustomersDemo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(501, 206);
+            this.ClientSize = new System.Drawing.Size(501, 180);
             this.Controls.Add(this.JsonSaveButton);
             this.Controls.Add(this.EditCurrentButton);
             this.Controls.Add(this.AddButton);
@@ -125,6 +132,7 @@ namespace CustomersDemo
             this.Controls.Add(this.label2);
             this.Controls.Add(this.FirstNameTextBox);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ListBoxSaveForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Code sample";
