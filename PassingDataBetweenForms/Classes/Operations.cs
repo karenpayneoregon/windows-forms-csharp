@@ -11,7 +11,10 @@ namespace PassingDataBetweenForms.Classes
         public delegate void OnSaveNote(Note note);
         public static event OnSaveNote SaveNote;
 
-        
+        public delegate void OnTransferNote(Note note, bool fresh);
+        public static event OnTransferNote Transfer;
+
+
         public static List<Note> NotesList = new List<Note>();
 
         public static Note DefaultNote => new Note() { Title = "Default title", Content = "Content"};
@@ -23,6 +26,11 @@ namespace PassingDataBetweenForms.Classes
         public static void NewNote(Note note)
         {
             AddNote?.Invoke(note);
+        }
+
+        public static void TransferNote(Note note, bool newNote)
+        {
+            Transfer?.Invoke(note, newNote);
         }
 
         /// <summary>

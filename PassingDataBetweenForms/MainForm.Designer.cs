@@ -33,6 +33,7 @@ namespace PassingDataBetweenForms
             this.ContentsTextBox = new System.Windows.Forms.TextBox();
             this.EditButton = new System.Windows.Forms.Button();
             this.AddButton = new System.Windows.Forms.Button();
+            this.SortButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // NotesListBox
@@ -75,17 +76,29 @@ namespace PassingDataBetweenForms
             this.AddButton.UseVisualStyleBackColor = true;
             this.AddButton.Click += new System.EventHandler(this.AddButton_Click);
             // 
-            // Form1
+            // SortButton
+            // 
+            this.SortButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.SortButton.Location = new System.Drawing.Point(506, 330);
+            this.SortButton.Name = "SortButton";
+            this.SortButton.Size = new System.Drawing.Size(128, 23);
+            this.SortButton.TabIndex = 4;
+            this.SortButton.Text = "Sort";
+            this.SortButton.UseVisualStyleBackColor = true;
+            this.SortButton.Click += new System.EventHandler(this.SortButton_Click);
+            // 
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(646, 373);
+            this.Controls.Add(this.SortButton);
             this.Controls.Add(this.EditButton);
             this.Controls.Add(this.AddButton);
             this.Controls.Add(this.ContentsTextBox);
             this.Controls.Add(this.NotesListBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Name = "Form1";
+            this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Note-Taker";
             this.ResumeLayout(false);
@@ -99,6 +112,7 @@ namespace PassingDataBetweenForms
         private System.Windows.Forms.TextBox ContentsTextBox;
         private System.Windows.Forms.Button AddButton;
         private System.Windows.Forms.Button EditButton;
+        private System.Windows.Forms.Button SortButton;
     }
 }
 
