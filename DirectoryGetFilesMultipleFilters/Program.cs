@@ -51,20 +51,18 @@ namespace DirectoryGetFilesMultipleFilters
                 .Select(filter => $"*.{filter}") 
                 .SelectMany(x => Directory.EnumerateFiles(path, x));
 
-        public static void Option1(string folder)
+        public static void Option1(string path)
         {
-            var allowedExtensions = new[] { ".doc", ".docx", ".pdf", ".ppt", ".pptx", ".xls", ".xslx" };
+            var allowedExtensions = new[] { ".md", ".json" };
             var files = Directory
-                .GetFiles(folder)
+                .GetFiles(path)
                 .Where(file => allowedExtensions.Any(file.ToLower().EndsWith))
                 .ToList();
         }
 
         public static void Option2(string path)
         {
-            var searchPattern = new Regex(
-                @"$(?<=\.(aspx|ascx))",
-                RegexOptions.IgnoreCase);
+            var searchPattern = new Regex(@"$(?<=\.(md|json))", RegexOptions.IgnoreCase);
             var files = Directory.EnumerateFiles(path)
                 .Where(f => searchPattern.IsMatch(f))
                 .ToList();
@@ -74,7 +72,7 @@ namespace DirectoryGetFilesMultipleFilters
         {
             var filteredFiles = Directory
                 .EnumerateFiles(path) //<--- .NET 4.5
-                .Where(file => file.ToLower().EndsWith("aspx") || file.ToLower().EndsWith("ascx"))
+                .Where(file => file.ToLower().EndsWith("md") || file.ToLower().EndsWith("json"))
                 .ToList();
 
         }

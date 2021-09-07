@@ -14,7 +14,10 @@ namespace CustomersDemo
     public partial class ListBoxSaveForm : Form
     {
         private BindingList<Customer> _customersBindingList;
-        private readonly BindingSource _customersBindingSource = new();
+        
+        private readonly BindingSource _customersBindingSource = new BindingSource();
+        
+        
         public ListBoxSaveForm()
         {
             InitializeComponent();
