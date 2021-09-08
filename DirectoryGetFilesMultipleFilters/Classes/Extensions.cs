@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 
 namespace DirectoryGetFilesMultipleFilters.Classes
 {
@@ -15,7 +18,5 @@ namespace DirectoryGetFilesMultipleFilters.Classes
         /// </remarks>
         public static string UpTo(this string sender, string stopper = ".") 
             => sender.Substring(0, Math.Max(0, sender.IndexOf(stopper, StringComparison.Ordinal)));
-        
-        
     }
 }
