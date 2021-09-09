@@ -37,6 +37,11 @@ Public Class Form1
 
         SetActive()
 
+        Enumerable.Range(1, 12).
+            Select(Function(index)
+                       Return DateTimeFormatInfo.CurrentInfo.GetMonthName(index)
+                   End Function).ToList().ForEach(Sub(item) Console.WriteLine(item))
+
     End Sub
     Private Sub SetActive()
 
