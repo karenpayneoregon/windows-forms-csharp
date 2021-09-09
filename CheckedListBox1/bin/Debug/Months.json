@@ -1,0 +1,50 @@
+[
+  {
+    "Text": "January",
+    "Checked": false
+  },
+  {
+    "Text": "February",
+    "Checked": true
+  },
+  {
+    "Text": "March",
+    "Checked": false
+  },
+  {
+    "Text": "April",
+    "Checked": false
+  },
+  {
+    "Text": "May",
+    "Checked": true
+  },
+  {
+    "Text": "June",
+    "Checked": false
+  },
+  {
+    "Text": "July",
+    "Checked": false
+  },
+  {
+    "Text": "August",
+    "Checked": false
+  },
+  {
+    "Text": "September",
+    "Checked": false
+  },
+  {
+    "Text": "October",
+    "Checked": false
+  },
+  {
+    "Text": "November",
+    "Checked": false
+  },
+  {
+    "Text": "December",
+    "Checked": true
+  }
+]
