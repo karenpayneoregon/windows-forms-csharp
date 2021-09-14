@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Windows.Forms;
 
 namespace PassingDataBetweenFormsSimple
@@ -38,6 +39,23 @@ namespace PassingDataBetweenFormsSimple
             FirstNameTextBox.Text = string.IsNullOrWhiteSpace(text) ? 
                 "(empty)" : 
                 text;
+        }
+
+        private void ShowConfirmButton_Click(object sender, EventArgs e)
+        {
+            var confirmForm = new ConfirmForm();
+
+            try
+            {
+                if (confirmForm.ShowDialog() == DialogResult.OK)
+                {
+                    Debug.WriteLine(confirmForm.Confirmed ? "Yes" : "No");
+                }
+            }
+            finally
+            {
+                confirmForm.Dispose();
+            }
         }
     }
 }
