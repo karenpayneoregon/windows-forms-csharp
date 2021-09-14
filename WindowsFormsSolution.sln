@@ -151,6 +151,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FileHelpersFrontEnd", "File
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FileHelpers", "FileHelpers\FileHelpers.csproj", "{DB71BFEB-D815-4742-8692-56CB79437FA0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PassingDataBetweenFormsSimple", "PassingDataBetweenFormsSimple\PassingDataBetweenFormsSimple.csproj", "{073C0CDB-1472-40AC-9903-AFD330FB2E03}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -603,6 +605,14 @@ Global
 		{DB71BFEB-D815-4742-8692-56CB79437FA0}.Release|Any CPU.Build.0 = Release|Any CPU
 		{DB71BFEB-D815-4742-8692-56CB79437FA0}.Release|x86.ActiveCfg = Release|Any CPU
 		{DB71BFEB-D815-4742-8692-56CB79437FA0}.Release|x86.Build.0 = Release|Any CPU
+		{073C0CDB-1472-40AC-9903-AFD330FB2E03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{073C0CDB-1472-40AC-9903-AFD330FB2E03}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{073C0CDB-1472-40AC-9903-AFD330FB2E03}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{073C0CDB-1472-40AC-9903-AFD330FB2E03}.Debug|x86.Build.0 = Debug|Any CPU
+		{073C0CDB-1472-40AC-9903-AFD330FB2E03}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{073C0CDB-1472-40AC-9903-AFD330FB2E03}.Release|Any CPU.Build.0 = Release|Any CPU
+		{073C0CDB-1472-40AC-9903-AFD330FB2E03}.Release|x86.ActiveCfg = Release|Any CPU
+		{073C0CDB-1472-40AC-9903-AFD330FB2E03}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -677,6 +687,7 @@ Global
 		{3DA3DE92-068B-45FA-B480-EBB4360FED03} = {2E5D5985-8504-422C-A302-6A46890F4ACB}
 		{DE1B8BB7-CBA6-4D9A-81C0-67A3AC178076} = {EB8074FC-097A-4DAD-B824-1C7AC3B3A52D}
 		{DB71BFEB-D815-4742-8692-56CB79437FA0} = {6BFCAE18-B5E1-4868-AFC0-184839D307D9}
+		{073C0CDB-1472-40AC-9903-AFD330FB2E03} = {2E5D5985-8504-422C-A302-6A46890F4ACB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {58AC3B13-B420-4F3C-8723-CE1E6C224D46}

@@ -27,6 +27,7 @@ namespace CounterExample
         {
             _counterTimer.Dispose();
         }
+        
 
         private void OnShown(object sender, EventArgs e)
         {
@@ -77,4 +78,6 @@ namespace CounterExample
         }
 
     }
+
+
 }
