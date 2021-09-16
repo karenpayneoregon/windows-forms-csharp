@@ -30,6 +30,7 @@ namespace ListBoxDisableApp
         private void InitializeComponent()
         {
             this.listBox1 = new ListBoxDisableApp.ListBoxEx();
+            this.SelectedButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // listBox1
@@ -41,11 +42,22 @@ namespace ListBoxDisableApp
             this.listBox1.Size = new System.Drawing.Size(280, 251);
             this.listBox1.TabIndex = 0;
             // 
+            // SelectedButton
+            // 
+            this.SelectedButton.Location = new System.Drawing.Point(22, 282);
+            this.SelectedButton.Name = "SelectedButton";
+            this.SelectedButton.Size = new System.Drawing.Size(75, 23);
+            this.SelectedButton.TabIndex = 1;
+            this.SelectedButton.Text = "Selected";
+            this.SelectedButton.UseVisualStyleBackColor = true;
+            this.SelectedButton.Click += new System.EventHandler(this.SelectedButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(329, 309);
+            this.ClientSize = new System.Drawing.Size(329, 347);
+            this.Controls.Add(this.SelectedButton);
             this.Controls.Add(this.listBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Form1";
@@ -57,6 +69,7 @@ namespace ListBoxDisableApp
         #endregion
 
         private ListBoxEx listBox1;
+        private System.Windows.Forms.Button SelectedButton;
     }
 }
 

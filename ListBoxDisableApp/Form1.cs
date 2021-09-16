@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -42,6 +43,12 @@ namespace ListBoxDisableApp
             {
                 listBox1.DisableItem(item.Index);
             }
+        }
+
+        private void SelectedButton_Click(object sender, EventArgs e)
+        {
+            var current = (ListItem)listBox1.SelectedItem;
+            MessageBox.Show(current != null ? $"{current.Name} {current.Disable}" : $"Disabled item");
         }
     }
 }
