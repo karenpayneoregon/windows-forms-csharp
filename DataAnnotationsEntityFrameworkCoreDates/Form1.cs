@@ -11,12 +11,13 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DataAnnotationsEntityFrameworkCoreDates.Classes;
 using DataAnnotationsEntityFrameworkCoreDates.DbContext;
+using DataAnnotationsEntityFrameworkCoreDates.Models;
 
 namespace DataAnnotationsEntityFrameworkCoreDates
 {
     public partial class Form1 : Form
     {
-        private BindingSource _bindingSource = new BindingSource();
+        private readonly BindingSource _bindingSource = new ();
         public Form1()
         {
             InitializeComponent();
@@ -25,34 +26,32 @@ namespace DataAnnotationsEntityFrameworkCoreDates
 
             Shown += OnShown;
         }
-
-        private void OnShown(object sender, EventArgs e)
+        
+        private async void OnShown(object sender, EventArgs e)
         {
-            using var context = new Context();
-            var people = context.Person1.ToList();
+            static async Task<List<Person1>> GetPeople()
+            {
+                return await Task.Run(async () =>
+                {
+                    await Task.Delay(1);
+                    await using var context = new Context();
+                    return context.Person1.ToList();
+                });
+            }
+
+            var people = await GetPeople();
 
             _bindingSource.DataSource = people;
             dataGridView1.DataSource = _bindingSource;
-
-            dataGridView1.DataError += DataGridView1OnDataError;
         }
 
-        private void DataGridView1OnDataError(object sender, DataGridViewDataErrorEventArgs e)
-        {
-            if (e.Exception.Message.Contains("not recognized as a valid DateTime"))
-            {
-                e.Cancel = true;
-                
-                MessageBox.Show("Not a date, correct or press ESC");
-            }
-            
-        }
-
-
-
-        private void ReadPeopleButton_Click(object sender, EventArgs e)
+        private void CurrentPersonButton_Click(object sender, EventArgs e)
         {
 
+            if (_bindingSource is null || _bindingSource.Current is null) return;
+
+            var current = (Person1)_bindingSource.Current;
+            MessageBox.Show($"{current.FirstName} {current.LastName}\n{current.BirthDateFormatted}");
         }
     }
 }

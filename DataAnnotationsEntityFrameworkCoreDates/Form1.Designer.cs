@@ -29,25 +29,25 @@ namespace DataAnnotationsEntityFrameworkCoreDates
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.ReadPeopleButton = new System.Windows.Forms.Button();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.GtCurrentPersonButton = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.FirstNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LastNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BirthDateColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BirthDateColumn = new DataAnnotationsEntityFrameworkCoreDates.Classes.CalendarColumn();
             this.AgeColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // ReadPeopleButton
+            // GtCurrentPersonButton
             // 
-            this.ReadPeopleButton.Location = new System.Drawing.Point(14, 15);
-            this.ReadPeopleButton.Name = "ReadPeopleButton";
-            this.ReadPeopleButton.Size = new System.Drawing.Size(225, 23);
-            this.ReadPeopleButton.TabIndex = 0;
-            this.ReadPeopleButton.Text = "Get people";
-            this.ReadPeopleButton.UseVisualStyleBackColor = true;
-            this.ReadPeopleButton.Click += new System.EventHandler(this.ReadPeopleButton_Click);
+            this.GtCurrentPersonButton.Location = new System.Drawing.Point(12, 145);
+            this.GtCurrentPersonButton.Name = "GtCurrentPersonButton";
+            this.GtCurrentPersonButton.Size = new System.Drawing.Size(225, 23);
+            this.GtCurrentPersonButton.TabIndex = 0;
+            this.GtCurrentPersonButton.Text = "Current person";
+            this.GtCurrentPersonButton.UseVisualStyleBackColor = true;
+            this.GtCurrentPersonButton.Click += new System.EventHandler(this.CurrentPersonButton_Click);
             // 
             // dataGridView1
             // 
@@ -58,7 +58,7 @@ namespace DataAnnotationsEntityFrameworkCoreDates
             this.LastNameColumn,
             this.BirthDateColumn,
             this.AgeColumn});
-            this.dataGridView1.Location = new System.Drawing.Point(15, 61);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 12);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 25;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -80,11 +80,12 @@ namespace DataAnnotationsEntityFrameworkCoreDates
             // BirthDateColumn
             // 
             this.BirthDateColumn.DataPropertyName = "BirthDate";
-            dataGridViewCellStyle1.Format = "d";
-            dataGridViewCellStyle1.NullValue = null;
-            this.BirthDateColumn.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Format = "d";
+            this.BirthDateColumn.DefaultCellStyle = dataGridViewCellStyle2;
             this.BirthDateColumn.HeaderText = "Date";
             this.BirthDateColumn.Name = "BirthDateColumn";
+            this.BirthDateColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.BirthDateColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // AgeColumn
             // 
@@ -99,7 +100,7 @@ namespace DataAnnotationsEntityFrameworkCoreDates
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(569, 193);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.ReadPeopleButton);
+            this.Controls.Add(this.GtCurrentPersonButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -111,11 +112,11 @@ namespace DataAnnotationsEntityFrameworkCoreDates
 
         #endregion
 
-        private System.Windows.Forms.Button ReadPeopleButton;
+        private System.Windows.Forms.Button GtCurrentPersonButton;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn FirstNameColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn LastNameColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn BirthDateColumn;
+        private Classes.CalendarColumn BirthDateColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn AgeColumn;
     }
 }

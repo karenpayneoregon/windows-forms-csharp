@@ -61,6 +61,7 @@ namespace ListBoxDisableApp
             this.Controls.Add(this.listBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Special ListBox";
             this.ResumeLayout(false);
 
