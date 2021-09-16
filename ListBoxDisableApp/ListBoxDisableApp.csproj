@@ -52,9 +52,10 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="ListBoxEx.cs">
+    <Compile Include="Controls\ListBoxEx.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Classes\ListItem.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -78,6 +79,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Content Include="readme.md" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

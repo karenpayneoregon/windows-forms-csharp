@@ -151,6 +151,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextBoxesInOrder", "TextBox
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ListBoxDisableApp", "ListBoxDisableApp\ListBoxDisableApp.csproj", "{71664363-BB75-4AF1-AAF7-47750B3E1B85}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAnnotationsEntityFrameworkCoreDates", "DataAnnotationsEntityFrameworkCoreDates\DataAnnotationsEntityFrameworkCoreDates.csproj", "{12CDB148-D566-41FF-B7A2-A9416694E745}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -605,6 +607,14 @@ Global
 		{71664363-BB75-4AF1-AAF7-47750B3E1B85}.Release|Any CPU.Build.0 = Release|Any CPU
 		{71664363-BB75-4AF1-AAF7-47750B3E1B85}.Release|x86.ActiveCfg = Release|Any CPU
 		{71664363-BB75-4AF1-AAF7-47750B3E1B85}.Release|x86.Build.0 = Release|Any CPU
+		{12CDB148-D566-41FF-B7A2-A9416694E745}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12CDB148-D566-41FF-B7A2-A9416694E745}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12CDB148-D566-41FF-B7A2-A9416694E745}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{12CDB148-D566-41FF-B7A2-A9416694E745}.Debug|x86.Build.0 = Debug|Any CPU
+		{12CDB148-D566-41FF-B7A2-A9416694E745}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12CDB148-D566-41FF-B7A2-A9416694E745}.Release|Any CPU.Build.0 = Release|Any CPU
+		{12CDB148-D566-41FF-B7A2-A9416694E745}.Release|x86.ActiveCfg = Release|Any CPU
+		{12CDB148-D566-41FF-B7A2-A9416694E745}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -679,6 +689,7 @@ Global
 		{49C04B21-B569-400F-A2F0-51F1203440D2} = {2E5D5985-8504-422C-A302-6A46890F4ACB}
 		{350DA35E-FA75-402D-8B06-C90D93CA6E52} = {2E5D5985-8504-422C-A302-6A46890F4ACB}
 		{71664363-BB75-4AF1-AAF7-47750B3E1B85} = {2E5D5985-8504-422C-A302-6A46890F4ACB}
+		{12CDB148-D566-41FF-B7A2-A9416694E745} = {746A92C3-5E0B-4536-A18F-D0542BFF7C60}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {58AC3B13-B420-4F3C-8723-CE1E6C224D46}
