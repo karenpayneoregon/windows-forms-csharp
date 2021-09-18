@@ -12,26 +12,26 @@ using System.Text.RegularExpressions;
 
 namespace FileHelpers
 {
-	public static class StringExtensions
-	{
-		public static string StringBetweenQuotes(this string sender)
-		{
-			Match match = Regex.Match(sender, "'([^']*)");
+    public static class StringExtensions
+    {
+        public static string StringBetweenQuotes(this string sender)
+        {
+            Match match = Regex.Match(sender, "'([^']*)");
 
-			if (match.Success)
-			{
-				return match.Groups[1].Value;
-			}
-			else
-			{
-				return sender;
-			}
-		}
+            if (match.Success)
+            {
+                return match.Groups[1].Value;
+            }
+            else
+            {
+                return sender;
+            }
+        }
 
-		public static bool ContainsAny(this string sender, params string[] values)
-		{
-			return values.Any((value) => sender.Contains(value));
-		}
-	}
+        public static bool ContainsAny(this string sender, params string[] values)
+        {
+            return values.Any((value) => sender.Contains(value));
+        }
+    }
 
 }

@@ -8,19 +8,13 @@ using System.Xml.Linq;
 
 namespace FileHelpers
 {
-	public class DirectoryItem
-	{
-		public string Name {get; set;}
-		public string Location {get; set;}
-		public DateTime Modified {get; set;}
-		public string[] ItemArray
-		{
-			get
-			{
-				return new[] {Location, Name, Modified.ToShortDateString()};
-			}
-		}
-		public override string ToString() => Name;
+    public class DirectoryItem
+    {
+        public string Name { get; set; }
+        public string Location { get; set; }
+        public DateTime Modified { get; set; }
+        public string[] ItemArray => new[] { Location, Name, Modified.ToShortDateString() };
+        public override string ToString() => Name;
     }
 
 }

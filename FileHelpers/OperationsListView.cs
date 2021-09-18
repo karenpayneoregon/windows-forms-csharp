@@ -11,172 +11,172 @@ using System.Threading;
 
 namespace FileHelpers
 {
-	public class OperationsListView
-	{
-		/// <summary>
-		/// Container for files containing SearchText
-		/// </summary>
-		public static List<FoundFile> FoundFileList = new List<FoundFile>();
+    public class OperationsListView
+    {
+        /// <summary>
+        /// Container for files containing SearchText
+        /// </summary>
+        public static List<FoundFile> FoundFileList = new List<FoundFile>();
 
-		public delegate void OnTraverseFolder(DirectoryItem information);
-		/// <summary>
-		/// Callback for when a folder is being processed
-		/// </summary>
-		public static event OnTraverseFolder OnTraverseEvent;
+        public delegate void OnTraverseFolder(DirectoryItem information);
+        /// <summary>
+        /// Callback for when a folder is being processed
+        /// </summary>
+        public static event OnTraverseFolder OnTraverseEvent;
 
-		/// <summary>
-		/// For traversing folders, if a cancellation is requested stop processing folders.
-		/// </summary>
-		public static bool Cancelled = false;
+        /// <summary>
+        /// For traversing folders, if a cancellation is requested stop processing folders.
+        /// </summary>
+        public static bool Cancelled = false;
 
-		/// <summary>
-		/// Text to search for in files
-		/// </summary>
-		public static string SearchText;
+        /// <summary>
+        /// Text to search for in files
+        /// </summary>
+        public static string SearchText;
 
-		public static async Task RecursiveFolders(DirectoryInfo directoryInfo, CancellationToken ct, string fileType = "*.txt")
-		{
+        public static async Task RecursiveFolders(DirectoryInfo directoryInfo, CancellationToken ct, string fileType = "*.txt")
+        {
 
-			if (!directoryInfo.Exists)
-			{
-				return;
-			}
+            if (!directoryInfo.Exists)
+            {
+                return;
+            }
 
-			//
-			// Let's say you are traversing folders with Git repositories, we don't
-			// want to include their folders.
-			//
-			if (!directoryInfo.FullName.ContainsAny(".git", "\\obj"))
-			{
+            //
+            // Let's say you are traversing folders with Git repositories, we don't
+            // want to include their folders.
+            //
+            if (!directoryInfo.FullName.ContainsAny(".git", "\\obj"))
+            {
 
-				DirectoryItem di = new DirectoryItem
-				{
-					Location = Path.GetDirectoryName(directoryInfo.FullName),
-					Name = directoryInfo.Name,
-					Modified = directoryInfo.CreationTime
-				};
+                DirectoryItem di = new DirectoryItem
+                {
+                    Location = Path.GetDirectoryName(directoryInfo.FullName),
+                    Name = directoryInfo.Name,
+                    Modified = directoryInfo.CreationTime
+                };
 
-				IterateFilesMultipleExtensions(di.Location);
+                IterateFilesMultipleExtensions(di.Location);
 
-				if (OnTraverseEvent != null)
-					OnTraverseEvent(di);
+                if (OnTraverseEvent != null)
+                    OnTraverseEvent(di);
 
-			}
+            }
 
-			await Task.Delay(1);
+            await Task.Delay(1);
 
-			DirectoryInfo folder = null;
+            DirectoryInfo folder = null;
 
-			try
-			{
+            try
+            {
 
-				await Task.Run(async () =>
-				{
-							   foreach (DirectoryInfo dir in directoryInfo.EnumerateDirectories())
-							   {
+                await Task.Run(async () =>
+                {
+                    foreach (DirectoryInfo dir in directoryInfo.EnumerateDirectories())
+                    {
 
-								   folder = dir;
+                        folder = dir;
 
-								   if (!Cancelled)
-								   {
+                        if (!Cancelled)
+                        {
 
-									   IterateFilesMultipleExtensions(dir.FullName);
-									   await Task.Delay(1);
-									   await RecursiveFolders(folder, ct);
+                            IterateFilesMultipleExtensions(dir.FullName);
+                            await Task.Delay(1);
+                            await RecursiveFolders(folder, ct);
 
-								   }
-								   else
-								   {
-									   return;
-								   }
+                        }
+                        else
+                        {
+                            return;
+                        }
 
-								   if (ct.IsCancellationRequested)
-								   {
-									   ct.ThrowIfCancellationRequested();
-								   }
+                        if (ct.IsCancellationRequested)
+                        {
+                            ct.ThrowIfCancellationRequested();
+                        }
 
-							   }
-				});
+                    }
+                });
 
-			}
-			catch (Exception ex)
-			{
-				//
-				// Operations.RecursiveFolders showed how to recognize
-				// folders that access has been denied, here these exceptions
-				// are ignored. A developer can integrate those exceptions here
-				// if so desired.
-				//
-				if (ex is OperationCanceledException)
-				{
+            }
+            catch (Exception ex)
+            {
+                //
+                // Operations.RecursiveFolders showed how to recognize
+                // folders that access has been denied, here these exceptions
+                // are ignored. A developer can integrate those exceptions here
+                // if so desired.
+                //
+                if (ex is OperationCanceledException)
+                {
 
-					Cancelled = true;
+                    Cancelled = true;
 
-				}
-			}
+                }
+            }
 
-		}
-		//public static void IterateFiles(string folderName, string fileType)
-		//{
+        }
+        //public static void IterateFiles(string folderName, string fileType)
+        //{
 
-		//	if (string.IsNullOrWhiteSpace(SearchText))
-		//	{
-		//		return;
-		//	}
+        //	if (string.IsNullOrWhiteSpace(SearchText))
+        //	{
+        //		return;
+        //	}
 
-		//	var files = Directory.GetFiles(folderName, fileType);
+        //	var files = Directory.GetFiles(folderName, fileType);
 
-		//	if (files.Length > 0)
-		//	{
-		//		foreach (string fileName in files)
-		//		{
-		//			var current = fileName;
+        //	if (files.Length > 0)
+        //	{
+        //		foreach (string fileName in files)
+        //		{
+        //			var current = fileName;
 
-		//			var result = File.ReadLines(fileName).Select((text, index) => new {text, LineNumber = index + 1}).Where((anonymous) => anonymous.text.Contains(SearchText)).ToList();
+        //			var result = File.ReadLines(fileName).Select((text, index) => new {text, LineNumber = index + 1}).Where((anonymous) => anonymous.text.Contains(SearchText)).ToList();
 
-		//			if (result.Count > 0)
-		//			{
+        //			if (result.Count > 0)
+        //			{
 
-		//				foreach (System.Collections.Generic.IEnumerable<object> foundFileItem in
-		//					from anonymous in result
-		//					select new FoundFile()
-		//					{
-		//						Text = anonymous.text,
-		//						LineNumber = anonymous.LineNumber,
-		//						FileName = current
-		//					} where !FoundFileList.Contains(item) into item select item)
-		//				{
+        //				foreach (System.Collections.Generic.IEnumerable<object> foundFileItem in
+        //					from anonymous in result
+        //					select new FoundFile()
+        //					{
+        //						Text = anonymous.text,
+        //						LineNumber = anonymous.LineNumber,
+        //						FileName = current
+        //					} where !FoundFileList.Contains(item) into item select item)
+        //				{
 
-		//					FoundFileList.Add(foundFileItem);
+        //					FoundFileList.Add(foundFileItem);
 
-		//				}
+        //				}
 
-		//			}
+        //			}
 
-		//		}
-		//	}
+        //		}
+        //	}
 
-		//}
-		public static void IterateFilesMultipleExtensions(string folderName)
-		{
+        //}
+        public static void IterateFilesMultipleExtensions(string folderName)
+        {
 
-			if (string.IsNullOrWhiteSpace(SearchText))
-			{
-				return;
-			}
+            if (string.IsNullOrWhiteSpace(SearchText))
+            {
+                return;
+            }
 
 
-			var dInfo = new DirectoryInfo(folderName);
-			var files = dInfo.GetFilesByExtensions(".png", ".exe").Select((item) => item.Name).ToArray();
+            var dInfo = new DirectoryInfo(folderName);
+            var files = dInfo.GetFilesByExtensions(".png", ".exe").Select((item) => item.Name).ToArray();
 
-			if (files.Length > 0)
-			{
-				foreach (string fileName in files)
-				{
-					FoundFileList.Add(new FoundFile() {FileName = fileName});
-				}
-			}
+            if (files.Length > 0)
+            {
+                foreach (string fileName in files)
+                {
+                    FoundFileList.Add(new FoundFile() { FileName = fileName });
+                }
+            }
 
-		}
-	}
+        }
+    }
 }
