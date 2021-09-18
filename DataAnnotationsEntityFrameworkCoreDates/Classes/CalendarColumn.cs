@@ -1,9 +1,11 @@
 ﻿using System;
+using System.Drawing;
 using System.Globalization;
 using System.Windows.Forms;
 
 namespace DataAnnotationsEntityFrameworkCoreDates.Classes
 {
+    [ToolboxBitmap(typeof(DateTimePicker))]
     public class CalendarColumn : DataGridViewColumn
     {
         public CalendarColumn() : base(new CalendarCell())
@@ -28,7 +30,8 @@ namespace DataAnnotationsEntityFrameworkCoreDates.Classes
     {
         public CalendarCell()
         {
-            Style.Format = "d"; // Use the short date format.
+            Style.Format = "yyyy-MM-dd"; 
+            //Style.Format = "d"; // Use the short date format.
             EmptyDate = DateTime.Now;
         }
         /// <summary>
@@ -54,6 +57,7 @@ namespace DataAnnotationsEntityFrameworkCoreDates.Classes
         public override Type EditType => typeof(CalendarEditingControl);
         public override Type ValueType => typeof(DateTime);
         public override object DefaultNewRowValue => DateTime.Now;
+
     }
     /// <summary>
     /// Provides Calendar popup within the DataGridView.
@@ -67,7 +71,9 @@ namespace DataAnnotationsEntityFrameworkCoreDates.Classes
 
         public CalendarEditingControl()
         {
-            Format = DateTimePickerFormat.Short;
+            Format = DateTimePickerFormat.Custom;
+            CustomFormat = "yyyy-MM-dd";
+            //Format = DateTimePickerFormat.Short;
         }
 
         public object EditingControlFormattedValue
@@ -92,8 +98,6 @@ namespace DataAnnotationsEntityFrameworkCoreDates.Classes
             CalendarMonthBackground = dataGridViewCellStyle.BackColor;
         }
 
-        /// <inheritdoc />
-        // ReSharper disable once ConvertToAutoProperty
         public int EditingControlRowIndex
         {
             get => _rowIndexNumber;
@@ -115,16 +119,12 @@ namespace DataAnnotationsEntityFrameworkCoreDates.Classes
         }
         public bool RepositionEditingControlOnValueChange => false;
 
-        /// <inheritdoc />
-        // ReSharper disable once ConvertToAutoProperty
         public DataGridView EditingControlDataGridView
         {
             get => _dataGridViewControl;
             set => _dataGridViewControl = value;
         }
 
-        /// <inheritdoc />
-        // ReSharper disable once ConvertToAutoProperty
         public bool EditingControlValueChanged
         {
             get => _valueChanged;

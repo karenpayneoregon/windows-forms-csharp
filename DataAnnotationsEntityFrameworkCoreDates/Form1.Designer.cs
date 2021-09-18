@@ -29,13 +29,14 @@ namespace DataAnnotationsEntityFrameworkCoreDates
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.GtCurrentPersonButton = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.FirstNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LastNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BirthDateColumn = new DataAnnotationsEntityFrameworkCoreDates.Classes.CalendarColumn();
             this.AgeColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BirthDateDateTimePicker = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -80,8 +81,8 @@ namespace DataAnnotationsEntityFrameworkCoreDates
             // BirthDateColumn
             // 
             this.BirthDateColumn.DataPropertyName = "BirthDate";
-            dataGridViewCellStyle2.Format = "d";
-            this.BirthDateColumn.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Format = "d";
+            this.BirthDateColumn.DefaultCellStyle = dataGridViewCellStyle1;
             this.BirthDateColumn.HeaderText = "Date";
             this.BirthDateColumn.Name = "BirthDateColumn";
             this.BirthDateColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -94,11 +95,21 @@ namespace DataAnnotationsEntityFrameworkCoreDates
             this.AgeColumn.HeaderText = "Age";
             this.AgeColumn.Name = "AgeColumn";
             // 
+            // BirthDateDateTimePicker
+            // 
+            this.BirthDateDateTimePicker.CustomFormat = "yyyy-MM-dd";
+            this.BirthDateDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.BirthDateDateTimePicker.Location = new System.Drawing.Point(354, 143);
+            this.BirthDateDateTimePicker.Name = "BirthDateDateTimePicker";
+            this.BirthDateDateTimePicker.Size = new System.Drawing.Size(200, 23);
+            this.BirthDateDateTimePicker.TabIndex = 2;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(569, 193);
+            this.Controls.Add(this.BirthDateDateTimePicker);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.GtCurrentPersonButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
@@ -118,6 +129,7 @@ namespace DataAnnotationsEntityFrameworkCoreDates
         private System.Windows.Forms.DataGridViewTextBoxColumn LastNameColumn;
         private Classes.CalendarColumn BirthDateColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn AgeColumn;
+        private System.Windows.Forms.DateTimePicker BirthDateDateTimePicker;
     }
 }
 

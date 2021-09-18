@@ -18,6 +18,7 @@ namespace DataAnnotationsEntityFrameworkCoreDates
     public partial class Form1 : Form
     {
         private readonly BindingSource _bindingSource = new ();
+
         public Form1()
         {
             InitializeComponent();
@@ -25,10 +26,12 @@ namespace DataAnnotationsEntityFrameworkCoreDates
             dataGridView1.AutoGenerateColumns = false;
 
             Shown += OnShown;
+
         }
         
         private async void OnShown(object sender, EventArgs e)
         {
+
             static async Task<List<Person1>> GetPeople()
             {
                 return await Task.Run(async () =>
@@ -43,15 +46,36 @@ namespace DataAnnotationsEntityFrameworkCoreDates
 
             _bindingSource.DataSource = people;
             dataGridView1.DataSource = _bindingSource;
+
+            BirthDateDateTimePicker.DataBindings.Add(
+                "Value", _bindingSource, 
+                "BirthDate", 
+                false, 
+                DataSourceUpdateMode.OnPropertyChanged);
+
+            BirthDateDateTimePicker.ValueChanged += BirthDateDateTimePickerOnValueChanged;
         }
 
+        private void BirthDateDateTimePickerOnValueChanged(object sender, EventArgs e)
+        {
+            if (_bindingSource is null || _bindingSource.Current is null) return;
+
+            var current = (Person1)_bindingSource.Current;
+
+            current.BirthDate = BirthDateDateTimePicker.Value;
+
+        }
+        
         private void CurrentPersonButton_Click(object sender, EventArgs e)
         {
 
             if (_bindingSource is null || _bindingSource.Current is null) return;
 
             var current = (Person1)_bindingSource.Current;
-            MessageBox.Show($"{current.FirstName} {current.LastName}\n{current.BirthDateFormatted}");
+
+            MessageBox.Show(
+                $"{current.FirstName} {current.LastName}\n" + 
+                $"{current.BirthDate.Value:yyyy-MM-dd}");
         }
     }
 }
