@@ -2,21 +2,32 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Diagnostics;
+using System.Globalization;
 using System.Linq;
 using AccountsToDictionaryEfCore.Data;
 using MoreLinq;
 
 namespace AccountsToDictionaryEfCore
 {
+    public class Item
+    {
+        public string Value { get; set; }
+        public int Index { get; set; }
+        public override string ToString() => $"{Index,2:D2} {Value}";
+
+    }
+
     class Program
     {
         static void Main(string[] args)
         {
             Console.Title = "ToDictionary";
             //Version1();
-            More();
-            //Console.ReadLine();
+            //More();
+            //Interesting();
+            Console.ReadLine();
         }
+
 
         private static void Version1()
         {
@@ -44,6 +55,19 @@ namespace AccountsToDictionaryEfCore
             {
                 Debug.WriteLine(string.Join(",", row.ItemArray));
             }
+        }
+
+        private static void Interesting()
+        {
+
+            var months = Enumerable.Range(1, 12)
+                .Select((index) => DateTimeFormatInfo.CurrentInfo.GetMonthName(index))
+                .ToList();
+
+            months.Select((value, index) 
+                => new Item { Value = value, Index = index })
+                .ToList()
+                .ForEach(Console.WriteLine);
         }
     }
 }

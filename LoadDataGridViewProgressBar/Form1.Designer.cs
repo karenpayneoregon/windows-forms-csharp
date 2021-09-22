@@ -102,7 +102,6 @@ namespace LoadDataGridViewProgressBar
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
-
         }
 
         #endregion

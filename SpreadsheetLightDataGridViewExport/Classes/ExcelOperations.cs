@@ -116,4 +116,26 @@ namespace SpreadsheetLightDataGridViewExport.Classes
             }
         }
     }
+
+    public class SpreadSheetLightDemos
+    {
+        public static (bool success, Exception exception) Export(DataTable table, string fileName, string sheetName)
+        {
+            try
+            {
+                using (var document = new SLDocument())
+                {
+                    document.ImportDataTable(1, SLConvert.ToColumnIndex("A"), table, true);
+                    document.RenameWorksheet(SLDocument.DefaultFirstSheetName, sheetName);
+                    document.SaveAs(fileName);
+
+                    return (true, null);
+                }
+            }
+            catch (Exception exception)
+            {
+                return (false, exception);
+            }
+        }
+    }
 }

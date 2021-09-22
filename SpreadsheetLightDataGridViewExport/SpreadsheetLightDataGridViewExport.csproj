@@ -68,6 +68,7 @@
     <Compile Include="Classes\ExcelHelpers.cs" />
     <Compile Include="Classes\ExcelOperations.cs" />
     <Compile Include="Classes\SpreadSheetLightOperations.cs" />
+    <Compile Include="Classes\SpreadSheetLightSearchOperations.cs" />
     <Compile Include="Classes\StringExtensions.cs" />
     <Compile Include="CreateFileWithSheets.cs">
       <SubType>Form</SubType>

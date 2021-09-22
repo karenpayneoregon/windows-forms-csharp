@@ -28,6 +28,7 @@ Partial Class Form1
         Me.ExportSimpleButton = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
+        Me.FindTextBox = New System.Windows.Forms.TextBox()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -84,11 +85,19 @@ Partial Class Form1
         Me.Button3.Text = "Button3"
         Me.Button3.UseVisualStyleBackColor = True
         '
+        'FindTextBox
+        '
+        Me.FindTextBox.Location = New System.Drawing.Point(625, 247)
+        Me.FindTextBox.Name = "FindTextBox"
+        Me.FindTextBox.Size = New System.Drawing.Size(100, 20)
+        Me.FindTextBox.TabIndex = 6
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(897, 284)
+        Me.Controls.Add(Me.FindTextBox)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.ExportSimpleButton)
@@ -101,6 +110,7 @@ Partial Class Form1
         Me.Text = "Export DataGridView to Excel"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -110,4 +120,5 @@ Partial Class Form1
     Friend WithEvents ExportSimpleButton As Button
     Friend WithEvents Button2 As Button
     Friend WithEvents Button3 As Button
+    Friend WithEvents FindTextBox As TextBox
 End Class

@@ -1,4 +1,6 @@
 ﻿Imports System.ComponentModel
+Imports System.IO
+Imports SpreadSheetLightVb1.Classes
 
 Public Class Form1
     Private Sub Form1_Shown(sender As Object, e As EventArgs) Handles Me.Shown
@@ -46,6 +48,17 @@ Public Class Form1
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
-        ExcelOperations2.Numbers()
+
+        Dim fileName = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "SomeFile.xlsx")
+        Dim sheetName = "SomeSheetName"
+
+        Dim Results = SpreadSheetLightSearchOperations.Find(fileName, sheetName, FindTextBox.Text)
+
+        If Results.exception IsNot Nothing Then
+            For Each foundItem As FoundItem In Results.items
+                Debug.WriteLine(foundItem)
+            Next
+        End If
+
     End Sub
 End Class

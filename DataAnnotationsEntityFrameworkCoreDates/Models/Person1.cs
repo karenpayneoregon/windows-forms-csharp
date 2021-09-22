@@ -36,7 +36,7 @@ namespace DataAnnotationsEntityFrameworkCoreDates.Models
         /// <summary>
         /// For desktop apps
         /// </summary>
-        public string BirthDateFormatted 
+        public string Age 
             => BirthDate?.Age(DateTime.Now).YearsMonthsDays;
 
         public event PropertyChangedEventHandler PropertyChanged;

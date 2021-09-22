@@ -82,6 +82,7 @@
     <Compile Include="Classes\DataGridViewExtensionMethods.vb" />
     <Compile Include="Classes\DataOperationsSqlServer.vb" />
     <Compile Include="Classes\Extensions.vb" />
+    <Compile Include="Classes\SpreadSheetLightSearchOperations.vb" />
     <Compile Include="ExcelClasses\ExcelOperations.vb" />
     <Compile Include="ExcelClasses\ExcelOperations1.vb" />
     <Compile Include="ExcelClasses\ExcelOperations2.vb" />

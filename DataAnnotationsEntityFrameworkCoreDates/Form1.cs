@@ -10,7 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DataAnnotationsEntityFrameworkCoreDates.Classes;
-using DataAnnotationsEntityFrameworkCoreDates.DbContext;
+using DataAnnotationsEntityFrameworkCoreDates.Data;
 using DataAnnotationsEntityFrameworkCoreDates.Models;
 
 namespace DataAnnotationsEntityFrameworkCoreDates
@@ -18,6 +18,7 @@ namespace DataAnnotationsEntityFrameworkCoreDates
     public partial class Form1 : Form
     {
         private readonly BindingSource _bindingSource = new ();
+        private SortableBindingList<Person1> _sortableBindingList;
 
         public Form1()
         {
@@ -42,15 +43,12 @@ namespace DataAnnotationsEntityFrameworkCoreDates
                 });
             }
 
-            var people = await GetPeople();
-
-            _bindingSource.DataSource = people;
+            _sortableBindingList = new SortableBindingList<Person1>(await GetPeople()) ;
+            
+            _bindingSource.DataSource = _sortableBindingList;
             dataGridView1.DataSource = _bindingSource;
 
-            BirthDateDateTimePicker.DataBindings.Add(
-                "Value", _bindingSource, 
-                "BirthDate", 
-                false, 
+            BirthDateDateTimePicker.DataBindings.Add("Value", _bindingSource, "BirthDate", false, 
                 DataSourceUpdateMode.OnPropertyChanged);
 
             BirthDateDateTimePicker.ValueChanged += BirthDateDateTimePickerOnValueChanged;
@@ -71,7 +69,7 @@ namespace DataAnnotationsEntityFrameworkCoreDates
 
             if (_bindingSource is null || _bindingSource.Current is null) return;
 
-            var current = (Person1)_bindingSource.Current;
+            var current = _sortableBindingList[_bindingSource.Position];
 
             MessageBox.Show(
                 $"{current.FirstName} {current.LastName}\n" + 

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+
 using System.IO;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -10,6 +11,7 @@ using DirectoryGetFilesMultipleFilters.Classes;
 
 namespace DirectoryGetFilesMultipleFilters
 {
+
     /// <summary>
     /// Can you call Directory.GetFiles() with multiple filters?
     /// 
@@ -18,10 +20,13 @@ namespace DirectoryGetFilesMultipleFilters
     /// </summary>
     partial class Program
     {
+
         static async Task Main(string[] args)
         {
+
             await Task.Delay(5);
 
+            
             HalfBakedNoviceAttempt();
 
             Console.ReadLine();
@@ -70,6 +75,10 @@ namespace DirectoryGetFilesMultipleFilters
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("Next");
             Console.ResetColor();
+
+
+
+            
 
             var files1 = Directory
                 .GetFiles(directoryName)

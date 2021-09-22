@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
@@ -52,6 +53,26 @@ namespace SpreadsheetLightDataGridViewExport
                     MessageBox.Show($"No rows found for {PoliciesListBox.Text}");
                 }
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var fileName = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "FindDups.xlsx");
+            var sheetName = "SearchFor";
+
+            var (items, exception) = SpreadSheetLightSearchOperations.Find(fileName, sheetName, "OLD04");
+            if (exception is null)
+            {
+                foreach (var foundItem in items)
+                {
+                    Debug.WriteLine(foundItem);
+                }
+            }
+            else
+            {
+                Debug.WriteLine(exception.Message);
+            }
+
         }
     }
 }
