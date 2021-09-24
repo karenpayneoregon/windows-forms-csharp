@@ -75,3 +75,10 @@ public static partial class CheckedListBoxExtensions
 
 
 ![img](assets/screens.png)
+
+# CancellationToken
+
+- In this project data is loaded with a small data set, if this was a large data set you have the option to pass in a TimeSpan so say the intended operation is known to take 2 seconds and if the perhaps the server is unreachable the connection timeout is 30 seconds but setting a TimeSpan to 5 seconds the timeout is acceptable.
+ 
+- If there is a need to reuse a CancellationToken first assert IsCancellationRequested, if true recreate the IsCancellationRequested prior to using else you can reuse the CancellationToken.
+

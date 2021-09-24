@@ -25,6 +25,7 @@ namespace SqlServerAsyncReadCore
 
         private async void OnShown(object? sender, EventArgs e)
         {
+
             try
             {
                 DataTable table = await DataOperations.ReadProductsTask(_cancellationTokenSource.Token);
@@ -74,7 +75,7 @@ namespace SqlServerAsyncReadCore
         }
 
 
-        private async void button1_Click(object sender, EventArgs e)
+        private async void HardWiredWhereInButton_Click(object sender, EventArgs e)
         {
             var (exception, success, list) = await SqlOperations.ReadPlaceholderTask(_cancellationTokenSource.Token);
             if (success)

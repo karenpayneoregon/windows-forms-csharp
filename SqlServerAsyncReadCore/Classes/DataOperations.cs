@@ -14,7 +14,7 @@ namespace SqlServerAsyncReadCore.Classes
             "Data Source=.\\sqlexpress;Initial Catalog=NorthWind2020;Integrated Security=True";
 
 
-        public static async Task<DataTable> ReadProductsTask(CancellationToken ct)
+        public static async Task<DataTable> ReadProductsTask(CancellationToken cancellationToken)
         {
 
             return await Task.Run(async () =>
@@ -23,20 +23,21 @@ namespace SqlServerAsyncReadCore.Classes
 
                 await using var cn = new SqlConnection(_connectionString);
                 await using var cmd = new SqlCommand {Connection = cn, CommandText = SelectStatement()};
+
                 try
                 {
-                    await cn.OpenAsync(ct);
+                    await cn.OpenAsync(cancellationToken);
                 }
-                catch (TaskCanceledException tce)
+                catch (TaskCanceledException)
                 {
                     return null;
                 }
-                catch (Exception ex)
+                catch (Exception exception) // consider adapting the return type to tuple and include the exception
                 {
                     return null;
                 }
 
-                productTable.Load(await cmd.ExecuteReaderAsync(ct));
+                productTable.Load(await cmd.ExecuteReaderAsync(cancellationToken));
 
                 return productTable;
 
@@ -44,9 +45,10 @@ namespace SqlServerAsyncReadCore.Classes
 
         }
 
-        public static async Task<(Exception, bool success, List<object>)> ReadPlaceholderTask(CancellationToken ct)
+        public static async Task<(Exception, bool success, List<object>)> ReadPlaceholderTask(CancellationToken cancellationToken)
         {
             (Exception, bool, List<object>) result = (null, true, new List<object>());
+
             var selectStatement = "";
             
             return await Task.Run(async () =>
@@ -57,8 +59,8 @@ namespace SqlServerAsyncReadCore.Classes
                 
                 try
                 {
-                    await cn.OpenAsync(ct);
-                    var reader = await cmd.ExecuteReaderAsync(ct);
+                    await cn.OpenAsync(cancellationToken);
+                    var reader = await cmd.ExecuteReaderAsync(cancellationToken);
 
                     if (reader.HasRows)
                     {
@@ -78,7 +80,7 @@ namespace SqlServerAsyncReadCore.Classes
 
                 return result;
                 
-            }, ct);
+            }, cancellationToken);
         }
 
 

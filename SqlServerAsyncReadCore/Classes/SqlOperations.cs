@@ -11,7 +11,7 @@ namespace SqlServerAsyncReadCore.Classes
     {
         private static readonly string _connectionString = ConnectionString();
 
-        public static async Task<(Exception, bool, List<string>)> ReadPlaceholderTask(CancellationToken ct)
+        public static async Task<(Exception, bool, List<string>)> ReadPlaceholderTask(CancellationToken cancellationToken)
         {
             (Exception, bool, List<string> namesList) result = (null, true, new List<string>());
 
@@ -25,12 +25,12 @@ namespace SqlServerAsyncReadCore.Classes
 
                 try
                 {
-                    await cn.OpenAsync(ct);
-                    var reader = await cmd.ExecuteReaderAsync(ct);
+                    await cn.OpenAsync(cancellationToken);
+                    var reader = await cmd.ExecuteReaderAsync(cancellationToken);
 
                     if (reader.HasRows)
                     {
-                        while (reader.Read())
+                        while (await reader.ReadAsync(cancellationToken))
                         {
                             result.namesList.Add(reader.GetString(0));
                         }
@@ -50,7 +50,7 @@ namespace SqlServerAsyncReadCore.Classes
 
                 return result;
 
-            }, ct);
+            }, cancellationToken);
         }
 
 
