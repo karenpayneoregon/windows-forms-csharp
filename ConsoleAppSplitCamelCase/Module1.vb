@@ -1,4 +1,5 @@
-﻿Imports System.Text.RegularExpressions
+﻿Imports System.IO
+Imports System.Text.RegularExpressions
 
 Module Module1
 
@@ -17,7 +18,25 @@ Module Module1
 
         data.ForEach(Sub(item) Console.WriteLine($"{item,-25}[{item.SplitCamelCase}]"))
     End Sub
+    ''' <summary>
+    ''' Removed 'mark of the web' from all files in a folder recursively 
+    ''' </summary>
+    ''' <param name="folderName">folder to perform the operation on</param>
+    Public Sub UnblockFiles(folderName As String)
+        If Not Directory.Exists(folderName) Then
+            Return
+        End If
 
+        Dim start = New ProcessStartInfo With {
+                .FileName = "powershell.exe",
+                .Arguments = $"Get-ChildItem -Path '{folderName}' -Recurse | Unblock-File",
+                .CreateNoWindow = True
+                }
+
+        Using process As Process = Process.Start(start)
+
+        End Using
+    End Sub
 End Module
 Public Module StringExtensions
     <Runtime.CompilerServices.Extension>

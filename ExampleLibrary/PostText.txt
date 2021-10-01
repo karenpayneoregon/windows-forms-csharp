@@ -1,0 +1,17 @@
+﻿public class Customer
+{
+    public int ID { get; set; }
+    public string Name { get; set; }
+}
+
+ public class Order
+ {
+     public int ID { get; set; }
+     public string Product { get; set; }
+ }
+
+
+public string commonMethod(Customer c)
+{
+    common logic for Customer and Order objects
+}

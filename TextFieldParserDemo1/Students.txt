@@ -1,0 +1,5 @@
+﻿1,Nile,Smith,English,Class1,100.00
+1,Nile,Smith,English,Class2,99.5
+2,Mary,Adams,English,Class2,99.00
+1,Nile,Smith,Computer Science,Class1,80.4
+2,Mary,Adams,English,Class3,90.25
