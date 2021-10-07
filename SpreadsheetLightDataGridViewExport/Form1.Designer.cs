@@ -33,6 +33,7 @@ namespace SpreadsheetLightDataGridViewExport
             this.ExcelExportButton = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.SearchTextBox = new System.Windows.Forms.TextBox();
+            this.CloneTableButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -73,11 +74,22 @@ namespace SpreadsheetLightDataGridViewExport
             this.SearchTextBox.TabIndex = 3;
             this.SearchTextBox.Text = "What year is it";
             // 
+            // CloneTableButton
+            // 
+            this.CloneTableButton.Location = new System.Drawing.Point(573, 201);
+            this.CloneTableButton.Name = "CloneTableButton";
+            this.CloneTableButton.Size = new System.Drawing.Size(75, 23);
+            this.CloneTableButton.TabIndex = 4;
+            this.CloneTableButton.Text = "Clone";
+            this.CloneTableButton.UseVisualStyleBackColor = true;
+            this.CloneTableButton.Click += new System.EventHandler(this.CloneTableButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(694, 234);
+            this.Controls.Add(this.CloneTableButton);
             this.Controls.Add(this.SearchTextBox);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.ExcelExportButton);
@@ -97,6 +109,7 @@ namespace SpreadsheetLightDataGridViewExport
         private System.Windows.Forms.Button ExcelExportButton;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox SearchTextBox;
+        private System.Windows.Forms.Button CloneTableButton;
     }
 }
 

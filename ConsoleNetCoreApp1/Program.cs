@@ -1,5 +1,6 @@
 ﻿using ExampleLibrary.Classes;
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 
@@ -9,15 +10,30 @@ namespace ContainsAny
     {
         static void Main(string[] args)
         {
-            Customer customer = new () {Id = 1, Name = "Adams"};
+            Dictionary<string, int> dictionary = new Dictionary<string, int> { { "", 1 } };
+
+            DateTime birthdate = new DateTime(1956, 9, 24);
+            // Save today's date.
+            var today = DateTime.Today;
+
+            // Calculate the age.
+            var age = today.Year - birthdate.Year;
+
+            // Go back to the year in which the person was born in case of a leap year
+            if (birthdate.Date > today.AddYears(-age)) age--;
+        }
+
+        private static void MainRun()
+        {
+            Customer customer = new() { Id = 1, Name = "Adams" };
             Debug.WriteLine(Operations.Common(customer));
 
-            Order order = new () {Id = 12, Product = "Phone"};
+            Order order = new() { Id = 12, Product = "Phone" };
             Debug.WriteLine(Operations.Common(order));
 
             try
             {
-                Contact contact = new () { Id = 45, FirstName = "Jim", LastName = "Smith" };
+                Contact contact = new() { Id = 45, FirstName = "Jim", LastName = "Smith" };
                 Debug.WriteLine(Operations.Common(contact));
             }
             catch (Exception exception)

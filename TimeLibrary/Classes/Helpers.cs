@@ -48,8 +48,16 @@ namespace TimeLibrary.Classes
         /// <param name="minutes"></param>
         /// <param name="seconds"></param>
         /// <param name="milliseconds"></param>
-        public static void GetElapsedTime(this DateTime fromDate, DateTime toDate, out int years, out int months, out int days, out int hours, out int minutes, out int seconds, out int milliseconds)
-        {
+        public static void GetElapsedTime(
+            this DateTime fromDate, 
+            DateTime toDate, 
+            out int years, 
+            out int months, 
+            out int days, 
+            out int hours, 
+            out int minutes, 
+            out int seconds, 
+            out int milliseconds) {
             // If from_date > to_date, switch them around.
             if (fromDate > toDate)
             {

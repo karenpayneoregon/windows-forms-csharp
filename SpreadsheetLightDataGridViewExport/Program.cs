@@ -16,7 +16,7 @@ namespace SpreadsheetLightDataGridViewExport
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new PoliciesForm());
+            Application.Run(new Form1());
         }
     }
 }

@@ -20,7 +20,7 @@ namespace StringInterpolationTemplating
 
     public class Template1
     {
-        private const string Template = @"Her name is {name} and her birthday is on {dob}, which is in {month}.";
+        private const string Template = @"Her name is {name} and her birthday is on {dob}, which is in {month} for {name}.";
         private readonly Dictionary<string, string> _parameters = new();
 
         public Template1(string name, DateTime dob)

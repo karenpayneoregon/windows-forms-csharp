@@ -4,11 +4,17 @@
 
         Private ReadOnly MyProperties As Reflection.PropertyInfo()
         Private ReadOnly MyBitmapNames As List(Of String)
-        Private BitMapImages As Dictionary(Of String, Bitmap)
+        Public BitMapImages As new Dictionary(Of String, Bitmap)
+
+        Public ReadOnly Property HasImages() As Boolean
+        get
+            Return BitMapImages.Count >0
+        End Get
+        End Property
 
         Private Sub GetBitMapImages()
 
-            BitMapImages = New Dictionary(Of String, Bitmap)
+            'BitMapImages = New Dictionary(Of String, Bitmap)
 
             Dim propertyInfo As Reflection.PropertyInfo() =
                 GetType(Resources.Resources).GetProperties(Reflection.BindingFlags.NonPublic Or
@@ -29,14 +35,6 @@
             End If
 
         End Sub
-        ''' <summary>
-        ''' Gets a image from resource or if not found a blank image
-        ''' </summary>
-        ''' <param name="sender">Name of an existing item in My.Resources</param>
-        ''' <returns></returns>
-        ''' <remarks>
-        ''' For this demo I return a transparent bitmap, feel free to change.
-        ''' </remarks>
         Public Function BitmapFromResource(sender As String) As Bitmap
 
             Dim Item = (
@@ -56,12 +54,6 @@
             End If
 
         End Function
-        ''' <summary>
-        ''' Returns a list of bitmap names in this project resources w/ extension
-        ''' </summary>
-        ''' <value></value>
-        ''' <returns></returns>
-        ''' <remarks></remarks>
         Public ReadOnly Property BitmapNames As List(Of String)
             Get
                 Return MyBitmapNames

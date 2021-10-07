@@ -99,6 +99,16 @@ Public Class ExcelOperations
         End Using
 
     End Sub
+    Public Shared Sub ExportTable(pFileName As String, pSheetName As String, pDataTable As DataTable, pColumnHeaders As Boolean)
+
+        Using doc As New SLDocument()
+            doc.SelectWorksheet(pSheetName)
+            doc.ImportDataTable(1, SLConvert.ToColumnIndex("A"), pDataTable, pColumnHeaders)
+            doc.RenameWorksheet(SLDocument.DefaultFirstSheetName, pSheetName)
+            doc.SaveAs(pFileName)
+        End Using
+
+    End Sub
     Public Shared Sub InsertTable()
 
 

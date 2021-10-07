@@ -48,4 +48,19 @@ Public Class Form1
         End If
 
     End Sub
+
+
+    Private Sub SearchButton_Click(sender As Object, e As EventArgs) _
+        Handles SearchButton.Click
+
+        If String.IsNullOrWhiteSpace(SearchTextBox.Text) Then
+            bindingSource.Filter = ""
+        Else
+            Dim currentRowCount = bindingSource.Count
+            bindingSource.Filter = $"TRIM(LastName) = '{SearchTextBox.Text}'"
+            MessageBox.Show($"Before: {currentRowCount} Now: {bindingSource.Count}")
+        End If
+
+    End Sub
+
 End Class

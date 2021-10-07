@@ -51,7 +51,7 @@ Public Class EmployeeOperations
             Using cn = New SqlConnection With {.ConnectionString = _connectionString}
                 Using cmd = New SqlCommand With {.Connection = cn}
 
-                    cmd.CommandText = "SELECT EmployeeID, LastName, FirstName, HireDate FROM dbo.Employees WHERE ACTIVE = 1;"
+                    cmd.CommandText = "SELECT EmployeeID, LastName, FirstName, HireDate FROM dbo.Employees;"
                     cn.Open()
                     Table.Load(cmd.ExecuteReader())
 

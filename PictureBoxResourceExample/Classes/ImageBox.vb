@@ -5,4 +5,5 @@
     ''' </summary>
     ''' <returns></returns>
     Public Property ResourceName() As String
+    
 End Class

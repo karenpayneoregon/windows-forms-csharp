@@ -44,5 +44,15 @@ namespace SpreadsheetLightDataGridViewExport
                 Console.WriteLine("Not found");
             }
         }
+
+        private void CloneTableButton_Click(object sender, EventArgs e)
+        {
+            DataTable dataTableFromDataGridView = (DataTable)_bindingSource.DataSource;
+
+            DataView view = new DataView(dataTableFromDataGridView);
+            DataTable selected = view.ToTable("Selected", false, "CompanyName", "OrderDate");
+
+            Console.WriteLine();
+        }
     }
 }

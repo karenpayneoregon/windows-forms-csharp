@@ -34,12 +34,14 @@ Partial Class Form1
         Me.Label3 = New System.Windows.Forms.Label()
         Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
         Me.RemoveCurrentButton = New System.Windows.Forms.Button()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.SuspendLayout()
+        Me.SearchButton = New System.Windows.Forms.Button()
+        Me.SearchTextBox = New System.Windows.Forms.TextBox()
+        CType(Me.DataGridView1,System.ComponentModel.ISupportInitialize).BeginInit
+        Me.SuspendLayout
         '
         'DataGridView1
         '
-        Me.DataGridView1.AllowUserToAddRows = False
+        Me.DataGridView1.AllowUserToAddRows = false
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.FirstNameColumn, Me.LastColumn, Me.HireDateColumn})
         Me.DataGridView1.Location = New System.Drawing.Point(8, 1)
@@ -72,11 +74,11 @@ Partial Class Form1
         Me.AddNewButton.Size = New System.Drawing.Size(117, 23)
         Me.AddNewButton.TabIndex = 1
         Me.AddNewButton.Text = "Add new"
-        Me.AddNewButton.UseVisualStyleBackColor = True
+        Me.AddNewButton.UseVisualStyleBackColor = true
         '
         'Label1
         '
-        Me.Label1.AutoSize = True
+        Me.Label1.AutoSize = true
         Me.Label1.Location = New System.Drawing.Point(12, 331)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(29, 15)
@@ -93,7 +95,7 @@ Partial Class Form1
         '
         'Label2
         '
-        Me.Label2.AutoSize = True
+        Me.Label2.AutoSize = true
         Me.Label2.Location = New System.Drawing.Point(12, 390)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(28, 15)
@@ -110,7 +112,7 @@ Partial Class Form1
         '
         'Label3
         '
-        Me.Label3.AutoSize = True
+        Me.Label3.AutoSize = true
         Me.Label3.Location = New System.Drawing.Point(12, 440)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(36, 15)
@@ -132,13 +134,32 @@ Partial Class Form1
         Me.RemoveCurrentButton.Size = New System.Drawing.Size(117, 23)
         Me.RemoveCurrentButton.TabIndex = 8
         Me.RemoveCurrentButton.Text = "Remove current"
-        Me.RemoveCurrentButton.UseVisualStyleBackColor = True
+        Me.RemoveCurrentButton.UseVisualStyleBackColor = true
+        '
+        'SearchButton
+        '
+        Me.SearchButton.Location = New System.Drawing.Point(201, 356)
+        Me.SearchButton.Name = "SearchButton"
+        Me.SearchButton.Size = New System.Drawing.Size(75, 23)
+        Me.SearchButton.TabIndex = 9
+        Me.SearchButton.Text = "Button1"
+        Me.SearchButton.UseVisualStyleBackColor = true
+        '
+        'SearchTextBox
+        '
+        Me.SearchTextBox.Location = New System.Drawing.Point(282, 357)
+        Me.SearchTextBox.Name = "SearchTextBox"
+        Me.SearchTextBox.Size = New System.Drawing.Size(100, 23)
+        Me.SearchTextBox.TabIndex = 10
+        Me.SearchTextBox.Text = "King"
         '
         'Form1
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(7!, 15!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(448, 505)
+        Me.Controls.Add(Me.SearchTextBox)
+        Me.Controls.Add(Me.SearchButton)
         Me.Controls.Add(Me.RemoveCurrentButton)
         Me.Controls.Add(Me.DateTimePicker1)
         Me.Controls.Add(Me.Label3)
@@ -152,11 +173,11 @@ Partial Class Form1
         Me.Name = "Form1"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Code sample"
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.ResumeLayout(False)
-        Me.PerformLayout()
+        CType(Me.DataGridView1,System.ComponentModel.ISupportInitialize).EndInit
+        Me.ResumeLayout(false)
+        Me.PerformLayout
 
-    End Sub
+End Sub
 
     Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents FirstNameColumn As DataGridViewTextBoxColumn
@@ -170,4 +191,6 @@ Partial Class Form1
     Friend WithEvents Label3 As Label
     Friend WithEvents DateTimePicker1 As DateTimePicker
     Friend WithEvents RemoveCurrentButton As Button
+    Friend WithEvents SearchButton As Button
+    Friend WithEvents SearchTextBox As TextBox
 End Class
