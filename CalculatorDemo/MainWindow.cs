@@ -43,10 +43,7 @@ namespace CalculatorDemo
         //Lats value entered
         private string LastValue
         {
-            get
-            {
-                return _lastValue == string.Empty ? "0" : _lastValue;
-            }
+            get => _lastValue == string.Empty ? "0" : _lastValue;
             set => _lastValue = value;
         }
 
@@ -59,7 +56,7 @@ namespace CalculatorDemo
             var character = (text.ToCharArray())[0];
             e.Handled = true;
 
-            if ((character >= '0' && character <= '9') || character == '.' || character == '\b') // '\b' is backspace
+            if (character is >= '0' and <= '9' || character == '.' || character == '\b') // '\b' is backspace
             {
                 ProcessKey(character);
                 return;
@@ -121,9 +118,9 @@ namespace CalculatorDemo
                     break;
                 case "BDevide":
 
-                    if (EraseDisplay) //stil wait for a digit...
+                    if (EraseDisplay) //still wait for a digit...
                     {
-                        //stil wait for a digit...
+                        //still wait for a digit...
                         _lastOperator = Operation.Devide;
                         break;
                     }
@@ -133,9 +130,9 @@ namespace CalculatorDemo
                     EraseDisplay = true;
                     break;
                 case "BMultiply":
-                    if (EraseDisplay) //stil wait for a digit...
+                    if (EraseDisplay) //still wait for a digit...
                     {
-                        //stil wait for a digit...
+                        //still wait for a digit...
                         _lastOperator = Operation.Multiply;
                         break;
                     }
@@ -145,9 +142,9 @@ namespace CalculatorDemo
                     EraseDisplay = true;
                     break;
                 case "BMinus":
-                    if (EraseDisplay) //stil wait for a digit...
+                    if (EraseDisplay) //still wait for a digit...
                     {
-                        //stil wait for a digit...
+                        //still wait for a digit...
                         _lastOperator = Operation.Subtract;
                         break;
                     }
@@ -159,7 +156,7 @@ namespace CalculatorDemo
                 case "BPlus":
                     if (EraseDisplay)
                     {
-                        //stil wait for a digit...
+                        //still wait for a digit...
                         _lastOperator = Operation.Add;
                         break;
                     }
@@ -169,7 +166,7 @@ namespace CalculatorDemo
                     EraseDisplay = true;
                     break;
                 case "BEqual":
-                    if (EraseDisplay) //stil wait for a digit...
+                    if (EraseDisplay) //still wait for a digit...
                         break;
                     CalcResults();
                     EraseDisplay = true;
@@ -186,9 +183,9 @@ namespace CalculatorDemo
                     _lastOperator = Operation.None;
                     break;
                 case "BPercent":
-                    if (EraseDisplay) //stil wait for a digit...
+                    if (EraseDisplay) //still wait for a digit...
                     {
-                        //stil wait for a digit...
+                        //still wait for a digit...
                         _lastOperator = Operation.Percent;
                         break;
                     }
@@ -308,7 +305,7 @@ namespace CalculatorDemo
                 doubleValue = 0;
                 var parent = (Window) MyPanel.Parent;
                 _paper.AddResult("Error");
-                MessageBox.Show(parent, "Operation cannot be perfomed", parent.Title);
+                MessageBox.Show(parent, "Operation cannot be performed", parent.Title);
             }
 
             return doubleValue;
