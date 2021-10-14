@@ -27,7 +27,9 @@ namespace MasterDetail
             division.Teams.Add(new Team("Team West"));
             division.Teams.Add(new Team("Team North"));
             division.Teams.Add(new Team("Team South"));
+
             Add(league = new League("League B"));
+
             league.Divisions.Add(division = new Division("Division A"));
             division.Teams.Add(new Team("Team 1"));
             division.Teams.Add(new Team("Team 2"));

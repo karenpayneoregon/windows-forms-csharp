@@ -43,5 +43,14 @@ namespace SingletonDemo
         {
             ApplicationJobs.Instance.Reset();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            using (var f = new ChildForm())
+            {
+                f.ShowDialog();
+            }
+            
+        }
     }
 }

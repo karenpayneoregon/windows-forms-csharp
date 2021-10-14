@@ -9,7 +9,8 @@
     Width="525"
     Height="350"
     Icon="appicon.ico"
-    mc:Ignorable="d" WindowStartupLocation="CenterScreen">
+    WindowStartupLocation="CenterScreen"
+    mc:Ignorable="d">
     <DockPanel Name="MyPanel">
         <Menu Height="26" DockPanel.Dock="Top">
             <MenuItem Header="File">
@@ -259,7 +260,7 @@
                 Grid.Column="3"
                 Grid.ColumnSpan="2"
                 Margin="10,17,10,17">
-                Memory: [empty]
+                Memory: 0
             </TextBlock>
             <local:MyTextBox
                 x:Name="DisplayBox"

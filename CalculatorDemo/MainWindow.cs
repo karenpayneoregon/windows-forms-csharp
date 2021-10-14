@@ -11,6 +11,9 @@ namespace CalculatorDemo
     /// <summary>
     ///     Interaction logic for MainWindow.xaml
     /// </summary>
+    /// <remarks>
+    /// Karen note, code works fine while naming convention is crap
+    /// </remarks>
     public sealed partial class MainWindow : Window
     {
         private static PaperTrail _paper;
@@ -121,11 +124,11 @@ namespace CalculatorDemo
                     if (EraseDisplay) //still wait for a digit...
                     {
                         //still wait for a digit...
-                        _lastOperator = Operation.Devide;
+                        _lastOperator = Operation.Divide;
                         break;
                     }
                     CalcResults();
-                    _lastOperator = Operation.Devide;
+                    _lastOperator = Operation.Divide;
                     LastValue = Display;
                     EraseDisplay = true;
                     break;
@@ -252,7 +255,7 @@ namespace CalculatorDemo
             {
                 switch (lastOperator)
                 {
-                    case Operation.Devide:
+                    case Operation.Divide:
                         _paper.AddArguments(LastValue + " / " + Display);
                         doubleValue = (Convert.ToDouble(LastValue)/Convert.ToDouble(Display));
                         CheckResult(doubleValue);
@@ -401,7 +404,7 @@ namespace CalculatorDemo
         private enum Operation
         {
             None,
-            Devide,
+            Divide,
             Multiply,
             Subtract,
             Add,
