@@ -22,29 +22,55 @@ Partial Class Form1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.TestConnectionButton = New System.Windows.Forms.Button()
-        Me.SuspendLayout()
+        Me.CurrentRowButton = New System.Windows.Forms.Button()
+        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.LastRowButton = New System.Windows.Forms.Button()
+        CType(Me.DataGridView1,System.ComponentModel.ISupportInitialize).BeginInit
+        Me.SuspendLayout
         '
-        'TestConnectionButton
+        'CurrentRowButton
         '
-        Me.TestConnectionButton.Location = New System.Drawing.Point(12, 12)
-        Me.TestConnectionButton.Name = "TestConnectionButton"
-        Me.TestConnectionButton.Size = New System.Drawing.Size(75, 23)
-        Me.TestConnectionButton.TabIndex = 0
-        Me.TestConnectionButton.Text = "Button1"
-        Me.TestConnectionButton.UseVisualStyleBackColor = True
+        Me.CurrentRowButton.Location = New System.Drawing.Point(12, 251)
+        Me.CurrentRowButton.Name = "CurrentRowButton"
+        Me.CurrentRowButton.Size = New System.Drawing.Size(75, 23)
+        Me.CurrentRowButton.TabIndex = 0
+        Me.CurrentRowButton.Text = "Current"
+        Me.CurrentRowButton.UseVisualStyleBackColor = true
+        '
+        'DataGridView1
+        '
+        Me.DataGridView1.AllowUserToAddRows = false
+        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1.Location = New System.Drawing.Point(12, 12)
+        Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.Size = New System.Drawing.Size(485, 222)
+        Me.DataGridView1.TabIndex = 1
+        '
+        'LastRowButton
+        '
+        Me.LastRowButton.Location = New System.Drawing.Point(93, 251)
+        Me.LastRowButton.Name = "LastRowButton"
+        Me.LastRowButton.Size = New System.Drawing.Size(75, 23)
+        Me.LastRowButton.TabIndex = 2
+        Me.LastRowButton.Text = "Last"
+        Me.LastRowButton.UseVisualStyleBackColor = true
         '
         'Form1
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(392, 173)
-        Me.Controls.Add(Me.TestConnectionButton)
+        Me.ClientSize = New System.Drawing.Size(509, 286)
+        Me.Controls.Add(Me.LastRowButton)
+        Me.Controls.Add(Me.DataGridView1)
+        Me.Controls.Add(Me.CurrentRowButton)
         Me.Name = "Form1"
         Me.Text = "Form1"
-        Me.ResumeLayout(False)
+        CType(Me.DataGridView1,System.ComponentModel.ISupportInitialize).EndInit
+        Me.ResumeLayout(false)
 
-    End Sub
+End Sub
 
-    Friend WithEvents TestConnectionButton As Button
+    Friend WithEvents CurrentRowButton As Button
+    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents LastRowButton As Button
 End Class
