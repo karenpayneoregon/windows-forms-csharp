@@ -26,8 +26,8 @@ namespace DirectoryGetFilesMultipleFilters
 
             await Task.Delay(5);
 
-            
-            HalfBakedNoviceAttempt();
+
+            Examples1();
 
             Console.ReadLine();
         }

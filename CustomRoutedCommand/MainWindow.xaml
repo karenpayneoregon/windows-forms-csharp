@@ -5,6 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CustomRoutedCommand"
         mc:Ignorable="d"
+        WindowStyle="None"
+        WindowState="Maximized"
         Title="MainWindow" Name="RootWindow" Height="500" Width="600"
         Focusable="True">
     <!-- </SnippetCustomCommandMapping-->
