@@ -60,7 +60,7 @@ namespace CheckListBoxProducts
             this.Controls.Add(this.ProductCheckedListBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Form1";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Get checked";
             this.ResumeLayout(false);
 

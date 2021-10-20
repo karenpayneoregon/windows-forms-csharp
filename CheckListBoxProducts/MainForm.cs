@@ -20,11 +20,20 @@ namespace CheckListBoxProducts
         private void OpenForm1Button_Click(object sender, EventArgs e)
         {
             listBox1.Items.Clear();
-            var f = new Form1();
-            f.ProductSelected += ProductSelected;
-            f.ShowDialog();
-            f.Dispose();
-            f.ProductSelected -= ProductSelected;
+            var f = new Form1(new Product() {ProductID = 24});
+
+            try
+            {
+                f.ProductSelected += ProductSelected;
+                f.Top = Top;
+                f.Left = (Left + Width) + 10;
+                f.ShowDialog();
+            }
+            finally
+            {
+                f.Dispose();
+                f.ProductSelected -= ProductSelected;
+            }
         }
 
         private void ProductSelected(Product product)

@@ -1,11 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using CheckListBoxProducts.Classes;
 
@@ -14,6 +9,7 @@ namespace CheckListBoxProducts
     public partial class Form1 : Form
     {
         private List<Product> _products = new List<Product>();
+        private readonly Product _product;
 
         public delegate void OnProductSelected(Product product);
         public event OnProductSelected ProductSelected;
@@ -24,20 +20,46 @@ namespace CheckListBoxProducts
             
             Shown += OnShown;
         }
-
+        public Form1(Product product)
+        {
+            InitializeComponent();
+            _product = product;
+            Shown += OnShown;
+        }
         private void OnShown(object sender, EventArgs e)
         {
+
             _products = SqlServerOperations.ProductsByCategoryIdentifier(1);
 
             ProductCheckedListBox.DataSource = _products;
-            ProductCheckedListBox.SelectedIndexChanged += OnSelectedIndexChanged;
+            ProductCheckedListBox.ItemCheck += ProductCheckedListBoxOnItemCheck;
+
+            var prodItem = _products
+                .Select((p, index) => new { Product = p, Index = index })
+                .FirstOrDefault(x => x.Product.ProductID == _product.ProductID);
+
+            if (prodItem != null)
+            {
+                ProductCheckedListBox.SelectedIndex = prodItem.Index;
+            }
+            
         }
 
-        private void OnSelectedIndexChanged(object sender, EventArgs e)
+        private void ProductCheckedListBoxOnItemCheck(object sender, ItemCheckEventArgs e)
         {
-            if (ProductCheckedListBox.GetItemCheckState(ProductCheckedListBox.SelectedIndex) == CheckState.Checked)
+            if (e.NewValue == CheckState.Checked)
             {
-                ProductSelected?.Invoke(_products[ProductCheckedListBox.SelectedIndex]);
+                for (int index = 0; index < ProductCheckedListBox.Items.Count; index++)
+                {
+                    if (index != e.Index)
+                    {
+                        ProductCheckedListBox.SetItemChecked(index, false);
+                    }
+                    else
+                    {
+                        ProductSelected?.Invoke(_products[e.Index]);
+                    }
+                }
             }
         }
 
