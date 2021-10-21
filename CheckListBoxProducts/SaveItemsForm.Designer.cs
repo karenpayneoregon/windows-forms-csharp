@@ -1,7 +1,7 @@
 ﻿
 namespace CheckListBoxProducts
 {
-    partial class Form1
+    partial class SaveItemsForm
     {
         /// <summary>
         /// Required designer variable.
@@ -29,46 +29,35 @@ namespace CheckListBoxProducts
         /// </summary>
         private void InitializeComponent()
         {
-            this.GetCheckedButton = new System.Windows.Forms.Button();
             this.ProductCheckedListBox = new System.Windows.Forms.CheckedListBox();
             this.SuspendLayout();
             // 
-            // GetCheckedButton
-            // 
-            this.GetCheckedButton.Location = new System.Drawing.Point(12, 202);
-            this.GetCheckedButton.Name = "GetCheckedButton";
-            this.GetCheckedButton.Size = new System.Drawing.Size(195, 23);
-            this.GetCheckedButton.TabIndex = 1;
-            this.GetCheckedButton.Text = "Get checked";
-            this.GetCheckedButton.UseVisualStyleBackColor = true;
-            this.GetCheckedButton.Click += new System.EventHandler(this.GetCheckedButton_Click);
-            // 
             // ProductCheckedListBox
             // 
+            this.ProductCheckedListBox.CheckOnClick = true;
+            this.ProductCheckedListBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ProductCheckedListBox.FormattingEnabled = true;
-            this.ProductCheckedListBox.Location = new System.Drawing.Point(12, 12);
+            this.ProductCheckedListBox.Location = new System.Drawing.Point(0, 0);
             this.ProductCheckedListBox.Name = "ProductCheckedListBox";
-            this.ProductCheckedListBox.Size = new System.Drawing.Size(195, 184);
-            this.ProductCheckedListBox.TabIndex = 0;
+            this.ProductCheckedListBox.Size = new System.Drawing.Size(226, 251);
+            this.ProductCheckedListBox.TabIndex = 1;
             // 
-            // Form1
+            // SaveItemsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(220, 239);
-            this.Controls.Add(this.GetCheckedButton);
+            this.ClientSize = new System.Drawing.Size(226, 251);
             this.Controls.Add(this.ProductCheckedListBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Name = "Form1";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
-            this.Text = "Get checked";
+            this.Name = "SaveItemsForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Save Items to Json file";
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.Button GetCheckedButton;
+
         private System.Windows.Forms.CheckedListBox ProductCheckedListBox;
     }
 }
-

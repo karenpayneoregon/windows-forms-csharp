@@ -12,3 +12,20 @@ Provides code to
 public delegate void OnProductSelected(Product product);
 public event OnProductSelected ProductSelected;
 ```
+
+# Save checked
+
+![img](../assets/Checked1.png)
+
+```json
+[
+  {
+    "ProductID": 34,
+    "Index": 3
+  },
+  {
+    "ProductID": 43,
+    "Index": 7
+  }
+]
+```
