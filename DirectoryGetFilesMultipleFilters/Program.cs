@@ -27,7 +27,10 @@ namespace DirectoryGetFilesMultipleFilters
             await Task.Delay(5);
 
 
-            Examples1();
+            //Examples1();
+
+
+
 
             Console.ReadLine();
         }
