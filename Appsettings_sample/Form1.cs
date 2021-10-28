@@ -160,6 +160,14 @@ namespace Appsettings_sample
 
 
         }
+
+        private void DateRangeButton_Click(object sender, EventArgs e)
+        {
+            listBox1.Items.Clear();
+            var endValue = EndDateTimePicker.Value.AddDays(1);
+            var results = StartDateTimePicker.Value.Range(endValue).ToArray();
+            listBox1.Items.AddRange(results.Select(x => x.ToString("MM/dd/yyyy")).ToArray());
+        }
     }
 
     public class Data

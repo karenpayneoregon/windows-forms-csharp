@@ -8,6 +8,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{ADAFC974-47BC-402C-ADCF-CBE2E275FEF8}"
 	ProjectSection(SolutionItems) = preProject
 		CheckSqlConnection.ps1 = CheckSqlConnection.ps1
+		File1.ps1 = File1.ps1
 		readme.md = readme.md
 	EndProjectSection
 EndProject
@@ -83,7 +84,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Forms", "Forms", "{EB8074FC
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ExtensionsConsoleApp_vb", "ExtensionsConsoleApp_vb\ExtensionsConsoleApp_vb.vbproj", "{66770B58-28A4-49F4-8133-F317F1F90788}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsyncSimple", "AsyncSimple\AsyncSimple.csproj", "{536B0E4E-4074-4D11-A5B0-821DB568226C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AsyncSimple", "AsyncSimple\AsyncSimple.csproj", "{536B0E4E-4074-4D11-A5B0-821DB568226C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConnectorLibrary", "ConnectorLibrary\ConnectorLibrary.csproj", "{5EF4B993-16C7-4F31-B6E3-32B57859F950}"
 EndProject
@@ -216,6 +217,8 @@ EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "AsyncTaskProgress1", "AsyncIProgress\AsyncTaskProgress1.vbproj", "{4EAAD1E4-D25C-46D4-AAB7-14646D346BED}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsApp1", "WindowsFormsApp1\WindowsFormsApp1.csproj", "{4C17B39C-E252-4994-BA01-912EC03E1FBC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextBoxArrayAssignment", "TextBoxArrayAssignment\TextBoxArrayAssignment.csproj", "{1DA8A4DE-C403-4CF7-A2AE-9138AA1A465F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -1137,6 +1140,18 @@ Global
 		{4C17B39C-E252-4994-BA01-912EC03E1FBC}.Release|x64.Build.0 = Release|Any CPU
 		{4C17B39C-E252-4994-BA01-912EC03E1FBC}.Release|x86.ActiveCfg = Release|Any CPU
 		{4C17B39C-E252-4994-BA01-912EC03E1FBC}.Release|x86.Build.0 = Release|Any CPU
+		{1DA8A4DE-C403-4CF7-A2AE-9138AA1A465F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1DA8A4DE-C403-4CF7-A2AE-9138AA1A465F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1DA8A4DE-C403-4CF7-A2AE-9138AA1A465F}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{1DA8A4DE-C403-4CF7-A2AE-9138AA1A465F}.Debug|x64.Build.0 = Debug|Any CPU
+		{1DA8A4DE-C403-4CF7-A2AE-9138AA1A465F}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{1DA8A4DE-C403-4CF7-A2AE-9138AA1A465F}.Debug|x86.Build.0 = Debug|Any CPU
+		{1DA8A4DE-C403-4CF7-A2AE-9138AA1A465F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1DA8A4DE-C403-4CF7-A2AE-9138AA1A465F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1DA8A4DE-C403-4CF7-A2AE-9138AA1A465F}.Release|x64.ActiveCfg = Release|Any CPU
+		{1DA8A4DE-C403-4CF7-A2AE-9138AA1A465F}.Release|x64.Build.0 = Release|Any CPU
+		{1DA8A4DE-C403-4CF7-A2AE-9138AA1A465F}.Release|x86.ActiveCfg = Release|Any CPU
+		{1DA8A4DE-C403-4CF7-A2AE-9138AA1A465F}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -1240,6 +1255,7 @@ Global
 		{40405915-E9BF-48E2-AD17-B65DFB2D6708} = {DE16B1C7-FA6D-417E-B3A3-C9B8AC284A41}
 		{4EAAD1E4-D25C-46D4-AAB7-14646D346BED} = {2E5D5985-8504-422C-A302-6A46890F4ACB}
 		{4C17B39C-E252-4994-BA01-912EC03E1FBC} = {2E5D5985-8504-422C-A302-6A46890F4ACB}
+		{1DA8A4DE-C403-4CF7-A2AE-9138AA1A465F} = {2E5D5985-8504-422C-A302-6A46890F4ACB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {58AC3B13-B420-4F3C-8723-CE1E6C224D46}

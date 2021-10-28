@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CheckListBoxProducts
+namespace TextBoxArrayAssignment
 {
     static class Program
     {
@@ -16,7 +16,7 @@ namespace CheckListBoxProducts
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ProductsForm());
+            Application.Run(new Form1());
         }
     }
 }

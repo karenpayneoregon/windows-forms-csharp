@@ -36,6 +36,10 @@ namespace Appsettings_sample
             this.WhenAllButton = new System.Windows.Forms.Button();
             this.RunSomeTaskButton = new System.Windows.Forms.Button();
             this.ReadFileButton = new System.Windows.Forms.Button();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.DateRangeButton = new System.Windows.Forms.Button();
+            this.StartDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.EndDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // GetConnectionStringButton
@@ -94,7 +98,7 @@ namespace Appsettings_sample
             // 
             // ReadFileButton
             // 
-            this.ReadFileButton.Location = new System.Drawing.Point(338, 209);
+            this.ReadFileButton.Location = new System.Drawing.Point(6, 60);
             this.ReadFileButton.Name = "ReadFileButton";
             this.ReadFileButton.Size = new System.Drawing.Size(75, 23);
             this.ReadFileButton.TabIndex = 5;
@@ -102,11 +106,48 @@ namespace Appsettings_sample
             this.ReadFileButton.UseVisualStyleBackColor = true;
             this.ReadFileButton.Click += new System.EventHandler(this.ReadFileButton_Click);
             // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.ItemHeight = 15;
+            this.listBox1.Location = new System.Drawing.Point(325, 12);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(230, 274);
+            this.listBox1.TabIndex = 6;
+            // 
+            // DateRangeButton
+            // 
+            this.DateRangeButton.Location = new System.Drawing.Point(325, 350);
+            this.DateRangeButton.Name = "DateRangeButton";
+            this.DateRangeButton.Size = new System.Drawing.Size(230, 23);
+            this.DateRangeButton.TabIndex = 7;
+            this.DateRangeButton.Text = "Date range";
+            this.DateRangeButton.UseVisualStyleBackColor = true;
+            this.DateRangeButton.Click += new System.EventHandler(this.DateRangeButton_Click);
+            // 
+            // StartDateTimePicker
+            // 
+            this.StartDateTimePicker.Location = new System.Drawing.Point(325, 292);
+            this.StartDateTimePicker.Name = "StartDateTimePicker";
+            this.StartDateTimePicker.Size = new System.Drawing.Size(200, 23);
+            this.StartDateTimePicker.TabIndex = 8;
+            // 
+            // EndDateTimePicker
+            // 
+            this.EndDateTimePicker.Location = new System.Drawing.Point(325, 321);
+            this.EndDateTimePicker.Name = "EndDateTimePicker";
+            this.EndDateTimePicker.Size = new System.Drawing.Size(200, 23);
+            this.EndDateTimePicker.TabIndex = 9;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(579, 278);
+            this.ClientSize = new System.Drawing.Size(579, 422);
+            this.Controls.Add(this.EndDateTimePicker);
+            this.Controls.Add(this.StartDateTimePicker);
+            this.Controls.Add(this.DateRangeButton);
+            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.ReadFileButton);
             this.Controls.Add(this.RunSomeTaskButton);
             this.Controls.Add(this.WhenAllButton);
@@ -129,6 +170,10 @@ namespace Appsettings_sample
         private System.Windows.Forms.Button WhenAllButton;
         private System.Windows.Forms.Button RunSomeTaskButton;
         private System.Windows.Forms.Button ReadFileButton;
+        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.Button DateRangeButton;
+        private System.Windows.Forms.DateTimePicker StartDateTimePicker;
+        private System.Windows.Forms.DateTimePicker EndDateTimePicker;
     }
 }
 

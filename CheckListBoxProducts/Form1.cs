@@ -34,14 +34,14 @@ namespace CheckListBoxProducts
             ProductCheckedListBox.DataSource = _products;
             ProductCheckedListBox.ItemCheck += ProductCheckedListBoxOnItemCheck;
 
-            var prodItem = _products
-                .Select((p, index) => new { Product = p, Index = index })
-                .FirstOrDefault(x => x.Product.ProductID == _product.ProductID);
+            //var prodItem = _products
+            //    .Select((p, index) => new { Product = p, Index = index })
+            //    .FirstOrDefault(x => x.Product.ProductID == _product.ProductID);
 
-            if (prodItem != null)
-            {
-                ProductCheckedListBox.SelectedIndex = prodItem.Index;
-            }
+            //if (prodItem != null)
+            //{
+            //    ProductCheckedListBox.SelectedIndex = prodItem.Index;
+            //}
             
         }
 
