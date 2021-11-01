@@ -46,7 +46,7 @@ namespace LoadDataGridViewProgressBar
             this.CountryColumn});
             this.customerDataGridView.Location = new System.Drawing.Point(13, 19);
             this.customerDataGridView.Name = "customerDataGridView";
-            this.customerDataGridView.Size = new System.Drawing.Size(777, 369);
+            this.customerDataGridView.Size = new System.Drawing.Size(480, 369);
             this.customerDataGridView.TabIndex = 0;
             // 
             // CompanyNameColumn
@@ -81,7 +81,7 @@ namespace LoadDataGridViewProgressBar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(505, 450);
             this.Controls.Add(this.LoadDataGridViewButton);
             this.Controls.Add(this.customerDataGridView);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
