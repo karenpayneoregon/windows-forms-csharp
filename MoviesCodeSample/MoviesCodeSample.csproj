@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{6DFB95BE-3F03-4B47-A0BA-3C25D0DAE2F3}</ProjectGuid>
+    <ProjectGuid>{A0C2ABFC-818E-4EF0-B3A4-D31F6B898953}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>LoadDataGridViewProgressBar</RootNamespace>
-    <AssemblyName>LoadDataGridViewProgressBar</AssemblyName>
+    <RootNamespace>MoviesCodeSample</RootNamespace>
+    <AssemblyName>MoviesCodeSample</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -46,49 +49,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BindingListForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="BindingListForm.Designer.cs">
-      <DependentUpon>BindingListForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Classes\Customer.cs" />
-    <Compile Include="Classes\DataGridViewExtensions.cs" />
-    <Compile Include="Classes\Operations.cs" />
-    <Compile Include="Controls\DataGridViewJumper.cs">
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form2.Designer.cs">
-      <DependentUpon>Form2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Form3.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form3.Designer.cs">
-      <DependentUpon>Form3.cs</DependentUpon>
-    </Compile>
+    <Compile Include="Movie.cs" />
+    <Compile Include="MovieOperations.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="BindingListForm.resx">
-      <DependentUpon>BindingListForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form2.resx">
-      <DependentUpon>Form2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form3.resx">
-      <DependentUpon>Form3.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -98,9 +70,8 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="customerBindingNavigator.md" />
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -110,19 +81,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="readme.md" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\WinControlsLibrary\WinControlsLibrary.csproj">
-      <Project>{1e4843a2-da1e-496f-9eaf-4e06c3c0fe98}</Project>
-      <Name>WinControlsLibrary</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="assets\CustomBindingNavigator.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

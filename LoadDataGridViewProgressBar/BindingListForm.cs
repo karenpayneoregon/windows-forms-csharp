@@ -11,37 +11,37 @@ using LoadDataGridViewProgressBar.Classes;
 
 namespace LoadDataGridViewProgressBar
 {
-    public partial class Form3 : Form
+    public partial class BindingListForm : Form
     {
-        public BindingSource _customersBindingSource = new BindingSource();
-        public Form3()
+        private BindingSource _customersBindingSource = new BindingSource();
+        private BindingList<Customer> _customersBindingList = new BindingList<Customer>(); 
+        public BindingListForm()
         {
             InitializeComponent();
-
             Shown += OnShown;
         }
-
         private async void OnShown(object sender, EventArgs e)
         {
             await PopulateData();
         }
-
         private async Task PopulateData()
         {
-            var (exception, dataTable) = await Operations.LoadCustomerDataTable();
+            var (exception, customers) = await Operations.LoadCustomerList();
+
             if (exception == null)
             {
-                
+                _customersBindingList = null;
                 _customersBindingSource = null;
                 customerDataGridView.DataSource = null;
 
                 GC.Collect();
                 await Task.Delay(500);
 
+                _customersBindingList = new BindingList<Customer>(customers);
                 _customersBindingSource = new BindingSource();
 
-                _customersBindingSource.DataSource = dataTable;
-
+                _customersBindingSource.DataSource = _customersBindingList;
+                customerDataGridView.AutoGenerateColumns = false;
                 customerDataGridView.DataSource = _customersBindingSource;
                 customerDataGridView.ExpandColumns(true);
             }

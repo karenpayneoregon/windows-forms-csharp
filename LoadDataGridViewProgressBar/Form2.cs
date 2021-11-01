@@ -23,7 +23,7 @@ namespace LoadDataGridViewProgressBar
 
         private async void OnShown(object sender, EventArgs e)
         {
-            var (_, dataTable) = await Operations.LoadCustomerData();
+            var (_, dataTable) = await Operations.LoadCustomerDataTable();
 
             Setup(dataTable);
         }

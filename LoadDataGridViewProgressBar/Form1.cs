@@ -19,7 +19,7 @@ namespace LoadDataGridViewProgressBar
 
         private async void OnShown(object sender, EventArgs e)
         {
-            var (exception, dataTable) = await Operations.LoadCustomerData();
+            var (exception, dataTable) = await Operations.LoadCustomerDataTable();
             
             try
             {
