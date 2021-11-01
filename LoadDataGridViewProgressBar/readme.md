@@ -16,3 +16,8 @@ Load DataGridView async with Progressbar written with VS2019, .NET Framework 4.8
 
 
 ![image](assets/figure1.png)
+
+
+# Framework notes
+
+Done with .NET Framework 4.8 because I first started off answering questions using .NET Core and learned most people were not using Core which is why I used .NET Framework classic.
