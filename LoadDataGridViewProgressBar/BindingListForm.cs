@@ -1,10 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using LoadDataGridViewProgressBar.Classes;
@@ -38,9 +33,7 @@ namespace LoadDataGridViewProgressBar
                 await Task.Delay(500);
 
                 _customersBindingList = new BindingList<Customer>(customers);
-                _customersBindingSource = new BindingSource();
-
-                _customersBindingSource.DataSource = _customersBindingList;
+                _customersBindingSource = new BindingSource { DataSource = _customersBindingList };
                 customerDataGridView.AutoGenerateColumns = false;
                 customerDataGridView.DataSource = _customersBindingSource;
                 customerDataGridView.ExpandColumns(true);
