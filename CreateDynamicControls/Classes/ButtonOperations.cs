@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Windows.Forms;
 using CreateDynamicControls.Classes.Controls;
 
@@ -29,7 +31,7 @@ namespace CreateDynamicControls.Classes
         /// <param name="pButtonClick">Click event for button</param>
         public static void Initialize(Control pControl, int pTop, int pBaseHeightPadding, int pLeft, int pWidth, EventHandler pButtonClick)
         {
-            
+
             ParentControl = pControl;
             Top = pTop;
             HeightPadding = pBaseHeightPadding;
@@ -37,15 +39,16 @@ namespace CreateDynamicControls.Classes
             Width = pWidth;
             EventHandler = pButtonClick;
             ButtonsList = new List<DataButton>();
-            
+
         }
+
         public static void CreateButton(string text = "")
         {
 
             var button = new DataButton()
             {
                 Name = $"{BaseName}{Index}",
-                Text = text, 
+                Text = text,
                 Width = Width,
                 Location = new Point(Left, Top),
                 Parent = ParentControl,
@@ -58,9 +61,21 @@ namespace CreateDynamicControls.Classes
             ParentControl.Controls.Add(button);
             Top += HeightPadding;
             Index += 1;
-            
+
         }
-        
+
+        public static void RemoveButton(string name)
+        {
+            var dataButton = ButtonsList.FirstOrDefault(button => button.Name == name);
+            if (dataButton != null)
+            {
+
+                ParentControl.Controls.Remove(dataButton);
+                ButtonsList.Remove(dataButton);
+            }
+
+
+        }
 
         public static void CreateCategoryButton(string text, int categoryIdentifier)
         {
@@ -71,11 +86,11 @@ namespace CreateDynamicControls.Classes
                 Text = text,
                 Width = Width,
                 Location = new Point(Left, Top),
-                Parent = ParentControl, 
+                Parent = ParentControl,
                 Identifier = categoryIdentifier,
-                Visible = true, 
-                ImageAlign = ContentAlignment.MiddleLeft, 
-                TextAlign  = ContentAlignment.MiddleRight
+                Visible = true,
+                ImageAlign = ContentAlignment.MiddleLeft,
+                TextAlign = ContentAlignment.MiddleRight
             };
 
             button.Click += EventHandler;
@@ -84,7 +99,7 @@ namespace CreateDynamicControls.Classes
             ParentControl.Controls.Add(button);
             Top += HeightPadding;
             Index += 1;
-            
+
         }
     }
 }

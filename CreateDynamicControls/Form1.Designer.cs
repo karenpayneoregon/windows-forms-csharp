@@ -35,6 +35,7 @@ namespace CreateDynamicControls
             this.ButtonTextButton = new System.Windows.Forms.TextBox();
             this.CreateCategoriesButton = new System.Windows.Forms.Button();
             this.ProductsListBox = new System.Windows.Forms.ListBox();
+            this.DeleteButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // CreateButton
@@ -90,12 +91,23 @@ namespace CreateDynamicControls
             this.ProductsListBox.Size = new System.Drawing.Size(164, 290);
             this.ProductsListBox.TabIndex = 5;
             // 
+            // DeleteButton
+            // 
+            this.DeleteButton.Location = new System.Drawing.Point(311, 319);
+            this.DeleteButton.Name = "DeleteButton";
+            this.DeleteButton.Size = new System.Drawing.Size(120, 23);
+            this.DeleteButton.TabIndex = 6;
+            this.DeleteButton.Text = "Delete Button";
+            this.DeleteButton.UseVisualStyleBackColor = true;
+            this.DeleteButton.Click += new System.EventHandler(this.DeleteButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(452, 345);
+            this.Controls.Add(this.DeleteButton);
             this.Controls.Add(this.ProductsListBox);
             this.Controls.Add(this.CreateCategoriesButton);
             this.Controls.Add(this.ButtonTextButton);
@@ -118,6 +130,7 @@ namespace CreateDynamicControls
         private System.Windows.Forms.TextBox ButtonTextButton;
         private System.Windows.Forms.Button CreateCategoriesButton;
         private System.Windows.Forms.ListBox ProductsListBox;
+        private System.Windows.Forms.Button DeleteButton;
     }
 }
 

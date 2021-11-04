@@ -46,9 +46,10 @@ namespace WindowsFormsApp1
 
 
             var progressIndicator = new Progress<int>(ReportProgress);
+
             try
             {
-                await AsyncMethod(progressIndicator, _cts.Token);
+                await Operations.AsyncMethod(progressIndicator, _cts.Token);
             }
             catch (OperationCanceledException ex)
             {
@@ -67,6 +68,7 @@ namespace WindowsFormsApp1
         {
             _cts.Cancel();
         }
+
         private void ReportProgress(int value)
         {
             StatusLabel.Text = value.ToString();

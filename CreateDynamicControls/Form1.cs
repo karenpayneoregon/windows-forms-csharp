@@ -74,6 +74,7 @@ namespace CreateDynamicControls
             Operations.ButtonsList.ForEach(b => b.Image = null);
 
             var button = (DataButton)sender;
+            Console.WriteLine(button.Name);
             button.Image = Resources.CheckDot_6x_16x;
             
             _productsBindingList = new BindingList<Product>(DataOperations.ReadProducts(button.Identifier));
@@ -100,6 +101,18 @@ namespace CreateDynamicControls
                 Operations.CreateCategoryButton(category.Name, category.Id);
             }
             
+        }
+
+        private void DeleteButton_Click(object sender, EventArgs e)
+        {
+            if (ButtonsListBox.DataSource != null)
+            {
+                Operations.RemoveButton(ButtonsListBox.Text);
+            }
+            else
+            {
+                MessageBox.Show($"Create some buttons and populate the ButtonListBox first");
+            }
         }
     }
 
