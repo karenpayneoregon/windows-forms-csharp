@@ -1,0 +1,68 @@
+{
+  "ColumnDefinitions": [
+    {
+      "HeaderText": "Id",
+      "DataPropertyName": "Identifier",
+      "Visible": false
+    },
+    {
+      "HeaderText": "Company",
+      "DataPropertyName": "CompanyName",
+      "Visible": true
+    },
+    {
+      "HeaderText": "Contact type",
+      "DataPropertyName": "ContactType",
+      "Visible": true
+    },
+    {
+      "HeaderText": "Contact",
+      "DataPropertyName": "ContactName",
+      "Visible": true
+    },
+    {
+      "HeaderText": "Gender",
+      "DataPropertyName": "GenderType",
+      "Visible": true
+    },
+    {
+      "HeaderText": "",
+      "DataPropertyName": "ContactTypeIdentifier",
+      "Visible": false
+    },
+    {
+      "HeaderText": "",
+      "DataPropertyName": "GenderIdentifier",
+      "Visible": false
+    }
+  ],
+  "Customers": [
+    {
+      "Identifier": 1,
+      "CompanyName": "Alfreds Futterkiste",
+      "ContactType": "Owner",
+      "ContactName": "Maria Anders",
+      "GenderType": "Female",
+      "ContactTypeIdentifier": 7,
+      "GenderIdentifier": 1
+    },
+    {
+      "Identifier": 2,
+      "CompanyName": "Die Wandernde Kuh",
+      "ContactType": "Owner",
+      "ContactName": "Rita Müller",
+      "GenderType": "Female",
+      "ContactTypeIdentifier": 7,
+      "GenderIdentifier": 1
+    },
+    {
+      "Identifier": 3,
+      "CompanyName": "Chop-suey Chinese",
+      "ContactType": "Assistant Sales Agent",
+      "ContactName": "Yang Wang",
+      "GenderType": "Male",
+      "ContactTypeIdentifier": 2,
+      "GenderIdentifier": 2
+    }
+  ]
+}
