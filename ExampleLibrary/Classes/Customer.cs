@@ -51,7 +51,7 @@ namespace ExampleLibrary.Classes
         public string LastName { get; set; }
     }
 
-    public class Operations
+    public class KarensOperation
     {
         public static string Common(object sender) => sender switch
         {

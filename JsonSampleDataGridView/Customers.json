@@ -1,0 +1,110 @@
+[
+  {
+    "Identifier": 1,
+    "CompanyName": "Alfreds Futterkiste",
+    "ContactType": "Owner",
+    "ContactName": "Maria Anders",
+    "GenderType": "Female",
+    "ContactTypeIdentifier": 7,
+    "GenderIdentifier": 1
+  },
+  {
+    "Identifier": 2,
+    "CompanyName": "Die Wandernde Kuh",
+    "ContactType": "Owner",
+    "ContactName": "Rita Müller",
+    "GenderType": "Female",
+    "ContactTypeIdentifier": 7,
+    "GenderIdentifier": 1
+  },
+  {
+    "Identifier": 3,
+    "CompanyName": "Chop-suey Chinese",
+    "ContactType": "Owner",
+    "ContactName": "Yang Wang",
+    "GenderType": "Male",
+    "ContactTypeIdentifier": 7,
+    "GenderIdentifier": 2
+  },
+  {
+    "Identifier": 4,
+    "CompanyName": "Antonio Moreno Taquería",
+    "ContactType": "Owner",
+    "ContactName": "Antonio Moreno",
+    "GenderType": "Male",
+    "ContactTypeIdentifier": 7,
+    "GenderIdentifier": 2
+  },
+  {
+    "Identifier": 5,
+    "CompanyName": "Alfreds Futterkiste",
+    "ContactType": "Owner",
+    "ContactName": "Maria Anders",
+    "GenderType": "Female",
+    "ContactTypeIdentifier": 7,
+    "GenderIdentifier": 1
+  },
+  {
+    "Identifier": 6,
+    "CompanyName": "Die Wandernde Kuh",
+    "ContactType": "Owner",
+    "ContactName": "Rita Müller",
+    "GenderType": "Female",
+    "ContactTypeIdentifier": 7,
+    "GenderIdentifier": 1
+  },
+  {
+    "Identifier": 7,
+    "CompanyName": "Chop-suey Chinese",
+    "ContactType": "Owner",
+    "ContactName": "Yang Wang",
+    "GenderType": "Male",
+    "ContactTypeIdentifier": 7,
+    "GenderIdentifier": 2
+  },
+  {
+    "Identifier": 8,
+    "CompanyName": "Antonio Moreno Taquería",
+    "ContactType": "Owner",
+    "ContactName": "Antonio Moreno",
+    "GenderType": "Male",
+    "ContactTypeIdentifier": 7,
+    "GenderIdentifier": 2
+  },
+  {
+    "Identifier": 9,
+    "CompanyName": "Alfreds Futterkiste",
+    "ContactType": "Owner",
+    "ContactName": "Maria Anders",
+    "GenderType": "Female",
+    "ContactTypeIdentifier": 7,
+    "GenderIdentifier": 1
+  },
+  {
+    "Identifier": 10,
+    "CompanyName": "Die Wandernde Kuh",
+    "ContactType": "Owner",
+    "ContactName": "Rita Müller",
+    "GenderType": "Female",
+    "ContactTypeIdentifier": 7,
+    "GenderIdentifier": 1
+  },
+  {
+    "Identifier": 11,
+    "CompanyName": "Chop-suey Chinese",
+    "ContactType": "Owner",
+    "ContactName": "Yang Wang",
+    "GenderType": "Male",
+    "ContactTypeIdentifier": 7,
+    "GenderIdentifier": 2
+  },
+  {
+    "Identifier": 12,
+    "CompanyName": "Antonio Moreno Taquería",
+    "ContactType": "Owner",
+    "ContactName": "Antonio Moreno",
+    "GenderType": "Male",
+    "ContactTypeIdentifier": 7,
+    "GenderIdentifier": 2
+  }
+]

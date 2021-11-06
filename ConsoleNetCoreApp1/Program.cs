@@ -26,15 +26,15 @@ namespace ContainsAny
         private static void MainRun()
         {
             Customer customer = new() { Id = 1, Name = "Adams" };
-            Debug.WriteLine(Operations.Common(customer));
+            Debug.WriteLine(KarensOperation.Common(customer));
 
             Order order = new() { Id = 12, Product = "Phone" };
-            Debug.WriteLine(Operations.Common(order));
+            Debug.WriteLine(KarensOperation.Common(order));
 
             try
             {
                 Contact contact = new() { Id = 45, FirstName = "Jim", LastName = "Smith" };
-                Debug.WriteLine(Operations.Common(contact));
+                Debug.WriteLine(KarensOperation.Common(contact));
             }
             catch (Exception exception)
             {

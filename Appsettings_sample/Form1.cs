@@ -12,6 +12,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Appsettings_sample.Classes;
+using ExampleLibrary.Classes;
 
 namespace Appsettings_sample
 {
@@ -139,6 +140,7 @@ namespace Appsettings_sample
 
         private void ReadFileButton_Click(object sender, EventArgs e)
         {
+            Class1.Tester();
             //List<string> contents = File.ReadAllLines(Path.Combine(
             //    AppDomain.CurrentDomain.BaseDirectory, "WordList.txt")).ToList();
             
