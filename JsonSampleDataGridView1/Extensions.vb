@@ -7,8 +7,8 @@ Public Module Extensions
     ''' <typeparam name="TSource">Type to convert from</typeparam>
     ''' <param name="data"><see cref="TSource"/></param>
     ''' <returns></returns>
-    <System.Runtime.CompilerServices.Extension>
-    Public Function ToDataTable(Of TSource)(ByVal data As IList(Of TSource)) As DataTable
+    <Runtime.CompilerServices.Extension>
+    Public Function ToDataTable(Of TSource)(data As IList(Of TSource)) As DataTable
         Dim props As PropertyDescriptorCollection = TypeDescriptor.GetProperties(GetType(TSource))
         Dim table As New DataTable()
 
@@ -33,14 +33,13 @@ Public Module Extensions
     ''' <typeparam name="TSource">Type to return from DataTable</typeparam>
     ''' <param name="table">DataTable</param>
     ''' <returns>List of <see cref="TSource"/>Expected type list</returns>
-    <System.Runtime.CompilerServices.Extension>
-    Public Function DataTableToList(Of TSource As New)(ByVal table As DataTable) As List(Of TSource)
+    <Runtime.CompilerServices.Extension>
+    Public Function DataTableToList(Of TSource As New)(table As DataTable) As List(Of TSource)
         Dim list As New List(Of TSource)()
 
-        Dim typeProperties = GetType(TSource).GetProperties().Select(Function(propertyInfo) New With {
-                                                                        Key .PropertyInfo = propertyInfo,
-                                                                        Key .Type = If(Nullable.GetUnderlyingType(propertyInfo.PropertyType), propertyInfo.PropertyType)
-                                                                        }).ToList()
+        Dim typeProperties = GetType(TSource).GetProperties().Select(
+            Function(propertyInfo) New With {Key .PropertyInfo = propertyInfo, Key .Type =
+                If(Nullable.GetUnderlyingType(propertyInfo.PropertyType), propertyInfo.PropertyType)}).ToList()
 
         For Each row In table.Rows.Cast(Of DataRow)()
 
