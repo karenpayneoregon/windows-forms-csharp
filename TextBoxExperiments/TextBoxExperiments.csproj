@@ -7,8 +7,4 @@
     <UseWindowsForms>true</UseWindowsForms>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Folder Include="assets\" />
-  </ItemGroup>
-
 </Project>
