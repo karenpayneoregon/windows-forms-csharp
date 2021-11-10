@@ -20,7 +20,7 @@ namespace TextBoxExperiments
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string longString = new string('*', 5000) + "A1B";
+            string longString = new string('*', 43676) + "A1B";
             textBox1.Text = longString;
             textBox1.SelectionStart = textBox1.Text.Length;
             textBox1.SelectionLength = 0;
