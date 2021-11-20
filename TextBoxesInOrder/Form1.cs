@@ -75,15 +75,15 @@ namespace TextBoxesInOrder
         private void button2_Click(object sender, EventArgs e)
         {
 
-
-for (int index = 0; index < 1000; index++)
-{
-    var textbox = Controls.OfType<TextBox>().FirstOrDefault(x => x.Name == $"textBox{index}");
-    if (textbox != null)
-    {
-        textbox.Text = "";
-    }
-}
+            var baseText = "Textbox number ";
+            for (int index = 0; index < 1000; index++)
+            {
+                var textBox = Controls.OfType<TextBox>().FirstOrDefault(x => x.Name == $"textBox{index}");
+                if (textBox != null)
+                {
+                    textBox.Text = $"{baseText}{index}";
+                }
+            }
 
 
         }

@@ -34,6 +34,8 @@ namespace LoadDataGridViewProgressBar
             this.ContactTitleColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CountryColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LoadDataGridViewButton = new System.Windows.Forms.Button();
+            this.FilterButton = new System.Windows.Forms.Button();
+            this.CompanyNameFilterTextBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.customerDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -77,11 +79,30 @@ namespace LoadDataGridViewProgressBar
             this.LoadDataGridViewButton.UseVisualStyleBackColor = true;
             this.LoadDataGridViewButton.Click += new System.EventHandler(this.LoadDataGridViewButton_Click);
             // 
+            // FilterButton
+            // 
+            this.FilterButton.Location = new System.Drawing.Point(159, 406);
+            this.FilterButton.Name = "FilterButton";
+            this.FilterButton.Size = new System.Drawing.Size(75, 23);
+            this.FilterButton.TabIndex = 3;
+            this.FilterButton.Text = "Filter";
+            this.FilterButton.UseVisualStyleBackColor = true;
+            this.FilterButton.Click += new System.EventHandler(this.FilterButton_Click);
+            // 
+            // CompanyNameFilterTextBox
+            // 
+            this.CompanyNameFilterTextBox.Location = new System.Drawing.Point(243, 408);
+            this.CompanyNameFilterTextBox.Name = "CompanyNameFilterTextBox";
+            this.CompanyNameFilterTextBox.Size = new System.Drawing.Size(100, 20);
+            this.CompanyNameFilterTextBox.TabIndex = 5;
+            // 
             // BindingListForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(505, 450);
+            this.Controls.Add(this.CompanyNameFilterTextBox);
+            this.Controls.Add(this.FilterButton);
             this.Controls.Add(this.LoadDataGridViewButton);
             this.Controls.Add(this.customerDataGridView);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
@@ -90,6 +111,7 @@ namespace LoadDataGridViewProgressBar
             this.Text = "BindingList Form";
             ((System.ComponentModel.ISupportInitialize)(this.customerDataGridView)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -100,5 +122,7 @@ namespace LoadDataGridViewProgressBar
         private System.Windows.Forms.DataGridViewTextBoxColumn ContactTitleColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn CountryColumn;
         private System.Windows.Forms.Button LoadDataGridViewButton;
+        private System.Windows.Forms.Button FilterButton;
+        private System.Windows.Forms.TextBox CompanyNameFilterTextBox;
     }
 }

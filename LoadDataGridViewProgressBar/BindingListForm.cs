@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel;
+using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using LoadDataGridViewProgressBar.Classes;
@@ -10,6 +11,7 @@ namespace LoadDataGridViewProgressBar
     {
         private BindingSource _customersBindingSource = new BindingSource();
         private BindingList<Customer> _customersBindingList = new BindingList<Customer>(); 
+        private BindingList<Customer> _customersBindingListFiltered = new BindingList<Customer>(); 
         public BindingListForm()
         {
             InitializeComponent();
@@ -48,5 +50,23 @@ namespace LoadDataGridViewProgressBar
         {
             await PopulateData();
         }
+
+        private void FilterButton_Click(object sender, EventArgs e)
+        {
+
+            /*
+             * If CompanyNameFilterTextBox.Text is empty, filter is removed
+             */
+            _customersBindingListFiltered = new BindingList<Customer>(
+                _customersBindingList.Where(product =>
+                    product.CompanyName.StartsWith(CompanyNameFilterTextBox.Text)).ToList());
+
+            _customersBindingSource.DataSource = _customersBindingListFiltered;
+            customerDataGridView.DataSource = _customersBindingSource;
+
+
+
+        }
+
     }
 }
