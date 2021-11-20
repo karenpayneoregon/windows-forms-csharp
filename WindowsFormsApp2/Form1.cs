@@ -1,55 +1,61 @@
 ﻿using System;
-using System.ComponentModel;
-using System.Linq;
+using System.Drawing;
 using System.Windows.Forms;
-using WindowsFormsApp2.Classes;
 
 namespace WindowsFormsApp2
 {
     public partial class Form1 : Form
     {
-        
-        readonly BindingList<BoxItem> _dataSource;
-        
         public Form1()
         {
             InitializeComponent();
 
-            _dataSource = new BindingList<BoxItem>(MockedData.Boxes());
-
-            listBox1.DataSource = _dataSource;
-
-            Flipper();
-            
-            radioButtonIM.CheckedChanged += RadioButtonOnCheckedChanged;
-            radioButtonSI.CheckedChanged += RadioButtonOnCheckedChanged;
-
+            dataGridView1.CellFormatting += DataGridView1OnCellFormatting;
         }
 
-        private void RadioButtonOnCheckedChanged(object sender, EventArgs e)
+        private void DataGridView1OnCellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-            RadioButton rb = (RadioButton)sender ;
-            
-            if (rb != null)
+            if (e.ColumnIndex != 0) return;
+
+            if (Convert.ToString(dataGridView1.Rows[e.RowIndex].Cells[0].Value) == "Anne")
             {
-                if (rb.Checked)
+                dataGridView1.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.DarkSalmon;
+                e.CellStyle.Font = new Font(e.CellStyle.Font, FontStyle.Bold);
+            }
+            else
+            {
+                dataGridView1.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.Empty;
+                e.CellStyle.Font = new Font(e.CellStyle.Font, FontStyle.Regular);
+            }
+        }
+        
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            dataGridView1.Rows.Add("Karen");
+            dataGridView1.Rows.Add("Anne");
+            dataGridView1.Rows.Add("Karen");
+            dataGridView1.Rows.Add("Anne");
+            dataGridView1.Rows.Add("Mary");
+            dataGridView1.Rows.Add("Anne");
+        }
+
+        private void IterateRowsButton_Click(object sender, EventArgs e)
+        {
+            
+            listBox1.Items.Clear();
+
+            for (int index = 0; index < dataGridView1.Rows.Count -1; index++)
+            {
+                
+                if (dataGridView1.Rows[index].IsNewRow)
                 {
-                    Flipper();
+                    continue;
                 }
+
+                var cellStyle = dataGridView1.Rows[index].Cells[0].GetFormattedStyle();
+                listBox1.Items.Add(cellStyle.Font.Bold ? $"{index} is bold" : $"{index} is not bold");
             }
-        }
-
-        private void Flipper()
-        {
-            string unitType = Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked).Tag.ToString();
-
-            Enum.TryParse(unitType, out Unit unit);
             
-            for (int index = 0; index < listBox1.Items.Count; index++)
-            {
-                BoxItem item = _dataSource[index];
-                item.Unit = unit;
-            }
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using TimeLibrary.Classes;
 
 namespace TimeLibraryConsoleApp
@@ -9,8 +10,6 @@ namespace TimeLibraryConsoleApp
         {
             SecondAttempt();
             FirstAttempt();
-
-            Console.ReadLine();
         }
 
         /// <summary>
@@ -18,11 +17,11 @@ namespace TimeLibraryConsoleApp
         /// </summary>
         private static void SecondAttempt()
         {
-            var fromDateTime = new DateTime(2008, 9, 24);
+            var fromDateTime = new DateTime(1956, 9, 24);
             var toDateTime = DateTime.Now;
 
             var age = fromDateTime.Age(toDateTime);
-            Console.WriteLine($"Age is {age.YearsMonthsDays}");
+            Debug.WriteLine($"Age is {age.YearsMonthsDays}");
         }
 
         /// <summary>
@@ -30,7 +29,7 @@ namespace TimeLibraryConsoleApp
         /// </summary>
         private static void FirstAttempt()
         {
-            var fromDateTime = new DateTime(2008, 9, 24);
+            var fromDateTime = new DateTime(1956, 9, 24);
             var toDateTime = DateTime.Now;
 
             fromDateTime.GetElapsedTime(toDateTime,
@@ -38,7 +37,7 @@ namespace TimeLibraryConsoleApp
                 out var hours, out var minutes, out var seconds,
                 out _);
 
-            Console.WriteLine($"Age is {years} years {months} months {days} days");
+            Debug.WriteLine($"Age is {years} years {months} months {days} days");
         }
     }
 }

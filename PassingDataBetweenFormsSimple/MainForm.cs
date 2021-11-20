@@ -14,7 +14,7 @@ namespace PassingDataBetweenFormsSimple
         private void ShowChildButton_Click(object sender, EventArgs e)
         {
             ChildForm childForm = new ChildForm();
-            
+
             childForm.PassingData   += ChildFormOnPassingData;
             childForm.PassingNumber += ChildFormOnPassingNumber;
 

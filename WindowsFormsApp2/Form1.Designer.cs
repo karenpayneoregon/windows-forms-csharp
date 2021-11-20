@@ -4,12 +4,12 @@ namespace WindowsFormsApp2
     partial class Form1
     {
         /// <summary>
-        ///  Required designer variable.
+        /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
         /// <summary>
-        ///  Clean up any resources being used.
+        /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
@@ -24,71 +24,75 @@ namespace WindowsFormsApp2
         #region Windows Form Designer generated code
 
         /// <summary>
-        ///  Required method for Designer support - do not modify
-        ///  the contents of this method with the code editor.
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
         {
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.FirstNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IterateRowsButton = new System.Windows.Forms.Button();
             this.listBox1 = new System.Windows.Forms.ListBox();
-            this.radioButtonSI = new System.Windows.Forms.RadioButton();
-            this.radioButtonIM = new System.Windows.Forms.RadioButton();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.FirstNameColumn});
+            this.dataGridView1.Location = new System.Drawing.Point(24, 29);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(240, 204);
+            this.dataGridView1.TabIndex = 0;
+            // 
+            // FirstNameColumn
+            // 
+            this.FirstNameColumn.HeaderText = "First name";
+            this.FirstNameColumn.Name = "FirstNameColumn";
+            // 
+            // IterateRowsButton
+            // 
+            this.IterateRowsButton.Location = new System.Drawing.Point(270, 29);
+            this.IterateRowsButton.Name = "IterateRowsButton";
+            this.IterateRowsButton.Size = new System.Drawing.Size(151, 23);
+            this.IterateRowsButton.TabIndex = 1;
+            this.IterateRowsButton.Text = "Iterate rows";
+            this.IterateRowsButton.UseVisualStyleBackColor = true;
+            this.IterateRowsButton.Click += new System.EventHandler(this.IterateRowsButton_Click);
             // 
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 15;
-            this.listBox1.Location = new System.Drawing.Point(22, 14);
+            this.listBox1.Location = new System.Drawing.Point(290, 74);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(147, 139);
-            this.listBox1.TabIndex = 1;
-            // 
-            // radioButtonSI
-            // 
-            this.radioButtonSI.AutoSize = true;
-            this.radioButtonSI.Location = new System.Drawing.Point(175, 14);
-            this.radioButtonSI.Name = "radioButtonSI";
-            this.radioButtonSI.Size = new System.Drawing.Size(34, 19);
-            this.radioButtonSI.TabIndex = 2;
-            this.radioButtonSI.TabStop = true;
-            this.radioButtonSI.Tag = "SI";
-            this.radioButtonSI.Text = "SI";
-            this.radioButtonSI.UseVisualStyleBackColor = true;
-            // 
-            // radioButtonIM
-            // 
-            this.radioButtonIM.AutoSize = true;
-            this.radioButtonIM.Checked = true;
-            this.radioButtonIM.Location = new System.Drawing.Point(175, 39);
-            this.radioButtonIM.Name = "radioButtonIM";
-            this.radioButtonIM.Size = new System.Drawing.Size(39, 19);
-            this.radioButtonIM.TabIndex = 3;
-            this.radioButtonIM.TabStop = true;
-            this.radioButtonIM.Tag = "IM";
-            this.radioButtonIM.Text = "IM";
-            this.radioButtonIM.UseVisualStyleBackColor = true;
+            this.listBox1.Size = new System.Drawing.Size(86, 108);
+            this.listBox1.TabIndex = 2;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(236, 178);
-            this.Controls.Add(this.radioButtonIM);
-            this.Controls.Add(this.radioButtonSI);
+            this.ClientSize = new System.Drawing.Size(433, 306);
             this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.IterateRowsButton);
+            this.Controls.Add(this.dataGridView1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Code sample";
+            this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
+
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FirstNameColumn;
+        private System.Windows.Forms.Button IterateRowsButton;
         private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.RadioButton radioButtonSI;
-        private System.Windows.Forms.RadioButton radioButtonIM;
     }
 }
 
