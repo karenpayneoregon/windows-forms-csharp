@@ -10,6 +10,7 @@ namespace PassingDataBetweenFormsSimple
 
         public delegate void OnPassingNumber(int value);
         public event OnPassingNumber PassingNumber;
+
         public ChildForm()
         {
             InitializeComponent();

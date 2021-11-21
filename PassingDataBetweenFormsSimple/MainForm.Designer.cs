@@ -32,7 +32,6 @@ namespace PassingDataBetweenFormsSimple
             this.FirstNameTextBox = new System.Windows.Forms.TextBox();
             this.ShowChildButton = new System.Windows.Forms.Button();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.ShowConfirmButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -65,22 +64,11 @@ namespace PassingDataBetweenFormsSimple
             this.numericUpDown1.Size = new System.Drawing.Size(120, 20);
             this.numericUpDown1.TabIndex = 3;
             // 
-            // ShowConfirmButton
-            // 
-            this.ShowConfirmButton.Location = new System.Drawing.Point(22, 79);
-            this.ShowConfirmButton.Name = "ShowConfirmButton";
-            this.ShowConfirmButton.Size = new System.Drawing.Size(226, 23);
-            this.ShowConfirmButton.TabIndex = 4;
-            this.ShowConfirmButton.Text = "Show confirm form";
-            this.ShowConfirmButton.UseVisualStyleBackColor = true;
-            this.ShowConfirmButton.Click += new System.EventHandler(this.ShowConfirmButton_Click);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(339, 114);
-            this.Controls.Add(this.ShowConfirmButton);
+            this.ClientSize = new System.Drawing.Size(339, 75);
             this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.ShowChildButton);
             this.Controls.Add(this.FirstNameTextBox);
@@ -97,7 +85,6 @@ namespace PassingDataBetweenFormsSimple
         private System.Windows.Forms.TextBox FirstNameTextBox;
         private System.Windows.Forms.Button ShowChildButton;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.Button ShowConfirmButton;
     }
 }
 

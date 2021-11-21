@@ -64,7 +64,7 @@ namespace PassingDataBetweenFormsSimple
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(318, 180);
+            this.ClientSize = new System.Drawing.Size(318, 113);
             this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.PassDataButton);
             this.Controls.Add(this.FirstNameTextBox);
