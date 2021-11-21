@@ -1,5 +1,5 @@
 ﻿
-namespace WindowsFormsApp2
+namespace DataGridViewGetCellSyle
 {
     partial class Form1
     {

@@ -2,7 +2,7 @@
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace WindowsFormsApp2
+namespace DataGridViewGetCellSyle
 {
     public partial class Form1 : Form
     {

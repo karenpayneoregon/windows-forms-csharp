@@ -17,7 +17,7 @@ namespace SplitButtonDemo
 
         const int SplitSectionWidth = 18;
 
-        static int BorderSize = SystemInformation.Border3DSize.Width * 2;
+        private static readonly int BorderSize = SystemInformation.Border3DSize.Width * 2;
         bool skipNextOpen;
         Rectangle dropDownRectangle;
         bool showSplit;
@@ -25,8 +25,8 @@ namespace SplitButtonDemo
         bool isSplitMenuVisible;
 
 
-        ContextMenuStrip m_SplitMenuStrip;
-        ContextMenu m_SplitMenu;
+        ContextMenuStrip _SplitMenuStrip;
+        ContextMenu _SplitMenu;
 
         TextFormatFlags textFormatFlags = TextFormatFlags.Default;
 
@@ -50,13 +50,13 @@ namespace SplitButtonDemo
         [DefaultValue(null)]
         public ContextMenu SplitMenu
         {
-            get => m_SplitMenu;
+            get => _SplitMenu;
             set
             {
                 //remove the event handlers for the old SplitMenu
-                if (m_SplitMenu != null)
+                if (_SplitMenu != null)
                 {
-                    m_SplitMenu.Popup -= SplitMenu_Popup;
+                    _SplitMenu.Popup -= SplitMenu_Popup;
                 }
 
                 //add the event handlers for the new SplitMenu
@@ -68,21 +68,21 @@ namespace SplitButtonDemo
                 else
                     ShowSplit = false;
 
-                m_SplitMenu = value;
+                _SplitMenu = value;
             }
         }
 
         [DefaultValue(null)]
         public ContextMenuStrip SplitMenuStrip
         {
-            get => m_SplitMenuStrip;
+            get => _SplitMenuStrip;
             set
             {
                 //remove the event handlers for the old SplitMenuStrip
-                if (m_SplitMenuStrip != null)
+                if (_SplitMenuStrip != null)
                 {
-                    m_SplitMenuStrip.Closing -= SplitMenuStrip_Closing;
-                    m_SplitMenuStrip.Opening -= SplitMenuStrip_Opening;
+                    _SplitMenuStrip.Closing -= SplitMenuStrip_Closing;
+                    _SplitMenuStrip.Opening -= SplitMenuStrip_Opening;
                 }
 
                 //add the event handlers for the new SplitMenuStrip
@@ -96,7 +96,7 @@ namespace SplitButtonDemo
                     ShowSplit = false;
 
 
-                m_SplitMenuStrip = value;
+                _SplitMenuStrip = value;
             }
         }
 
@@ -198,6 +198,7 @@ namespace SplitButtonDemo
             State = Enabled ? PushButtonState.Normal : PushButtonState.Disabled;
 
             base.OnEnabledChanged(e);
+
         }
 
         protected override void OnLostFocus(EventArgs e)
@@ -214,7 +215,7 @@ namespace SplitButtonDemo
             }
         }
 
-        bool isMouseEntered;
+        bool _isMouseEntered;
 
         protected override void OnMouseEnter(EventArgs e)
         {
@@ -224,7 +225,7 @@ namespace SplitButtonDemo
                 return;
             }
 
-            isMouseEntered = true;
+            _isMouseEntered = true;
 
             if (!State.Equals(PushButtonState.Pressed) && !State.Equals(PushButtonState.Disabled))
             {
@@ -241,7 +242,7 @@ namespace SplitButtonDemo
                 return;
             }
 
-            isMouseEntered = false;
+            _isMouseEntered = false;
 
             if (!State.Equals(PushButtonState.Pressed) && !State.Equals(PushButtonState.Disabled))
             {
@@ -258,7 +259,7 @@ namespace SplitButtonDemo
             }
 
             //handle ContextMenu re-clicking the drop-down region to close the menu
-            if (m_SplitMenu != null && e.Button == MouseButtons.Left && !isMouseEntered)
+            if (_SplitMenu != null && e.Button == MouseButtons.Left && !_isMouseEntered)
                 skipNextOpen = true;
 
             if (dropDownRectangle.Contains(e.Location) && !isSplitMenuVisible && e.Button == MouseButtons.Left)
@@ -284,13 +285,13 @@ namespace SplitButtonDemo
             {
                 ShowContextMenuStrip();
             }
-            else if (m_SplitMenuStrip == null && m_SplitMenu == null || !isSplitMenuVisible)
+            else if (_SplitMenuStrip == null && _SplitMenu == null || !isSplitMenuVisible)
             {
                 SetButtonDrawState();
 
                 if (ClientRectangle.Contains(mevent.Location) && !dropDownRectangle.Contains(mevent.Location))
                 {
-                    OnClick(new EventArgs());
+                    OnClick(EventArgs.Empty);
                 }
             }
         }
@@ -300,7 +301,9 @@ namespace SplitButtonDemo
             base.OnPaint(pevent);
 
             if (!showSplit)
+            {
                 return;
+            }
 
             Graphics g = pevent.Graphics;
             Rectangle bounds = ClientRectangle;
@@ -312,7 +315,7 @@ namespace SplitButtonDemo
                 backgroundBounds.Inflate(-1, -1);
                 ButtonRenderer.DrawButton(g, backgroundBounds, State);
 
-                // button renderer doesnt draw the black frame when themes are off
+                // button renderer doesn't draw the black frame when themes are off
                 g.DrawRectangle(SystemPens.WindowFrame, 0, 0, bounds.Width - 1, bounds.Height - 1);
             }
             else
@@ -395,9 +398,13 @@ namespace SplitButtonDemo
             if (!string.IsNullOrEmpty(Text))
             {
                 if (Enabled)
+                {
                     TextRenderer.DrawText(g, Text, Font, text_rectangle, ForeColor, textFormatFlags);
+                }
                 else
+                {
                     ControlPaint.DrawStringDisabled(g, Text, Font, BackColor, text_rectangle, textFormatFlags);
+                }
             }
         }
 
@@ -410,24 +417,25 @@ namespace SplitButtonDemo
 
             Point[] arrow = new[] { new Point(middle.X - 2, middle.Y - 1), new Point(middle.X + 3, middle.Y - 1), new Point(middle.X, middle.Y + 2) };
 
-            if (Enabled)
-                g.FillPolygon(SystemBrushes.ControlText, arrow);
-            else
-                g.FillPolygon(SystemBrushes.ButtonShadow, arrow);
+            g.FillPolygon(Enabled ? SystemBrushes.ControlText : SystemBrushes.ButtonShadow, arrow);
         }
 
         public override Size GetPreferredSize(Size proposedSize)
         {
             Size preferredSize = base.GetPreferredSize(proposedSize);
 
-            //autosize correctly for splitbuttons
+            //auto size correctly for split buttons
             if (showSplit)
             {
                 if (AutoSize)
+                {
                     return CalculateButtonAutoSize();
+                }
 
                 if (!string.IsNullOrEmpty(Text) && TextRenderer.MeasureText(Text, Font).Width + SplitSectionWidth > preferredSize.Width)
+                {
                     return preferredSize + new Size(SplitSectionWidth + BorderSize * 2, 0);
+                }
             }
 
             return preferredSize;
@@ -437,7 +445,7 @@ namespace SplitButtonDemo
         {
             Size ret_size = Size.Empty;
             Size text_size = TextRenderer.MeasureText(Text, Font);
-            Size image_size = Image == null ? Size.Empty : Image.Size;
+            Size image_size = Image?.Size ?? Size.Empty;
 
             // Pad the text size
             if (Text.Length != 0)
@@ -484,7 +492,7 @@ namespace SplitButtonDemo
         private void CalculateButtonTextAndImageLayout(ref Rectangle content_rect, out Rectangle textRectangle, out Rectangle imageRectangle)
         {
             Size text_size = TextRenderer.MeasureText(Text, Font, content_rect.Size, textFormatFlags);
-            Size image_size = Image == null ? Size.Empty : Image.Size;
+            Size image_size = Image?.Size ?? Size.Empty;
 
             textRectangle = Rectangle.Empty;
             imageRectangle = Rectangle.Empty;
@@ -754,13 +762,13 @@ namespace SplitButtonDemo
 
             State = PushButtonState.Pressed;
 
-            if (m_SplitMenu != null)
+            if (_SplitMenu != null)
             {
-                m_SplitMenu.Show(this, new Point(0, Height));
+                _SplitMenu.Show(this, new Point(0, Height));
             }
-            else if (m_SplitMenuStrip != null)
+            else if (_SplitMenuStrip != null)
             {
-                m_SplitMenuStrip.Show(this, new Point(0, Height), ToolStripDropDownDirection.BelowRight);
+                _SplitMenuStrip.Show(this, new Point(0, Height), ToolStripDropDownDirection.BelowRight);
             }
         }
 

@@ -1,8 +1,7 @@
-﻿using System;
-using System.Reflection;
+﻿using System.Reflection;
 using System.Windows.Forms;
 
-namespace WindowsFormsApp2
+namespace DataGridViewGetCellSyle
 {
     public static class DataGridViewColumnExtensions
     {
@@ -25,7 +24,7 @@ namespace WindowsFormsApp2
             var methodInfo = dgv.GetType().GetMethod("OnCellFormatting",
                 BindingFlags.Instance | BindingFlags.NonPublic,
                 null,
-                new Type[] { typeof(DataGridViewCellFormattingEventArgs) },
+                new[] { typeof(DataGridViewCellFormattingEventArgs) },
                 null);
 
             methodInfo.Invoke(dgv, new object[] { formattingArgs });
