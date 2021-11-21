@@ -1,0 +1,29 @@
+[
+  {
+    "CustomerIdentifier": 1,
+    "FirstName": "Karen",
+    "LastName": "Payne",
+    "Street": null,
+    "City": null,
+    "PostalCode": null,
+    "CountryIdentifier": 0
+  },
+  {
+    "CustomerIdentifier": 2,
+    "FirstName": "Mary",
+    "LastName": "Smith",
+    "Street": null,
+    "City": null,
+    "PostalCode": null,
+    "CountryIdentifier": 0
+  },
+  {
+    "CustomerIdentifier": 3,
+    "FirstName": "Anne",
+    "LastName": "Barr",
+    "Street": null,
+    "City": null,
+    "PostalCode": null,
+    "CountryIdentifier": 0
+  }
+]
