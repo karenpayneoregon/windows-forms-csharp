@@ -52,6 +52,9 @@
     <Compile Include="Classes\Controls\DataButton.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Classes\Controls\CustomButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Classes\DataOperations.cs" />
     <Compile Include="Classes\Containers\Product.cs" />
     <Compile Include="Classes\Extensions\StringExtensions.cs" />

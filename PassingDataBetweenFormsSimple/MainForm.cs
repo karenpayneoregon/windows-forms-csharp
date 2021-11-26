@@ -26,7 +26,7 @@ namespace PassingDataBetweenFormsSimple
             {
                 childForm.Dispose();
             }
-            
+
         }
 
         private void ChildFormOnPassingNumber(int value)

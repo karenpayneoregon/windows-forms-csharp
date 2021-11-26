@@ -14,6 +14,7 @@ namespace PassingDataBetweenFormsSimple
         public ChildForm()
         {
             InitializeComponent();
+
         }
 
         private void PassDataButton_Click(object sender, EventArgs e)
