@@ -1,5 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
+using System.Diagnostics;
+using System.Drawing;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -19,19 +21,24 @@ namespace LoadDataGridViewProgressBar
         }
         private async void OnShown(object sender, EventArgs e)
         {
-            await PopulateData();
+            await PopulateData(true);
         }
-        private async Task PopulateData()
+
+        private async Task PopulateData(bool firstTime = false)
         {
             var (exception, customers) = await Operations.LoadCustomerList();
 
             if (exception == null)
             {
-                _customersBindingList = null;
-                _customersBindingSource = null;
-                customerDataGridView.DataSource = null;
+                if (!firstTime)
+                {
+                    _customersBindingList = null;
+                    _customersBindingSource = null;
+                    customerDataGridView.DataSource = null;
 
-                GC.Collect();
+                    GC.Collect();
+                }
+
                 await Task.Delay(500);
 
                 _customersBindingList = new BindingList<Customer>(customers);
@@ -68,5 +75,11 @@ namespace LoadDataGridViewProgressBar
 
         }
 
+    }
+
+    public static class MyExtensions
+    {
+        public static string TrimLastCharacter(this String str) 
+            => string.IsNullOrEmpty(str) ? str : str.TrimEnd(str[str.Length - 1]);
     }
 }

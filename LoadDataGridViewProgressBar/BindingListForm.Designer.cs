@@ -41,6 +41,8 @@ namespace LoadDataGridViewProgressBar
             // 
             // customerDataGridView
             // 
+            this.customerDataGridView.AllowUserToAddRows = false;
+            this.customerDataGridView.AllowUserToDeleteRows = false;
             this.customerDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.customerDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.CompanyNameColumn,
@@ -48,6 +50,8 @@ namespace LoadDataGridViewProgressBar
             this.CountryColumn});
             this.customerDataGridView.Location = new System.Drawing.Point(13, 19);
             this.customerDataGridView.Name = "customerDataGridView";
+            this.customerDataGridView.ReadOnly = true;
+            this.customerDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.customerDataGridView.Size = new System.Drawing.Size(480, 369);
             this.customerDataGridView.TabIndex = 0;
             // 
@@ -56,18 +60,21 @@ namespace LoadDataGridViewProgressBar
             this.CompanyNameColumn.DataPropertyName = "CompanyName";
             this.CompanyNameColumn.HeaderText = "Name";
             this.CompanyNameColumn.Name = "CompanyNameColumn";
+            this.CompanyNameColumn.ReadOnly = true;
             // 
             // ContactTitleColumn
             // 
             this.ContactTitleColumn.DataPropertyName = "ContactTitle";
             this.ContactTitleColumn.HeaderText = "Title";
             this.ContactTitleColumn.Name = "ContactTitleColumn";
+            this.ContactTitleColumn.ReadOnly = true;
             // 
             // CountryColumn
             // 
             this.CountryColumn.DataPropertyName = "Country";
             this.CountryColumn.HeaderText = "Country";
             this.CountryColumn.Name = "CountryColumn";
+            this.CountryColumn.ReadOnly = true;
             // 
             // LoadDataGridViewButton
             // 
