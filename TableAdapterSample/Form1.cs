@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DgvFilterPopup;
 using TableAdapterSample.Classes;
 
 namespace TableAdapterSample
@@ -16,23 +17,18 @@ namespace TableAdapterSample
         public Form1()
         {
             InitializeComponent();
+            productsDataGridView.DataError += ProductsDataGridViewOnDataError;
         }
 
-        private void productsBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        private void ProductsDataGridViewOnDataError(object sender, DataGridViewDataErrorEventArgs e)
         {
-            this.Validate();
-            this.productsBindingSource.EndEdit();
-            //this.tableAdapterManager.UpdateAll(this.northDataSet);
-            var temp = northDataSet.Products;
-            Console.WriteLine();
+            e.Cancel = true;
         }
-
-
         private void productsBindingNavigatorSaveItem_Click_1(object sender, EventArgs e)
         {
-            this.Validate();
-            this.productsBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.northDataSet);
+            Validate();
+            productsBindingSource.EndEdit();
+            tableAdapterManager.UpdateAll(this.northDataSet);
 
         }
 
@@ -44,6 +40,12 @@ namespace TableAdapterSample
             productsDataGridView.AutoGenerateColumns = false;
             productsTableAdapter.FillByCustom(northDataSet.Products);
             productsDataGridView.DataSource = productsBindingSource;
+
+            DgvFilterManager fm = new DgvFilterManager(productsDataGridView)
+            {
+                ["SupplierNameColumn"] = new DgvComboBoxColumnFilter(),
+                ["CategoryNameColumn"] = new DgvComboBoxColumnFilter()
+            };
 
             categoriesTableAdapter.Fill(northDataSet.Categories);
 

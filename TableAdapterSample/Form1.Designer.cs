@@ -62,6 +62,7 @@ namespace TableAdapterSample
             this.label2 = new System.Windows.Forms.Label();
             this.TestFilterButton = new System.Windows.Forms.Button();
             this.RemoveFilterButton = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingNavigator)).BeginInit();
             this.productsBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).BeginInit();
@@ -213,7 +214,7 @@ namespace TableAdapterSample
             this.ProductColumn,
             this.SupplierNameColumn,
             this.CategoryNameColumn});
-            this.productsDataGridView.Location = new System.Drawing.Point(12, 28);
+            this.productsDataGridView.Location = new System.Drawing.Point(12, 58);
             this.productsDataGridView.Name = "productsDataGridView";
             this.productsDataGridView.Size = new System.Drawing.Size(826, 220);
             this.productsDataGridView.TabIndex = 1;
@@ -327,11 +328,21 @@ namespace TableAdapterSample
             this.RemoveFilterButton.UseVisualStyleBackColor = true;
             this.RemoveFilterButton.Click += new System.EventHandler(this.RemoveFilterButton_Click);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(12, 38);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(182, 13);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "Right click on column header to filder";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(858, 409);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.RemoveFilterButton);
             this.Controls.Add(this.TestFilterButton);
             this.Controls.Add(this.label2);
@@ -340,7 +351,6 @@ namespace TableAdapterSample
             this.Controls.Add(this.CategoriesComboBox);
             this.Controls.Add(this.productsDataGridView);
             this.Controls.Add(this.productsBindingNavigator);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Code Sample";
@@ -391,6 +401,7 @@ namespace TableAdapterSample
         private System.Windows.Forms.DataGridViewTextBoxColumn CategoryNameColumn;
         private System.Windows.Forms.Button TestFilterButton;
         private System.Windows.Forms.Button RemoveFilterButton;
+        private System.Windows.Forms.Label label3;
     }
 }
 
