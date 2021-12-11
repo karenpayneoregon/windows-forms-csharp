@@ -2,12 +2,35 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Diagnostics;
 using static SqlServerLibrary.Classes.SqlServerConnections;
 
 namespace SqlServerLibrary.Classes
 {
     public class DataOperations
     {
+        public static void Demo()
+        {
+            using var cn = new SqlConnection("Data Source=.\\SQLEXPRESS;Initial Catalog=ForumExample;Integrated Security=True");
+            var sql = "SELECT LEN(PetName) +2 AS length FROM Pet WHERE LEN(PetName) = " + 
+                      "(SELECT MAX(LEN(PetName)) FROM Pet)";
+
+            using var cmd = new SqlCommand(sql, cn);
+
+            cn.Open();
+
+            var nameLength = Convert.ToInt32(cmd.ExecuteScalar());
+            cmd.CommandText = "SELECT MakeId, PetName, Color FROM dbo.Pet;";
+
+            SqlDataReader reader = cmd.ExecuteReader();
+            
+            Debug.WriteLine("++++++++ Fun with Data Readers AutoLot++++++++++++");
+            while (reader.Read())
+            {
+                Debug.WriteLine($"-> Make : {reader.GetInt32(0),-4}PetName : {reader.GetString(1).PadRight(nameLength)}Color : {reader.GetString(2)}");
+            }
+
+        }
         public static (Exception exception, List<string> nameList) ReadCategoryNames()
         {
             List<string> names = new ();
@@ -40,21 +63,5 @@ namespace SqlServerLibrary.Classes
         }
     }
 
-    class Demo
-    {
-        public Demo()
-        {
-            var (exception, nameList) = DataOperations.ReadCategoryNames();
-            if (exception is null)
-            {
-                // use list
-            }
-            else
-            {
-                // report issue
-                // exception.Message
-            }
-
-        }
-    }
+    
 }

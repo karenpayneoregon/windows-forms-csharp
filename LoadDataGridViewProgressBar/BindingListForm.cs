@@ -66,7 +66,7 @@ namespace LoadDataGridViewProgressBar
              */
             _customersBindingListFiltered = new BindingList<Customer>(
                 _customersBindingList.Where(product =>
-                    product.CompanyName.StartsWith(CompanyNameFilterTextBox.Text)).ToList());
+                    product.CompanyName.StartsWith(CompanyNameFilterTextBox.Text, StringComparison.OrdinalIgnoreCase)).ToList());
 
             _customersBindingSource.DataSource = _customersBindingListFiltered;
             customerDataGridView.DataSource = _customersBindingSource;

@@ -37,8 +37,7 @@ namespace LoadDataGridViewProgressBar
 
             NextButton.Click += (sender, args) => CustomersBindingSource.MoveNext();
 
-            PreviousButton.Click += (sender, args)
-                => CustomersBindingSource.MovePrevious();
+            PreviousButton.Click += (sender, args) => CustomersBindingSource.MovePrevious();
 
             EditButton.Click += EditButtonOnClick;
 

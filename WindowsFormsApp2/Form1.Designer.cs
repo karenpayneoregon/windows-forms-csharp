@@ -1,5 +1,5 @@
 ﻿
-namespace DataGridViewGetCellSyle
+namespace DataGridViewGetCellStyle
 {
     partial class Form1
     {

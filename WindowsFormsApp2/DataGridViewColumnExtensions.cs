@@ -1,8 +1,9 @@
 ﻿using System.Reflection;
 using System.Windows.Forms;
 
-namespace DataGridViewGetCellSyle
+namespace DataGridViewGetCellStyle
 {
+
     public static class DataGridViewColumnExtensions
     {
         public static DataGridViewCellStyle GetFormattedStyle(this DataGridViewCell cell)
