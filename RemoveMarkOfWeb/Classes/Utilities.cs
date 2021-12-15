@@ -20,10 +20,7 @@ namespace RemoveMarkOfWeb.Classes
             };
 
 
-            using (var process = Process.Start(startProcess))
-            {
-                
-            }
+            using (var process = Process.Start(startProcess)) { }
 
         }
     }
