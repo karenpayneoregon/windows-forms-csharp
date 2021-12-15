@@ -53,6 +53,24 @@ namespace SpreadsheetLightDataGridViewExport.Classes
            
         }
 
+        public static bool SheetExists(SLDocument document, string sheetName) =>
+            document.GetSheetNames(false).Any((name) => name.ToLower() == sheetName.ToLower());
+
+        public static void Example(string fileName, string sheetName)
+        {
+            using (var document = new SLDocument(fileName, sheetName))
+            {
+                var stats = document.GetWorksheetStatistics();
+                for (int rowIndex = 1; rowIndex < stats.EndRowIndex + 1; rowIndex++)
+                {
+                    for (int columnIndex = 1; columnIndex < stats.EndColumnIndex +1; columnIndex++)
+                    {
+                        Console.WriteLine($"{SLConvert.ToCellReference(rowIndex, columnIndex)} = {document.GetCellValueAsString(rowIndex, columnIndex)}");
+                    }
+                }
+            }
+        }
+
 
     }
 }
