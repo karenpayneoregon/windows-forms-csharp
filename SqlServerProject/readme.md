@@ -14,6 +14,8 @@ Alternate is to use EF Core 5 with .[ToBindingList](https://docs.microsoft.com/e
 
 </br>
 
+Update 12/2021 Added code sample for obtaining data from another form that is immutable.
+
 
 
 ![img](assets/vbFormsCore.png)

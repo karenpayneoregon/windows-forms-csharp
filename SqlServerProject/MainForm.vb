@@ -3,7 +3,6 @@
     Private ReadOnly EmployeeBindingSource As New BindingSource
     Private ChildForm As Form1
 
-
     Private Sub Mocked()
         Dim dt As New DataTable
         dt.Columns.Add(New DataColumn With {.ColumnName = "EmployeeID", .DataType = GetType(Integer)})
