@@ -86,8 +86,7 @@ namespace SpreadsheetLightDataGridViewExport.Classes
                      * import DataTable without column names,
                      * change last param to true for column names
                      */
-                    document.ImportDataTable(1,
-                        SLConvert.ToColumnIndex("A"), table, true);
+                    document.ImportDataTable(1, SLConvert.ToColumnIndex("A"), table, true);
 
                     // apply date style to DateTime columns
                     document.SetColumnStyle(4, dateStyle);
@@ -105,6 +104,30 @@ namespace SpreadsheetLightDataGridViewExport.Classes
                         SheetName);
 
                     // save to file
+                    document.SaveAs(FileName);
+
+                    return (true, null);
+                }
+            }
+            catch (Exception exception)
+            {
+                return (false, exception);
+            }
+        }
+
+        /// <summary>
+        /// https://stackoverflow.com/questions/70378875/best-way-to-export-large-datatable-into-excel-in-c/70379151#70379151
+        /// </summary>
+        /// <param name="table"></param>
+        /// <returns></returns>
+        public static (bool success, Exception exception) ExportDataTable(DataTable table)
+        {
+            try
+            {
+
+                using (var document = new SLDocument())
+                {
+                    document.ImportDataTable(1, SLConvert.ToColumnIndex("A"), table, true);
                     document.SaveAs(FileName);
 
                     return (true, null);

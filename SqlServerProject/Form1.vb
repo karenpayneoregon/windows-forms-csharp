@@ -1,16 +1,20 @@
-﻿Imports SqlServerProject.Classes
+﻿Imports System.Collections.Immutable
+Imports SqlServerProject.Classes
 
 Public Class Form1
-    Private ReadOnly bindingSource As New BindingSource
+    Private ReadOnly EmployeeBindingSource As New BindingSource
+    Public Function DataRows() As IReadOnlyList(Of DataRow)
+        Return CType(EmployeeBindingSource.DataSource, DataTable).Rows.Cast(Of DataRow).ToImmutableList()
+    End Function
     Private Sub Form1_Shown(sender As Object, e As EventArgs) Handles Me.Shown
 
         DataGridView1.AutoGenerateColumns = False
 
-        Dim results = EmployeeOperations.Read()
+        Dim results As (Success As Boolean, Exceptions As Exception, DataTable As DataTable) = EmployeeOperations.Read()
 
         If results.Success Then
-            bindingSource.DataSource = results.DataTable
-            DataGridView1.DataSource = bindingSource
+            EmployeeBindingSource.DataSource = results.DataTable
+            DataGridView1.DataSource = EmployeeBindingSource
         Else
             MessageBox.Show(results.Exceptions.Message)
         End If
@@ -23,7 +27,7 @@ Public Class Form1
             Dim employee As New Employee With {.FirstName = FirstNameTextBox.Text, .LastName = LastNameTextBox.Text, .HiredDate = DateTimePicker1.Value}
             Dim results = EmployeeOperations.Insert(employee)
             If results.success Then
-                Dim table = CType(bindingSource.DataSource, DataTable)
+                Dim table = CType(EmployeeBindingSource.DataSource, DataTable)
                 table.Rows.Add(New Object() {employee.Id, employee.LastName, employee.FirstName, employee.HiredDate})
                 MessageBox.Show(employee.Id.ToString())
             Else
@@ -34,13 +38,13 @@ Public Class Form1
     End Sub
 
     Private Sub RemoveCurrentButton_Click(sender As Object, e As EventArgs) Handles RemoveCurrentButton.Click
-        If bindingSource.Current IsNot Nothing Then
+        If EmployeeBindingSource.Current IsNot Nothing Then
             If Question("Remove current") Then
-                Dim id = CType(bindingSource.Current, DataRowView).Row.Field(Of Integer)("EmployeeID")
+                Dim id = CType(EmployeeBindingSource.Current, DataRowView).Row.Field(Of Integer)("EmployeeID")
 
                 Dim results = EmployeeOperations.Remove(id)
                 If results.success Then
-                    bindingSource.RemoveCurrent()
+                    EmployeeBindingSource.RemoveCurrent()
                 Else
                     MessageBox.Show(results.exception.Message)
                 End If
@@ -54,11 +58,11 @@ Public Class Form1
         Handles SearchButton.Click
 
         If String.IsNullOrWhiteSpace(SearchTextBox.Text) Then
-            bindingSource.Filter = ""
+            EmployeeBindingSource.Filter = ""
         Else
-            Dim currentRowCount = bindingSource.Count
-            bindingSource.Filter = $"TRIM(LastName) = '{SearchTextBox.Text}'"
-            MessageBox.Show($"Before: {currentRowCount} Now: {bindingSource.Count}")
+            Dim currentRowCount = EmployeeBindingSource.Count
+            EmployeeBindingSource.Filter = $"TRIM(LastName) = '{SearchTextBox.Text}'"
+            MessageBox.Show($"Before: {currentRowCount} Now: {EmployeeBindingSource.Count}")
         End If
 
     End Sub

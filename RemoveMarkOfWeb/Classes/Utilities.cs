@@ -1,26 +1,31 @@
 ﻿using System.Diagnostics;
 using System.IO;
+using System.Threading.Tasks;
 
 namespace RemoveMarkOfWeb.Classes
 {
     class Utilities
     {
-        public static void UnblockFiles(string folderName)
+        public static async Task UnblockFiles(string folderName)
         {
             if (!Directory.Exists(folderName))
             {
-                return;
+                return ;
             }
 
-            var startProcess = new ProcessStartInfo
+            var start = new ProcessStartInfo
             {
                 FileName = "powershell.exe",
+                RedirectStandardOutput = true,
                 Arguments = $"Get-ChildItem -Path '{folderName}' -Recurse | Unblock-File",
-                CreateNoWindow = true
+                CreateNoWindow = true, 
+                UseShellExecute = false
             };
 
-
-            using (var process = Process.Start(startProcess)) { }
+            using (var process = Process.Start(start))
+            {
+                await process.WaitForExitAsync();
+            }
 
         }
     }

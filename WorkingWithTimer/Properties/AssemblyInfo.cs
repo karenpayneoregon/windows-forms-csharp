@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("TextBoxesInOrder")]
+[assembly: AssemblyTitle("WorkingWithTimer")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("TextBoxesInOrder")]
+[assembly: AssemblyProduct("WorkingWithTimer")]
 [assembly: AssemblyCopyright("Copyright ©  2021")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("350da35e-fa75-402d-8b06-c90d93ca6e52")]
+[assembly: Guid("1943033f-05d6-4b1a-977a-a67de0cc5406")]
 
 // Version information for an assembly consists of the following four values:
 //

@@ -142,7 +142,7 @@ Partial Class Form1
         Me.SearchButton.Name = "SearchButton"
         Me.SearchButton.Size = New System.Drawing.Size(75, 23)
         Me.SearchButton.TabIndex = 9
-        Me.SearchButton.Text = "Button1"
+        Me.SearchButton.Text = "Filter"
         Me.SearchButton.UseVisualStyleBackColor = true
         '
         'SearchTextBox

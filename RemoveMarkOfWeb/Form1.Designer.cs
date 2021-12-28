@@ -29,10 +29,19 @@ namespace RemoveMarkOfWeb
         /// </summary>
         private void InitializeComponent()
         {
-            this.ExecuteButton = new System.Windows.Forms.Button();
             this.FolderTextBox = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.ExecuteButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
+            // 
+            // FolderTextBox
+            // 
+            this.FolderTextBox.AllowDrop = true;
+            this.FolderTextBox.Location = new System.Drawing.Point(12, 12);
+            this.FolderTextBox.Name = "FolderTextBox";
+            this.FolderTextBox.Size = new System.Drawing.Size(483, 20);
+            this.FolderTextBox.TabIndex = 1;
+            this.FolderTextBox.DragDrop += new System.Windows.Forms.DragEventHandler(this.FolderTextBox_DragDrop);
+            this.FolderTextBox.DragEnter += new System.Windows.Forms.DragEventHandler(this.FolderTextBox_DragEnter);
             // 
             // ExecuteButton
             // 
@@ -46,28 +55,11 @@ namespace RemoveMarkOfWeb
             this.ExecuteButton.UseVisualStyleBackColor = true;
             this.ExecuteButton.Click += new System.EventHandler(this.ExecuteButton_Click);
             // 
-            // FolderTextBox
-            // 
-            this.FolderTextBox.Location = new System.Drawing.Point(12, 12);
-            this.FolderTextBox.Name = "FolderTextBox";
-            this.FolderTextBox.Size = new System.Drawing.Size(483, 20);
-            this.FolderTextBox.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.Location = new System.Drawing.Point(9, 90);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(493, 44);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "After clicking Execute a PowerShell window appears. Once closed mark of the web h" +
-    "as been removed from specified folder";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(517, 135);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(517, 88);
             this.Controls.Add(this.FolderTextBox);
             this.Controls.Add(this.ExecuteButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
@@ -83,7 +75,6 @@ namespace RemoveMarkOfWeb
 
         private System.Windows.Forms.Button ExecuteButton;
         private System.Windows.Forms.TextBox FolderTextBox;
-        private System.Windows.Forms.Label label1;
     }
 }
 

@@ -42,15 +42,7 @@ namespace ContainsAny
             }
         }
 
-        private static void Example()
-        {
-            string loggerfilepath = "c://abc.txt";
 
-            string fileContents = File.ReadAllText(loggerfilepath);
-            if (fileContents.ContainsAny("error", "bcp copy out failed"))
-            {
-            }
-        }
     }
 
     public static class Extensions

@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{350DA35E-FA75-402D-8B06-C90D93CA6E52}</ProjectGuid>
+    <ProjectGuid>{1943033F-05D6-4B1A-977A-A67DE0CC5406}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>TextBoxesInOrder</RootNamespace>
-    <AssemblyName>TextBoxesInOrder</AssemblyName>
+    <RootNamespace>WorkingWithTimer</RootNamespace>
+    <AssemblyName>WorkingWithTimer</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -78,11 +78,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="products.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

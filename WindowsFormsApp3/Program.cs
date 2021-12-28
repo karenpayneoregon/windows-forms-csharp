@@ -16,7 +16,7 @@ namespace WindowsFormsApp3
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ImageForm());
+            Application.Run(new Form2());
         }
     }
 }

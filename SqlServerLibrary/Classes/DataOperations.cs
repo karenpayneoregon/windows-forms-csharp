@@ -61,6 +61,30 @@ namespace SqlServerLibrary.Classes
             }
 
         }
+
+        public static (bool success, Exception exception) DemoInsert(string companyName, ref int newIdentifier)
+        {
+            using var cn = new SqlConnection { ConnectionString = "TODO" };
+            using var cmd = new SqlCommand { Connection = cn };
+
+            cmd.CommandText = "INSERT INTO [Customer] (CompanyName) " +
+                              "VALUES (@CompanyName); " +
+                              "SELECT CAST(scope_identity() AS int);";
+
+            cmd.Parameters.Add("", SqlDbType.NVarChar).Value = companyName;
+
+            try
+            {
+                cn.Open();
+
+                newIdentifier = (int)cmd.ExecuteScalar();
+                return (true, null);
+            }
+            catch (Exception ex)
+            {
+                return (false, ex);
+            }
+        }
     }
 
     

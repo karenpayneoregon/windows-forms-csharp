@@ -49,6 +49,12 @@
     <Compile Include="Controls\MyDataGridView.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="DataGridViewCalcForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DataGridViewCalcForm.Designer.cs">
+      <DependentUpon>DataGridViewCalcForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -57,6 +63,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="DataGridViewCalcForm.resx">
+      <DependentUpon>DataGridViewCalcForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

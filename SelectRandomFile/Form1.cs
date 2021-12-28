@@ -44,18 +44,19 @@ namespace SelectRandomFile
 
         private void LoadButton_Click(object sender, EventArgs e)
         {
-            string folderName = "TODO";
+            string folderName = "C:\\OED";
 
             if (!Directory.Exists(folderName)) return;
             
-            listBox1.Items.Clear();
+            //listBox1.Items.Clear();
             label1.Text = "";
 
             SelectButton.Enabled = true;
 
-            _bindingSource.DataSource = FileOperations.GetFilesFromPath(folderName);
+            var result = FileOperations.GetFilesFromPath(folderName);
+            _bindingSource.DataSource = result;
 
-            LoadButton.Enabled = false;
+            //LoadButton.Enabled = false;
         }
     }
 }
