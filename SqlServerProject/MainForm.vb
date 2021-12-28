@@ -20,12 +20,22 @@
         ChildForm.Top = Top
         ChildForm.Left = Left + Width
     End Sub
-
+    ''' <summary>
+    ''' Basic code to get rows from child form.
+    ''' We could use LINQ/Lambda rather than a for-each
+    ''' for obtaining only rows that met some condition
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
     Private Sub GetRowsButton_Click(sender As Object, e As EventArgs) Handles GetRowsButton.Click
 
         If ChildForm IsNot Nothing Then
             childRows = ChildForm.DataRows
             For Each row As DataRow In childRows
+                '
+                ' Assert if a row should be added rather
+                ' than simply adding all rows as done here
+                '
                 CType(EmployeeBindingSource.DataSource, DataTable).ImportRow(row)
             Next
         End If
