@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Xml.Linq;
@@ -11,6 +12,14 @@ namespace ParsePackagesInProjectFile
     class Program
     {
         static void Main(string[] args)
+        {
+            var projFile = "C:\\OED\\Dotnetland\\VS2019\\LearningVisualStudio\\WindowsFormsSolution\\FileHelpersFrontEnd\\FileHelpersFrontEnd.csproj";
+            var results = SolutionHelper.ProjectReferences(projFile);
+            
+
+        }
+
+        private static void GetPackages()
         {
             Dictionary<string, List<PackageReference>> results = new();
             string solutionName = @"C:\OED\Dotnetland\VS2019\LearningVisualStudio\WindowsFormsSolution\WindowsFormsSolution.sln";
@@ -25,7 +34,6 @@ namespace ParsePackagesInProjectFile
                     {
                         results.Add(project, SolutionHelper.PackageReferences(project));
                     }
-
                 }
             }
 
@@ -41,9 +49,7 @@ namespace ParsePackagesInProjectFile
             }
 
 
-
             Console.ReadLine();
         }
-
     }
 }

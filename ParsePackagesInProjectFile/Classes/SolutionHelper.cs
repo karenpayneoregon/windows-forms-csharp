@@ -71,5 +71,17 @@ namespace ParsePackagesInProjectFile.Classes
                     FileName = fileName
                 }).ToList();
         }
+
+        /// <summary>
+        /// Get a list of project references for a project
+        /// </summary>
+        /// <param name="fileName">sln file name</param>
+        /// <returns>list of project references if any</returns>
+        public static List<string> ProjectReferences(string fileName)
+        {
+            var doc = XDocument.Parse(File.ReadAllText(fileName));
+            return doc.XPathSelectElements("//ProjectReference")
+                .Select(element => element.Attribute("Include").Value).ToList();
+        }
     }
 }

@@ -6,8 +6,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Update="TextFile1.txt">
+    <None Update="Packages.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Project.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
 
