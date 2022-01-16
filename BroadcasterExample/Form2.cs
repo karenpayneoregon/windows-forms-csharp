@@ -19,8 +19,11 @@ namespace BroadcasterExample
         public Form2()
         {
             InitializeComponent();
+
             Broadcaster().AddListener(this);
+
             listBox1.DataSource = _bindingSource;
+
             Closing += Form2_Closing;
         }
 

@@ -66,7 +66,7 @@ namespace BroadcasterExample
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(274, 230);
+            this.ClientSize = new System.Drawing.Size(233, 244);
             this.Controls.Add(this.OpenChildFormButton);
             this.Controls.Add(this.PassButton);
             this.Controls.Add(this.listBox1);
