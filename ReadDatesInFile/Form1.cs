@@ -70,7 +70,21 @@ namespace ReadDatesInFile
                 }
             }
         }
+
+        private void ExampleButton_Click(object sender, EventArgs e)
+        {
+            string subjectstring = "totalVideosText\":{\"runs\":[{\"text\":\"34";
+            Debug.WriteLine(ExtractNumber(subjectstring));
+        }
+        public static string ExtractNumber(string original) 
+            => new(original.Where(char.IsDigit).ToArray());
     }
+
+public static class StringExtensions
+{
+    public static string ExtractNumber(this string original)
+        => new(original.Where(char.IsDigit).ToArray());
+}
 }
 
 

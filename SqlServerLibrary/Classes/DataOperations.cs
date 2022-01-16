@@ -31,6 +31,8 @@ namespace SqlServerLibrary.Classes
             }
 
         }
+
+        
         public static (Exception exception, List<string> nameList) ReadCategoryNames()
         {
             List<string> names = new ();
