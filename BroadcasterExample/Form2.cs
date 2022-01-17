@@ -27,6 +27,11 @@ namespace BroadcasterExample
             Closing += Form2_Closing;
         }
 
+        public Form2(BindingSource bindingSource)
+        {
+            InitializeComponent();
+            listBox1.DataSource = bindingSource;
+        }
         private void Form2_Closing(object sender, CancelEventArgs e)
         {
             Broadcaster().RemoveListener(this);

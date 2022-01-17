@@ -33,7 +33,7 @@ namespace BroadcasterExample
         private void OpenChildFormButton_Click(object sender, EventArgs e)
         {
 
-            _form2 = new Form2();
+            _form2 = new Form2(_bindingSource);
             _form2.Show();
             _form2.Top = Top;
             _form2.Left = Left + Width + 10;
