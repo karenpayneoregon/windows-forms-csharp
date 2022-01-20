@@ -1,5 +1,9 @@
 ﻿# About
 
+Sample Task examples
+
+![img](assets/asyncCode.png)
+
 ![img](assets/connect.png)
 
 Simple code sample showing how to read a `connection string` from `appsettings.json`. 
