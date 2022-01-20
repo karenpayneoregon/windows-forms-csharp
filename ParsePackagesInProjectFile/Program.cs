@@ -14,6 +14,8 @@ namespace ParsePackagesInProjectFile
     {
         static async Task Main(string[] args)
         {
+            string path = "\"\\Company\\Stores\\Sales & Revenue\\\"";
+            Debug.WriteLine(path);
             await FolderOperations.Example1Async();
             Console.WriteLine("Done");
             Console.ReadLine();

@@ -5,24 +5,27 @@ namespace Appsettings_sample.Classes
 {
     public class ExampleTask
     {
+        public delegate void OnProcess(string sender);
+        public static event OnProcess ProcessHandler;
         public static Task FirstAsync()
         {
-            Debug.WriteLine($"Started {nameof(FirstAsync)}");
+            ProcessHandler?.Invoke($"Started {nameof(FirstAsync)}");
+
             return Task.Delay(1000).ContinueWith(t =>
-                Debug.WriteLine($"Finished  {nameof(FirstAsync)}"));
+                ProcessHandler?.Invoke($"Finished  {nameof(FirstAsync)}"));
         }
 
         public static Task SecondAsync()
         {
-            Debug.WriteLine($"Started {nameof(SecondAsync)}");
+            ProcessHandler?.Invoke($"Started {nameof(SecondAsync)}");
             return Task.Delay(1000).ContinueWith(t =>
-                Debug.WriteLine($"Finished {nameof(SecondAsync)}"));
+                ProcessHandler?.Invoke($"Finished  {nameof(SecondAsync)}"));
         }
         public static Task ThirdAsync()
         {
-            Debug.WriteLine($"Started {nameof(ThirdAsync)}");
+            ProcessHandler?.Invoke($"Started {nameof(ThirdAsync)}");
             return Task.Delay(1000).ContinueWith(t =>
-                Debug.WriteLine($"Finished {nameof(ThirdAsync)}"));
+                ProcessHandler?.Invoke($"Finished  {nameof(ThirdAsync)}"));
         }
 
     }

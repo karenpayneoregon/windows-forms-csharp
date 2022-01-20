@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Appsettings_sample
+namespace DescendantsFormExample
 {
     static class Program
     {
@@ -17,7 +17,7 @@ namespace Appsettings_sample
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new TaskForm());
+            Application.Run(new Form1());
         }
     }
 }
