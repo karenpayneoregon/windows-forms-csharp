@@ -2,6 +2,8 @@
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WorkingWithTimer.Classes;
+using WorkingWithTimer.LanguageExtensions;
 using Timer = System.Threading.Timer;
 
 namespace WorkingWithTimer
@@ -11,13 +13,20 @@ namespace WorkingWithTimer
     /// </summary>
     public partial class Form1 : Form
     {
+        private int _wait = 6000 * 10;
         Timer _serviceTimer;
         private CancellationTokenSource _cancellationTokenSource = new CancellationTokenSource();
         public Form1()
         {
             InitializeComponent();
+            Console.WriteLine(TimeSpan.FromMinutes(_wait).Seconds);
+
+            Utilities.Message += OnMessageReceived;
         }
 
+        private void OnMessageReceived(string message) 
+            => listBox1.InvokeIfRequired(lb => lb.Items.Add(message));
+        
         private void StartButton_Click(object sender, EventArgs e)
         {
             if (_cancellationTokenSource.IsCancellationRequested)
@@ -27,11 +36,12 @@ namespace WorkingWithTimer
             }
 
             InitTimer();
+
         }
         private void InitTimer()
         {
             _serviceTimer = new Timer(Dispatcher);
-            _serviceTimer.Change(TimeSpan.FromMinutes(5).Seconds, Timeout.Infinite);
+            _serviceTimer.Change(_wait, Timeout.Infinite);
         }
 
         private void Dispatcher(object e)
@@ -45,13 +55,20 @@ namespace WorkingWithTimer
         {
             _serviceTimer.Dispose();
             // the following will throw an exception
-            _serviceTimer.Change(TimeSpan.FromMinutes(5).Seconds, Timeout.Infinite);
+
+            try
+            {
+                _serviceTimer.Change(_wait, Timeout.Infinite);
+            }
+            catch (ObjectDisposedException ex)
+            {
+            }
         }
 
 
         private void UpdateSomething()
         {
-            // do work
+            Console.WriteLine("Do work");
         }
 
         public async Task PeriodicFooAsync(TimeSpan interval, CancellationToken cancellationToken)
@@ -94,7 +111,8 @@ namespace WorkingWithTimer
 
         private async Task FooAsync()
         {
-            
+            await Task.Delay(0);
+            // TODO
         }
 
         private async void button1_Click(object sender, EventArgs e)
@@ -112,6 +130,16 @@ namespace WorkingWithTimer
         private void button2_Click(object sender, EventArgs e)
         {
             _cancellationTokenSource.Cancel(false);
+        }
+
+        private void UtilsStartButton_Click(object sender, EventArgs e)
+        {
+            Utilities.Start();
+        }
+
+        private void UtilsStopButton_Click(object sender, EventArgs e)
+        {
+            Utilities.Stop();
         }
     }
 }

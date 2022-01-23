@@ -34,6 +34,11 @@ namespace WorkingWithTimer
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.UtilsStopButton = new System.Windows.Forms.Button();
+            this.UtilsStartButton = new System.Windows.Forms.Button();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // StartButton
@@ -86,11 +91,52 @@ namespace WorkingWithTimer
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.listBox1);
+            this.groupBox1.Controls.Add(this.UtilsStopButton);
+            this.groupBox1.Controls.Add(this.UtilsStartButton);
+            this.groupBox1.Location = new System.Drawing.Point(200, 12);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(305, 206);
+            this.groupBox1.TabIndex = 5;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Timer in Utilities class";
+            // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(119, 22);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(163, 160);
+            this.listBox1.TabIndex = 2;
+            // 
+            // UtilsStopButton
+            // 
+            this.UtilsStopButton.Location = new System.Drawing.Point(26, 48);
+            this.UtilsStopButton.Name = "UtilsStopButton";
+            this.UtilsStopButton.Size = new System.Drawing.Size(75, 23);
+            this.UtilsStopButton.TabIndex = 1;
+            this.UtilsStopButton.Text = "Stop";
+            this.UtilsStopButton.UseVisualStyleBackColor = true;
+            this.UtilsStopButton.Click += new System.EventHandler(this.UtilsStopButton_Click);
+            // 
+            // UtilsStartButton
+            // 
+            this.UtilsStartButton.Location = new System.Drawing.Point(26, 19);
+            this.UtilsStartButton.Name = "UtilsStartButton";
+            this.UtilsStartButton.Size = new System.Drawing.Size(75, 23);
+            this.UtilsStartButton.TabIndex = 0;
+            this.UtilsStartButton.Text = "Start";
+            this.UtilsStartButton.UseVisualStyleBackColor = true;
+            this.UtilsStartButton.Click += new System.EventHandler(this.UtilsStartButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(517, 230);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.checkBox1);
@@ -100,6 +146,7 @@ namespace WorkingWithTimer
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Code Sample";
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -112,6 +159,10 @@ namespace WorkingWithTimer
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.Button UtilsStopButton;
+        private System.Windows.Forms.Button UtilsStartButton;
     }
 }
 
