@@ -6,27 +6,27 @@ namespace WorkingWithTimer.Classes
     public class Utilities
     {
         private static int _dueTime = 6000 * 10;
-        private static Timer _serviceTimer;
+        private static Timer _workTimer;
 
         public delegate void MessageHandler(string message);
         public static event MessageHandler Message;
 
         private static void Initialize()
         {
-            _serviceTimer = new Timer(Dispatcher);
-            _serviceTimer.Change(_dueTime, Timeout.Infinite);
+            _workTimer = new Timer(Dispatcher);
+            _workTimer.Change(_dueTime, Timeout.Infinite);
         }
 
         private static void Initialize(int dueTime)
         {
             _dueTime = dueTime;
-            _serviceTimer = new Timer(Dispatcher);
-            _serviceTimer.Change(_dueTime, Timeout.Infinite);
+            _workTimer = new Timer(Dispatcher);
+            _workTimer.Change(_dueTime, Timeout.Infinite);
         }
         private static void Dispatcher(object e)
         {
             StatusCheck();
-            _serviceTimer.Dispose();
+            _workTimer.Dispose();
             Initialize();
         }
 
@@ -34,11 +34,10 @@ namespace WorkingWithTimer.Classes
         {
             Initialize();
             Message?.Invoke("Started");
-
         }
         public static void Stop()
         {
-            _serviceTimer.Dispose();
+            _workTimer.Dispose();
             Message?.Invoke("Stopped");
         }
         /// <summary>
