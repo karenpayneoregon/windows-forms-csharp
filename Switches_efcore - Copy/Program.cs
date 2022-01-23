@@ -1,7 +1,11 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using System.Windows.Forms;
+using SwitchExpressions_efcore;
 
-namespace DeconstructCodeSamples
+namespace Switches
 {
     static class Program
     {
@@ -14,7 +18,7 @@ namespace DeconstructCodeSamples
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new DeconstructForm());
+            Application.Run(new Form1());
         }
     }
 }

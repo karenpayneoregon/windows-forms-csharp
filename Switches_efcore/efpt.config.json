@@ -1,4 +1,5 @@
 ﻿{
+   "CodeGenerationMode": 0,
    "ContextClassName": "SchoolContext",
    "ContextNamespace": null,
    "DefaultDacpacSchema": null,
@@ -13,22 +14,61 @@
    "SelectedToBeGenerated": 0,
    "Tables": [
       {
-         "HasPrimaryKey": true,
+         "Name": "[dbo].[Course]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[CourseDay]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[CourseInstructor]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Department]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[OfficeAssignment]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[OnlineCourse]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[OnsiteCourse]",
+         "ObjectType": 0
+      },
+      {
          "Name": "[dbo].[Person]",
          "ObjectType": 0
       },
       {
-         "HasPrimaryKey": true,
          "Name": "[dbo].[StudentGrade]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[WeekDayName]",
          "ObjectType": 0
       }
    ],
+   "UiHint": "6X2V0G2\\SQLEXPRESS.School",
+   "UseBoolPropertiesWithoutDefaultSql": false,
    "UseDatabaseNames": true,
    "UseDbContextSplitting": true,
    "UseFluentApiOnly": true,
    "UseHandleBars": false,
    "UseInflector": false,
    "UseLegacyPluralizer": false,
+   "UseManyToManyEntity": false,
+   "UseNoConstructor": false,
+   "UseNoDefaultConstructor": false,
+   "UseNoNavigations": false,
+   "UseNoObjectFilter": false,
    "UseNodaTime": false,
+   "UseNullableReferences": false,
+   "UseSchemaFolders": false,
    "UseSpatial": false
 }

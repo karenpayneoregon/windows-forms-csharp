@@ -5,14 +5,13 @@ using System.Collections.Generic;
 
 namespace Switches.Models
 {
-    public partial class StudentGrade
+    public partial class OnsiteCourse
     {
-        public int EnrollmentID { get; set; }
         public int CourseID { get; set; }
-        public int StudentID { get; set; }
-        public decimal? Grade { get; set; }
+        public string Location { get; set; }
+        public string Days { get; set; }
+        public DateTime Time { get; set; }
 
         public virtual Course Course { get; set; }
-        public virtual Person Student { get; set; }
     }
 }

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 
-namespace DeconstructCodeSamples.Extensions
+namespace SwitchExpressions_efcore.Extensions
 {
     public static class Extensions
     {

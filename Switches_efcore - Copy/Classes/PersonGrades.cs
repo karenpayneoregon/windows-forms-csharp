@@ -1,4 +1,6 @@
-﻿namespace DeconstructCodeSamples.Classes
+﻿using Switches.Models;
+
+namespace Switches.Classes
 {
     public class PersonGrades : PersonEntity
     {

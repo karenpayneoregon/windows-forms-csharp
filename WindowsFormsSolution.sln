@@ -256,7 +256,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DescendantsFormExample", "D
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentSimpleEntityFramework_1", "StudentSimpleEntityFramework_1\StudentSimpleEntityFramework_1.csproj", "{3DBE0180-6191-4A59-8392-0A24668C149F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SwitchExpressions_efcore", "Switches_efcore\SwitchExpressions_efcore.csproj", "{01F42965-74A8-47B8-943D-44BCAA256D32}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DeconstructCodeSamples", "Switches_efcore\DeconstructCodeSamples.csproj", "{01F42965-74A8-47B8-943D-44BCAA256D32}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -2,10 +2,8 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
-using DeconstructCodeSamples.Classes;
 using Microsoft.EntityFrameworkCore;
 using Switches.Data;
 using Switches.Models;
@@ -18,22 +16,6 @@ namespace Switches.Classes
     {
         public delegate void OnIteratePersonGrades(PersonGrades personData);
         public static event OnIteratePersonGrades? IteratePersonGrades;
-
-        public static async Task GetStudent(int personIdentifier)
-        {
-            await using var context = new SchoolContext();
-
-            var test = await context.Person
-                .Include(x => x.StudentGrade)
-                .ThenInclude(x => x.Course).FirstOrDefaultAsync(x => x.PersonID == personIdentifier);
-
-        }
-
-        public static async Task<List<PersonEntity>> GetStudents()
-        {
-            await using var context = new SchoolContext();
-            return await context.Person.Select(Person.ListBoxSource).OrderBy(person => person.LastName).ToListAsync();
-        }
 
         /// <summary>
         /// Get students in a course by course identifier, better solution

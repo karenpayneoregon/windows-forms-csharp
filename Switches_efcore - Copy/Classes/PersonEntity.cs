@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
-using Switches.Models;
 
-namespace DeconstructCodeSamples.Classes
+namespace Switches.Models
 {
     public class PersonEntity
     {
@@ -10,13 +9,5 @@ namespace DeconstructCodeSamples.Classes
         public string LastName { get; set; }
         public string FullName => $"{FirstName} {LastName}";
         public ICollection<StudentGrade> Grades { get; set; }
-        public override string ToString() => $"{FirstName} {LastName}";
-
-        public void Deconstruct(out int id, out string firstName, out string lastName)
-        {
-            id = PersonID;
-            firstName = FirstName;
-            lastName = LastName;
-        }
     }
 }

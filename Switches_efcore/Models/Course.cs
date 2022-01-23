@@ -5,24 +5,23 @@ using System.Collections.Generic;
 
 namespace Switches.Models
 {
-    public partial class Person
+    public partial class Course
     {
-        public Person()
+        public Course()
         {
             CourseInstructor = new HashSet<CourseInstructor>();
             StudentGrade = new HashSet<StudentGrade>();
         }
 
-        public int PersonID { get; set; }
-        public string LastName { get; set; }
-        public string FirstName { get; set; }
-        public DateTime? HireDate { get; set; }
-        public DateTime? EnrollmentDate { get; set; }
-        public string Discriminator { get; set; }
+        public int CourseID { get; set; }
+        public string Title { get; set; }
+        public int Credits { get; set; }
+        public int DepartmentID { get; set; }
 
-        public virtual OfficeAssignment OfficeAssignment { get; set; }
+        public virtual Department Department { get; set; }
+        public virtual OnlineCourse OnlineCourse { get; set; }
+        public virtual OnsiteCourse OnsiteCourse { get; set; }
         public virtual ICollection<CourseInstructor> CourseInstructor { get; set; }
         public virtual ICollection<StudentGrade> StudentGrade { get; set; }
-
     }
 }
