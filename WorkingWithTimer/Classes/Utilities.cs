@@ -8,9 +8,6 @@ namespace WorkingWithTimer.Classes
         private static int _dueTime = 6000 * 10;
         private static Timer _serviceTimer;
 
-        private static CancellationTokenSource _cancellationTokenSource = 
-            new CancellationTokenSource();
-
         public delegate void MessageHandler(string message);
         public static event MessageHandler Message;
 
@@ -35,14 +32,7 @@ namespace WorkingWithTimer.Classes
 
         public static void Start()
         {
-            if (_cancellationTokenSource.IsCancellationRequested)
-            {
-                _cancellationTokenSource.Dispose();
-                _cancellationTokenSource = new CancellationTokenSource();
-            }
-
             Initialize();
-
             Message?.Invoke("Started");
 
         }
