@@ -14,10 +14,10 @@ namespace SwitchExpressions_efcore
         {
             InitializeComponent();
             
-            SchoolOperations.OnIteratePersonGradesEvent += SchoolOperationsOnOnIteratePersonGradesEvent;
+            SchoolOperations.IteratePersonGrades += IteratePersonGrades;
         }
 
-        private void SchoolOperationsOnOnIteratePersonGradesEvent(PersonGrades pData)
+        private void IteratePersonGrades(PersonGrades pData)
         {
             if (pData.Grade is null) return;
 
@@ -40,7 +40,7 @@ namespace SwitchExpressions_efcore
 
             await Task.Run(async () =>
             {
-                await SchoolOperations.GradesForPeople(2021);
+                await SchoolOperations.PeopleGrades(2021);
                 return true;
             });
 

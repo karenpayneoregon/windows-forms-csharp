@@ -36,8 +36,8 @@ namespace SwitchExpressions_efcore
             this.columnHeader3 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader4 = new System.Windows.Forms.ColumnHeader();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.CurrentButton = new System.Windows.Forms.Button();
             this.DeconstructButton = new System.Windows.Forms.Button();
+            this.CurrentButton = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -99,16 +99,6 @@ namespace SwitchExpressions_efcore
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             // 
-            // CurrentButton
-            // 
-            this.CurrentButton.Location = new System.Drawing.Point(21, 194);
-            this.CurrentButton.Name = "CurrentButton";
-            this.CurrentButton.Size = new System.Drawing.Size(259, 23);
-            this.CurrentButton.TabIndex = 2;
-            this.CurrentButton.Text = "Current";
-            this.CurrentButton.UseVisualStyleBackColor = true;
-            this.CurrentButton.Click += new System.EventHandler(this.CurrentButton_Click);
-            // 
             // DeconstructButton
             // 
             this.DeconstructButton.Location = new System.Drawing.Point(21, 224);
@@ -119,6 +109,16 @@ namespace SwitchExpressions_efcore
             this.DeconstructButton.UseVisualStyleBackColor = true;
             this.DeconstructButton.Click += new System.EventHandler(this.DeconstructButton_Click);
             // 
+            // CurrentButton
+            // 
+            this.CurrentButton.Location = new System.Drawing.Point(21, 194);
+            this.CurrentButton.Name = "CurrentButton";
+            this.CurrentButton.Size = new System.Drawing.Size(259, 23);
+            this.CurrentButton.TabIndex = 2;
+            this.CurrentButton.Text = "Current";
+            this.CurrentButton.UseVisualStyleBackColor = true;
+            this.CurrentButton.Click += new System.EventHandler(this.CurrentButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -128,7 +128,7 @@ namespace SwitchExpressions_efcore
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Switches";
+            this.Text = "Deconstruct code sample";
             this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
 

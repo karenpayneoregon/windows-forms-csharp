@@ -15,17 +15,16 @@ namespace Switches.Classes
     public class SchoolOperations
     {
         public delegate void OnIteratePersonGrades(PersonGrades personData);
-        public static event OnIteratePersonGrades? OnIteratePersonGradesEvent;
+        public static event OnIteratePersonGrades? IteratePersonGrades;
 
         /// <summary>
         /// Get students in a course by course identifier, better solution
         /// then in StudentsForCourse as there is only one condition
         /// </summary>
         /// <param name="courseIdentifier"></param>
-        public async static Task<List<StudentEntity>> GradesForPeople(int courseIdentifier = 2021)
+        public static async Task<List<StudentEntity>> PeopleGrades(int courseIdentifier = 2021)
         {
-            
-            using var context = new SchoolContext();
+            await using var context = new SchoolContext();
             
             List<StudentEntity> studentEntities = await context
                 .StudentGrade
@@ -34,9 +33,9 @@ namespace Switches.Classes
                 .Where(studentEntity => studentEntity.CourseID == courseIdentifier)
                 .ToListAsync();
 
-            foreach (var entity in studentEntities)
+            foreach (var studentEntity in studentEntities)
             {
-                var letterGrade = entity.Grade.Value switch
+                var letterGrade = studentEntity.Grade!.Value switch
                 {
                     >= 1.00m and <= 2.00m => "F",
                     2.50m => "C",
@@ -46,12 +45,12 @@ namespace Switches.Classes
                     _ => "unknown",
                 };
 
-                OnIteratePersonGradesEvent?.Invoke(new PersonGrades()
+                IteratePersonGrades?.Invoke(new()
                 {
-                    PersonID = entity.PersonID,
-                    FirstName = entity.FirstName,
-                    LastName = entity.LastName,
-                    Grade = entity.Grade,
+                    PersonID = studentEntity.PersonID,
+                    FirstName = studentEntity.FirstName,
+                    LastName = studentEntity.LastName,
+                    Grade = studentEntity.Grade,
                     GradeLetter = letterGrade
                 });
 
