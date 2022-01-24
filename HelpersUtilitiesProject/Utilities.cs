@@ -13,23 +13,27 @@ namespace HelpersUtilitiesProject
             const int maxHops = 30;
             const string someFarAwayIpAddress = "8.8.8.8";
 
-            // Keep pinging further along the line from here to google 
-            // until we find a response that is from a routable address
             for (int ttl = 1; ttl <= maxHops; ttl++)
             {
                 var options = new PingOptions(ttl, true);
                 byte[] buffer = new byte[32];
+
                 PingReply reply;
+
                 try
                 {
                     using (var pinger = new Ping())
                     {
-                        reply = await pinger.SendPingAsync(someFarAwayIpAddress, 10000, buffer, options);
+                        reply = await pinger.SendPingAsync(
+                            someFarAwayIpAddress, 
+                            10000, 
+                            buffer, 
+                            options);
                     }
                 }
                 catch (PingException pingex)
                 {
-                    Debug.Print($"Ping exception (probably due to no network connection or recent change in network conditions), hence not connected to internet. Message: {pingex.Message}");
+                    //Debug.Print($"Ping exception (probably due to no network connection or recent change in network conditions), hence not connected to internet. Message: {pingex.Message}");
                     return false;
                 }
 
