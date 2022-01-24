@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using HelpersUtilitiesProject.Classes;
 
 namespace HelpersUtilitiesProject
 {
@@ -15,15 +16,20 @@ namespace HelpersUtilitiesProject
         public Form1()
         {
             InitializeComponent();
+
+            TimerHelper.Message += OnMessage;
+
+            Shown += OnShown;
+
         }
 
-        private async void InternetCheckButton_Click(object sender, EventArgs e)
+        private void OnShown(object sender, EventArgs e)
         {
-            await Task.Run(async () =>
-            {
-                var result = await Utilities.IsConnectedToInternetAsync();
-                MessageBox.Show(result ? "Available" : "Not available");
-            });
+            label1.Text = "";
+            TimerHelper.Start();
         }
+
+        private void OnMessage(string message) => 
+            label1.InvokeIfRequired(x => x.Text = message);
     }
 }

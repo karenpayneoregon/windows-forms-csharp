@@ -1,10 +1,9 @@
-﻿using System.Diagnostics;
-using System.Net;
+﻿using System.Net;
 using System.Net.NetworkInformation;
 using System.Net.Sockets;
 using System.Threading.Tasks;
 
-namespace HelpersUtilitiesProject
+namespace HelpersUtilitiesProject.Classes
 {
     class Utilities
     {
