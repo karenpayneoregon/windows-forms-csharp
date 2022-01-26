@@ -13,6 +13,7 @@ namespace DelimitedDemo.Classes
                 .Select((lineData) =>
                 {
                     SomeClass someClass = new SomeClass();
+                    // skip empty lines
                     if (string.IsNullOrWhiteSpace(lineData)) return someClass;
                     var lineArray = lineData.Split(delimitBy);
                     someClass = new SomeClass
