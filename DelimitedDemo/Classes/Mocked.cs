@@ -28,13 +28,11 @@ namespace DelimitedDemo.Classes
 
                     return someClass;
 
-                }).Skip(1).ToList();
+                })
+                // skip header
+                .Skip(1)
+                .ToList();
 
-            foreach (var someClass in list)
-            {
-                var part1 = someClass.Part1;
-
-            }
 
             File.WriteAllLines("File1.txt", list.Select(x => x.Part1).ToArray());
             File.WriteAllLines("File2.txt", list.Select(x => x.Part2).ToArray());
