@@ -3,8 +3,18 @@
     <OutputType>Exe</OutputType>
 	  <LangVersion>9.0</LangVersion>
 	  <TargetFramework>net5.0</TargetFramework>
+	  <UserSecretsId>ec526f35-05b6-4f79-b77e-f32cc0252cae</UserSecretsId>
   </PropertyGroup>
   <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="5.0.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="appsettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LongView.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="TextFile1.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

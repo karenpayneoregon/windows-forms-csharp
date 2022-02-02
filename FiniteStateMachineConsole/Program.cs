@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.Extensions.Configuration;
 
 namespace FiniteStateMachineConsole
 {
@@ -19,7 +21,26 @@ namespace FiniteStateMachineConsole
     /// </summary>
     class Program
     {
-        static void Main(string[] args)
+        static async Task Main(string[] args)
+        {
+            await Task.Delay(0);
+        }
+
+        private static void Secrets()
+        {
+            //https://makolyte.com/how-to-add-user-secrets-in-a-dotnetcore-console-app/
+            var config = new ConfigurationBuilder()
+                .SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
+                .AddJsonFile("appsettings.json")
+                .AddUserSecrets<Program>()
+                .Build();
+
+            var conString = config.GetConnectionString("DefaultDB");
+
+            Debug.WriteLine(conString);
+        }
+
+        private static void Dump()
         {
             /*
              * Works with a text file too
@@ -27,13 +48,13 @@ namespace FiniteStateMachineConsole
             List<string> linesList = new()
             {
                 "(Record)",
-                "John", 
+                "John",
                 "111",
                 "John's address",
                 "(Record)",
 
                 "(Record)",
-                "Mary", 
+                "Mary",
                 "222",
                 "Mary's address",
                 "(Record)",
@@ -46,9 +67,7 @@ namespace FiniteStateMachineConsole
 
             foreach (var line in Reader(linesList))
             {
-
                 Debug.WriteLine($"'{line}'");
-
             }
 
 
@@ -69,6 +88,19 @@ namespace FiniteStateMachineConsole
 
 
             ViewAllContacts();
+        }
+
+        private static void ViewLong()
+        {
+            var fileName = "LongView.txt";
+
+            var linesList = File.ReadAllLines(fileName).ToList();
+            foreach (var line in ViewReader(linesList))
+            {
+
+                Debug.WriteLine($"'{line}'");
+
+            }
         }
 
         private static void ViewAllContacts()
@@ -115,6 +147,23 @@ namespace FiniteStateMachineConsole
                 }
             }
         }
+        private static IEnumerable<string> ViewReader(List<string> itemsList)
+        {
+            var reading = false;
+
+            foreach (var line in itemsList)
+            {
+                if (line.Contains("Order {", StringComparison.OrdinalIgnoreCase))
+                {
+                    reading = !reading;
+                    yield return "";
+                }
+                else if (reading)
+                {
+                    yield return line;
+                }
+            }
+        }
     }
 
     public static class LanguageExtensions
@@ -130,4 +179,5 @@ namespace FiniteStateMachineConsole
                 .Select(grp => grp.Select(v => v.Value).ToList())
                 .ToList();
     }
+
 }

@@ -1,0 +1,534 @@
+﻿Order {OrderId: 10259} Unchanged
+  OrderId: 10259 PK
+  CustomerId: 13 FK
+  EmployeeId: 4 FK
+  Freight: 3.25
+  OrderDate: '7/18/2006 12:00:00 AM'
+  RequiredDate: '8/15/2006 12:00:00 AM'
+  ShipAddress: 'Sierras de Granada 9993'
+  ShipCity: 'Mexico' Originally 'Mexico D.F.'
+  ShipCountry: 'Mexico'
+  ShipName: 'Centro comercial Moctezuma'
+  ShipPostalCode: '05022'
+  ShipRegion: <null>
+  ShipVia: 3 FK
+  ShippedDate: '7/25/2006 12:00:00 AM'
+  Customer: <null>
+  Employee: <null>
+  OrderDetails: []
+  ShipViaNavigation: <null>
+Order {OrderId: 10276} Unchanged
+  OrderId: 10276 PK
+  CustomerId: 80 FK
+  EmployeeId: 8 FK
+  Freight: 13.84
+  OrderDate: '8/8/2006 12:00:00 AM'
+  RequiredDate: '8/22/2006 12:00:00 AM'
+  ShipAddress: 'Avda. Azteca 123'
+  ShipCity: 'Mexico' Originally 'Mexico D.F.'
+  ShipCountry: 'Mexico'
+  ShipName: 'Tortuga Restaurante'
+  ShipPostalCode: '05033'
+  ShipRegion: <null>
+  ShipVia: 3 FK
+  ShippedDate: '8/14/2006 12:00:00 AM'
+  Customer: <null>
+  Employee: <null>
+  OrderDetails: []
+  ShipViaNavigation: <null>
+Order {OrderId: 10293} Unchanged
+  OrderId: 10293 PK
+  CustomerId: 80 FK
+  EmployeeId: 1 FK
+  Freight: 21.18
+  OrderDate: '8/29/2006 12:00:00 AM'
+  RequiredDate: '9/26/2006 12:00:00 AM'
+  ShipAddress: 'Avda. Azteca 123'
+  ShipCity: 'Mexico' Originally 'Mexico D.F.'
+  ShipCountry: 'Mexico'
+  ShipName: 'Tortuga Restaurante'
+  ShipPostalCode: '05033'
+  ShipRegion: <null>
+  ShipVia: 3 FK
+  ShippedDate: '9/11/2006 12:00:00 AM'
+  Customer: <null>
+  Employee: <null>
+  OrderDetails: []
+  ShipViaNavigation: <null>
+Order {OrderId: 10304} Unchanged
+  OrderId: 10304 PK
+  CustomerId: 80 FK
+  EmployeeId: 1 FK
+  Freight: 63.79
+  OrderDate: '9/12/2006 12:00:00 AM'
+  RequiredDate: '10/10/2006 12:00:00 AM'
+  ShipAddress: 'Avda. Azteca 123'
+  ShipCity: 'Mexico' Originally 'Mexico D.F.'
+  ShipCountry: 'Mexico'
+  ShipName: 'Tortuga Restaurante'
+  ShipPostalCode: '05033'
+  ShipRegion: <null>
+  ShipVia: 2 FK
+  ShippedDate: '9/17/2006 12:00:00 AM'
+  Customer: <null>
+  Employee: <null>
+  OrderDetails: []
+  ShipViaNavigation: <null>
+Order {OrderId: 10308} Unchanged
+  OrderId: 10308 PK
+  CustomerId: 2 FK
+  EmployeeId: 7 FK
+  Freight: 1.61
+  OrderDate: '9/18/2006 12:00:00 AM'
+  RequiredDate: '10/16/2006 12:00:00 AM'
+  ShipAddress: 'Avda. de la Constituci?n 2222'
+  ShipCity: 'Mexico' Originally 'Mexico D.F.'
+  ShipCountry: 'Mexico'
+  ShipName: 'Ana Trujillo Emparedados y helados'
+  ShipPostalCode: '05021'
+  ShipRegion: <null>
+  ShipVia: 3 FK
+  ShippedDate: '9/24/2006 12:00:00 AM'
+  Customer: <null>
+  Employee: <null>
+  OrderDetails: []
+  ShipViaNavigation: <null>
+Order {OrderId: 10319} Unchanged
+  OrderId: 10319 PK
+  CustomerId: 80 FK
+  EmployeeId: 7 FK
+  Freight: 64.5
+  OrderDate: '10/2/2006 12:00:00 AM'
+  RequiredDate: '10/30/2006 12:00:00 AM'
+  ShipAddress: 'Avda. Azteca 123'
+  ShipCity: 'Mexico' Originally 'Mexico D.F.'
+  ShipCountry: 'Mexico'
+  ShipName: 'Tortuga Restaurante'
+  ShipPostalCode: '05033'
+  ShipRegion: <null>
+  ShipVia: 3 FK
+  ShippedDate: '10/11/2006 12:00:00 AM'
+  Customer: <null>
+  Employee: <null>
+  OrderDetails: []
+  ShipViaNavigation: <null>
+Order {OrderId: 10322} Unchanged
+  OrderId: 10322 PK
+  CustomerId: 58 FK
+  EmployeeId: 7 FK
+  Freight: 0.4
+  OrderDate: '10/4/2006 12:00:00 AM'
+  RequiredDate: '11/1/2006 12:00:00 AM'
+  ShipAddress: 'Calle Dr. Jorge Cash 321'
+  ShipCity: 'Mexico' Originally 'Mexico D.F.'
+  ShipCountry: 'Mexico'
+  ShipName: 'Pericles Comidas cl?sicas'
+  ShipPostalCode: '05033'
+  ShipRegion: <null>
+  ShipVia: 3 FK
+  ShippedDate: '10/23/2006 12:00:00 AM'
+  Customer: <null>
+  Employee: <null>
+  OrderDetails: []
+  ShipViaNavigation: <null>
+Order {OrderId: 10354} Unchanged
+  OrderId: 10354 PK
+  CustomerId: 58 FK
+  EmployeeId: 8 FK
+  Freight: 53.8
+  OrderDate: '11/14/2006 12:00:00 AM'
+  RequiredDate: '12/12/2006 12:00:00 AM'
+  ShipAddress: 'Calle Dr. Jorge Cash 321'
+  ShipCity: 'Mexico' Originally 'Mexico D.F.'
+  ShipCountry: 'Mexico'
+  ShipName: 'Pericles Comidas cl?sicas'
+  ShipPostalCode: '05033'
+  ShipRegion: <null>
+  ShipVia: 3 FK
+  ShippedDate: '11/20/2006 12:00:00 AM'
+  Customer: <null>
+  Employee: <null>
+  OrderDetails: []
+  ShipViaNavigation: <null>
+Order {OrderId: 10365} Unchanged
+  OrderId: 10365 PK
+  CustomerId: 3 FK
+  EmployeeId: 3 FK
+  Freight: 22
+  OrderDate: '11/27/2006 12:00:00 AM'
+  RequiredDate: '12/25/2006 12:00:00 AM'
+  ShipAddress: 'Mataderos  2312'
+  ShipCity: 'Mexico' Originally 'Mexico D.F.'
+  ShipCountry: 'Mexico'
+  ShipName: 'Antonio Moreno Taquer?a'
+  ShipPostalCode: '05023'
+  ShipRegion: <null>
+  ShipVia: 2 FK
+  ShippedDate: '12/2/2006 12:00:00 AM'
+  Customer: <null>
+  Employee: <null>
+  OrderDetails: []
+  ShipViaNavigation: <null>
+Order {OrderId: 10474} Unchanged
+  OrderId: 10474 PK
+  CustomerId: 58 FK
+  EmployeeId: 5 FK
+  Freight: 83.49
+  OrderDate: '3/13/2007 12:00:00 AM'
+  RequiredDate: '4/10/2007 12:00:00 AM'
+  ShipAddress: 'Calle Dr. Jorge Cash 321'
+  ShipCity: 'Mexico' Originally 'Mexico D.F.'
+  ShipCountry: 'Mexico'
+  ShipName: 'Pericles Comidas cl?sicas'
+  ShipPostalCode: '05033'
+  ShipRegion: <null>
+  ShipVia: 2 FK
+  ShippedDate: '3/21/2007 12:00:00 AM'
+  Customer: <null>
+  Employee: <null>
+  OrderDetails: []
+  ShipViaNavigation: <null>
+Order {OrderId: 10502} Unchanged
+  OrderId: 10502 PK
+  CustomerId: 58 FK
+  EmployeeId: 2 FK
+  Freight: 69.32
+  OrderDate: '4/10/2007 12:00:00 AM'
+  RequiredDate: '5/8/2007 12:00:00 AM'
+  ShipAddress: 'Calle Dr. Jorge Cash 321'
+  ShipCity: 'Mexico' Originally 'Mexico D.F.'
+  ShipCountry: 'Mexico'
+  ShipName: 'Pericles Comidas cl?sicas'
+  ShipPostalCode: '05033'
+  ShipRegion: <null>
+  ShipVia: 1 FK
+  ShippedDate: '4/29/2007 12:00:00 AM'
+  Customer: <null>
+  Employee: <null>
+  OrderDetails: []
+  ShipViaNavigation: <null>
+Order {OrderId: 10507} Unchanged
+  OrderId: 10507 PK
+  CustomerId: 3 FK
+  EmployeeId: 7 FK
+  Freight: 47.45
+  OrderDate: '4/15/2007 12:00:00 AM'
+  RequiredDate: '5/13/2007 12:00:00 AM'
+  ShipAddress: 'Mataderos  2312'
+  ShipCity: 'Mexico' Originally 'Mexico D.F.'
+  ShipCountry: 'Mexico'
+  ShipName: 'Antonio Moreno Taquer?a'
+  ShipPostalCode: '05023'
+  ShipRegion: <null>
+  ShipVia: 1 FK
+  ShippedDate: '4/22/2007 12:00:00 AM'
+  Customer: <null>
+  Employee: <null>
+  OrderDetails: []
+  ShipViaNavigation: <null>
+Order {OrderId: 10518} Unchanged
+  OrderId: 10518 PK
+  CustomerId: 80 FK
+  EmployeeId: 4 FK
+  Freight: 218.15
+  OrderDate: '4/25/2007 12:00:00 AM'
+  RequiredDate: '5/9/2007 12:00:00 AM'
+  ShipAddress: 'Avda. Azteca 123'
+  ShipCity: 'Mexico' Originally 'Mexico D.F.'
+  ShipCountry: 'Mexico'
+  ShipName: 'Tortuga Restaurante'
+  ShipPostalCode: '05033'
+  ShipRegion: <null>
+  ShipVia: 2 FK
+  ShippedDate: '5/5/2007 12:00:00 AM'
+  Customer: <null>
+  Employee: <null>
+  OrderDetails: []
+  ShipViaNavigation: <null>
+Order {OrderId: 10535} Unchanged
+  OrderId: 10535 PK
+  CustomerId: 3 FK
+  EmployeeId: 4 FK
+  Freight: 15.64
+  OrderDate: '5/13/2007 12:00:00 AM'
+  RequiredDate: '6/10/2007 12:00:00 AM'
+  ShipAddress: 'Mataderos  2312'
+  ShipCity: 'Mexico' Originally 'Mexico D.F.'
+  ShipCountry: 'Mexico'
+  ShipName: 'Antonio Moreno Taquer?a'
+  ShipPostalCode: '05023'
+  ShipRegion: <null>
+  ShipVia: 1 FK
+  ShippedDate: '5/21/2007 12:00:00 AM'
+  Customer: <null>
+  Employee: <null>
+  OrderDetails: []
+  ShipViaNavigation: <null>
+Order {OrderId: 10573} Unchanged
+  OrderId: 10573 PK
+  CustomerId: 3 FK
+  EmployeeId: 7 FK
+  Freight: 84.84
+  OrderDate: '6/19/2007 12:00:00 AM'
+  RequiredDate: '7/17/2007 12:00:00 AM'
+  ShipAddress: 'Mataderos  2312'
+  ShipCity: 'Mexico' Originally 'Mexico D.F.'
+  ShipCountry: 'Mexico'
+  ShipName: 'Antonio Moreno Taquer?a'
+  ShipPostalCode: '05023'
+  ShipRegion: <null>
+  ShipVia: 3 FK
+  ShippedDate: '6/20/2007 12:00:00 AM'
+  Customer: <null>
+  Employee: <null>
+  OrderDetails: []
+  ShipViaNavigation: <null>
+Order {OrderId: 10576} Unchanged
+  OrderId: 10576 PK
+  CustomerId: 80 FK
+  EmployeeId: 3 FK
+  Freight: 18.56
+  OrderDate: '6/23/2007 12:00:00 AM'
+  RequiredDate: '7/7/2007 12:00:00 AM'
+  ShipAddress: 'Avda. Azteca 123'
+  ShipCity: 'Mexico' Originally 'Mexico D.F.'
+  ShipCountry: 'Mexico'
+  ShipName: 'Tortuga Restaurante'
+  ShipPostalCode: '05033'
+  ShipRegion: <null>
+  ShipVia: 3 FK
+  ShippedDate: '6/30/2007 12:00:00 AM'
+  Customer: <null>
+  Employee: <null>
+  OrderDetails: []
+  ShipViaNavigation: <null>
+Order {OrderId: 10625} Unchanged
+  OrderId: 10625 PK
+  CustomerId: 2 FK
+  EmployeeId: 3 FK
+  Freight: 43.9
+  OrderDate: '8/8/2007 12:00:00 AM'
+  RequiredDate: '9/5/2007 12:00:00 AM'
+  ShipAddress: 'Avda. de la Constituci?n 2222'
+  ShipCity: 'Mexico' Originally 'Mexico D.F.'
+  ShipCountry: 'Mexico'
+  ShipName: 'Ana Trujillo Emparedados y helados'
+  ShipPostalCode: '05021'
+  ShipRegion: <null>
+  ShipVia: 1 FK
+  ShippedDate: '8/14/2007 12:00:00 AM'
+  Customer: <null>
+  Employee: <null>
+  OrderDetails: []
+  ShipViaNavigation: <null>
+Order {OrderId: 10676} Unchanged
+  OrderId: 10676 PK
+  CustomerId: 80 FK
+  EmployeeId: 2 FK
+  Freight: 2.01
+  OrderDate: '9/22/2007 12:00:00 AM'
+  RequiredDate: '10/20/2007 12:00:00 AM'
+  ShipAddress: 'Avda. Azteca 123'
+  ShipCity: 'Mexico' Originally 'Mexico D.F.'
+  ShipCountry: 'Mexico'
+  ShipName: 'Tortuga Restaurante'
+  ShipPostalCode: '05033'
+  ShipRegion: <null>
+  ShipVia: 2 FK
+  ShippedDate: '9/29/2007 12:00:00 AM'
+  Customer: <null>
+  Employee: <null>
+  OrderDetails: []
+  ShipViaNavigation: <null>
+Order {OrderId: 10677} Unchanged
+  OrderId: 10677 PK
+  CustomerId: 3 FK
+  EmployeeId: 1 FK
+  Freight: 4.03
+  OrderDate: '9/22/2007 12:00:00 AM'
+  RequiredDate: '10/20/2007 12:00:00 AM'
+  ShipAddress: 'Mataderos  2312'
+  ShipCity: 'Mexico' Originally 'Mexico D.F.'
+  ShipCountry: 'Mexico'
+  ShipName: 'Antonio Moreno Taquer?a'
+  ShipPostalCode: '05023'
+  ShipRegion: <null>
+  ShipVia: 3 FK
+  ShippedDate: '9/26/2007 12:00:00 AM'
+  Customer: <null>
+  Employee: <null>
+  OrderDetails: []
+  ShipViaNavigation: <null>
+Order {OrderId: 10682} Unchanged
+  OrderId: 10682 PK
+  CustomerId: 3 FK
+  EmployeeId: 3 FK
+  Freight: 36.13
+  OrderDate: '9/25/2007 12:00:00 AM'
+  RequiredDate: '10/23/2007 12:00:00 AM'
+  ShipAddress: 'Mataderos  2312'
+  ShipCity: 'Mexico' Originally 'Mexico D.F.'
+  ShipCountry: 'Mexico'
+  ShipName: 'Antonio Moreno Taquer?a'
+  ShipPostalCode: '05023'
+  ShipRegion: <null>
+  ShipVia: 2 FK
+  ShippedDate: '10/1/2007 12:00:00 AM'
+  Customer: <null>
+  Employee: <null>
+  OrderDetails: []
+  ShipViaNavigation: <null>
+Order {OrderId: 10759} Unchanged
+  OrderId: 10759 PK
+  CustomerId: 2 FK
+  EmployeeId: 3 FK
+  Freight: 11.99
+  OrderDate: '11/28/2007 12:00:00 AM'
+  RequiredDate: '12/26/2007 12:00:00 AM'
+  ShipAddress: 'Avda. de la Constituci?n 2222'
+  ShipCity: 'Mexico' Originally 'Mexico D.F.'
+  ShipCountry: 'Mexico'
+  ShipName: 'Ana Trujillo Emparedados y helados'
+  ShipPostalCode: '05021'
+  ShipRegion: <null>
+  ShipVia: 3 FK
+  ShippedDate: '12/12/2007 12:00:00 AM'
+  Customer: <null>
+  Employee: <null>
+  OrderDetails: []
+  ShipViaNavigation: <null>
+Order {OrderId: 10842} Unchanged
+  OrderId: 10842 PK
+  CustomerId: 80 FK
+  EmployeeId: 1 FK
+  Freight: 54.42
+  OrderDate: '1/20/2008 12:00:00 AM'
+  RequiredDate: '2/17/2008 12:00:00 AM'
+  ShipAddress: 'Avda. Azteca 123'
+  ShipCity: 'Mexico' Originally 'Mexico D.F.'
+  ShipCountry: 'Mexico'
+  ShipName: 'Tortuga Restaurante'
+  ShipPostalCode: '05033'
+  ShipRegion: <null>
+  ShipVia: 3 FK
+  ShippedDate: '1/29/2008 12:00:00 AM'
+  Customer: <null>
+  Employee: <null>
+  OrderDetails: []
+  ShipViaNavigation: <null>
+Order {OrderId: 10856} Unchanged
+  OrderId: 10856 PK
+  CustomerId: 3 FK
+  EmployeeId: 3 FK
+  Freight: 58.43
+  OrderDate: '1/28/2008 12:00:00 AM'
+  RequiredDate: '2/25/2008 12:00:00 AM'
+  ShipAddress: 'Mataderos  2312'
+  ShipCity: 'Mexico' Originally 'Mexico D.F.'
+  ShipCountry: 'Mexico'
+  ShipName: 'Antonio Moreno Taquer?a'
+  ShipPostalCode: '05023'
+  ShipRegion: <null>
+  ShipVia: 2 FK
+  ShippedDate: '2/10/2008 12:00:00 AM'
+  Customer: <null>
+  Employee: <null>
+  OrderDetails: []
+  ShipViaNavigation: <null>
+Order {OrderId: 10915} Unchanged
+  OrderId: 10915 PK
+  CustomerId: 80 FK
+  EmployeeId: 2 FK
+  Freight: 3.51
+  OrderDate: '2/27/2008 12:00:00 AM'
+  RequiredDate: '3/27/2008 12:00:00 AM'
+  ShipAddress: 'Avda. Azteca 123'
+  ShipCity: 'Mexico' Originally 'Mexico D.F.'
+  ShipCountry: 'Mexico'
+  ShipName: 'Tortuga Restaurante'
+  ShipPostalCode: '05033'
+  ShipRegion: <null>
+  ShipVia: 2 FK
+  ShippedDate: '3/2/2008 12:00:00 AM'
+  Customer: <null>
+  Employee: <null>
+  OrderDetails: []
+  ShipViaNavigation: <null>
+Order {OrderId: 10926} Unchanged
+  OrderId: 10926 PK
+  CustomerId: 2 FK
+  EmployeeId: 4 FK
+  Freight: 39.92
+  OrderDate: '3/4/2008 12:00:00 AM'
+  RequiredDate: '4/1/2008 12:00:00 AM'
+  ShipAddress: 'Avda. de la Constituci?n 2222'
+  ShipCity: 'Mexico' Originally 'Mexico D.F.'
+  ShipCountry: 'Mexico'
+  ShipName: 'Ana Trujillo Emparedados y helados'
+  ShipPostalCode: '05021'
+  ShipRegion: <null>
+  ShipVia: 3 FK
+  ShippedDate: '3/11/2008 12:00:00 AM'
+  Customer: <null>
+  Employee: <null>
+  OrderDetails: []
+  ShipViaNavigation: <null>
+Order {OrderId: 10995} Unchanged
+  OrderId: 10995 PK
+  CustomerId: 58 FK
+  EmployeeId: 1 FK
+  Freight: 46
+  OrderDate: '4/2/2008 12:00:00 AM'
+  RequiredDate: '4/30/2008 12:00:00 AM'
+  ShipAddress: 'Calle Dr. Jorge Cash 321'
+  ShipCity: 'Mexico' Originally 'Mexico D.F.'
+  ShipCountry: 'Mexico'
+  ShipName: 'Pericles Comidas cl?sicas'
+  ShipPostalCode: '05033'
+  ShipRegion: <null>
+  ShipVia: 3 FK
+  ShippedDate: '4/6/2008 12:00:00 AM'
+  Customer: <null>
+  Employee: <null>
+  OrderDetails: []
+  ShipViaNavigation: <null>
+Order {OrderId: 11069} Unchanged
+  OrderId: 11069 PK
+  CustomerId: 80 FK
+  EmployeeId: 1 FK
+  Freight: 15.67
+  OrderDate: '5/4/2008 12:00:00 AM'
+  RequiredDate: '6/1/2008 12:00:00 AM'
+  ShipAddress: 'Avda. Azteca 123'
+  ShipCity: 'Mexico' Originally 'Mexico D.F.'
+  ShipCountry: 'Mexico'
+  ShipName: 'Tortuga Restaurante'
+  ShipPostalCode: '05033'
+  ShipRegion: <null>
+  ShipVia: 2 FK
+  ShippedDate: '5/6/2008 12:00:00 AM'
+  Customer: <null>
+  Employee: <null>
+  OrderDetails: []
+  ShipViaNavigation: <null>
+Order {OrderId: 11073} Unchanged
+  OrderId: 11073 PK
+  CustomerId: 58 FK
+  EmployeeId: 2 FK
+  Freight: 24.95
+  OrderDate: '5/5/2008 12:00:00 AM'
+  RequiredDate: '6/2/2008 12:00:00 AM'
+  ShipAddress: 'Calle Dr. Jorge Cash 321'
+  ShipCity: 'Mexico' Originally 'Mexico D.F.'
+  ShipCountry: 'Mexico'
+  ShipName: 'Pericles Comidas cl?sicas'
+  ShipPostalCode: '05033'
+  ShipRegion: <null>
+  ShipVia: 2 FK
+  ShippedDate: <null>
+  Customer: <null>
+  Employee: <null>
+  OrderDetails: []
+  ShipViaNavigation: <null>
+Order {
+Order {
