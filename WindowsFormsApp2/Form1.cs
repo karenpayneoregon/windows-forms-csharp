@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
+using System.Linq;
 
 namespace DataGridViewGetCellStyle
 {
@@ -13,13 +15,14 @@ namespace DataGridViewGetCellStyle
             dataGridView1.CellFormatting += DataGridView1OnCellFormatting;
         }
 
+        private readonly List<string> _firstNamesList = new List<string>() { "anne", "mary" };
         private void DataGridView1OnCellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
             if (e.ColumnIndex != 0) return;
 
-            if (Convert.ToString(dataGridView1.Rows[e.RowIndex].Cells[0].Value) == "Anne")
+            if (_firstNamesList.Contains(Convert.ToString(dataGridView1.Rows[e.RowIndex].Cells[0].Value), StringComparer.OrdinalIgnoreCase))
             {
-                dataGridView1.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.DarkSalmon;
+                dataGridView1.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.Yellow;
                 e.CellStyle.Font = new Font(e.CellStyle.Font, FontStyle.Bold);
             }
             else
@@ -35,7 +38,10 @@ namespace DataGridViewGetCellStyle
             dataGridView1.Rows.Add("Anne");
             dataGridView1.Rows.Add("Karen");
             dataGridView1.Rows.Add("Anne");
+            dataGridView1.Rows.Add("Mike");
+            dataGridView1.Rows.Add("Jack");
             dataGridView1.Rows.Add("Mary");
+            dataGridView1.Rows.Add("Joan");
             dataGridView1.Rows.Add("Anne");
         }
 

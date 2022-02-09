@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\Extensions.cs" />
+    <Compile Include="Classes\GenericExtensions.cs" />
     <Compile Include="Classes\NumberItem.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>

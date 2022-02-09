@@ -54,5 +54,21 @@ namespace CountExample
                 MessageBox.Show($"{specificFind.Occurrences}");
             }
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+            string[] lines = {
+                "8182,2114,9871,3335,5653,1812,5503,5310,9234,8864,0841,6947,0275,5765,0869,5877,0160,5120,0107,3023,8970,6360,4241",
+                "0251,1292,8111,7166,6149,5676,6301,5207,3242,2205,0765,9177,9988,4080,6972,5337,9173,4805,4720,8152,8805,5028,8625"
+            };
+
+            lines.AllInt();
+            Dictionary<int, List<Item>> dictionary = new Dictionary<int, List<Item>>();
+            for (int index = 0; index < lines.Length; index++)
+            {
+                dictionary.Add(index, Operations.GetNumbersOnly(lines[index]));
+            }
+        }
     }
 }

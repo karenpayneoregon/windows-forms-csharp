@@ -13,7 +13,7 @@ namespace DataGridViewGetCellStyle
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new SourceChangedForm());
+            Application.Run(new Form1());
         }
     }
 }
