@@ -113,7 +113,6 @@ namespace AsyncSimple
             Console.WriteLine("Result of complex letter processing {wordTask.Result");
         }
         
-
         private static async Task<int> SlowAndComplexSumAsync()
         {
             int sum = 0;
