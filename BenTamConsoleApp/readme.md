@@ -1,0 +1,1 @@
+﻿For replying to the following [question](https://docs.microsoft.com/en-us/answers/questions/728511/how-to-compile-with-main.html)
