@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\CheckBoxOperations.cs" />
     <Compile Include="Classes\Containers\Category.cs" />
     <Compile Include="Classes\Containers\Employee.cs" />
     <Compile Include="Classes\Controls\DataButton.cs">

@@ -10,6 +10,21 @@ namespace SpreadsheetLightDataGridViewExport.Classes
 {
     public class SpreadSheetLightSearchOperations
     {
+
+        public static void ConvertCasing(string fileName, string sheetName, int columnIndex)
+        {
+            using (var document = new SLDocument(fileName, sheetName))
+            {
+                
+                var stats = document.GetWorksheetStatistics();
+
+                for (int rowIndex = 1; rowIndex < stats.EndRowIndex; rowIndex++)
+                {
+                    document.SetCellValue(SLConvert.ToCellReference(rowIndex, columnIndex), document.GetCellValueAsString(rowIndex, columnIndex).ToUpper());
+                }
+                document.Save();
+            }
+        }
         public static (List<FoundItem> items, Exception exception) Find(string fileName, string sheetName, string search)
         {
             var foundList = new List<FoundItem>();

@@ -42,5 +42,11 @@ namespace SpreadsheetLightDataGridViewExport
             var (success, exception) = ExcelHelpers.CreateWithSheets(fileName, sheetNameList, headerDictionary);
             MessageBox.Show(success ? "Done" : exception.Message);
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            SpreadSheetLightSearchOperations.ConvertCasing("demo1.xlsx", "sheet1", 1);
+            MessageBox.Show("Test");
+        }
     }
 }

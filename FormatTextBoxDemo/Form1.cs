@@ -15,6 +15,19 @@ namespace FormatTextBoxDemo
         public Form1()
         {
             InitializeComponent();
+
+            DemoControl.OnCheckChangedEvent += DemoControlCheckChanged;
+            DemoControl.checkBox1.CheckStateChanged += CheckBox1OnCheckStateChanged;
+        }
+
+        private void CheckBox1OnCheckStateChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void DemoControlCheckChanged(CheckBox sender)
+        {
+            MessageBox.Show($"{sender.Checked}");
         }
     }
 

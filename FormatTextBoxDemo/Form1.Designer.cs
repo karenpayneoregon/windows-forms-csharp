@@ -30,6 +30,7 @@ namespace FormatTextBoxDemo
         private void InitializeComponent()
         {
             this.button1 = new System.Windows.Forms.Button();
+            this.DemoControl = new FormatTextBoxDemo.UserControl1();
             this.formattedTextBox1 = new FormatTextBoxDemo.FormattedTextBox();
             this.SuspendLayout();
             // 
@@ -41,6 +42,14 @@ namespace FormatTextBoxDemo
             this.button1.TabIndex = 1;
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
+            // 
+            // DemoControl
+            // 
+            this.DemoControl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.DemoControl.Location = new System.Drawing.Point(32, 134);
+            this.DemoControl.Name = "DemoControl";
+            this.DemoControl.Size = new System.Drawing.Size(159, 59);
+            this.DemoControl.TabIndex = 2;
             // 
             // formattedTextBox1
             // 
@@ -56,6 +65,7 @@ namespace FormatTextBoxDemo
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(517, 230);
+            this.Controls.Add(this.DemoControl);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.formattedTextBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
@@ -71,6 +81,7 @@ namespace FormatTextBoxDemo
 
         private FormattedTextBox formattedTextBox1;
         private System.Windows.Forms.Button button1;
+        private UserControl1 DemoControl;
     }
 }
 
