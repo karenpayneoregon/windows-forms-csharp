@@ -6,7 +6,7 @@ namespace WorkingWithTimer.Classes
     public class Utilities
     {
         /// <summary>
-        /// How long between intervals, adjust as needed or use <see cref="Initialize"/> overload
+        /// How long between intervals, adjust as needed or use Initialize overload
         /// </summary>
         private static int _dueTime = 6000 * 10;
         private static Timer _workTimer;
@@ -24,6 +24,7 @@ namespace WorkingWithTimer.Classes
         private static void Initialize()
         {
             if (!ShouldRun) return;
+
             _workTimer = new Timer(Dispatcher);
             _workTimer.Change(_dueTime, Timeout.Infinite);
         }

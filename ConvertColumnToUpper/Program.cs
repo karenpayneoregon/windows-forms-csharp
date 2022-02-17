@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using SpreadsheetLight;
 
 namespace ConvertColumnToUpper
@@ -28,6 +24,12 @@ namespace ConvertColumnToUpper
             Console.ReadLine();
         }
 
+        /// <summary>
+        /// Convert cell values in specific column to uppercase
+        /// </summary>
+        /// <param name="fileName">file name to work on</param>
+        /// <param name="sheetName">Sheet name to work on</param>
+        /// <param name="columnIndex">Column index in sheet to convert to upper case</param>
         public static void ConvertCasing(string fileName, string sheetName, int columnIndex)
         {
             using (var document = new SLDocument(fileName, sheetName))
@@ -37,12 +39,15 @@ namespace ConvertColumnToUpper
 
                 for (int rowIndex = 1; rowIndex < stats.EndRowIndex; rowIndex++)
                 {
+
                     document.SetCellValue(
                         SLConvert.ToCellReference(rowIndex, columnIndex), 
                         document.GetCellValueAsString(rowIndex, columnIndex).ToUpper());
+
                 }
 
                 document.Save();
+
             }
         }
     }
