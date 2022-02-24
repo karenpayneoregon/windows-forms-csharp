@@ -143,6 +143,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="bin\Debug\ExcelFiles\DemoExport.xlsx" />
+    <None Include="ChangeActive.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="Customers.xlsx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

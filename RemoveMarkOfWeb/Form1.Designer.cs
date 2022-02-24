@@ -31,6 +31,7 @@ namespace RemoveMarkOfWeb
         {
             this.FolderTextBox = new System.Windows.Forms.TextBox();
             this.ExecuteButton = new System.Windows.Forms.Button();
+            this.ShowHelpLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // FolderTextBox
@@ -42,6 +43,7 @@ namespace RemoveMarkOfWeb
             this.FolderTextBox.TabIndex = 1;
             this.FolderTextBox.DragDrop += new System.Windows.Forms.DragEventHandler(this.FolderTextBox_DragDrop);
             this.FolderTextBox.DragEnter += new System.Windows.Forms.DragEventHandler(this.FolderTextBox_DragEnter);
+            this.FolderTextBox.DragLeave += new System.EventHandler(this.FolderTextBox_DragLeave);
             // 
             // ExecuteButton
             // 
@@ -55,11 +57,24 @@ namespace RemoveMarkOfWeb
             this.ExecuteButton.UseVisualStyleBackColor = true;
             this.ExecuteButton.Click += new System.EventHandler(this.ExecuteButton_Click);
             // 
+            // ShowHelpLabel
+            // 
+            this.ShowHelpLabel.AutoSize = true;
+            this.ShowHelpLabel.BackColor = System.Drawing.SystemColors.Window;
+            this.ShowHelpLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ShowHelpLabel.Location = new System.Drawing.Point(169, 15);
+            this.ShowHelpLabel.Name = "ShowHelpLabel";
+            this.ShowHelpLabel.Size = new System.Drawing.Size(99, 13);
+            this.ShowHelpLabel.TabIndex = 2;
+            this.ShowHelpLabel.Text = "Drop folder here";
+            this.ShowHelpLabel.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(517, 88);
+            this.Controls.Add(this.ShowHelpLabel);
             this.Controls.Add(this.FolderTextBox);
             this.Controls.Add(this.ExecuteButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
@@ -75,6 +90,7 @@ namespace RemoveMarkOfWeb
 
         private System.Windows.Forms.Button ExecuteButton;
         private System.Windows.Forms.TextBox FolderTextBox;
+        private System.Windows.Forms.Label ShowHelpLabel;
     }
 }
 

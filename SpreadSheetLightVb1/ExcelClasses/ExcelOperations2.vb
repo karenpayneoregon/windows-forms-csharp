@@ -164,4 +164,16 @@ Public Class ExcelOperations2
     Public Shared Function SheetExists(doc As SLDocument, pSheetName As String) As Boolean
         Return doc.GetSheetNames(False).Any(Function(sheetName) sheetName.ToLower() = pSheetName.ToLower())
     End Function
+
+    Public Shared Sub ChangeActiveSheet(fileName As String, worksheet As String)
+        Using doc As New SLDocument(fileName)
+            doc.SelectWorksheet(worksheet)
+            doc.Save()
+        End Using
+    End Sub
+    Public Shared Function GetActiveSheet(fileName As String) As String
+        Using doc As New SLDocument(fileName)
+            Return doc.GetCurrentWorksheetName()
+        End Using
+    End Function
 End Class

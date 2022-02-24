@@ -12,18 +12,24 @@ namespace AsyncSimple
     class Program
     {
         private static readonly CancellationTokenSource _cancellationSource = new();
+        private static readonly ImportItem _importItem = new () {RowsStr = "Start"};
         static async Task Main(string[] args)
         {
-
-            Console.Title = "Async simple/basics";
+            Console.WriteLine($"RowStr = '{_importItem.RowsStr}'");
+            await Go_ImportCommand_Execute();
+            Console.WriteLine($"RowStr = '{_importItem.RowsStr}'");
             
+
+            Console.WriteLine("2");
+            Console.Title = "Async simple/basics";
+
             Console.WriteLine("Return bool");
             var example1Result = await Example1();
             Console.WriteLine($"\t{example1Result.ToYesNo()}");
 
             Console.WriteLine();
             Console.WriteLine("Return list");
-            
+
             var customersList = await Example2();
 
             foreach (var customer in customersList)
@@ -46,7 +52,7 @@ namespace AsyncSimple
                 var x = await Example1();
 
                 Console.WriteLine(x.ToYesNo());
-                
+
             }, null, startTimeSpan, periodTimeSpan);
 
             await Task.Delay(3000);
@@ -108,11 +114,11 @@ namespace AsyncSimple
 
             // running them in parallel should take about 4s to complete
             await Task.WhenAll(sumTask, wordTask);
-            
+
             Console.WriteLine($"Result of complex sum = {sumTask.Result}");
             Console.WriteLine("Result of complex letter processing {wordTask.Result");
         }
-        
+
         private static async Task<int> SlowAndComplexSumAsync()
         {
             int sum = 0;
@@ -134,6 +140,12 @@ namespace AsyncSimple
             }
 
             return word;
+        }
+
+        private static async Task Go_ImportCommand_Execute()
+        {
+            _importItem.RowsStr = "";
+            await Task.Delay(2000);
         }
     }
 }

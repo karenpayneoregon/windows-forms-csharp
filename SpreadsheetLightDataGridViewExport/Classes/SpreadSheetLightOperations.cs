@@ -71,6 +71,19 @@ namespace SpreadsheetLightDataGridViewExport.Classes
             }
         }
 
+        public static void Example1(string fileName, string sheetName)
+        {
+            using (var document = new SLDocument(fileName, sheetName))
+            {
+
+                Dictionary<int, Dictionary<int, SLCell>> cells = document.GetCells();
+                var results= cells.Select(x => x.Value).ToList();
+
+       
+
+            }
+        }
+
 
     }
 }

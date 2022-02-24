@@ -160,6 +160,7 @@ Public Class ExcelOperations
                 doc.AutoFitColumn(1, stats.EndColumnIndex)
                 doc.RenameWorksheet(SLDocument.DefaultFirstSheetName, "People")
 
+
                 doc.SaveAs("PeopleData.xlsx")
 
             End Using

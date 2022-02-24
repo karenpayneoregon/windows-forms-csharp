@@ -22,9 +22,7 @@ namespace RemoveMarkOfWeb
             {
                 FolderTextBox.Text = Arguments.Path;
             }
-            string solutiondir = Directory.GetParent(
-                Directory.GetCurrentDirectory()).Parent.FullName;
-            Console.WriteLine(solutiondir);
+
         }
 
         private async void ExecuteButton_Click(object sender, EventArgs e)
@@ -50,17 +48,27 @@ namespace RemoveMarkOfWeb
 
         private void FolderTextBox_DragEnter(object sender, DragEventArgs e)
         {
-            if (e.Data.GetDataPresent(DataFormats.FileDrop)) e.Effect = DragDropEffects.Copy;
+            if (e.Data.GetDataPresent(DataFormats.FileDrop))
+            {
+                e.Effect = DragDropEffects.Copy;
+                ShowHelpLabel.Visible = true;
+            }
+        }
+
+        private void FolderTextBox_DragLeave(object sender, EventArgs e)
+        {
+            ShowHelpLabel.Visible = false;
         }
 
         private void FolderTextBox_DragDrop(object sender, DragEventArgs e)
         {
             var droppedData = (string[])e.Data.GetData(DataFormats.FileDrop);
 
-            if (Directory.Exists(droppedData[0]))
-            {
-                FolderTextBox.Text = droppedData[0];
-            }
+            if (!Directory.Exists(droppedData[0])) return;
+            ShowHelpLabel.Visible = false;
+            FolderTextBox.Text = droppedData[0];
         }
+
+
     }
 }

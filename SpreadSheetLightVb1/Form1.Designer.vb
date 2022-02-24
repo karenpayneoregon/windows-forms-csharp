@@ -29,6 +29,7 @@ Partial Class Form1
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.FindTextBox = New System.Windows.Forms.TextBox()
+        Me.Button4 = New System.Windows.Forms.Button()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -92,11 +93,21 @@ Partial Class Form1
         Me.FindTextBox.Size = New System.Drawing.Size(100, 20)
         Me.FindTextBox.TabIndex = 6
         '
+        'Button4
+        '
+        Me.Button4.Location = New System.Drawing.Point(771, 246)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(75, 23)
+        Me.Button4.TabIndex = 7
+        Me.Button4.Text = "Button4"
+        Me.Button4.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(897, 284)
+        Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.FindTextBox)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Button2)
@@ -121,4 +132,5 @@ Partial Class Form1
     Friend WithEvents Button2 As Button
     Friend WithEvents Button3 As Button
     Friend WithEvents FindTextBox As TextBox
+    Friend WithEvents Button4 As Button
 End Class
