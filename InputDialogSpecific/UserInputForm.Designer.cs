@@ -84,9 +84,9 @@ namespace InputDialogSpecific
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(29, 154);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(130, 13);
+            this.label3.Size = new System.Drawing.Size(52, 13);
             this.label3.TabIndex = 5;
-            this.label3.Text = "BirthDateDateTimeControl";
+            this.label3.Text = "Birth date";
             // 
             // SubmitButton
             // 

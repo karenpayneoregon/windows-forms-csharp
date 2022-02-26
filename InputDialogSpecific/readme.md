@@ -1,3 +1,3 @@
 ﻿# About
 
-![img](figure1.png)
+![img](figure1a.png)
