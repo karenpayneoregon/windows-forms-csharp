@@ -29,7 +29,7 @@ namespace InputDialogSpecific
             }
             else
             {
-                // present user with a dialo
+                // present user with a dialog
             }
 
         }
