@@ -105,7 +105,7 @@ namespace InputDialogSpecific
             this.CancelButton.Name = "CancelButton";
             this.CancelButton.Size = new System.Drawing.Size(75, 23);
             this.CancelButton.TabIndex = 7;
-            this.CancelButton.Text = "button1";
+            this.CancelButton.Text = "Cancel";
             this.CancelButton.UseVisualStyleBackColor = true;
             // 
             // UserInputForm
