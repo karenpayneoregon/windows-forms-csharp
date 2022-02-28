@@ -22,7 +22,8 @@ namespace DataGridViewColumns.Classes
                 new ConfigurationItem() { Id = 2, Name = "Second" }
             };
 
-            File.WriteAllText(ConfigurationFileName, JsonConvert.SerializeObject(list, Formatting.Indented));
+            File.WriteAllText(ConfigurationFileName, 
+                JsonConvert.SerializeObject(list, Formatting.Indented));
         }
         /// <summary>
         /// Create file if not exists for list of <see cref="DataMapColumn"/>
@@ -40,13 +41,16 @@ namespace DataGridViewColumns.Classes
                 new DataMapColumn() { ConfigurationId = 1, Name = "A10", DisplayName = "Site" }
             };
 
-            File.WriteAllText(DataItemsFileName, JsonConvert.SerializeObject(list, Formatting.Indented));
+            File.WriteAllText(DataItemsFileName, 
+                JsonConvert.SerializeObject(list, Formatting.Indented));
         }
 
         public static List<DataMapColumn> Columns 
-            => JsonConvert.DeserializeObject<List<DataMapColumn>>(File.ReadAllText(DataItemsFileName));
+            => JsonConvert.DeserializeObject<List<DataMapColumn>>(
+                File.ReadAllText(DataItemsFileName));
 
         public static List<ConfigurationItem> Configurations
-            => JsonConvert.DeserializeObject<List<ConfigurationItem>>(File.ReadAllText(ConfigurationFileName));
+            => JsonConvert.DeserializeObject<List<ConfigurationItem>>(
+                File.ReadAllText(ConfigurationFileName));
     }
 }

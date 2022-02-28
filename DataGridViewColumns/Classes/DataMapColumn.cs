@@ -6,6 +6,6 @@
         public string Name { get; set; }
         public int Ordinal { get; set; }
         public string DisplayName { get; set; }
-
+        public override string ToString() => Name;
     }
 }
