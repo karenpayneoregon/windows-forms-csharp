@@ -48,6 +48,12 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="DataGridViewColumnExtensions.cs" />
+    <Compile Include="DatesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DatesForm.Designer.cs">
+      <DependentUpon>DatesForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -62,6 +68,9 @@
     <Compile Include="SampleForm.Designer.cs">
       <DependentUpon>SampleForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="DatesForm.resx">
+      <DependentUpon>DatesForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -90,6 +99,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="folders.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

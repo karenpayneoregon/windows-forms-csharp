@@ -290,6 +290,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DeserializeAvoidNullConsole
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InputDialogSpecific", "InputDialogSpecific\InputDialogSpecific.csproj", "{121D41E8-0900-40E5-9566-FFACBAB0F442}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataGridViewColumns", "DataGridViewColumns\DataGridViewColumns.csproj", "{027D698E-9610-448C-BDFB-76C6B8150139}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -1686,6 +1688,18 @@ Global
 		{121D41E8-0900-40E5-9566-FFACBAB0F442}.Release|x64.Build.0 = Release|Any CPU
 		{121D41E8-0900-40E5-9566-FFACBAB0F442}.Release|x86.ActiveCfg = Release|Any CPU
 		{121D41E8-0900-40E5-9566-FFACBAB0F442}.Release|x86.Build.0 = Release|Any CPU
+		{027D698E-9610-448C-BDFB-76C6B8150139}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{027D698E-9610-448C-BDFB-76C6B8150139}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{027D698E-9610-448C-BDFB-76C6B8150139}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{027D698E-9610-448C-BDFB-76C6B8150139}.Debug|x64.Build.0 = Debug|Any CPU
+		{027D698E-9610-448C-BDFB-76C6B8150139}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{027D698E-9610-448C-BDFB-76C6B8150139}.Debug|x86.Build.0 = Debug|Any CPU
+		{027D698E-9610-448C-BDFB-76C6B8150139}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{027D698E-9610-448C-BDFB-76C6B8150139}.Release|Any CPU.Build.0 = Release|Any CPU
+		{027D698E-9610-448C-BDFB-76C6B8150139}.Release|x64.ActiveCfg = Release|Any CPU
+		{027D698E-9610-448C-BDFB-76C6B8150139}.Release|x64.Build.0 = Release|Any CPU
+		{027D698E-9610-448C-BDFB-76C6B8150139}.Release|x86.ActiveCfg = Release|Any CPU
+		{027D698E-9610-448C-BDFB-76C6B8150139}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -1826,6 +1840,7 @@ Global
 		{DB95D36E-5ACB-4CA4-8CEA-D1BD5A6E0F97} = {2E5D5985-8504-422C-A302-6A46890F4ACB}
 		{C35BD255-8236-4D7D-AC5E-2303937AEA84} = {DE16B1C7-FA6D-417E-B3A3-C9B8AC284A41}
 		{121D41E8-0900-40E5-9566-FFACBAB0F442} = {2E5D5985-8504-422C-A302-6A46890F4ACB}
+		{027D698E-9610-448C-BDFB-76C6B8150139} = {2E5D5985-8504-422C-A302-6A46890F4ACB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {58AC3B13-B420-4F3C-8723-CE1E6C224D46}

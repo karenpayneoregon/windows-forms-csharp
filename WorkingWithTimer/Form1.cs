@@ -16,12 +16,13 @@ namespace WorkingWithTimer
         private int _wait = 6000 * 10;
         Timer _serviceTimer;
         private CancellationTokenSource _cancellationTokenSource = new CancellationTokenSource();
+        
         public Form1()
         {
             InitializeComponent();
-            Console.WriteLine(TimeSpan.FromMinutes(_wait).Seconds);
 
-            Utilities.Message += OnMessageReceived;
+
+            TimerHelper.Message += OnMessageReceived;
         }
 
         private void OnMessageReceived(string message) 
@@ -134,12 +135,27 @@ namespace WorkingWithTimer
 
         private void UtilsStartButton_Click(object sender, EventArgs e)
         {
-            Utilities.Start();
+            TimerHelper.Start(FormWork);
         }
 
         private void UtilsStopButton_Click(object sender, EventArgs e)
         {
-            Utilities.Stop();
+            TimerHelper.Stop();
+        }
+
+        public void FormWork()
+        {
+            /*
+             * Place code here e.g.
+             *
+             * this.Hide();
+             * Form1 main = new Form1();
+             * main.Show();
+             * 
+             */
+            TimerHelper.Stop();
+            Console.WriteLine("Worked");
+
         }
     }
 }

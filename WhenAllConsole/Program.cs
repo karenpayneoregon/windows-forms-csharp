@@ -16,16 +16,17 @@ namespace WhenAllConsole
     {
         static async Task Main(string[] args)
         {
-            Task<List<string>> monthNames = SecondTask();
             Task<bool> nameChange = FirstTask();
+            Task<List<string>> monthNames = SecondTask();
             Task<List<PersonItem>> groupedTask = ThirdTask();
 
             await Task.WhenAll(nameChange, monthNames, groupedTask);
             Debug.WriteLine("");
             Debug.WriteLine($"Task 1: {nameChange.Result}");
             Debug.WriteLine($"Task 2: {string.Join(",", monthNames.Result.ToArray())}");
-
+            Debug.WriteLine("Task 3");
             groupedTask.Result.ForEach(personItem => Debug.WriteLine(personItem));
+            
             Debug.WriteLine("");
         }
 
@@ -33,7 +34,7 @@ namespace WhenAllConsole
         {
             return await Task.Run(async () =>
             {
-
+                Debug.WriteLine($"In {nameof(FirstTask)}");
                 await Task.Delay(1000);
 
                 return Environment.UserName == "PayneK";
@@ -45,6 +46,7 @@ namespace WhenAllConsole
             return await Task.Run(async () =>
             {
 
+                Debug.WriteLine($"In {nameof(SecondTask)}");
                 await Task.Delay(3000);
 
                 return Enumerable.Range(1, 12).Select((index)
@@ -58,6 +60,7 @@ namespace WhenAllConsole
         {
             return await Task.Run(async () =>
             {
+                Debug.WriteLine($"In {nameof(ThirdTask)}");
                 await Task.Delay(1);
                 var results = Data.Mocked().GroupBy(person => person.Customer)
                     .OrderByDescending(group => group.Max(person => person.Total))

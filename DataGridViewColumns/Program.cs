@@ -1,7 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace DataGridViewGetCellStyle
+namespace DataGridViewColumns
 {
     static class Program
     {
@@ -13,7 +16,7 @@ namespace DataGridViewGetCellStyle
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new DatesForm());
+            Application.Run(new ConfigForm());
         }
     }
 }
