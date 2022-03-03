@@ -160,5 +160,18 @@ namespace SpreadsheetLightDataGridViewExport.Classes
                 return (false, exception);
             }
         }
+
+        /// <summary>
+        /// Open file to specific sheet
+        /// </summary>
+        /// <param name="fileName">Existing Excel file name</param>
+        /// <param name="sheetName">Existing Sheet name in file</param>
+        public static void Work(string fileName, string sheetName)
+        {
+            using (var document = new SLDocument(fileName, sheetName))
+            {
+                // some code do write to the cells of selected sheet
+            }
+        }
     }
 }
