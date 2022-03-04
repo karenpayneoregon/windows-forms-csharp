@@ -33,13 +33,17 @@ namespace SqlServerInsertRecord
             this.AddButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.coreBindingNavigator = new SqlServerInsertRecord.Classes.CoreBindingNavigator();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.coreBindingNavigator)).BeginInit();
             this.SuspendLayout();
             // 
             // AddButton
             // 
             this.AddButton.Image = ((System.Drawing.Image)(resources.GetObject("AddButton.Image")));
             this.AddButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.AddButton.Location = new System.Drawing.Point(52, 21);
+            this.AddButton.Location = new System.Drawing.Point(55, 78);
             this.AddButton.Name = "AddButton";
             this.AddButton.Size = new System.Drawing.Size(75, 23);
             this.AddButton.TabIndex = 0;
@@ -50,7 +54,7 @@ namespace SqlServerInsertRecord
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(161, 25);
+            this.label1.Location = new System.Drawing.Point(164, 82);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(38, 15);
             this.label1.TabIndex = 1;
@@ -62,17 +66,35 @@ namespace SqlServerInsertRecord
             this.comboBox1.Items.AddRange(new object[] {
             "First",
             "Second"});
-            this.comboBox1.Location = new System.Drawing.Point(55, 59);
+            this.comboBox1.Location = new System.Drawing.Point(58, 116);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 23);
             this.comboBox1.TabIndex = 2;
             this.comboBox1.TextChanged += new System.EventHandler(this.comboBox1_TextChanged);
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(55, 163);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(436, 177);
+            this.dataGridView1.TabIndex = 4;
+            // 
+            // coreBindingNavigator
+            // 
+            this.coreBindingNavigator.Location = new System.Drawing.Point(0, 0);
+            this.coreBindingNavigator.Name = "coreBindingNavigator";
+            this.coreBindingNavigator.Size = new System.Drawing.Size(595, 25);
+            this.coreBindingNavigator.TabIndex = 5;
+            this.coreBindingNavigator.Text = "coreBindingNavigator1";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(274, 87);
+            this.ClientSize = new System.Drawing.Size(595, 371);
+            this.Controls.Add(this.coreBindingNavigator);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.AddButton);
@@ -80,6 +102,9 @@ namespace SqlServerInsertRecord
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Insert record";
+            this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.coreBindingNavigator)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -90,6 +115,8 @@ namespace SqlServerInsertRecord
         private System.Windows.Forms.Button AddButton;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private Classes.CoreBindingNavigator coreBindingNavigator;
     }
 }
 

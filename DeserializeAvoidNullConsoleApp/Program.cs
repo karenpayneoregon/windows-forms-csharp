@@ -30,6 +30,13 @@ namespace DeserializeAvoidNullConsoleApp
                 Console.WriteLine($"{data.Id,-6:D3}{data.FirstName,-10}{data.LastName,-10}{data.Country,-10} First name is null: {(data.FirstName is null)}");
             }
 
+            Console.WriteLine();
+            foreach (var data in list)
+            {
+                Console.WriteLine($"{data.Id,-6:D3}{data.FirstName,-10}{data.LastName,-10}{data.StartDate:d}");
+            }
+
+
             Console.ReadLine();
         }
     }

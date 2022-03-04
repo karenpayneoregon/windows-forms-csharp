@@ -70,7 +70,18 @@ namespace SpreadsheetLightDataGridViewExport.Classes
                 }
             }
         }
+        public static void ExampleDataTable(string fileName, string sheetName)
+        {
+            using (var doc = new SLDocument(fileName, sheetName))
+            {
+                var stats = doc.GetWorksheetStatistics();
+                for (int rowIndex = 2; rowIndex < stats.EndRowIndex + 1; rowIndex++)
+                {
+                    Console.WriteLine($"{doc.GetCellValueAsString(rowIndex, 1)}, {doc.GetCellValueAsString(rowIndex, 2)}, {doc.GetCellValueAsDateTime(rowIndex, 9)}");
 
+                }
+            }
+        }
         public static void Example1(string fileName, string sheetName)
         {
             using (var document = new SLDocument(fileName, sheetName))

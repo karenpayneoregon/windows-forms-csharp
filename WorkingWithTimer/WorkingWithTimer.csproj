@@ -69,6 +69,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Content Include="MarkDownFiles\assets\Grrrrr.png" />
+    <Content Include="MarkDownFiles\Part1.md" />
+    <Content Include="MarkDownFiles\Part2.md" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

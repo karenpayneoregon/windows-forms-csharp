@@ -35,7 +35,31 @@ namespace SqlServerInsertRecord.Classes
 
 
         }
+        public static (DataTable table, Exception exception) SelectTable()
+        {
+            DataTable table = new DataTable();
 
+            try
+            {
+                using (var cn = new SqlConnection { ConnectionString = connection })
+                {
+                    using (var cmd = new SqlCommand { Connection = cn })
+                    {
+                        cmd.CommandText = "SELECT FirstName, LastName FROM dbo.Contacts;";
+
+                        cn.Open();
+                        table.Load(cmd.ExecuteReader());
+                        return (table, null);
+                    }
+                }
+            }
+            catch (Exception exception)
+            {
+                return (null, exception);
+            }
+
+
+        }
 
 
         public static Contact SelectContact(string contactId)

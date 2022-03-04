@@ -27,7 +27,8 @@ namespace DeserializeAvoidNullConsoleApp.Classes
                     Country = "USA",
                     FirstName = "Karen",
                     LastName = "Payne",
-                    EmailAddress = "karen@comcast.net"
+                    EmailAddress = "karen@comcast.net", 
+                    StartDate = new DateTime(2022,2,2)
                 },
                 new()
                 {
@@ -35,7 +36,8 @@ namespace DeserializeAvoidNullConsoleApp.Classes
                     Country = null,
                     FirstName = "Bob",
                     LastName = "Smith",
-                    EmailAddress = "bob@gmail.com"
+                    EmailAddress = "bob@gmail.com",
+                    StartDate = new DateTime(2022, 1, 2)
                 },
                 new()
                 {
@@ -43,7 +45,8 @@ namespace DeserializeAvoidNullConsoleApp.Classes
                     Country = "Germany",
                     FirstName = null,
                     LastName = "Smith",
-                    EmailAddress = "Anne@hotmail.com"
+                    EmailAddress = "Anne@hotmail.com",
+                    StartDate = new DateTime(2022, 3, 2)
                 }
             };
 

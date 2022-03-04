@@ -1,4 +1,6 @@
-﻿namespace DeserializeAvoidNullConsoleApp.Models
+﻿using System;
+
+namespace DeserializeAvoidNullConsoleApp.Models
 {
     public class Person
     {
@@ -7,6 +9,7 @@
         public string LastName { get; set; }
         public string EmailAddress { get; set; }
         public string Country { get; set; }
+        public DateTime StartDate { get; set; }
         public override string ToString() => $"{FirstName} {LastName}";
     }
 }

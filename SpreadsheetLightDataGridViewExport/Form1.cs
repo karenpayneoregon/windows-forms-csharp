@@ -59,8 +59,8 @@ namespace SpreadsheetLightDataGridViewExport
         private void button2_Click(object sender, EventArgs e)
         {
             var fileName = "Customers.xlsx";
-            var sheetName = "Sheet2";
-            SpreadSheetLightOperations.Example(fileName, sheetName);
+            var sheetName = "Customers";
+            SpreadSheetLightOperations.ExampleDataTable(fileName, sheetName);
             
             
         }

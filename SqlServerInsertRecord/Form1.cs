@@ -35,5 +35,18 @@ namespace SqlServerInsertRecord
         {
             Debug.WriteLine(comboBox1.Text);
         }
+
+        private BindingSource _bindingSource = new BindingSource();
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            var (table, exception) = DataOperations.SelectTable();
+            _bindingSource.DataSource = table;
+
+     
+            coreBindingNavigator.BindingSource = _bindingSource;
+            dataGridView1.DataSource = _bindingSource;
+
+      
+        }
     }
 }
