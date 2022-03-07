@@ -3,7 +3,7 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using BetweenCodeSample.Extensions;
-using BetweenCodeSample.Extensions.System.Linq;
+
 
 namespace BetweenCodeSample
 {
@@ -15,6 +15,13 @@ namespace BetweenCodeSample
     {
         static void Main(string[] args)
         {
+            ChunkingInNetCore5();
+
+            Console.Read();
+        }
+
+        private static void ChunkingInNetCore5()
+        {
             string input = "This,is,an,example,for,the,stackoverflow,community";
 
             var output = input.Split(",")
@@ -23,8 +30,6 @@ namespace BetweenCodeSample
 
             foreach (string s in output)
                 Console.WriteLine(s);
-
-            Console.Read();
         }
 
         private static void First()
