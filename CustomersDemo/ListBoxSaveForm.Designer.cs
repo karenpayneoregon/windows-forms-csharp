@@ -38,6 +38,7 @@ namespace CustomersDemo
             this.AddButton = new System.Windows.Forms.Button();
             this.EditCurrentButton = new System.Windows.Forms.Button();
             this.JsonSaveButton = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label1
@@ -119,11 +120,21 @@ namespace CustomersDemo
             this.JsonSaveButton.UseVisualStyleBackColor = true;
             this.JsonSaveButton.Click += new System.EventHandler(this.JsonSaveButton_Click);
             // 
+            // comboBox1
+            // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(219, 145);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 23);
+            this.comboBox1.TabIndex = 8;
+            // 
             // ListBoxSaveForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(501, 180);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.JsonSaveButton);
             this.Controls.Add(this.EditCurrentButton);
             this.Controls.Add(this.AddButton);
@@ -151,5 +162,6 @@ namespace CustomersDemo
         private System.Windows.Forms.Button AddButton;
         private System.Windows.Forms.Button EditCurrentButton;
         private System.Windows.Forms.Button JsonSaveButton;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

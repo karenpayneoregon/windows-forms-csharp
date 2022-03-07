@@ -1,13 +1,54 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Text.RegularExpressions;
+using BetweenCodeSample.Extensions;
+using BetweenCodeSample.Extensions.System.Linq;
 
 namespace BetweenCodeSample
 {
+    /// <summary>
+    /// Example for a generic language extension for <see cref="IComparable"/>
+    /// In this case the extension is used for int and DateTime
+    /// </summary>
     class Program
     {
         static void Main(string[] args)
         {
-            
+            string input = "This,is,an,example,for,the,stackoverflow,community";
+
+            var output = input.Split(",")
+                .Chunk(2)
+                .Select(chunk => string.Join(",", chunk));
+
+            foreach (string s in output)
+                Console.WriteLine(s);
+
+            Console.Read();
+        }
+
+        private static void First()
+        {
+            string value = "This,is,an, example,for,the,stack-overflow,community";
+            var output = Regex.Matches(value, "[^,]+,[^,]+,*");
+            StringBuilder sb = new();
+            foreach (Match item in output)
+            {
+                sb.AppendLine(item.Value.Trim(','));
+            }
+
+            Console.WriteLine(sb.ToString());
+        }
+
+        private static void SwitchExpression()
+        {
+            Console.WriteLine(7.CaseWhen());
+            Console.WriteLine(5.CaseWhen());
+            Console.WriteLine(1.CaseWhen());
+        }
+
+        private static void IComparableExtensionExamples()
+        {
             int age = 29;
 
             Console.WriteLine($"{age,-3} is over 30 {age.Between(30, 30).ToYesNo()}");
@@ -21,34 +62,17 @@ namespace BetweenCodeSample
             age = 12;
             Console.WriteLine($"is child {age.IsChild().ToYesNo()}");
 
-            DateTime lowDateTime = new DateTime(2022, 1, 1);
-            DateTime someDateTime = new DateTime(2022, 1, 2);
-            DateTime highDateTime = new DateTime(2022, 1, 8);
+            DateTime lowDateTime = new(2022, 1, 1);
+            DateTime someDateTime = new(2022, 1, 2);
+            DateTime highDateTime = new(2022, 1, 8);
 
             Console.WriteLine($"{someDateTime:d} between {lowDateTime:d} and {highDateTime:d}? {someDateTime.Between(lowDateTime, highDateTime).ToYesNo()}");
 
             someDateTime = new DateTime(2022, 2, 2);
             Console.WriteLine($"{someDateTime:d} between {lowDateTime:d} and {highDateTime:d}? {someDateTime.Between(lowDateTime, highDateTime).ToYesNo()}");
 
-            Console.Read();
+            Console.WriteLine($"30.IsOver30() {30.IsOver30()}");
+            Console.WriteLine($"31.IsOver30() {31.IsOver30()}");
         }
-    }
-
-    public static class GenericExtensions
-    {
-        public static bool Between<T>(this T value, T lowerValue, T upperValue) 
-            where T : struct, IComparable<T> 
-            => Comparer<T>.Default.Compare(value, lowerValue) >= 0 && 
-               Comparer<T>.Default.Compare(value, upperValue) <= 0;
-
-        public static bool IsChild(this int sender)
-            => sender.Between(1, 12);
-
-        public static bool IsOver30(this int sender)
-            => sender.Between(30, 30);
-
-        public static string ToYesNo(this bool value) 
-            => value ? "Yes" : "No";
-
     }
 }

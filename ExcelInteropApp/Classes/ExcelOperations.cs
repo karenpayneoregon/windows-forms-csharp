@@ -2,7 +2,7 @@
 using System.Diagnostics;
 using System.Linq;
 using System.IO;
-using System.Runtime.InteropServices;
+using static System.Runtime.InteropServices.Marshal;
 using Excel = Microsoft.Office.Interop.Excel;
 
 namespace ExcelInteropApp.Classes
@@ -17,6 +17,7 @@ namespace ExcelInteropApp.Classes
             Excel.Application application = new Excel.Application();
             return application.Version;
         }
+
         /// <summary>
         /// create an excel file, rename sheet1 (default sheet),
         /// create another worksheet, rename it and re-order to end.
@@ -24,10 +25,11 @@ namespace ExcelInteropApp.Classes
         /// <param name="fileName">path and file name for excel file</param>
         /// <param name="firstWorkSheetName">name for default sheet</param>
         /// <param name="secondWorkSheetName">name for newly added sheet</param>
-        public static (bool success, Exception exception) CreateExcelFile(string fileName, string firstWorkSheetName, string secondWorkSheetName, bool open)
+        public static (bool success, Exception exception) CreateExcelFile(string fileName, string firstWorkSheetName, string secondWorkSheetName)
         {
             try
             {
+
                 if (File.Exists(fileName))
                 {
                     File.Delete(fileName);
@@ -59,19 +61,22 @@ namespace ExcelInteropApp.Classes
                         Type.Missing, 
                         Type.Missing);
 
-                xlNewSheet.Move(System.Reflection.Missing.Value, xlWorkSheets[xlWorkSheets.Count]);
+                xlNewSheet.Move(
+                    System.Reflection.Missing.Value, 
+                    xlWorkSheets[xlWorkSheets.Count]);
 
                 xlNewSheet.Name = secondWorkSheetName;
 
                 Excel.Range xlRange1 = null;
                 xlRange1 = xlWorkSheet.Range["A1"];
                 xlRange1.Value = "Hello Excel";
-                Marshal.FinalReleaseComObject(xlRange1);
+
+                FinalReleaseComObject(xlRange1);
                 xlRange1 = null;
 
                 ActionHandler?.Invoke("Done with add sheet");
 
-                Marshal.FinalReleaseComObject(xlNewSheet);
+                FinalReleaseComObject(xlNewSheet);
                 xlNewSheet = null;
                 xlWorkBook.SaveAs(fileName);
 
@@ -81,32 +86,22 @@ namespace ExcelInteropApp.Classes
                 xlApp.UserControl = true;
                 xlApp.Quit();
 
-                Marshal.FinalReleaseComObject(xlWorkSheets);
+                FinalReleaseComObject(xlWorkSheets);
                 xlWorkSheets = null;
 
-                Marshal.FinalReleaseComObject(xlWorkSheet);
+                FinalReleaseComObject(xlWorkSheet);
                 xlWorkSheet = null;
 
-                Marshal.FinalReleaseComObject(xlWorkBook);
+                FinalReleaseComObject(xlWorkBook);
                 xlWorkBook = null;
 
-                Marshal.FinalReleaseComObject(xlWorkBooks);
+                FinalReleaseComObject(xlWorkBooks);
                 xlWorkBooks = null;
 
-                Marshal.FinalReleaseComObject(xlApp);
+                FinalReleaseComObject(xlApp);
                 xlApp = null;
 
                 ActionHandler?.Invoke($"Clean-up: {(Process.GetProcesses().Any((p) => p.ProcessName.Contains("EXCEL")) ? "Released" : "Not released")}");
-
-                if (open)
-                {
-                    ActionHandler?.Invoke("Opening");
-                    Process.Start(fileName);
-                }
-                else
-                {
-                    ActionHandler?.Invoke("Not opening");
-                }
                 
                 return (true, null);
             }

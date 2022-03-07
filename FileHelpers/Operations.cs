@@ -83,7 +83,7 @@ namespace FileHelpers
                         if (!Cancelled)
                         {
 
-                            await Task.Delay(1);
+                            await Task.Delay(1, ct);
                             await RecursiveFolders(folder, excludeFileExtensions, ct);
 
                         }

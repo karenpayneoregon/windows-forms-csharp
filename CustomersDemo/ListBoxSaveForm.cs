@@ -23,6 +23,8 @@ namespace CustomersDemo
             InitializeComponent();
 
             Shown += OnShown;
+
+            comboBox1.DataSource = Mocked.List;
         }
 
         private void OnShown(object? sender, EventArgs e)
@@ -66,4 +68,20 @@ namespace CustomersDemo
             MessageBox.Show(exception is null ? "Saved" : $"Failed\n{exception.Message}");
         }
     }
+
+public class Example
+{
+    public int Id { get; set; }
+    public string Nama { get; set; }
+    public override string ToString() => Nama;
+}
+
+public class Mocked
+{
+    public static List<Example> List = new()
+    {
+        new () {Id = 1, Nama = "First"},
+        new () {Id = 2, Nama = "Second"},
+    };
+}
 }

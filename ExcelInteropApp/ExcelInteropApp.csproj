@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\ExcelOperations.cs" />
+    <Compile Include="Classes\Helpers.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
