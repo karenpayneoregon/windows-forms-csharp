@@ -11,13 +11,16 @@ using CustomersDemo.Classes;
 
 namespace CustomersDemo
 {
+    /// <summary>
+    /// To answer StackOverFlow question
+    /// </summary>
     public partial class ListBoxSaveForm : Form
     {
         private BindingList<Customer> _customersBindingList;
-        
-        private readonly BindingSource _customersBindingSource = new BindingSource();
-        
-        
+
+        private readonly BindingSource _customersBindingSource = new ();
+
+
         public ListBoxSaveForm()
         {
             InitializeComponent();
@@ -27,7 +30,7 @@ namespace CustomersDemo
             comboBox1.DataSource = Mocked.List;
         }
 
-        private void OnShown(object? sender, EventArgs e)
+        private void OnShown(object sender, EventArgs e)
         {
             _customersBindingList = new BindingList<Customer>();
             _customersBindingSource.DataSource = _customersBindingList;
@@ -61,27 +64,27 @@ namespace CustomersDemo
 
             for (int index = 0; index < _customersBindingList.Count; index++)
             {
-                _customersBindingList[index].CustomerIdentifier = index +1;
+                _customersBindingList[index].CustomerIdentifier = index + 1;
             }
-            
+
             var (success, exception) = _customersBindingList.JsonToFile("CustomersSaved.json");
             MessageBox.Show(exception is null ? "Saved" : $"Failed\n{exception.Message}");
         }
     }
 
-public class Example
-{
-    public int Id { get; set; }
-    public string Nama { get; set; }
-    public override string ToString() => Nama;
-}
-
-public class Mocked
-{
-    public static List<Example> List = new()
+    public class Example
     {
-        new () {Id = 1, Nama = "First"},
-        new () {Id = 2, Nama = "Second"},
-    };
-}
+        public int Id { get; set; }
+        public string Nama { get; set; }
+        public override string ToString() => Nama;
+    }
+
+    public class Mocked
+    {
+        public static List<Example> List = new()
+        {
+            new() { Id = 1, Nama = "First" },
+            new() { Id = 2, Nama = "Second" },
+        };
+    }
 }

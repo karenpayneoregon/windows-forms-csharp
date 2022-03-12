@@ -294,6 +294,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataGridViewColumns", "Data
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DescendantsExamples", "DescendantsExamples\DescendantsExamples.csproj", "{47D15CC6-2FAD-4E83-AA42-A80D7F890EC5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CountryImages", "CountryImages\CountryImages.csproj", "{1ADE484B-2DAC-4F21-86EA-B92F2FBB5F32}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -1714,6 +1716,18 @@ Global
 		{47D15CC6-2FAD-4E83-AA42-A80D7F890EC5}.Release|x64.Build.0 = Release|Any CPU
 		{47D15CC6-2FAD-4E83-AA42-A80D7F890EC5}.Release|x86.ActiveCfg = Release|Any CPU
 		{47D15CC6-2FAD-4E83-AA42-A80D7F890EC5}.Release|x86.Build.0 = Release|Any CPU
+		{1ADE484B-2DAC-4F21-86EA-B92F2FBB5F32}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1ADE484B-2DAC-4F21-86EA-B92F2FBB5F32}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1ADE484B-2DAC-4F21-86EA-B92F2FBB5F32}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{1ADE484B-2DAC-4F21-86EA-B92F2FBB5F32}.Debug|x64.Build.0 = Debug|Any CPU
+		{1ADE484B-2DAC-4F21-86EA-B92F2FBB5F32}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{1ADE484B-2DAC-4F21-86EA-B92F2FBB5F32}.Debug|x86.Build.0 = Debug|Any CPU
+		{1ADE484B-2DAC-4F21-86EA-B92F2FBB5F32}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1ADE484B-2DAC-4F21-86EA-B92F2FBB5F32}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1ADE484B-2DAC-4F21-86EA-B92F2FBB5F32}.Release|x64.ActiveCfg = Release|Any CPU
+		{1ADE484B-2DAC-4F21-86EA-B92F2FBB5F32}.Release|x64.Build.0 = Release|Any CPU
+		{1ADE484B-2DAC-4F21-86EA-B92F2FBB5F32}.Release|x86.ActiveCfg = Release|Any CPU
+		{1ADE484B-2DAC-4F21-86EA-B92F2FBB5F32}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -1856,6 +1870,7 @@ Global
 		{121D41E8-0900-40E5-9566-FFACBAB0F442} = {2E5D5985-8504-422C-A302-6A46890F4ACB}
 		{027D698E-9610-448C-BDFB-76C6B8150139} = {2E5D5985-8504-422C-A302-6A46890F4ACB}
 		{47D15CC6-2FAD-4E83-AA42-A80D7F890EC5} = {2E5D5985-8504-422C-A302-6A46890F4ACB}
+		{1ADE484B-2DAC-4F21-86EA-B92F2FBB5F32} = {2E5D5985-8504-422C-A302-6A46890F4ACB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {58AC3B13-B420-4F3C-8723-CE1E6C224D46}

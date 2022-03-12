@@ -13,4 +13,12 @@
     <Content Include="readme.md" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="TextFile1.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+	<PropertyGroup>
+		<RunArguments>-mode dryrun</RunArguments>
+	</PropertyGroup>
 </Project>

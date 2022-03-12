@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -15,26 +18,102 @@ namespace BetweenCodeSample
     {
         static void Main(string[] args)
         {
-            ChunkingInNetCore5();
+            Console.Title = "Code sample";
 
-            Console.Read();
+
+            Console.ReadLine();
+        }
+        public static int GetLineNumber(Exception ex)
+        {
+            var lineNumber = 0;
+            const string lineSearch = ":line ";
+            var index = ex.StackTrace.LastIndexOf(lineSearch);
+            if (index != -1)
+            {
+                var lineNumberText = ex.StackTrace.Substring(index + lineSearch.Length);
+                if (int.TryParse(lineNumberText, out lineNumber))
+                {
+
+                }
+            }
+            return lineNumber;
+        }
+
+        private static void BadCall()
+        {
+            Person person = new Person();
+
+            Dictionary<int, Person> dictionary = new() { [1] = person };
+            Console.WriteLine($"'{dictionary[4]}'");
+        }
+
+        private static void MoveLineUp()
+        {
+            List<string> lines = File.ReadAllLines("TextFile1.txt").Where(data => !string.IsNullOrWhiteSpace(data)).ToList();
+            int selectedIndex = lines.Count -1;
+
+            lines.Insert(selectedIndex -1,lines[selectedIndex]);
+            lines.RemoveAt(selectedIndex +1);
+
+            foreach (var line in lines)
+            {
+                Debug.WriteLine(line);
+            }
+
+            File.WriteAllLines(Path.Combine(AppDomain.CurrentDomain.BaseDirectory,"Results.txt"), lines.ToArray());
+
         }
 
         private static void ChunkingInNetCore5()
         {
-            string input = "This,is,an,example,for,the,stackoverflow,community";
+            string input = "This,is,an,example,for,the,C#,community";
 
             var output = input.Split(",")
                 .Chunk(2)
-                .Select(chunk => string.Join(",", chunk));
+                .Select(chunk => string.Join(" ", chunk));
 
             foreach (string s in output)
                 Console.WriteLine(s);
         }
 
+        private static void ChunkingBy2()
+        {
+            string input = "56822114567133355603";
+
+            List<char[]> output = input
+                .Chunk(2)
+                .Select(chunk => chunk).ToList();
+
+            StringBuilder builder = new();
+            foreach (var item in output)
+            {
+                builder.Append(new string(item.ToArray()) + " ");
+            }
+
+            Console.WriteLine(builder);
+            Console.WriteLine();
+        }
+        private static void ChunkingBy3()
+        {
+            string input = "56822114567133355603";
+
+            List<char[]> output = input
+                .Chunk(3)
+                .Select(chunk => chunk).ToList();
+
+            StringBuilder builder = new();
+            foreach (var item in output)
+            {
+                builder.Append(new string(item.ToArray()) + " ");
+            }
+
+            Console.WriteLine(builder);
+
+        }
         private static void First()
         {
-            string value = "This,is,an, example,for,the,stack-overflow,community";
+            string value = "This,is,an, example,for,the,C#,community";
+
             var output = Regex.Matches(value, "[^,]+,[^,]+,*");
             StringBuilder sb = new();
             foreach (Match item in output)
@@ -79,5 +158,9 @@ namespace BetweenCodeSample
             Console.WriteLine($"30.IsOver30() {30.IsOver30()}");
             Console.WriteLine($"31.IsOver30() {31.IsOver30()}");
         }
+    }
+
+    internal class Person
+    {
     }
 }

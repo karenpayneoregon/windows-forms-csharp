@@ -8,15 +8,19 @@ namespace DelimitedDemo.Classes
     {
         public static void ReadWrite(char delimitBy = ';')
         {
-            var list = File.ReadAllLines(
-                    Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "TextFile1.txt"))
+            string[] LineArrayMethod(string lineData)
+            {
+                var lineArray = lineData.Split(delimitBy);
+                return lineArray.Length == 6 ? lineArray : new[] { "", "", "", "", "", "","" };
+            }
+
+            var list = File.ReadAllLines(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "TextFile1.txt"))
                 .Select((lineData) =>
                 {
-                    SomeClass someClass = new SomeClass();
-                    // skip empty lines
-                    if (string.IsNullOrWhiteSpace(lineData)) return someClass;
-                    var lineArray = lineData.Split(delimitBy);
-                    someClass = new SomeClass
+                    Item item = new Item();
+                    if (string.IsNullOrWhiteSpace(lineData)) return item;
+                    var lineArray = LineArrayMethod(lineData);
+                    item = new Item
                     {
                         Column1 = lineArray[0],
                         Column2 = lineArray[1],
@@ -27,7 +31,7 @@ namespace DelimitedDemo.Classes
                         Column7 = lineArray[6]
                     };
 
-                    return someClass;
+                    return item;
 
                 })
                 // skip header

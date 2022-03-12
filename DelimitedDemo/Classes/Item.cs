@@ -1,6 +1,6 @@
 ﻿namespace DelimitedDemo.Classes
 {
-    public class SomeClass
+    public class Item
     {
         public string Column1 { get; set; }
         public string Column2 { get; set; }

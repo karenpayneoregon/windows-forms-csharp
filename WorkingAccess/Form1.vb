@@ -85,4 +85,38 @@ Public Class AccessOperations
         End Using
 
     End Function
+
+
+End Class
+
+Public Class DataOperations
+    Private Shared connectionString As String =
+        "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Daily Sales.accdb;"
+    Public Shared Function LoadByDateTime(DateValue As Date) As DataTable
+
+        Dim dt As New DataTable
+
+        '
+        ' Recommend getting out of the habit of SELECT *, instead select
+        ' only the columns needed even if all columns are needed
+        '
+        Dim selectStatement = "SELECT * FROM [Table1] WHERE [TDateField] = @DateValue"
+
+        Using cn As New OleDbConnection With {.ConnectionString = connectionString}
+            Using cmd As New OleDbCommand With {.CommandText = selectStatement, .Connection = cn}
+
+                cn.Open()
+                '
+                ' Always use parameters
+                '
+                cmd.Parameters.Add("@DateValue", OleDbType.Date).Value = DateValue
+
+                dt.Load(cmd.ExecuteReader())
+
+            End Using
+        End Using
+
+        Return dt
+
+    End Function
 End Class
