@@ -9,38 +9,17 @@ namespace SmtpConfigurationExample.Classes
     {
         private readonly SmtpSection _smtpSection;
 
-        /// <summary>
-        /// Configure which setting to use for getting SMTP settings 
-        /// from the configuration file.
-        /// </summary>
-        /// <param name="section"></param>
+
         public MailConfiguration(string section = "system.net/mailSettings/smtp")
         {
             _smtpSection = (ConfigurationManager.GetSection(section) as SmtpSection);
         }
 
-        /// <summary>
-        /// Email address for the system
-        /// </summary>
         public string FromAddress => _smtpSection.From;
-
-        #region Should be encrypted (will show how in part 2 of this series)
         public string UserName => _smtpSection.Network.UserName;
         public string Password => _smtpSection.Network.Password;
-        #endregion
-        /// <summary>
-        /// Gets the system credentials of the application.
-        /// </summary>
         public bool DefaultCredentials => _smtpSection.Network.DefaultCredentials;
-        /// <summary>
-        /// Specify whether the SmtpClient uses Secure Sockets Layer (SSL) 
-        /// to encrypt the connection.
-        /// </summary>
         public bool EnableSsl => _smtpSection.Network.EnableSsl;
-        /// <summary>
-        /// Gets or sets the folder where applications save mail messages to 
-        /// be processed by the local SMTP server.
-        /// </summary>
         public string PickupFolder
         {
             get
@@ -61,10 +40,8 @@ namespace SmtpConfigurationExample.Classes
         /// Determine if pickup folder exists
         /// </summary>
         /// <returns></returns>
-        public bool PickupFolderExists()
-        {
-            return Directory.Exists(PickupFolder);
-        }
+        public bool PickupFolderExists() => Directory.Exists(PickupFolder);
+
         /// <summary>
         /// Gets the name or IP address of the host used for SMTP transactions.
         /// </summary>
@@ -80,11 +57,6 @@ namespace SmtpConfigurationExample.Classes
         /// which a synchronous Send call times out.
         /// </summary>
         public int TimeOut => 2000;
-
-        /// <summary>
-        /// Allows, for debugging to review from address, host and port properties
-        /// </summary>
-        /// <returns>A string with main properties</returns>
         public override string ToString() => $"From: [ {FromAddress} ]" +
                                              $"Host: [{Host}] Port: [{Port}] " +
                                              $"Pickup: {Directory.Exists(PickupFolder)}";
