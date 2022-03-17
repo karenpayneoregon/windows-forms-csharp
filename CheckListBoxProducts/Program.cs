@@ -16,7 +16,7 @@ namespace CheckListBoxProducts
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ProductsForm());
+            Application.Run(new Form1());
         }
     }
 }

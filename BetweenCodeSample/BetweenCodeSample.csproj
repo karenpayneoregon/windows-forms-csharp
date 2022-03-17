@@ -21,4 +21,18 @@
 	<PropertyGroup>
 		<RunArguments>-mode dryrun</RunArguments>
 	</PropertyGroup>
+
+	<!--<Target Name="ZipOutputPath" AfterTargets="Build">
+		<ZipDirectory 
+			SourceDirectory="$(OutputPath)" 
+			DestinationFile="$(MSBuildProjectDirectory)\output.zip" />
+	</Target>-->
+
+
+	<Target Name="MakeLogFolder" AfterTargets="Build">
+		<MakeDir Directories="$(OutDir)Logs" />
+	</Target>
+
+
+
 </Project>

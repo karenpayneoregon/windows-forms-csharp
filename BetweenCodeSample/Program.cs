@@ -20,32 +20,12 @@ namespace BetweenCodeSample
         {
             Console.Title = "Code sample";
 
-
+            DateTime expirationDate = new (2022, 3, 21);
+            var emailtext = $"License will expire on {expirationDate:MM/dd/yyyy} and only have {DateHelper.CalculateExpirationTime(expirationDate)} days left.";
+            Chunking();
             Console.ReadLine();
         }
-        public static int GetLineNumber(Exception ex)
-        {
-            var lineNumber = 0;
-            const string lineSearch = ":line ";
-            var index = ex.StackTrace.LastIndexOf(lineSearch);
-            if (index != -1)
-            {
-                var lineNumberText = ex.StackTrace.Substring(index + lineSearch.Length);
-                if (int.TryParse(lineNumberText, out lineNumber))
-                {
 
-                }
-            }
-            return lineNumber;
-        }
-
-        private static void BadCall()
-        {
-            Person person = new Person();
-
-            Dictionary<int, Person> dictionary = new() { [1] = person };
-            Console.WriteLine($"'{dictionary[4]}'");
-        }
 
         private static void MoveLineUp()
         {
@@ -74,6 +54,23 @@ namespace BetweenCodeSample
 
             foreach (string s in output)
                 Console.WriteLine(s);
+        }
+
+        private static void Chunking()
+        {
+            int[] indexers = { 2, 3, 4, 6 };
+            string input = "56822114567133355603";
+            StringBuilder builder = new();
+
+            foreach (var indexer in indexers[..4])
+            {
+                builder.AppendLine($"Chunk by: {indexer}");
+                List<char[]> output = input.Chunk(indexer).Select(chunk => chunk).ToList();
+                output.ForEach(x => builder.Append(new string(x.ToArray()) + " "));
+
+                builder.AppendLine("");
+            }
+            Console.WriteLine(builder);
         }
 
         private static void ChunkingBy2()
