@@ -90,10 +90,4 @@ namespace LoadDataGridViewProgressBar
         }
 
     }
-
-    public static class MyExtensions
-    {
-        public static string TrimLastCharacter(this String str) 
-            => string.IsNullOrEmpty(str) ? str : str.TrimEnd(str[str.Length - 1]);
-    }
 }
