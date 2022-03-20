@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B09FA7C0-E3C2-4DDD-A7CC-8D7046A1041A}</ProjectGuid>
+    <ProjectGuid>{22E5FEDA-5419-4A5A-9094-AAFDDC9ACB83}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>CreateDynamicControls</RootNamespace>
-    <AssemblyName>CreateDynamicControls</AssemblyName>
+    <RootNamespace>PleaseWaitExample</RootNamespace>
+    <AssemblyName>PleaseWaitExample</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -32,7 +32,6 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <PropertyGroup />
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -47,49 +46,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Classes\ControlHelper.cs" />
-    <Compile Include="Classes\CheckBoxOperations.cs" />
-    <Compile Include="Classes\Containers\Category.cs" />
-    <Compile Include="Classes\Containers\Employee.cs" />
-    <Compile Include="Classes\Controls\DataButton.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Classes\Controls\CustomButton.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Classes\DataOperations.cs" />
-    <Compile Include="Classes\Containers\Product.cs" />
-    <Compile Include="Classes\Extensions\StringExtensions.cs" />
-    <Compile Include="Classes\Extensions\ControlExtensions.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Classes\ButtonOperations.cs" />
-    <Compile Include="Form2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form2.Designer.cs">
-      <DependentUpon>Form2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Form3.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form3.Designer.cs">
-      <DependentUpon>Form3.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="BusyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BusyForm.Designer.cs">
+      <DependentUpon>BusyForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form2.resx">
-      <DependentUpon>Form2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form3.resx">
-      <DependentUpon>Form3.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -99,9 +71,10 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="DataScripts\readme.md" />
+    <EmbeddedResource Include="BusyForm.resx">
+      <DependentUpon>BusyForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -111,14 +84,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="readme.md" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="DataScripts\script.sql" />
-    <None Include="Resources\CheckDot_6x_16x.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

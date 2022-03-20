@@ -33,7 +33,7 @@ namespace LoadDataGridViewProgressBar
             this.CompanyNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ContactTitleColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CountryColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LoadDataGridViewButton = new System.Windows.Forms.Button();
+            this.RemoveButton = new System.Windows.Forms.Button();
             this.FilterButton = new System.Windows.Forms.Button();
             this.CompanyNameFilterTextBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.customerDataGridView)).BeginInit();
@@ -76,15 +76,15 @@ namespace LoadDataGridViewProgressBar
             this.CountryColumn.Name = "CountryColumn";
             this.CountryColumn.ReadOnly = true;
             // 
-            // LoadDataGridViewButton
+            // RemoveButton
             // 
-            this.LoadDataGridViewButton.Location = new System.Drawing.Point(13, 406);
-            this.LoadDataGridViewButton.Name = "LoadDataGridViewButton";
-            this.LoadDataGridViewButton.Size = new System.Drawing.Size(75, 23);
-            this.LoadDataGridViewButton.TabIndex = 2;
-            this.LoadDataGridViewButton.Text = "Load";
-            this.LoadDataGridViewButton.UseVisualStyleBackColor = true;
-            this.LoadDataGridViewButton.Click += new System.EventHandler(this.LoadDataGridViewButton_Click);
+            this.RemoveButton.Location = new System.Drawing.Point(13, 406);
+            this.RemoveButton.Name = "RemoveButton";
+            this.RemoveButton.Size = new System.Drawing.Size(75, 23);
+            this.RemoveButton.TabIndex = 2;
+            this.RemoveButton.Text = "Remove";
+            this.RemoveButton.UseVisualStyleBackColor = true;
+            this.RemoveButton.Click += new System.EventHandler(this.RemoveButton_Click);
             // 
             // FilterButton
             // 
@@ -110,7 +110,7 @@ namespace LoadDataGridViewProgressBar
             this.ClientSize = new System.Drawing.Size(505, 450);
             this.Controls.Add(this.CompanyNameFilterTextBox);
             this.Controls.Add(this.FilterButton);
-            this.Controls.Add(this.LoadDataGridViewButton);
+            this.Controls.Add(this.RemoveButton);
             this.Controls.Add(this.customerDataGridView);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "BindingListForm";
@@ -128,7 +128,7 @@ namespace LoadDataGridViewProgressBar
         private System.Windows.Forms.DataGridViewTextBoxColumn CompanyNameColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn ContactTitleColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn CountryColumn;
-        private System.Windows.Forms.Button LoadDataGridViewButton;
+        private System.Windows.Forms.Button RemoveButton;
         private System.Windows.Forms.Button FilterButton;
         private System.Windows.Forms.TextBox CompanyNameFilterTextBox;
     }

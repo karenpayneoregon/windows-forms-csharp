@@ -35,17 +35,7 @@ namespace LoadDataGridViewProgressBar
 
             customerDataGridView.ExpandColumns(true);
 
-            NextButton.Click += (sender, args) => CustomersBindingSource.MoveNext();
 
-            PreviousButton.Click += (sender, args) => CustomersBindingSource.MovePrevious();
-
-            EditButton.Click += EditButtonOnClick;
-
-            CustomersBindingSource.PositionChanged += (sender, args) =>
-            {
-                NextButton.Enabled = CustomersBindingSource.Position < CustomersBindingSource.Count - 1;
-                PreviousButton.Enabled = CustomersBindingSource.Position > 0;
-            };
         }
 
         private void EditButtonOnClick(object sender, EventArgs e)
@@ -53,6 +43,21 @@ namespace LoadDataGridViewProgressBar
             if (CustomersBindingSource.Current == null) return;
             DataRow row = ((DataRowView) CustomersBindingSource.Current).Row;
             MessageBox.Show($"Go do something with {row.Field<int>("CustomerIdentifier")}");
+        }
+
+        private void InsertButton_Click(object sender, EventArgs e)
+        {
+            if (customerDataGridView.SelectedRows.Count == 0) return;
+
+            List<DataRow> selectedRows = customerDataGridView
+                .SelectedRows
+                .Cast<DataGridViewRow>()
+                .Select(dgvr => ((DataRowView)dgvr.DataBoundItem).Row)
+                .ToList();
+
+            //var (success, exception) = Operations.Insert(selectedRows);
+
+
         }
     }
 }

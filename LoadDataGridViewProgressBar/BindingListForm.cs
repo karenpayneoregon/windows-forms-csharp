@@ -24,6 +24,12 @@ namespace LoadDataGridViewProgressBar
             await PopulateData(true);
         }
 
+        /// <summary>
+        /// In short, used to answer a forum question to show reloading data
+        /// from form shown event and later in a button click (which has since been removed)
+        /// </summary>
+        /// <param name="firstTime"></param>
+        /// <returns></returns>
         private async Task PopulateData(bool firstTime = false)
         {
             var (exception, customers) = await Operations.LoadCustomerList();
@@ -53,9 +59,17 @@ namespace LoadDataGridViewProgressBar
             }
         }
 
-        private async void LoadDataGridViewButton_Click(object sender, EventArgs e)
+        private void RemoveButton_Click(object sender, EventArgs e)
         {
-            await PopulateData();
+            var customer = _customersBindingList[_customersBindingSource.Position];
+
+            if (!Dialogs.Question($"Remove {customer.CompanyName}?")) return;
+
+            if (Operations.RemoveCustomer(customer.CustomerIdentifier))
+            {
+                _customersBindingSource.RemoveCurrent();
+            }
+
         }
 
         private void FilterButton_Click(object sender, EventArgs e)

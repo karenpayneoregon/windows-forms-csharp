@@ -12,6 +12,36 @@ namespace LoadDataGridViewProgressBar.Classes
         private static string _connectionString = 
             "Data Source=.\\sqlexpress;Initial Catalog=NorthWind2020;Integrated Security=True";
 
+        public static (bool success, Exception exception) Insert(List<DataRow> rows)
+        {
+            using (var cn = new SqlConnection() { ConnectionString = _connectionString })
+            {
+                using (var cmd = new SqlCommand() { Connection = cn })
+                {
+                    cmd.CommandText = "INSERT INTO Customers VALUES (@CompanyName, @ContactId)";
+                    cmd.Parameters.Add("@CompanyName", SqlDbType.NVarChar);
+                    cmd.Parameters.Add("@ContactId", SqlDbType.Int);
+
+                    try
+                    {
+                        cn.Open();
+
+                        foreach (var row in rows)
+                        {
+                            cmd.Parameters["@CompanyName"].Value = row.Field<string>("CompanyName");
+                            cmd.Parameters["@ContactId"].Value = row.Field<string>("ContactId");
+                            cmd.ExecuteNonQuery();
+                        }
+
+                        return (true, null);
+                    }
+                    catch (Exception localException)
+                    {
+                        return (false, localException);
+                    }
+                }
+            }
+        }
         public static async Task<(Exception exception, DataTable dataTable)> LoadCustomerDataTable()
         {
 
@@ -24,7 +54,7 @@ namespace LoadDataGridViewProgressBar.Classes
                     try
                     {
                         cmd.CommandText =
-                            "SELECT  C.CustomerIdentifier, C.CompanyName, C.ContactId, CT.ContactTitle, C.City, CO.[Name] " + 
+                            "SELECT  C.CustomerIdentifier, C.CompanyName, C.ContactId, CT.ContactTitle, C.City, CO.[Name] AS CountryName " + 
                             "FROM Customers AS C INNER JOIN ContactType AS CT ON C.ContactTypeIdentifier = CT.ContactTypeIdentifier " + 
                             "INNER JOIN Countries AS CO ON C.CountryIdentifier = CO.CountryIdentifier ";
 
@@ -33,7 +63,7 @@ namespace LoadDataGridViewProgressBar.Classes
 
                         customersDataTable.Load(await cmd.ExecuteReaderAsync());
 
-                        customersDataTable.Columns["Name"].AllowDBNull = false;
+                        customersDataTable.Columns["CountryName"].AllowDBNull = false;
                         customersDataTable.Columns["CustomerIdentifier"].ColumnMapping = MappingType.Hidden;
                         customersDataTable.Columns["ContactId"].ColumnMapping = MappingType.Hidden;
 
@@ -46,6 +76,10 @@ namespace LoadDataGridViewProgressBar.Classes
                 }
             }
 
+            foreach (DataColumn column in customersDataTable.Columns)
+            {
+                Console.WriteLine($"{column.ColumnName}\t{column.DataType}");
+            }
             return (null, customersDataTable);
 
         }
@@ -93,6 +127,11 @@ namespace LoadDataGridViewProgressBar.Classes
 
             return (null, list);
 
+        }
+
+        public static bool RemoveCustomer(int customerCustomerIdentifier)
+        {
+            return true;
         }
     }
 }

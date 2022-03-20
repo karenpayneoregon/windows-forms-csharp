@@ -16,7 +16,7 @@ namespace SmtpConfigurationExample
         private void GetEmailSettingsButton_Click(object sender, EventArgs e)
         {
             var mc = new MailConfiguration();
-            StringBuilder builder = new StringBuilder();
+            var builder = new StringBuilder();
 
             builder.AppendLine($"User name: {mc.UserName}");
             builder.AppendLine($"From: {mc.FromAddress}");
