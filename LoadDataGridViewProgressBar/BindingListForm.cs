@@ -12,7 +12,7 @@ namespace LoadDataGridViewProgressBar
     public partial class BindingListForm : Form
     {
         private BindingSource _customersBindingSource = new BindingSource();
-        private BindingList<Customer> _customersBindingList = new BindingList<Customer>(); 
+        private SortableBindingList<Customer> _customersBindingList = new SortableBindingList<Customer>();
         private BindingList<Customer> _customersBindingListFiltered = new BindingList<Customer>(); 
         public BindingListForm()
         {
@@ -47,7 +47,7 @@ namespace LoadDataGridViewProgressBar
 
                 await Task.Delay(500);
 
-                _customersBindingList = new BindingList<Customer>(customers);
+                _customersBindingList = new SortableBindingList<Customer>(customers);
                 _customersBindingSource = new BindingSource { DataSource = _customersBindingList };
                 customerDataGridView.AutoGenerateColumns = false;
                 customerDataGridView.DataSource = _customersBindingSource;

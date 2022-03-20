@@ -55,6 +55,7 @@
     <Compile Include="Classes\Customer.cs" />
     <Compile Include="Classes\DataGridViewExtensions.cs" />
     <Compile Include="Classes\Operations.cs" />
+    <Compile Include="Classes\SortableBindingList.cs" />
     <Compile Include="Controls\DataGridViewJumper.cs">
       <SubType>Component</SubType>
     </Compile>
