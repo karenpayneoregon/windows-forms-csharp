@@ -1,23 +1,33 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <OutputType>Exe</OutputType>
-    <TargetFramework>net5.0</TargetFramework>
-  </PropertyGroup>
+	<PropertyGroup>
+		<OutputType>Exe</OutputType>
+		<TargetFramework>net5.0</TargetFramework>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <None Remove="readme.md" />
-  </ItemGroup>
+	<ItemGroup>
+		<None Remove="readme.md" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <Content Include="readme.md" />
-  </ItemGroup>
+	<ItemGroup>
+		<Content Include="readme.md" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <None Update="TextFile1.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
+	<!--<ItemGroup>
+		<ProjectReference Include="..\CoreExtensions\CoreExtensions.csproj" />
+	</ItemGroup>-->
+
+	<ItemGroup>
+		<Reference Include="CoreExtensions">
+			<HintPath>C:\OED\Dotnetland\VS2019\LearningVisualStudio\WindowsFormsSolution\CoreExtensions\bin\Debug\net5.0\CoreExtensions.dll</HintPath>
+		</Reference>
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Update="TextFile1.txt">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
+	</ItemGroup>
 	<PropertyGroup>
 		<RunArguments>-mode dryrun</RunArguments>
 	</PropertyGroup>

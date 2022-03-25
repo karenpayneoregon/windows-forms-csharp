@@ -1,0 +1,4 @@
+﻿<p>Hi,</p>
+<p>The following service(s) has reported issues:{{ for service in services }}</p>
+    <p>"<span style="color: red;font-weight: bold;">{{ service.key }}</span>": "{{service.value}}"{{end}}</p>
+<p>Thanks </p>

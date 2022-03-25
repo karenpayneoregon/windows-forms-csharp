@@ -30,10 +30,10 @@ namespace BetweenCodeSample.Extensions
         {
             return sender switch
             {
-                { } value1 when (value1 >= 7) => $"I am 7 or above: {value1}",
+                { } value1 when (value1 >= 7 && value1 <= 14) => $"I am 7 or above but less than 14: {value1}",
                 { } value2 when value2.Between(4, 6) => $"I am between 4 and 6: {value2}",
                 { } value3 when (value3.IsLessThan(3)) => $"I am 3 or less: {value3}",
-                _ => ""
+                _ => "I'm old"
             };
         }
 

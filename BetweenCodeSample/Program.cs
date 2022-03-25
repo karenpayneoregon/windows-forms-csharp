@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using BetweenCodeSample.Extensions;
+using CoreExtensions.LanguageExtensions;
 
 
 namespace BetweenCodeSample
@@ -20,9 +21,10 @@ namespace BetweenCodeSample
         {
             Console.Title = "Code sample";
 
-            DateTime expirationDate = new (2022, 3, 21);
-            var emailtext = $"License will expire on {expirationDate:MM/dd/yyyy} and only have {DateHelper.CalculateExpirationTime(expirationDate)} days left.";
-            Chunking();
+            //DateTime expirationDate = new (2022, 3, 21);
+            //var emailtext = $"License will expire on {expirationDate:MM/dd/yyyy} and only have {DateHelper.CalculateExpirationTime(expirationDate)} days left.";
+            //Chunking();
+            SwitchExpression();
             Console.ReadLine();
         }
 
@@ -126,6 +128,7 @@ namespace BetweenCodeSample
             Console.WriteLine(7.CaseWhen());
             Console.WriteLine(5.CaseWhen());
             Console.WriteLine(1.CaseWhen());
+            Console.WriteLine(16.CaseWhen());
         }
 
         private static void IComparableExtensionExamples()
