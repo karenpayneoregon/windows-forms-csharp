@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.IO;
-using Scriban;
 using StringInterpolationTemplating.Classes;
 
 
@@ -28,16 +26,12 @@ namespace StringInterpolationTemplating
 
         private static void NativeTemplating()
         {
-            NativeTemplate template1 = new NativeTemplate("Karen", new DateTime(1956, 9, 24));
+            NativeTemplate template = new("Karen", new DateTime(1956, 9, 24));
             
             Debug.WriteLine("");
-            Debug.WriteLine(template1);
+            Debug.WriteLine(template);
             Debug.WriteLine("");
         }
-
-   
             
     }
-
-    
 }
