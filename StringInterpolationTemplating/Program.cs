@@ -22,15 +22,6 @@ namespace StringInterpolationTemplating
 
 
         }
-
-        private static void NativeTemplating()
-        {
-            NativeTemplate template = new("Karen", new DateTime(1956, 9, 24));
-            
-            Debug.WriteLine("");
-            Debug.WriteLine(template);
-            Debug.WriteLine("");
-        }
             
     }
 }

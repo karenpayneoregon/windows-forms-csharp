@@ -6,7 +6,7 @@ namespace StringInterpolationTemplating.Classes
 {
     public class NativeTemplate
     {
-        private const string _Template1 = 
+        private const string _template = 
             @"Her name is {name} and her birthday is on {dob}, which is in {month} for {name}.";
 
         private readonly Dictionary<string, string> _parameters = new();
@@ -20,13 +20,13 @@ namespace StringInterpolationTemplating.Classes
 
         /// <summary>
         /// Uses Aggregate
-        /// Applies an accumulator function over a sequence. (in this case |_Template1| using |_parameters|)
+        /// Applies an accumulator function over a sequence. 
         /// The specified seed value is used as the initial accumulator value,
         /// and the specified function is used to select the result value.
         /// </summary>
         /// <returns></returns>
         public override string ToString() 
-            => _parameters.Aggregate(_Template1, (sender, kvp) 
+            => _parameters.Aggregate(_template, (sender, kvp) 
                 => sender.Replace(kvp.Key, kvp.Value));
     }
 }
