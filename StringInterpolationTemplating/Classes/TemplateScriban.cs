@@ -20,11 +20,12 @@ namespace StringInterpolationTemplating.Classes
         public static string ScribanFromFile()
         {
             var bodyText = File.ReadAllText(
-                Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Services1.txt"));
+                Path.Combine(AppDomain.CurrentDomain.BaseDirectory, 
+                    "Services1.txt"));
 
             var keyValuePairs = DeserializeObject<Dictionary<string, string>>(File.ReadAllText("Management.json"));
-            var template1 = Template.Parse(bodyText);
-            return template1.Render(new { services = keyValuePairs });
+            var resultTemplate = Template.Parse(bodyText);
+            return resultTemplate.Render(new { services = keyValuePairs });
 
         }
     }

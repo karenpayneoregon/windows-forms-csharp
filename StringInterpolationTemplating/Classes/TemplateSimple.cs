@@ -18,6 +18,13 @@ namespace StringInterpolationTemplating.Classes
             _parameters.Add(@"{month}", $"{dob:MMMM}");
         }
 
+        /// <summary>
+        /// Uses Aggregate
+        /// Applies an accumulator function over a sequence. (in this case |_Template1| using |_parameters|)
+        /// The specified seed value is used as the initial accumulator value,
+        /// and the specified function is used to select the result value.
+        /// </summary>
+        /// <returns></returns>
         public override string ToString() 
             => _parameters.Aggregate(_Template1, (sender, kvp) 
                 => sender.Replace(kvp.Key, kvp.Value));
