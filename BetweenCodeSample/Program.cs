@@ -17,8 +17,19 @@ namespace BetweenCodeSample
     /// </summary>
     class Program
     {
+        
         static void Main(string[] args)
         {
+
+            string[] test = new[] { "A", "B", "C" };
+
+            var data = test.ToList();
+
+            for (int index = 0; index < data.Count; index++)
+            {
+                Debug.WriteLine(test[index]);
+            }
+
             Console.Title = "Code sample";
 
             //DateTime expirationDate = new (2022, 3, 21);

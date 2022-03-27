@@ -17,14 +17,7 @@ namespace StringInterpolationTemplating.Classes
             _parameters.Add(@"{dob}", $"{dob:MM/dd/yyyy}");
             _parameters.Add(@"{month}", $"{dob:MMMM}");
         }
-
-        /// <summary>
-        /// Uses Aggregate
-        /// Applies an accumulator function over a sequence. 
-        /// The specified seed value is used as the initial accumulator value,
-        /// and the specified function is used to select the result value.
-        /// </summary>
-        /// <returns></returns>
+        
         public override string ToString() 
             => _parameters.Aggregate(_template, (sender, kvp) 
                 => sender.Replace(kvp.Key, kvp.Value));

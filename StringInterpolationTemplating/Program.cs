@@ -9,19 +9,16 @@ namespace StringInterpolationTemplating
     {
         static void Main(string[] args)
         {
-            Console.Title = "Templating";
-
-            Debug.WriteLine("Scriban example");
-            Debug.WriteLine(TemplateScriban.ScribanFromFile());
-            Debug.WriteLine("");
-
-
-            Debug.WriteLine("Native example");
-            Debug.WriteLine(new NativeTemplate("Karen", new DateTime(1956, 9, 24)));
-            Debug.WriteLine("");
-
+            Debug.WriteLine(Native("Karen", DateTime.Now));
+            Debug.WriteLine(Native("Bob", new DateTime(1945, 11, 1)));
+            
 
         }
-            
+
+
+        private static string Native(string name, DateTime dob)
+        {
+            return new NativeTemplate(name, dob).ToString();
+        }
     }
 }

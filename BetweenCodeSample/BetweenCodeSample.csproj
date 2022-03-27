@@ -39,10 +39,21 @@
 	</Target>-->
 
 
-	<Target Name="MakeLogFolder" AfterTargets="Build">
+	<!--<Target Name="MakeLogFolder" AfterTargets="Build">
 		<MakeDir Directories="$(OutDir)Logs" />
-	</Target>
+	</Target>-->
+	<!--<PropertyGroup>
+		<DebugDirectory>\Debug\</DebugDirectory>
+	</PropertyGroup>-->
 
 
+	<!--<Target Name="AfterClean">
+		<RemoveDir Directories="$(DebugDirectory)" />
+	</Target>-->
 
+
+<!--
+Get-ChildItem .\ -include bin,obj -Recurse | foreach ($_) { remove-item $_.fullname -Force -Recurse }
+dotnet restore
+-->
 </Project>
