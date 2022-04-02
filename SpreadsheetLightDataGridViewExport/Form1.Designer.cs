@@ -35,6 +35,7 @@ namespace SpreadsheetLightDataGridViewExport
             this.SearchTextBox = new System.Windows.Forms.TextBox();
             this.CloneTableButton = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.GetCellStyleButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -95,11 +96,22 @@ namespace SpreadsheetLightDataGridViewExport
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // GetCellStyleButton
+            // 
+            this.GetCellStyleButton.Location = new System.Drawing.Point(573, 252);
+            this.GetCellStyleButton.Name = "GetCellStyleButton";
+            this.GetCellStyleButton.Size = new System.Drawing.Size(75, 23);
+            this.GetCellStyleButton.TabIndex = 6;
+            this.GetCellStyleButton.Text = "Get style";
+            this.GetCellStyleButton.UseVisualStyleBackColor = true;
+            this.GetCellStyleButton.Click += new System.EventHandler(this.GetCellStyleButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(694, 292);
+            this.Controls.Add(this.GetCellStyleButton);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.CloneTableButton);
             this.Controls.Add(this.SearchTextBox);
@@ -123,6 +135,7 @@ namespace SpreadsheetLightDataGridViewExport
         private System.Windows.Forms.TextBox SearchTextBox;
         private System.Windows.Forms.Button CloneTableButton;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button GetCellStyleButton;
     }
 }
 

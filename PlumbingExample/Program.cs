@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace JsonSampleDataGridView
+namespace PlumbingExample
 {
     static class Program
     {
@@ -16,7 +16,7 @@ namespace JsonSampleDataGridView
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new JsonToComboBoxForm());
+            Application.Run(new Form1());
         }
     }
 }

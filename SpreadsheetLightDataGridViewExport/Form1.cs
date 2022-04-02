@@ -64,5 +64,10 @@ namespace SpreadsheetLightDataGridViewExport
             
             
         }
+
+        private void GetCellStyleButton_Click(object sender, EventArgs e)
+        {
+            SpreadSheetLightOperations.Example1("Demo1.xlsx","Sheet1");
+        }
     }
 }

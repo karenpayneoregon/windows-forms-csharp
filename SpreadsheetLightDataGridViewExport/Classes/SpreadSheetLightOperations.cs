@@ -5,6 +5,7 @@ using System.Text;
 using DocumentFormat.OpenXml;
 using DocumentFormat.OpenXml.Spreadsheet;
 using SpreadsheetLight;
+using Color = System.Drawing.Color;
 
 namespace SpreadsheetLightDataGridViewExport.Classes
 {
@@ -31,7 +32,7 @@ namespace SpreadsheetLightDataGridViewExport.Classes
             {
                 using (var document = new SLDocument(fileName, sheetName))
                 {
-                    
+
                     var stats = document.GetWorksheetStatistics();
                     var test = stats.EndRowIndex;
                     for (int index = 1; index < stats.EndRowIndex + 1; index++)
@@ -44,13 +45,13 @@ namespace SpreadsheetLightDataGridViewExport.Classes
                 }
 
                 return (indicesList, null);
-                
+
             }
             catch (Exception exception)
             {
                 return (indicesList, exception);
             }
-           
+
         }
 
         public static bool SheetExists(SLDocument document, string sheetName) =>
@@ -63,7 +64,7 @@ namespace SpreadsheetLightDataGridViewExport.Classes
                 var stats = document.GetWorksheetStatistics();
                 for (int rowIndex = 1; rowIndex < stats.EndRowIndex + 1; rowIndex++)
                 {
-                    for (int columnIndex = 1; columnIndex < stats.EndColumnIndex +1; columnIndex++)
+                    for (int columnIndex = 1; columnIndex < stats.EndColumnIndex + 1; columnIndex++)
                     {
                         Console.WriteLine($"{SLConvert.ToCellReference(rowIndex, columnIndex)} = {document.GetCellValueAsString(rowIndex, columnIndex)}");
                     }
@@ -87,12 +88,23 @@ namespace SpreadsheetLightDataGridViewExport.Classes
             using (var document = new SLDocument(fileName, sheetName))
             {
 
-                Dictionary<int, Dictionary<int, SLCell>> cells = document.GetCells();
-                var results= cells.Select(x => x.Value).ToList();
+                var stats = document.GetWorksheetStatistics();
+                var xxxx = document.GetStyles();
+                for (int columnIndex = 1; columnIndex < stats.EndColumnIndex + 1; columnIndex++)
+                {
 
-       
+                    for (int rowIndex = 1; rowIndex < stats.EndRowIndex + 1; rowIndex++)
+                    {
+                        var result = document.GetCellStyle(rowIndex, columnIndex);
+                        var test = result.Fill;
+                        
+                        Console.WriteLine($"{rowIndex}, {columnIndex}  {result.Fill.PatternBackgroundColor.Name}");
+                    }
+                }
 
             }
+
+
         }
 
 

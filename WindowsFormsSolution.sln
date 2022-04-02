@@ -316,6 +316,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RemoveFromSecondList", "Rem
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StackoverflowSalesFromFile", "StackoverflowSalesFromFile\StackoverflowSalesFromFile.csproj", "{FE28BBC4-DDB1-4458-ABEE-79D126DC5D87}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlumbingExample", "PlumbingExample\PlumbingExample.csproj", "{3AD0E051-7015-4789-8384-D70567D3DDCE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -1856,6 +1858,18 @@ Global
 		{FE28BBC4-DDB1-4458-ABEE-79D126DC5D87}.Release|x64.Build.0 = Release|Any CPU
 		{FE28BBC4-DDB1-4458-ABEE-79D126DC5D87}.Release|x86.ActiveCfg = Release|Any CPU
 		{FE28BBC4-DDB1-4458-ABEE-79D126DC5D87}.Release|x86.Build.0 = Release|Any CPU
+		{3AD0E051-7015-4789-8384-D70567D3DDCE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3AD0E051-7015-4789-8384-D70567D3DDCE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3AD0E051-7015-4789-8384-D70567D3DDCE}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{3AD0E051-7015-4789-8384-D70567D3DDCE}.Debug|x64.Build.0 = Debug|Any CPU
+		{3AD0E051-7015-4789-8384-D70567D3DDCE}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{3AD0E051-7015-4789-8384-D70567D3DDCE}.Debug|x86.Build.0 = Debug|Any CPU
+		{3AD0E051-7015-4789-8384-D70567D3DDCE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3AD0E051-7015-4789-8384-D70567D3DDCE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3AD0E051-7015-4789-8384-D70567D3DDCE}.Release|x64.ActiveCfg = Release|Any CPU
+		{3AD0E051-7015-4789-8384-D70567D3DDCE}.Release|x64.Build.0 = Release|Any CPU
+		{3AD0E051-7015-4789-8384-D70567D3DDCE}.Release|x86.ActiveCfg = Release|Any CPU
+		{3AD0E051-7015-4789-8384-D70567D3DDCE}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -2008,6 +2022,7 @@ Global
 		{40B53763-D256-4CAA-8146-5AD602EC1135} = {93C67B04-AC3D-4462-A914-2DF201F30342}
 		{33CE677D-FA22-4ACB-B8A8-B9CB904E3B98} = {2E5D5985-8504-422C-A302-6A46890F4ACB}
 		{FE28BBC4-DDB1-4458-ABEE-79D126DC5D87} = {2E5D5985-8504-422C-A302-6A46890F4ACB}
+		{3AD0E051-7015-4789-8384-D70567D3DDCE} = {2E5D5985-8504-422C-A302-6A46890F4ACB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {58AC3B13-B420-4F3C-8723-CE1E6C224D46}

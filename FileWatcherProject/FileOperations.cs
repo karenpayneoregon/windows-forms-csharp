@@ -15,6 +15,7 @@ namespace FileWatcherExample
         /// Path to move file(s) too
         /// </summary>
         public string TargetPath { get; set; }
+
         
         /// <summary>
         /// Responsible for watching a folder, move new files to a
@@ -63,9 +64,16 @@ namespace FileWatcherExample
                            | NotifyFilters.Size;
         }
 
+
+
         private void OnCreated(object sender, FileSystemEventArgs fileSystemEventArgs)
         {
-            
+            Console.WriteLine($"{fileSystemEventArgs.ChangeType} {fileSystemEventArgs.Name}");
+        }
+
+        private void OnCreated1(object sender, FileSystemEventArgs fileSystemEventArgs)
+        {
+
             try
             {
 
@@ -74,8 +82,8 @@ namespace FileWatcherExample
                 {
                     File.Delete(targetFile);
                 }
-                
-                File.Move(fileSystemEventArgs.FullPath,targetFile);
+
+                File.Move(fileSystemEventArgs.FullPath, targetFile);
             }
             catch (Exception exception)
             {
