@@ -1,5 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
+using SqlDemos.OtherForms;
 
 namespace SqlDemos
 {
@@ -25,6 +28,24 @@ namespace SqlDemos
             }
 
             return list;
+        }
+
+        public static DataTable GetCategories()
+        {
+
+            DataTable table = new DataTable();
+            using (var cn = new SqlConnection(_connectionString))
+            {
+                using (var cmd = new SqlCommand() { Connection = cn })
+                {
+                    cmd.CommandText = "SELECT CategoryID, CategoryName, Picture FROM dbo.Categories";
+                    cn.Open();
+                    table.Load(cmd.ExecuteReader());
+                    table.Columns["CategoryID"].ColumnMapping = MappingType.Hidden;
+                }
+            }
+
+            return table;
         }
     }
 }

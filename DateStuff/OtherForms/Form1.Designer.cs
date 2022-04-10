@@ -1,5 +1,5 @@
 ﻿
-namespace SqlDemos
+namespace SqlDemos.OtherForms
 {
     partial class Form1
     {

@@ -3,7 +3,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 
-namespace SqlDemos
+namespace SqlDemos.OtherForms
 {
     public partial class Form1 : Form
     {

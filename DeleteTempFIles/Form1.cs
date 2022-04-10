@@ -22,7 +22,7 @@ namespace DeleteTempFIles
 
         private void GetFilesButton_Click(object sender, EventArgs e)
         {
-            var list = Directory.GetDirectories(@"C:\Users\paynek\AppData\Local\Temp", "s*.*").ToList();
+            var list = Directory.GetDirectories(@"C:\Users\paynek\AppData\Local\Temp", $"{textBox1.Text}*.*").ToList();
 
             Console.WriteLine(list.Count);
             for (int index = 0; index < list.Count; index++)

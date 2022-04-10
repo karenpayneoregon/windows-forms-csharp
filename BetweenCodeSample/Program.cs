@@ -21,24 +21,22 @@ namespace BetweenCodeSample
         static void Main(string[] args)
         {
 
-            string[] test = new[] { "A", "B", "C" };
-
-            var data = test.ToList();
-
-            for (int index = 0; index < data.Count; index++)
-            {
-                Debug.WriteLine(test[index]);
-            }
-
             Console.Title = "Code sample";
+    
+
 
             //DateTime expirationDate = new (2022, 3, 21);
             //var emailtext = $"License will expire on {expirationDate:MM/dd/yyyy} and only have {DateHelper.CalculateExpirationTime(expirationDate)} days left.";
             //Chunking();
-            SwitchExpression();
+            //SwitchExpression();
             Console.ReadLine();
         }
-
+        public static string Reverse(string s)
+        {
+            char[] charArray = s.ToCharArray();
+            Array.Reverse(charArray);
+            return new string(charArray);
+        }
 
         private static void MoveLineUp()
         {

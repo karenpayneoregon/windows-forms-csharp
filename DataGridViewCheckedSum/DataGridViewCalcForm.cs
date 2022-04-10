@@ -1,17 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace DataGridViewCheckedSum
 {
     public partial class DataGridViewCalcForm : Form
     {
+        private BindingSource bindingSource = new BindingSource();
         public DataGridViewCalcForm()
         {
             InitializeComponent();
@@ -37,14 +33,28 @@ namespace DataGridViewCheckedSum
             table.Rows.Add("Second item", 2, 50);
             table.Rows.Add("Third item", 1, 20);
 
-            dataGridView1.DataSource = table;
+            bindingSource.DataSource = table;
+            dataGridView1.DataSource = bindingSource;
 
-            CalculateTotal();
+            //CalculateTotal();
         }
 
         private void CalculateTotal()
         {
             TotalLabel.Text = ((DataTable)dataGridView1.DataSource).AsEnumerable().Sum(row => row.Field<decimal>("Total")).ToString("C");
+        }
+
+        private void IncreaseButton_Click(object sender, EventArgs e)
+        {
+            var row = ((DataRowView)bindingSource.Current).Row;
+            row.SetField("Qty", row.Field<int>("Qty") +1);
+        }
+
+        private void DecreaseButton_Click(object sender, EventArgs e)
+        {
+            var row = ((DataRowView)bindingSource.Current).Row;
+            row.SetField("Qty", row.Field<int>("Qty") -1);
+
         }
     }
 }
