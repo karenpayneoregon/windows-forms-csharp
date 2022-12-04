@@ -38,16 +38,12 @@
             this.VendorComboBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.numericUpDownColumnRight1 = new DataGridViewCombo1.Controls.NumericUpDownColumnRight();
-            this.FilterButton = new System.Windows.Forms.Button();
-            this.searchTextBox = new System.Windows.Forms.TextBox();
             this.Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CustomersDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // Panel1
             // 
-            this.Panel1.Controls.Add(this.searchTextBox);
-            this.Panel1.Controls.Add(this.FilterButton);
             this.Panel1.Controls.Add(this.DisplayInformationTextBox);
             this.Panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.Panel1.Location = new System.Drawing.Point(0, 206);
@@ -116,23 +112,6 @@
             this.numericUpDownColumnRight1.HeaderText = "Qty";
             this.numericUpDownColumnRight1.Name = "numericUpDownColumnRight1";
             // 
-            // FilterButton
-            // 
-            this.FilterButton.Location = new System.Drawing.Point(12, 46);
-            this.FilterButton.Name = "FilterButton";
-            this.FilterButton.Size = new System.Drawing.Size(75, 23);
-            this.FilterButton.TabIndex = 4;
-            this.FilterButton.Text = "Filter";
-            this.FilterButton.UseVisualStyleBackColor = true;
-            this.FilterButton.Click += new System.EventHandler(this.FilterButton_Click);
-            // 
-            // searchTextBox
-            // 
-            this.searchTextBox.Location = new System.Drawing.Point(108, 47);
-            this.searchTextBox.Name = "searchTextBox";
-            this.searchTextBox.Size = new System.Drawing.Size(100, 20);
-            this.searchTextBox.TabIndex = 5;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -163,8 +142,6 @@
         private Controls.NumericUpDownColumnRight QtyNumericUpDownColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn InCartCheckBoxColumn;
         private System.Windows.Forms.DataGridViewComboBoxColumn VendorComboBoxColumn;
-        private System.Windows.Forms.TextBox searchTextBox;
-        private System.Windows.Forms.Button FilterButton;
     }
 }
 

@@ -41,7 +41,6 @@ namespace PassingDataBetweenFormsSimple
             this.FirstNameTextBox.Name = "FirstNameTextBox";
             this.FirstNameTextBox.Size = new System.Drawing.Size(100, 20);
             this.FirstNameTextBox.TabIndex = 0;
-            this.FirstNameTextBox.Text = "Karen";
             // 
             // PassDataButton
             // 

@@ -40,6 +40,26 @@ namespace DataGridViewCombo1.Classes
             }
         }
 
+        public (DataTable customerTable, DataTable colorTable) LoadData()
+        {
+            DataTable dtCustomer = new DataTable();
+            DataTable dtColor = new DataTable();
+
+            using (var cn = new SqlConnection { ConnectionString = ConnectionString })
+            {
+                using (var cmd = new SqlCommand { Connection = cn })
+                {
+                    cn.Open();
+                    cmd.CommandText = "SELECT id,Item,ColorId,CustomerId, qty, InCart, VendorId  FROM Product";
+                    dtCustomer.Load(cmd.ExecuteReader());
+                    cmd.CommandText = "SELECT ColorId,ColorText FROM Colors";
+                    dtColor.Load(cmd.ExecuteReader());
+                }
+            }
+
+            return (dtCustomer, dtColor);
+        }
+
         /// <summary>
         /// Load color reference table
         /// </summary>

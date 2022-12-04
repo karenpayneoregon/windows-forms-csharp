@@ -102,31 +102,7 @@ namespace DataGridViewCombo1
             //CustomersDataGridView.CellFormatting += CustomersDataGridView_CellFormatting;
 
         }
-        /// <summary>
-        /// To be moved out of here, placed here to reply to a forum question.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void CustomersDataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
-        {
-
-            if (e.ColumnIndex == CustomersDataGridView.Columns["ColorComboBoxColumn"].Index && CustomersDataGridView.Rows[e.RowIndex].DataBoundItem != null)
-            {
-                var colorKeyValue = ((DataRowView)CustomersDataGridView.Rows[e.RowIndex].DataBoundItem).Row.Field<int>("ColorId");
-                if (colorKeyValue == 2)
-                {
-                    //CustomersDataGridView.Rows[e.RowIndex].Cells[CustomersDataGridView.Columns["ColorComboBoxColumn"].Index].Style = new DataGridViewCellStyle { ForeColor = Color.White, BackColor = Color.Tomato };
-
-                    CustomersDataGridView.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.Yellow;
-                }
-                else
-                {
-                    //CustomersDataGridView.Rows[e.RowIndex].Cells[CustomersDataGridView.Columns["ColorComboBoxColumn"].Index].Style = null;
-                    CustomersDataGridView.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.Empty;
-                }
-            }
-        }
-
+       
         private void _CurrentCellDirtyStateChanged(object sender, EventArgs e)
         {
             CustomersDataGridView.CurrentCellDirtyStateChanged -= _CurrentCellDirtyStateChanged;
@@ -176,14 +152,7 @@ namespace DataGridViewCombo1
 
         private void FilterButton_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(searchTextBox.Text))
-            {
-                _customerBindingSource.RemoveFilter();
-            }
-            else
-            {
-                _customerBindingSource.Filter = $"Item = '{searchTextBox.Text}'";
-            }
+
         }
     }
 }
